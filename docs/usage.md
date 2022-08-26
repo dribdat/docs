@@ -78,7 +78,9 @@ If you have issues logging into the platform, please contact the organizing team
 
 Every active team should have a public project page on dribdat.
 
-These are sometimes categorized according to the challenge topic they address at the top of the event page, which is a kind of digital map. The button at the far right (&#9776;) switches to a list mode, which can also help you to find your team if there are a lot of challenges. Here is an example from a recent Dribdat event which uses categories:
+These are sometimes categorized according to the challenge topic they address at the top of the event page, which is a kind of digital map. The button at the far right (&#9776;) switches to a list mode, which can also help you to find your team if there are a lot of challenges. 
+
+Here is an example from a recent Dribdat event which uses categories:
 
 ![EvalHack screenshot](https://us-east-1.linodeobjects.com/dribdat/uploads/upload_5f353fb2f1a035c8a2a2d84f50121ca1.png)
 

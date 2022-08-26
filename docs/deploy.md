@@ -2,7 +2,7 @@ This document contains additional information on deploying dribdat.
 
 # Deployment guide
 
-The following section details environment variables you can add to tweak your installation. See also the [README](https://github.com/dribdat/dribdat#quickstart) guide.
+The following section details environment variables you can add to tweak your installation. See also the [README](https://github.com/dribdat/dribdat#quickstart) guide, and our new frontend microservice [Backboard](https://github.com/dribdat/backboard).
 
 ## With Python
 

@@ -10,6 +10,8 @@ nav:
 theme:
     name: bootstrap4
     next_previous: true
+    titles_only: true
+    extra_css: [extra.css]
 plugins:
     - bootstrap4-blockquotes
     - bootstrap4-tables
