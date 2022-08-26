@@ -5,9 +5,9 @@ brand:
 about:
   text: Co-creation, sprints & hackathons-in-a-box
 site:
-  favicon: ../assets/favicon.ico
+  favicon: assets/favicon.ico
   styles:
-    - style.css
+    - docs/style.css
 github:
   user: dribdat
   repo: dribdat
@@ -23,17 +23,17 @@ links:
       path: https://opencollective.com/dribdat
 pages:
   items:
-    - path: index
+    - path: docs/index
       name: Introduction
-    - path: about
+    - path: docs/about
       name: About
-    - path: usage
+    - path: docs/usage
       name: User guide
-    - path: deploy
+    - path: docs/deploy
       name: Installation
-    - path: contribute
+    - path: docs/contribute
       name: Contribute
-    - path: whitepaper
+    - path: docs/whitepaper
       name: Whitepaper
-    - path: trouble
+    - path: docs/trouble
       name: Help
