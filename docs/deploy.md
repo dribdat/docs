@@ -2,15 +2,15 @@ This document contains additional information on deploying dribdat.
 
 # Deployment guide
 
-The following section details environment variables you can add to tweak your installation. See also the [Quickstart](../README.md#quickstart) guide.
+The following section details environment variables you can add to tweak your installation. See also the [README](https://github.com/dribdat/dribdat#quickstart) guide.
 
 ## With Python
 
-Details on starting the application directly with Python are detailed in the [Developer guide](CONTRIBUTE.md). You will still want to refer to the [Configuration](#Configuration) section below.
+Details on starting the application directly with Python are detailed in the [Developer guide](contribute). You will still want to refer to the [Configuration](#Configuration) section below.
 
 ## With Docker
 
-To deploy dribdat using [Docker](https://www.docker.com/) or [Podman](https://docs.podman.io/en/latest/index.html), use the included [docker-compose.yml file](docker-compose.yml) as a starting point. This, by default, persists the PostgreSQL database outside the container, on the local filesystem in the `.db` folder.
+To deploy dribdat using [Docker](https://www.docker.com/) or [Podman](https://docs.podman.io/en/latest/index.html), use the included `docker-compose.yml` file as a starting point. This, by default, persists the PostgreSQL database outside the container, on the local filesystem in the `.db` folder.
 
 For a first-time setup, perform the initial migrations as follows:
 
@@ -75,7 +75,7 @@ Register your app with the provider, and set the following variables:
 * `OAUTH_DOMAIN` - (optional) subdomain of your Slack instance, or AD tenant for Azure.
 * `OAUTH_SKIP_LOGIN` - (optional) when enabled, the dribdat login screen is not shown at all.
 
-You can find more advice in the [Troubleshooting](TROUBLE.md#need-help-setting-up-sso) guide.
+You can find more advice in the [Troubleshooting](trouble#need-help-setting-up-sso) guide.
 
 ## File storage
 
@@ -94,7 +94,7 @@ Due to the use of the [boto3](https://github.com/boto/boto3/) library for S3 sup
 
 ## Custom content
 
-To customize some of the default content, you can edit the template include files, for example the default [quickstart](dribdat/templates/includes/quickstart.md) or [stages](dribdat/templates/includes/stages.yaml) - as long as you're not limited by ephemeral storage of your deployment.
+To customize some of the default content, you can edit the template include files in the folder `dribdat/templates/includes`, for example you will find there the default `quickstart.md` and `stages.yaml` definitions. Make sure your changes will not be overwritten due to ephemeral storage of your deployment.
 
 ## Using a proxy server
 

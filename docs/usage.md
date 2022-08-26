@@ -1,4 +1,6 @@
-This document explains the basic functions of `dribdat`, an open source platform for data-driven team collaboration (such as *[Hackathons](https://hackathon.guide/)*). It is a FAQ covering the basic usage of the application. For more background see [ABOUT](ABOUT.md), and for technical details visit the [README](README.md).
+This document explains the basic functions of `dribdat`, an open source platform for data-driven team collaboration (such as *[Hackathons](https://hackathon.guide/)*). It is a FAQ covering the basic usage of the application.
+
+For more background see [ABOUT](about), and for technical details visit the [README](https://github.com/dribdat/dribdat#dribdat).
 
 # User handbook
 
@@ -20,16 +22,16 @@ By updating your progress using the **Post** button, you can regularly check in 
 
 As we are really into making the most of those time constraints, the homepage and dashboard feature a big animated countdown clock:
 
-![](../dribdat/static/img/screenshot_countdown.png)
+![](images/screenshot_countdown.png)
 
 Here is how a dribdat-powered event looks like in the heat of things:
 
-![](../dribdat/static/img/screenshot_makezurich.jpg)
+![](images/screenshot_makezurich.jpg)
 _[now.makezurich.ch](https://now.makezurich.ch)_
 
 The picture below explains the various parts of a typical challenge or project page:
 
-![](../dribdat/static/img/project_page_overview.png)
+![](images/project_page_overview.png)
 
 This basic documentation makes it easy for fellow participants to understand the challenge - or what you've worked on in response to it - as well as allow the audience, the jury, and so on, to discover your work and respond to it.
 
@@ -52,7 +54,7 @@ For more details on entering content, see the [usage steps](#content).
 
 Creative collaborative events are a playground for creative individuals, and events which focus on sustainable solutions need to encourage good documentation and evaluation. Developed and used for hackathon series, dribdat is designed to involve a diverse user base - in particular those of the Swiss NGO [Opendata.ch](https://opendata.ch/events/). This open source platform built by a community for its own needs has developed over time into a unique solution that is used for a wide variety of events, and every contribution helps to assure the future development of this project.
 
-Logged-in users can submit challenges, ideas and projects by linking their document or repository, or entering details directly into a form. Many customizations to the process and content of the event can be made. You can change or customize the [instructions](dribdat/templates/includes/quickstart.md) for new projects as you see fit in the Event administration.
+Logged-in users can submit challenges, ideas and projects by linking their document or repository, or entering details directly into a form. Many customizations to the process and content of the event can be made. You can change or customize the instructions for new projects as you see fit in the Event administration.
 
 ## How do I use this effectively?
 
@@ -82,7 +84,7 @@ These are sometimes categorized according to the challenge topic they address at
 
 If your team does not yet have a project, then you may (administrators can disable this) be able to create one with the green **Start project** button (which is called **Announce Challenge** before the event begins) to create a project:
 
-![](../dribdat/static/img/screenshot_start.png)
+![](images/screenshot_start.png)
 
 Once you have found your group, open the project page, and tap on the blue **Join** button at the top, which looks like this:
 
@@ -162,7 +164,7 @@ You can add both with this snippet in your event's **Community code**:
 
 The administrative interface shown below allows defining details of the event and managing project data.
 
-![](../dribdat/static/img/screenshot_admin_projects.png)
+![](images/screenshot_admin_projects.png)
 
 Here you can see challenges and projects, with a rating of how completely they are documented. In the `Events` screen there are links to a *Print* view for a summary of all projects on one page, and the ability to *Embed* results into another website. The look and feel of the projects as well as instructions for teams can be customized per-event.
 

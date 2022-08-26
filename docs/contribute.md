@@ -2,13 +2,13 @@ This document contains additional information on contributing to dribdat as a de
 
 # Developer Guide
 
-For more background references, see the [README](README.md).
+For more background references, see the [README](https://github.com/dribdat/dribdat#dribdat).
 
 ## Software Architecture
 
 This code is originally based on [cookiecutter-flask](https://github.com/cookiecutter-flask/cookiecutter-flask), which has a number of helpful [developer features](https://github.com/cookiecutter-flask/cookiecutter-flask#features). It is a Python 3 project that uses the Flask microframework and SQLAlchemy for data modelling on the backend. A plain JSON API, along with Jinja templates and WTForms, serves data to a frontend based on Bootstrap 3 and jQuery.
 
-![Sketch of project architecture](../dribdat/static/img/architecture-dribdat.svg.png)
+![Sketch of project architecture](images/architecture-dribdat.svg.png)
 
 ## Getting started
 
@@ -104,10 +104,12 @@ To search all project contents:
 
 Use the `limit` query parameter to get more or less than 10 results.
 
-For more details see [api.py](dribdat/public/api.py)
-
 ## Write access (beta)
 
 If you would like to use external clients, like the chatbot, to remote control Dribdat you need to set `DRIBDAT_APIKEY`. The (experimental) call used to push data into projects is:
 
 - `/api/project/push.json`
+
+## Technical details
+
+For more details see [api.py](https://github.com/dribdat/dribdat/blob/main/dribdat/public/api.py)

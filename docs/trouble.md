@@ -3,7 +3,7 @@ This document contains additional tips for working with dribdat.
 # Troubleshooting
 
 Guidance to common errors is listed below.
-For more background references, see the [README](README.md).
+For more background references, see the [README](https://github.com/dribdat/dribdat#dribdat).
 
 ## Add results to my own web page
 

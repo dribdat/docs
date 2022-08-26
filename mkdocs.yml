@@ -1,12 +1,12 @@
 site_name: dribdat docs
 site_url: https://docs.dribdat.cc/
 nav:
-    - About: about
-    - Usage: usage
-    - Installation: deploy
-    - Contribute: contribute
-    - Whitepaper: whitepaper
-    - Help: trouble
+    - About: about.md
+    - Usage: usage.md
+    - Installation: deploy.md
+    - Contribute: contribute.md
+    - Whitepaper: whitepaper.md
+    - Help: trouble.md
 theme:
     name: bootstrap4
     next_previous: true
