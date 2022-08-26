@@ -6,8 +6,6 @@ For more background see [ABOUT](about), and for technical details visit the [REA
 
 **dribdat** works as a website and project board for running exciting, productive events, and allows organizers and participants to collect their project details in one place, displaying the challenges and projects in Web dashboards, and plugging in community tools such as [Discourse](https://www.discourse.org/), [Slack](http://slack.com), or [Let's Chat](http://sdelements.github.io/lets-chat/) - or using the [remote API](#api) for additional interfaces such as [chatbots](https://github.com/schoolofdata-ch/dridbot) to enhance the hackathon.
 
-We are also working on a new interactive manual at https://github.com/dribdat/handbook
-
 ## Quickstart
 
 After you join an event, log in and **Join** a challenge. Or, if it is still possible, start a new challenge or project. You and any of your team members can click the **Join** button at the top of your project page to contribute.
