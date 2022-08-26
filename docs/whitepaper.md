@@ -4,7 +4,7 @@ Co{re}creation for civic hackers
 // v.2.8 /// 8.2022
 
 
-> This paper describes **dribdat** as an open development platform for technical sprints and data expeditions. A simple user interface allows managing challenges, resources and bootstraps, while augmenting tolerance and fairness among participants. See how we use it to support teams in hackathons and workshops. By fostering and connecting design notes, data, and code, let's make the experience of exploring real world problems hands-on _even more awesome!_
+> This paper describes **dribdat** as an open development platform for technical sprints and data expeditions. A simple user interface allows managing challenges, resources and bootstraps, while augmenting tolerance and fairness among participants. See how we use it to support teams in hackathons and workshops. By fostering and connecting design notes, data, and code, let's make the experience of exploring real world problems moar awesome!
 
 Permalink: [docs.dribdat.cc/whitepaper](https://docs.dribdat.cc/whitepaper/)
 ~ Download: [tresorit.com](https://web.tresorit.com/l/fPhCS#b8XDMRrW_MTQC3z7anFn8Q) (PDF)
@@ -36,6 +36,7 @@ We encoded our principles in the form of an online, web-based application to ens
 When citizens engage in open development to hack on projects - such as monitoring the environment or validating public accounts - sometimes longer-term initiatives emerge. The shared premise is that open source code and openly designed hardware can be used in our digital society to rapidly prototype and assess the real-world potential and impacts of ideas or "challenges".
 
 <img alt="Screenshot" src="../images/whitepaper/datahackdaysbe.jpg" width="100%">
+
 _Opendata.ch / [Data Hackdays BE 2021](https://hack.opendata.ch/event/45)_
 
 Hackathons may be considered as a type of focus group, where platforms are evaluated, skills transferred, and horizontal insights accelerated by an open exchange of knowledge. This is an established venue to network, explore potential career paths while keenly evaluating prospective candidates or partners. Enabling better time management and coordination, such teamwork supported by dribdat should help to build a community of practice - lowering the barriers to entry for contributing creatively to NGOs, research, government, tech platforms and startups.
@@ -81,6 +82,7 @@ Web technologies and open data standards are at the core of dribdat. Typically, 
 In practice, the teams using dribdat are free to work as they please: keeping up with every twist and turn in the online collaboration landscape, we try to nurture supportive communities sharing the best brainstorming, prototyping and code sharing tools, helping to ensure we can plug in and generate data from any preferred platforms.
 
 <img alt="Screenshot" src="../images/whitepaper/myprofile.png" width="100%">
+
 _Role selection in the profile editor_
 
 Ideators who would like to get help with their challenge-writing or research can easily connect this with dribdat. Just embed your favorite cloud wiki or document editor and set open permissions. For example, [CodiMD](https://github.com/hackmdio/codimd) or [HackMD](https://hackmd.io) can be used to embed a collaborative document with commenting functionality, that can easily be turned into a pitch deck.
@@ -90,6 +92,7 @@ Designers can use their favorite prototyping tools, either uploading screenshots
 No 'copypasta' needed here, Developers! Code projects created in a compatible repository - such as [GitHub](http://github.com/), [GitLab](http://gitlab.com/), [Bitbucket](http://bitbucket.com/) - or documentation in supported wikis, such as [Etherpad](http://etherpad.org/), [DokuWiki](https://www.dokuwiki.org/), [Google Docs](https://www.google.com/docs/about/) - can be synchronised so that documentation can take place, and *continue to happen in a distributed way*, using standard formats, such as the *README* files preferred in open source.
 
 <img src="../images/whitepaper/swihack_2.png" alt="Screenshot" width="100%">
+
 _Swiss Broadcasting Corporation / [#swihack 2020](https://swihack.ch/)_
 
 Documentation that cannot readily be synced, such as data science notebooks as pictured above, is typically embedded using the _Project link_. This set-up both teaches your participants about key concepts of how publishing and integration on the Internet works today, and promotes a Web of Data approach to the collaboration setting.
@@ -172,6 +175,7 @@ _The standard footer deployed with a dribdat instance._
 Independently developed at the grassroots, behind the scenes of this project are compacted qualities of what we believe entails good collaboration: a supportive atmosphere that proliferates diversity and tolerance, clearly stated goals, community support and progressive guidelines. Inclusive co-creation, designed to support processes that engender team-building diversity, is an area of active development, currently the focus of collaborations, research, and development.
 
 <img src="../images/whitepaper/stages2.jpg" width="100%">
+
 _Screenshot of the [Stages screen](https://meta.dribdat.cc/event/1/stages)_
 
 As core methodology to help orient the teams, we have built in a customizable 7-step process inspired by the [School of Data Pipeline](https://schoolofdata.org/methodology/), that we recommend for attractive and efficient data expeditions and hackathons. Around each of these _Stages_, shown above, it is possible to set up Resources: recommended tools, datasets, brainstorming instruments, etc. Progressing from one step to the next is allowed based on simple programmable rules configured in `YAML`. This content can be customized by site owners to fit other patterns and practices.
@@ -257,6 +261,7 @@ Platforms that are accessible to the general public (no matter how technically a
 Visit [awesome-hackathons](https://github.com/dribdat/awesome-hackathon) for links to other projects that you may wish to evaluate and compare with dribdat, complementary tools and further resources.
 
 <img alt="Screenshot" width="100%" src="../images/whitepaper/energydata_1.png">
+
 _Opendata.ch / [Energy Data Hackdays 2020](https://hack.opendata.ch/project/463)_
 
 ----

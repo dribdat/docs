@@ -4,11 +4,11 @@
 
 These pages contain documentation about the dribdat open source project. Please see our [website](https://dribdat.cc) and [GitHub repo](https://github.com/dribdat/dribdat#dribdat) for a general introduction, downloads and more!
 
+<a href="https://opencollective.com/dribdat/donate" target="_blank"><img src="https://opencollective.com/dribdat/donate/button@2x.png?color=blue" width=300 /></a>
+
 <img alt="Screenshot of dribdat" src="../images/screenshot_sandbox.png" width="100%">
 
 If you need help or advice in setting up your event, or would like to contribute to the project, you can get in touch via [GitHub Issues](https://github.com/dribdat/dribdat/issues) or [contact form](https://dribdat.cc). Follow us on [Twitter](https://twitter.com/dribdat) and get updates on our [OpenCollective](https://opencollective.com/dribdat/updates), where you can also support the development of the project.
-
-<a href="https://opencollective.com/dribdat/donate" target="_blank"><img src="https://opencollective.com/dribdat/donate/button@2x.png?color=blue" width=300 /></a>
 
 # Introducing dribdat
 

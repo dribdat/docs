@@ -5,7 +5,7 @@ This document summarises the current status and makes some vision statements abo
 
 An open source project board designed for splendid collaboration, **dribdat** is used to collect and showcase all projects from an event in one place. Originally designed for use at hackathons - more than just a trendy way to get recruited into an IT job, these are a venue for open collaboration, civic engagement, and technical experimentation in a social setting. We've packed in a lot of experience running and optimizing the participant experience into this platform.
 
-<img src="../images/whitepaper/stages2.jpg" height="200"><img src="../images/screenshot_backboard2.jpg" height="200">
+<img src="../images/whitepaper/stages2.jpg"><img src="../images/screenshot_backboard2.jpg">
 
 _Screenshots of the [Stages screen](whitepaper/#6-being-excellent-to-each-other) and [Backboard](https://github.com/dribdat/backboard)_
 
@@ -36,29 +36,27 @@ What are the differences between a Project and a Challenge?
 - A **Challenge** is a problem statement, often with some elaboration of some ideas of how to address it - at a hackathon, this typically involves links to technical tools, datasets, or information resources. In dribdat, these are published in the form of Projects (set to an initial idea/challenge stage) and/or **Categories**.
 - A **Project** contains evidence of work that has been done - typically but not always in response to a specific Challenge, as often as possible with links to documentation, source code, presentation, or any other relevant artifacts.
 
-# History
+## History
 
 We have built this project to "scratch our own itch". In it's first two years of service, it has supported dozens of events around Switzerland, and become the official hackathon platform of [Opendata.ch](https://opendata.ch) - Swiss chapter of Open Knowledge, the [Open Network Infrastructure Association](https://opennetworkinfrastructure.org/), and others. We have interesting ideas about how to develop the project further, and a supportive community giving us the feedback and means to realize them. 
 
 Easiest of all is to sign up for an upcoming [hackathon](http://hack.opendata.ch/), and try dribdat out as a participant. You can also visit the project's home page for instructions on how to quickly deploy it on your own server and set up your own events. 
 
-dribdat is a responsive Web application written using the Flask framework for Python and Bootstrap. It runs on all major operating systems and databases. [Take it for a spin!](https://dribdat.cc)
+dribdat is a responsive Web application written using the Flask framework for Python and Bootstrap. 
+Using dribdat's API, it is also possible to create a live dashboard, for example for use as Digital Signage at the event, or to connect apps like [backboard](https://github.com/dribdat/backboard).
+It runs on all major operating systems and databases. [Take it for a spin!](https://dribdat.cc)
 
 ## Screenshots
 
-[![Now.Makezurich.ch](https://blog.datalets.ch/workshops/2017/dribdat/nowmakezurich.jpg)](http://now.makezurich.ch/)
-
-[![Climathon Zürich](https://blog.datalets.ch/workshops/2017/dribdat/climathon.jpg)](https://hack.opendata.ch/event/4)
-
 [![Open Food Hackdays](https://blog.datalets.ch/workshops/2017/dribdat/foodhackdays-openreceipts.jpg)](https://hack.opendata.ch/project/74)     
 
-Using dribdat's API, it is also possible to create a live dashboard, for example for use as Digital Signage at the event:
+[![Climathon Zürich](https://blog.datalets.ch/workshops/2017/dribdat/climathon.jpg)](https://hack.opendata.ch/event/4)
 
 ![](https://blog.datalets.ch/workshops/2017/dribdat/IMG_6910_800.JPG)
 
 *Photo credit: MakeZurich 2018 by Christina Rieder CC BY-SA 4.0*
 
-# FAQ
+## F.A.Q.
 
 The following questions were compiled as part of the projects [DINAcon nomination](https://dinacon.ch/en/dinacon-awards/nominations/), and last updated on May 5, 2021.
 
