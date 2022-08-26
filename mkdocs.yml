@@ -1,0 +1,18 @@
+site_name: dribdat docs
+site_url: https://docs.dribdat.cc/
+nav:
+    - About: about
+    - Usage: usage
+    - Installation: deploy
+    - Contribute: contribute
+    - Whitepaper: whitepaper
+    - Help: trouble
+theme:
+    name: bootstrap4
+    next_previous: true
+plugins:
+    - bootstrap4-blockquotes
+    - bootstrap4-tables
+markdown_extensions:
+  - toc:
+      toc_depth: 2
