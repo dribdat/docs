@@ -58,8 +58,18 @@ You can also try to test SSO providers with `OAUTHLIB_INSECURE_TRANSPORT=true` (
 
 ## Installation on Alpine Linux
 
-The project has so far mostly been developed on Fedora and Ubuntu Linux. Users on Alpine, BSD and other distributions are welcome to share their experience with us in the Issues. Some additional system packages are needed for a successful local (non-Docker) deployment:
+The project has so far mostly been developed on Fedora and Ubuntu Linux. Users on Alpine, BSD and other distributions are welcome to share their experience with us in the Issues. Some additional system packages are needed for a successful local (non-Docker) deployment.
+
+E.g. for Alpine or Ubuntu (apt instead of apk):
 
 ```
-apk add libxml2-dev libxslt-dev rust cargo
+apk add libxml2-dev libxslt-dev libffi-dev rust cargo
+```
+
+## Error compiling misaka
+
+You are missing development headers for Python. For example, in Fedora Linux run:
+
+```
+sudo dnf install libffi-devel python3-devel
 ```
