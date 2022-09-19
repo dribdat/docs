@@ -98,9 +98,11 @@ To customize some of the default content, you can edit the template include file
 
 ## Using a proxy server
 
-Besides encouraging the use of [Gunicorn](https://flask.palletsprojects.com/en/2.0.x/deploying/wsgi-standalone/#) to run the applocation, a web proxy server is typically used in production to optimize your deployment, add SSL certificates, etc.
+We encourage the use of [Gunicorn](https://flask.palletsprojects.com/en/2.0.x/deploying/wsgi-standalone/#) to run the application in production. Here is an example with 4 workers:
 
-Here is an example configuration using [nginx](https://nginx.org/) if you are running your application on port 5000:
+`gunicorn -w 4 -b 127.0.0.1:5000 "dribdat.app:init_app()"`
+
+A web proxy server is typically also used in production to optimize your deployment, add SSL certificates, etc. Here is an example configuration using [nginx](https://nginx.org/) if you are running your application on port 5000:
 
 ```
 upstream dribdat-cluster {
