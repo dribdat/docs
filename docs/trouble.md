@@ -32,7 +32,7 @@ u.save()
 
 ## Cannot upgrade database
 
-In local deployment, you will need to upgrade the database using `./manage.py db upgrade`. On Heroku, a deployment process called **Release** runs automatically.
+In local deployment, you will need to upgrade the database using `./manage.py db upgrade`. On Heroku, a deployment process called **Release** runs automatically. A handy parameter is `--sql` which shows just the SQL code you can also apply manually to fix your database. 
 
 If you get errors like *ERROR [alembic.env] Can't locate revision identified by 'aa969b4f9f51'*, your migration history is out of sync. You can set `FORCE_MIGRATE` to 1 when you run releases, however changes to the column sizes and other schema details will not be deployed. Instead, it is better to verify the latest schema specifications in the `migrations` folder, fix anything that is out of sync, and then update the alembic version, e.g.:
 
@@ -41,14 +41,16 @@ alter table projects alter column webpage_url type character varying(2048);
 insert into alembic_version values ('7c3929047190')
 ```
 
-If you get errors like *Invalid input value for enum activity_type*, there were issues in upgrading your instance that may require a manual SQL entry. Try running these commands in your `psql` console:
+See also further instructions in the `force-migrate.sh` script.
+
+## Invalid input value for enum activity_type error
+
+There were issues in upgrading your instance that may require a manual SQL entry. Try running these commands in your `psql` console:
 
 ```
 ALTER TYPE activity_type ADD VALUE 'boost';
 ALTER TYPE activity_type ADD VALUE 'review';
 ```
-
-See also further instructions in the `force-migrate.sh` script.
 
 ## Test locally using SSL
 
