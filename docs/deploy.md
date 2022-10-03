@@ -63,9 +63,19 @@ Support for **Web analytics** can be configured using one of the following varia
 
 If you are required by law to use a cookie warning or banner, you can add this through your community code configuration.
 
+## Mail
+
+If you would like people to be able to activate their accounts and reset passwords, you can connect to an SMTP mailing service (use Mailgun, or any other). Note that this is not really needed when you use OAuth (see next session) and disable registration completely.
+
+* `MAIL_SERVER` - just the domain name of your server.
+* `MAIL_PORT` - defaults to 25.
+* `MAIL_USERNAME` - the user name of your service.
+* `MAIL_PASSWORD` - the password to your service.
+* `MAIL_DEFAULT_SENDER` - a required reply-to address for e-mails.
+
 ## Authentication
 
-OAuth 2.0 support for **Single Sign-On** (SSO) is currently available using [Flask Dance](https://flask-dance.readthedocs.io/), and requires SSL to be enabled (using `SERVER_SSL`=1 in production or `OAUTHLIB_INSECURE_TRANSPORT` in development).
+OAuth 2.0 support for **Single Sign-On** (SSO) is currently available using [Flask Dance](https://flask-dance.readthedocs.io/), and requires SSL to be enabled (using `SERVER_SSL`=1 in production or `OAUTHLIB_INSECURE_TRANSPORT` in development). You may wish to disable non-SSO logins using `DRIBDAT_NOT_REGISTER`.
 
 Register your app with the provider, and set the following variables:
 
