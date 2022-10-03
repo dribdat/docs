@@ -63,7 +63,7 @@ Support for **Web analytics** can be configured using one of the following varia
 
 If you are required by law to use a cookie warning or banner, you can add this through your community code configuration.
 
-## Mail
+## Mail
 
 If you would like people to be able to activate their accounts and reset passwords, you can connect to an SMTP mailing service (use Mailgun, or any other). Note that this is not really needed when you use OAuth (see next session) and disable registration completely.
 
