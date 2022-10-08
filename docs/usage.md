@@ -146,6 +146,8 @@ For example, here is how [Disqus](https://disqus.com) was integrated with dribda
 
 ![Comments](https://us-east-1.linodeobjects.com/dribdat/uploads/upload_6a8a08937ba4e85f9dd508d1b9c0df19.png)
 
+You can also add a GitHub widget to a project page by adding the link to the repository on it's own line in your Pitch. This shows the number of "Stars" and "Forks" the project has received.
+
 ## What about Intellectual Property?
 
 The teams are free to decide for themselves which license conditions apply to their work. However, open access allows for the best evaluation, so we are stipulating a *Creative Commons license by default* which will apply to any project documentation which is not explicitly adherent to a different license or conditions.
