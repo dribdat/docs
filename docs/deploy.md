@@ -51,6 +51,7 @@ The following options can be used to toggle **application features**:
 * `DRIBDAT_USER_APPROVE` - set to True so that any new non-SSO accounts are inactive until approved by an admin.
 * `DRIBDAT_NOT_REGISTER` - set to True to hide the registration, so new users can only join this server via SSO.
 * `DRIBDAT_ALLOW_EVENTS` - set to True to allow regular users to start new events, which admins can edit to make visible on the home page.
+* `DRIBDAT_SOCIAL_LINKS` - set to False to hide automatic social network links (Twitter etc.) on the site.
 
 ## Statistics
 
@@ -72,6 +73,8 @@ If you would like people to be able to activate their accounts and reset passwor
 * `MAIL_USERNAME` - the user name of your service.
 * `MAIL_PASSWORD` - the password to your service.
 * `MAIL_DEFAULT_SENDER` - a required reply-to address for e-mails.
+* `MAIL_USE_TLS` - require a secure (TLS) connection when talking to the SMTP server.
+* `MAIL_USE_SSL` - require a secure (SSL) connection when talking to the SMTP server.
 
 ## Authentication
 
