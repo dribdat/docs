@@ -82,11 +82,11 @@ OAuth 2.0 support for **Single Sign-On** (SSO) is currently available using [Fla
 
 Register your app with the provider, and set the following variables:
 
-* `OAUTH_TYPE` - e.g. 'Slack', 'GitHub', 'Azure'
+* `OAUTH_TYPE` - a supported provider: 'slack', 'github', 'azure', 'auth0'
 * `OAUTH_ID` - the Client ID of your app.
 * `OAUTH_SECRET` - the Client Secret of your app.
-* `OAUTH_DOMAIN` - (optional) subdomain of your Slack instance, or AD tenant for Azure.
-* `OAUTH_SKIP_LOGIN` - (optional) when enabled, the dribdat login screen is not shown at all.
+* `OAUTH_DOMAIN` - (optional) Slack subdomain, Auth0 domain, Azure tenant
+* `OAUTH_SKIP_LOGIN` - (optional) go directly to external login screen.
 
 You can find more advice in the [Troubleshooting](trouble#need-help-setting-up-sso) guide.
 

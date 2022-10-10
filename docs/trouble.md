@@ -32,7 +32,9 @@ u.save()
 
 ## Cannot upgrade database
 
-In local deployment, you will need to upgrade the database using `./manage.py db upgrade`. On Heroku, a deployment process called **Release** runs automatically. A handy parameter is `--sql` which shows just the SQL code you can also apply manually to fix your database. 
+In local deployment, you will need to upgrade the database using `./manage.py db upgrade`.
+
+On Heroku, a deployment process called **Release** runs automatically. Note also the **Socialize** process which is used for refreshing user profiles.
 
 If you get errors like *ERROR [alembic.env] Can't locate revision identified by 'aa969b4f9f51'*, your migration history is out of sync. You can set `FORCE_MIGRATE` to 1 when you run releases, however changes to the column sizes and other schema details will not be deployed. Instead, it is better to verify the latest schema specifications in the `migrations` folder, fix anything that is out of sync, and then update the alembic version, e.g.:
 
@@ -41,7 +43,7 @@ alter table projects alter column webpage_url type character varying(2048);
 insert into alembic_version values ('7c3929047190')
 ```
 
-See also further instructions in the `force-migrate.sh` script.
+A handy parameter is `--sql` which shows just the SQL code you can also apply manually to fix your database. See also further instructions in the `force-migrate.sh` script.
 
 ## Invalid input value for enum activity_type error
 
@@ -56,7 +58,7 @@ ALTER TYPE activity_type ADD VALUE 'review';
 
 Some development scenarios and OAuth testing requires SSL. To use this in development with self-signed certificates (you will get a browser warning), start the server with `./manage.py run --cert=adhoc`
 
-You can also try to test SSO providers with `OAUTHLIB_INSECURE_TRANSPORT=true` (do not use in production!)
+You can test SSO providers in this way by adding `OAUTHLIB_INSECURE_TRANSPORT=true` to your environment (do not use in production!)
 
 ## Installation on Alpine Linux
 
@@ -75,3 +77,7 @@ You are missing development headers for Python. For example, in Fedora Linux run
 ```
 sudo dnf install libffi-devel python3-devel
 ```
+
+## No profile images after updating
+
+Run `manage.py socialize users` to restore the profile images. This is due to a change in the way they are stored, to make the profile more flexible.
