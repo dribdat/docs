@@ -17,7 +17,11 @@ Dark Bootswatch themes do not play well with the *navbar-light* component used i
 
 To get client keys, go to the [Slack API](https://api.slack.com/apps/), [Azure portal](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade), or add the [GitHub App](https://github.com/apps/dribdat) to your account or organization. You can also use [custom OAuth 2](https://flask-dance.readthedocs.io/en/latest/providers.html#custom) provider if you provide all external registration URLs.
 
-Cannot determine SSO callback for app registration? Try `<my server url>/oauth/slack/authorized` (replace `slack` with your OAuth provider).
+Cannot determine SSO callback for app registration? Try this:
+
+`<my server url>/oauth/<my provider>/authorized`
+
+Where the provider is `slack`, `mattermost`, ..
 
 ## Restore admin access
 
