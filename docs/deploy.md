@@ -8,7 +8,7 @@ The following section details environment variables you can add to tweak your in
 
 Details on starting the application directly with Python are detailed in the [Developer guide](contribute). You will still want to refer to the [Configuration](#Configuration) section below.
 
-## With Docker
+## With Docker (recommended)
 
 To deploy dribdat using [Docker](https://www.docker.com/) or [Podman](https://docs.podman.io/en/latest/index.html), use the included `docker-compose.yml` file as a starting point. This, by default, persists the PostgreSQL database outside the container, on the local filesystem in the `.db` folder.
 
@@ -19,6 +19,16 @@ For a first-time setup, perform the initial migrations as follows:
 At this point you should be ready to start with Docker Compose:
 
 `docker-compose up -d`
+
+## With cloud hosting
+
+We have battle-tested and tweaked installation of dribdat with the following cloud providers:
+
+[![Deploy on Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/dribdat/dribdat)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/dribdat/dribdat)
+
+[![Deploy with Linode](https://www.linode.com/wp-content/themes/linode-website-theme/images/linode-akamai-logo.svg?ver=1663187393)](https://cloud.linode.com/stackscripts/community?query=dribdat)
 
 # Configuration
 

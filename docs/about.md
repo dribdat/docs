@@ -9,9 +9,9 @@ An open source project board designed for splendid collaboration, **dribdat** is
 
 _Screenshots of the [Stages screen](whitepaper/#6-being-excellent-to-each-other) and [Backboard](https://github.com/dribdat/backboard)_
 
-The name _dribdat_ is an amalgam of "Driven By Data" - with a tip of the hat to [Dribbble](https://dribbble.com/), a famous online community for graphic design which was one of the inspirations at the start of the project. We have organised a lot of hackathons over the years, and started this platform to streamline our own efforts. It is designed with the goal of helping teams - and their facilitators - sustain efforts over time, streamline information channels, and let everyone focus on driving their ideas forward. 
+The name _dribdat_ is an amalgam of "Driven By Data" - with a tip of the hat to [Dribbble](https://dribbble.com/), a famous online community for graphic design which was one of the inspirations at the start of the project. We have organised a lot of hackathons over the years, and started this platform to streamline our own efforts. It is designed with the goal of helping teams - and their facilitators - sustain efforts over time, streamline information channels, and let everyone focus on driving their ideas forward.
 
-On the front page you can see the upcoming event, as well as any previous events. A short description is followed by a link to the event home page, as well as a countdown of time remaining until the start or finish (if already started) of the event. All the Projects and Challenges are shown on the event home page. Here you can learn about topics, schedules, get directions and any other vital information that the organizers of the event have provided. Once the event has started, and you have formed a team, you can login and "Share project". 
+On the front page you can see the upcoming event, as well as any previous events. A short description is followed by a link to the event home page, as well as a countdown of time remaining until the start or finish (if already started) of the event. All the Projects and Challenges are shown on the event home page. Here you can learn about topics, schedules, get directions and any other vital information that the organizers of the event have provided. Once the event has started, and you have formed a team, you can login and "Share project".
 
 ## How does it work?
 
@@ -38,11 +38,11 @@ What are the differences between a Project and a Challenge?
 
 ## History
 
-We have built this project to "scratch our own itch". In it's first two years of service, it has supported dozens of events around Switzerland, and become the official hackathon platform of [Opendata.ch](https://opendata.ch) - Swiss chapter of Open Knowledge, the [Open Network Infrastructure Association](https://opennetworkinfrastructure.org/), and others. We have interesting ideas about how to develop the project further, and a supportive community giving us the feedback and means to realize them. 
+We have built this project to "scratch our own itch". In it's first two years of service, it has supported dozens of events around Switzerland, and become the official hackathon platform of [Opendata.ch](https://opendata.ch) - Swiss chapter of Open Knowledge, the [Open Network Infrastructure Association](https://opennetworkinfrastructure.org/), and others. We have interesting ideas about how to develop the project further, and a supportive community giving us the feedback and means to realize them.
 
-Easiest of all is to sign up for an upcoming [hackathon](http://hack.opendata.ch/), and try dribdat out as a participant. You can also visit the project's home page for instructions on how to quickly deploy it on your own server and set up your own events. 
+Easiest of all is to sign up for an upcoming [hackathon](http://hack.opendata.ch/), and try dribdat out as a participant. You can also visit the project's home page for instructions on how to quickly deploy it on your own server and set up your own events.
 
-dribdat is a responsive Web application written using the Flask framework for Python and Bootstrap. 
+dribdat is a responsive Web application written using the Flask framework for Python and Bootstrap.
 Using dribdat's API, it is also possible to create a live dashboard, for example for use as Digital Signage at the event, or to connect apps like [backboard](https://github.com/dribdat/backboard).
 It runs on all major operating systems and databases. [Take it for a spin!](https://dribdat.cc)
 
@@ -102,17 +102,17 @@ Used at 50+ hackathons. The single largest installation has 750+ users.
 
 _&gt; Does your project have a non-coder community e.g. UX designer, translator, marketing, etc.? What kind of non-coder people are involved in your project?_
 
-Yes. Hackathon participations are not just coders, and non-technical users who would like to discover open source activities are an important prerogative for this project. 
+Yes. Hackathon participations are not just coders, and non-technical users who would like to discover open source activities are an important prerogative for this project. The process of running creative events like hackathons, combining our experience in code, is something we have aimed to build into all parts of the tool to make the event format accessible to an even wider public.  
 
 _&gt; Does your project offer something like "easy hacks" to make it easy to get a foot into the project?_
 
-Yes, there is a getting started page which can also be customized by the organisers. The process of running creative events like hackathons, combining our experience in code, is something we have aimed to build into all parts of the tool to make the event format accessible to an even wider public. To run your own instance of dribdat, there is an easy to use "deploy to Heroku" button on the GitHub page.
+Yes, there is a getting started page which can also be customized by the organisers. We have a community instance, where people can start their own events. To run your own instance of dribdat, there are clear installation instructions to follow.
 
 _&gt; Please provide the page where we can find more information about the easy hacks._
 
 For deployment see the [README](https://github.com/dribdat/dribdat#dribdat).
 
-For usage notes, see the [User handbook](usage).
+For usage notes, see the [dribdat handbook](https://docs.dribdat.cc).
 
 For general guidelines, visit [https://forum.opendata.ch/t/make-the-most-of-hackathon-season/167](https://forum.schoolofdata.ch/t/make-the-most-of-hackathon-season/167).
 
@@ -122,7 +122,7 @@ Oleg and other people with experience in using the platform are available via va
 
 _&gt; Does your project undertake specific efforts to make sure, that people regardless of ethnicity, gender, etc. can contribute and participate in the project? Does your project for example have a Code of Conduct or is it in general open and friendly to all human beings? Please explain the current situation._
 
-The Hack Code of Conduct, which we have applied to events for the past 3 years, is now in dribdat by default to help facilitate inclusive events.
+The [Hack Code of Conduct](https://hackcodeofconduct.org/), which we have applied to events for the past 3 years, is now in dribdat by default to help facilitate inclusive events.
 
 _&gt; Please describe the business case of your project._
 
