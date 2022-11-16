@@ -2,6 +2,8 @@
 
 This repository and its wiki serves to collect helpful advice and curated resources for contributing to open sprints and hackathons, aimed especially at self-starters who are new to organizing or taking part in hackdays and hacknights popular in the open data community. This is a perpetual work-in-progress: new org-hacks and tools pop up all the time, so please contribute your favorites and questions.
 
+📖 [GOTO Website](https://docs.dribdat.cc)
+
 🔜 [GOTO Wiki](https://github.com/dribdat/docs/wiki/)
 
 ## Contributing
