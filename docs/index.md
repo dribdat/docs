@@ -25,6 +25,6 @@ If you need help or advice in setting up your event, or would like to contribute
 
 [![](https://blog.datalets.ch/workshops/2017/dribdat/dribdat.png)](https://github.com/datalets/dribdat/)
 
-## 🏀😄 
+🌳 😄 🏀
 
 If you see an issue with the documentation, please [share it here](https://github.com/dribdat/docs/issues) or contribute [directly here](https://github.com/dribdat/docs).
