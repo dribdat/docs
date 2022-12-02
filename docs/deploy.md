@@ -117,7 +117,9 @@ Due to the use of the [boto3](https://github.com/boto/boto3/) library for S3 sup
 
 ## Custom content
 
-To customize some of the default content, you can edit the template include files in the folder `dribdat/templates/includes`, for example you will find there the default `quickstart.md` and `stages.yaml` definitions. Make sure your changes will not be overwritten due to ephemeral storage of your deployment.
+To customize some of the default content, you can edit the template include files in the folder `dribdat/templates/includes`, for example you will find there the default [quickstart.md](https://github.com/dribdat/dribdat/blob/main/dribdat/templates/includes/quickstart.md) and [stages.yaml](https://github.com/dribdat/dribdat/blob/main/dribdat/templates/includes/stages.yaml) definitions. 
+
+Make sure your changes will not be overwritten is you are using ephemeral storage (e.g. Heroku) for your deployment. In a future release we may provide an environmental variable for configurations hosted elsewhere. For now, copy the files from a secure location during a deployment step.
 
 ## Using a proxy server
 
