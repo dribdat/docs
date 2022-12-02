@@ -29,6 +29,8 @@ pages:
       name: About
     - path: docs/usage
       name: User guide
+    - path: docs/organiser
+      name: Organiser guide
     - path: docs/deploy
       name: Installation
     - path: docs/contribute
