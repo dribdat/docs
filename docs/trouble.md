@@ -85,3 +85,12 @@ sudo dnf install libffi-devel python3-devel
 ## No profile images after updating
 
 Run `manage.py socialize users` to restore the profile images. This is due to a change in the way they are stored, to make the profile more flexible.
+
+## Cleaning out inactive users
+
+Open a shell, and do something like this to remove all non-admin, inactive, non-SSO users with zero drib-scores:
+
+```
+for pp in User.query.filter_by(is_admin=False, active=False, sso_id=None):
+  if pp.activity_count == 0: pp.delete()
+```
