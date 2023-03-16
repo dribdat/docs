@@ -92,5 +92,5 @@ Open a shell, and do something like this to remove all non-admin, inactive, non-
 
 ```
 for pp in User.query.filter_by(is_admin=False, active=False, sso_id=None):
-  if pp.activity_count == 0: pp.delete()
+  if pp.activity_count == 0 and len(pp.roles) == 0 and len(pp.posted_challenges()) == 0: pp.delete()
 ```
