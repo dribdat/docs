@@ -23,6 +23,21 @@ Cannot determine SSO callback for app registration? Try this:
 
 Where the provider is `slack`, `mattermost`, ..
 
+## File storage example
+
+Here is an example of how to configure your own S3 provider (i.e. not Amazon) for serving files:
+
+```
+S3_BUCKET=my-bucket-a1bc2d3f4g
+S3_FOLDER=dribdat4uri
+S3_ENDPOINT=https://my-bucket-a1bc2d3f4g.s3.provider.com
+S3_HTTPS=https://my-bucket-a1bc2d3f4g.https.provider.com
+S3_KEY=BC7CH3CNMVERYSECRET
+S3_SECRET=abCdEfGhIjKlMnOpQr
+```
+
+Make sure to provide an HTTPS link, as normally you would like to be able to show uploaded files, not just store them. This may require setting permissions and CORS settings accordingly with your provider. We have tested this set up with Linode Object Storage, Exascale, Bucketeer and others.
+
 ## Restore admin access
 
 Create a user account if you do not already have one. From the console, run `./manage.py shell` then to promote to admin and/or reset the password of a user called "admin":

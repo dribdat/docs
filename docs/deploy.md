@@ -8,7 +8,11 @@ The following section details environment variables you can add to tweak your in
 
 Details on starting the application directly with Python are detailed in the [Developer guide](contribute). You will still want to refer to the [Configuration](#Configuration) section below.
 
-## With Docker (recommended)
+## With Ansible
+
+Use the [dribdat Ansible role](https://ansible.build/roles/dribdat/) for a straightforward production deployment using [Ansible](https://docs.ansible.com/).
+
+## With Docker Compose
 
 To deploy dribdat using [Docker](https://www.docker.com/) or [Podman](https://docs.podman.io/en/latest/index.html), use the included `docker-compose.yml` file as a starting point. This, by default, persists the PostgreSQL database outside the container, on the local filesystem in the `.db` folder.
 
@@ -96,7 +100,8 @@ Register your app with the provider, and set the following variables:
 * `OAUTH_ID` - the Client ID of your app.
 * `OAUTH_SECRET` - the Client Secret of your app.
 * `OAUTH_DOMAIN` - Slack subdomain, Auth0/Mattermost domain, or Azure tenant.
-* `OAUTH_SKIP_LOGIN` - (optional) go directly to external login screen.
+* `OAUTH_SKIP_LOGIN` - (optional) users should go directly to external login screen.
+* `OAUTH_LINK_REGISTER` - (optional) an external registration link.
 
 You can find more advice in the [Troubleshooting](trouble#need-help-setting-up-sso) guide.
 
@@ -112,6 +117,8 @@ For **uploading images** and other files directly within dribdat, you can config
 * `S3_HTTPS` - URL for web access to your bucket's public files.
 * `S3_ENDPOINT` - alternative endpoint for self-hosted Object Storage.
 * `MAX_CONTENT_LENGTH` - defaults to 1048576 bytes (1 MB) file size.
+
+See example connection in the [Troubleshooting](trouble#file-storage-example) guide.
 
 Due to the use of the [boto3](https://github.com/boto/boto3/) library for S3 support, there is a dependency on OpenSSL via awscrt. If you use these features, please note that the product includes cryptographic software written by Eric Young (eay@cryptsoft.com) and Tim Hudson (tjh@cryptsoft.com).
 
