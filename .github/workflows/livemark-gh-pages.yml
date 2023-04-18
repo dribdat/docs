@@ -60,7 +60,7 @@ jobs:
       - name: Install dependencies
         run: poetry install --no-interaction --no-root
       - name: Build with Livemark
-        run: livemark build
+        run: poetry run livemark build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
