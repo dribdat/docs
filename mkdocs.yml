@@ -1,7 +1,7 @@
 site_name: dribdat docs
 site_url: https://dribdat.cc/
 nav:
-    - About: about.md
+    - Overview: about.md
     - Usage: usage.md
     - Installation: deploy.md
     - Contribute: contribute.md

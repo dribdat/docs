@@ -26,13 +26,13 @@ pages:
     - path: docs/index
       name: Introduction
     - path: docs/about
-      name: About
+      name: Overview
     - path: docs/usage
       name: User guide
     - path: docs/organiser
       name: Organiser guide
     - path: docs/deploy
-      name: Installation
+      name: Quick Start
     - path: docs/contribute
       name: Contribute
     - path: docs/whitepaper

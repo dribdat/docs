@@ -1,8 +1,8 @@
 This document contains additional information on deploying dribdat.
 
-# Deployment guide
+# Quick Start
 
-The following section details environment variables you can add to tweak your installation. See also the [README](https://github.com/dribdat/dribdat#quickstart) guide, and our new frontend microservice [Backboard](https://github.com/dribdat/backboard).
+The following section details various options for installation, followed by environment variables you can use to tweak your installation. See also the [README](https://github.com/dribdat/dribdat#quickstart) guide, and our new frontend microservice [Backboard](https://github.com/dribdat/backboard).
 
 ## With Python
 
@@ -12,9 +12,13 @@ Details on starting the application directly with Python are detailed in the [De
 
 Use the [dribdat Ansible role](https://ansible.build/roles/dribdat/) for a straightforward production deployment using [Ansible](https://docs.ansible.com/).
 
+## With Docker
+
+We have a (beta) Docker image available at https://hub.docker.com/r/loleg/dribdat
+
 ## With Docker Compose
 
-To deploy dribdat using [Docker](https://www.docker.com/) or [Podman](https://docs.podman.io/en/latest/index.html), use the included `docker-compose.yml` file as a starting point. This, by default, persists the PostgreSQL database outside the container, on the local filesystem in the `.db` folder.
+To deploy dribdat using a local [Docker](https://www.docker.com/) or [Podman](https://docs.podman.io/en/latest/index.html) build, use the included `docker-compose.yml` file as a starting point. This, by default, persists the PostgreSQL database outside the container, on the local filesystem in the `.db` folder.
 
 For a first-time setup, perform the initial migrations as follows:
 
@@ -26,13 +30,15 @@ At this point you should be ready to start with Docker Compose:
 
 ## With cloud hosting
 
-We have battle-tested and tweaked installation of dribdat with the following cloud providers:
+We have battle-tested and tweaked installation of dribdat with the following cloud stacks:
+
+[![Deploy to NINE](https://www.nine.ch/hs-fs/hubfs/NEW%20WEBSITE/logo-new.png?width=536&name=logo-new.png)](https://hub.docker.com/r/loleg/dribdat)
 
 [![Deploy on Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/dribdat/dribdat)
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/dribdat/dribdat)
 
-[![Deploy with Linode](https://www.linode.com/wp-content/themes/linode-website-theme/images/linode-akamai-logo.svg?ver=1663187393)](https://cloud.linode.com/stackscripts/community?query=dribdat)
+[![Deploy with Akamai](https://assets.linode.com/akamai-logo.svg)](https://cloud.linode.com/stackscripts/community?query=dribdat)
 
 # Configuration
 

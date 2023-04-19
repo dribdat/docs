@@ -9,7 +9,6 @@ It incorporates tools and best practices from 10 years of community building and
 
 As it helps us - we hope it will help you to contribute to open projects, be a better (team) player, and make the most of a blank canvas and creative constraints.
 
-![](images/playersavegame.png)
 
 ## Quickstart
 
@@ -53,4 +52,8 @@ Of course you can also cross-post to a variety of social networks to boost your 
 
 ![](images/dribs.png)
 
-That's all there is to it, as a user. Read the [Organiser's guide](organise) if you'd like to see more details about running your own event.
+That's all there is to it, as a user. Read the [Organiser's guide](organiser) if you'd like to see more details about running your own event.
+
+---
+
+![](images/playersavegame.png)
