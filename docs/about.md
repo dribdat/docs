@@ -113,15 +113,15 @@ Yes, there is a getting started page which can also be customized by the organis
 
 _&gt; Please provide the page where we can find more information about the easy hacks._
 
-For deployment see the [README](https://github.com/dribdat/dribdat#dribdat).
+For deployment see the [deployment guide](/deploy).
 
-For usage notes, see the [dribdat handbook](https://docs.dribdat.cc).
+For usage notes, see the [user handbook](/usage).
 
-For general guidelines, visit [https://forum.opendata.ch/t/make-the-most-of-hackathon-season/167](https://forum.schoolofdata.ch/t/make-the-most-of-hackathon-season/167).
+For general information, visit [our website](https://dribd.at).
 
 _&gt; Do you have people mentoring new contributors and actively helping them to get on board of the project?_
 
-Oleg and other people with experience in using the platform are available via various community channels to new users of dribdat. We regularly mentor new users in getting started. There is also a hosted version of the platform which we can set up to get hackathons going quickly.
+Oleg and other people with experience in using the platform are available via various community channels to new users of dribdat. We regularly mentor new users in getting started. There is also a hosted version of the platform which we can set up to get hackathons going quickly. And a reasonably [active forum](https://forum.schoolofdata.ch/t/make-the-most-of-hackathon-season/167).
 
 _&gt; Does your project undertake specific efforts to make sure, that people regardless of ethnicity, gender, etc. can contribute and participate in the project? Does your project for example have a Code of Conduct or is it in general open and friendly to all human beings? Please explain the current situation._
 

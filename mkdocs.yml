@@ -1,5 +1,5 @@
 site_name: dribdat docs
-site_url: https://docs.dribdat.cc/
+site_url: https://dribdat.cc/
 nav:
     - About: about.md
     - Usage: usage.md

@@ -2,9 +2,9 @@
 
 This repository and its wiki serves to collect helpful advice and curated resources for contributing to open sprints and hackathons, aimed especially at self-starters who are new to organizing or taking part in hackdays and hacknights popular in the open data community. This is a perpetual work-in-progress: new org-hacks and tools pop up all the time, so please contribute your favorites and questions.
 
-📖 [GOTO Website](https://docs.dribdat.cc)
-
-🔜 [GOTO Wiki](https://github.com/dribdat/docs/wiki/)
+📖 100 [GOTO HANDBOOK](https://dribdat.cc)
+🕹️ 200 [GOTO WEBSITE](https://dribd.at)
+🔜 300 [GOTO WIKI](https://github.com/dribdat/docs/wiki/)
 
 ## Contributing
 
@@ -33,3 +33,5 @@ Open http://localhost:7000/docs/ in your browser.
 This command updates the gh-pages branch on GitHub:
 
 `livemark build && ghp-import -p -f -o docs/`
+
+We are currently running this inside of a tidy [GitHub Action](.github/workflows/livemark-gh-pages.yml).
