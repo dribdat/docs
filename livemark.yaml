@@ -29,10 +29,12 @@ pages:
       name: Overview
     - path: docs/usage
       name: User guide
+    - path: docs/sync
+      name: Sync how-to
     - path: docs/organiser
       name: Organiser guide
     - path: docs/deploy
-      name: Quick Start
+      name: Installation
     - path: docs/contribute
       name: Contribute
     - path: docs/whitepaper

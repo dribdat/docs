@@ -18,16 +18,7 @@ This basic documentation makes it easy for fellow participants to understand the
 
 Data on projects can be entered into the application directly using text, HTML or [Markdown](https://www.markdowntutorial.com/) formatting. Dribdat features an accessible user-facing frontend (made with Twitter's Bootstrap framework, in case you're wondering) for starting and updating projects, and an administrative backend for the organizing team.
 
-Content may also be aggregated (**Sync**-ed) from an external location by putting in the URL to a public project hosted on one of these supported platforms:
-
-- [GitHub](https://github.com) (README / README.md)
-- [GitLab](https://gitlab.com) (README.md)
-- [BitBucket](https://bitbucket.org)
-- [Etherpad Lite](http://etherpad.org)
-- [Google Docs](https://support.google.com/docs/answer/183965?co=GENIE.Platform%3DDesktop&hl=en) (Publish to Web)
-- [DokuWiki](http://make.opendata.ch/wiki/project:home)
-
-For more details on entering content, see the [usage steps](#content).
+Content may also be aggregated (**Sync**-ed) from an external location by putting in the URL to a public project hosted on one of several [supported platforms](sync). For more details on entering content, see the [usage steps](#content).
 
 ## Why should we use dribdat?
 
@@ -89,7 +80,7 @@ If you need to make other changes to your project, click the **Edit** button. Yo
 
 In the large **Description** field you can post notes on your final results, such as a video or slide presentation, summarizing in free form your solution to the challenge. This can be plain text, in HTML or Markdown. If you need to add an image, use a cloud hosting service like Imgur and paste the link in like this: `![Title of my image](https://link-to-my-image.jpg)`
 
-As noted at the top of this guide: if you are using GitHub, Google Docs, a wiki, etc., to write your documentation, you don't need to copy and paste it into dribdat. Use the **Sync** capability to automatically scrape the contents of your README or webpage into your project. Pretty hacky, huh? `;-)`
+As noted at the top of this guide: if you are using GitHub, Google Docs, a wiki, etc., to write your documentation, you don't need to copy and paste it into dribdat. Use the [**Sync** capability](sync) to automatically scrape the contents of your README or webpage into your project. Pretty hacky, huh? `;-)`
 
 You can also use the **Project link** to embed documentation you are working on elsewhere into a frame on your project page. This could be a demo of your application, or - in the early phases at least - collaboration tools for your team.
 

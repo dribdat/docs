@@ -30,7 +30,7 @@ The picture below explains the various parts of a typical challenge or project p
 
 ## Sync your stuff
 
-We don't force or even expect you to use the editor on this platform. The **README** feature allows you to connect documentation from your open source repository on [GitHub](https://github.com), [GitLab](https://gitlab.com) or [Bitbucket](https://bitbucket.org) - or an online document at [Etherpad](http://etherpad.org), [Google Docs](http://docs.google.com) (make sure to _Publish to Web_ first), [Instructables](http://instructables.com), [HackMD/CodiMD](https://hackmd.io) and [DokuWiki](http://make.opendata.ch/wiki/project:home). 
+We do not force or even expect you to use the editor on this platform to work on your content. The **README** feature allows you to connect documentation from your open source repository on [GitHub](https://github.com), an online document at [Etherpad](http://etherpad.org), and many other collaboration platforms. See [full list of supported](sync) remote sync locations.
 
 Use the **Sync** button on your project page to quickly refresh your changes, **Edit** your project to add notes or answer questions relevant to the event you are at, and **Details** to tweak the Contact, Download, Source, Image links and more.
 

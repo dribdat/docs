@@ -1,6 +1,6 @@
-This document contains additional information on deploying dribdat.
+This document contains additional information on deploying dribdat to a web server.
 
-# Quick Start
+# Quickstart for installing dribdat
 
 The following section details various options for installation, followed by environment variables you can use to tweak your installation. See also the [README](https://github.com/dribdat/dribdat#quickstart) guide, and our new frontend microservice [Backboard](https://github.com/dribdat/backboard).
 
@@ -108,6 +108,7 @@ Register your app with the provider, and set the following variables:
 * `OAUTH_DOMAIN` - Slack subdomain, Auth0/Mattermost domain, or Azure tenant.
 * `OAUTH_SKIP_LOGIN` - (optional) users should go directly to external login screen.
 * `OAUTH_LINK_REGISTER` - (optional) an external registration link.
+* `OAUTH_HELP_REGISTER` - (optional) a short text for the login page.
 
 You can find more advice in the [Troubleshooting](trouble#need-help-setting-up-sso) guide.
 
