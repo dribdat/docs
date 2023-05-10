@@ -29,7 +29,7 @@ There is a Vue.js app and a Node.js chatbot available as alternatives to the def
 
 You can find a range of excellent events that have been powered by dribdat on the Web and linked in our Open Collective. Please don't hesitate to get in touch if you'd like to get help accelerating your community!
 
-Get in touch via [GitHub Issues](https://github.com/dribdat/dribdat/issues) or [contact form](https://dribd.at/#contact). Get updates on our [OpenCollective](https://opencollective.com/dribdat/updates), where you can also support the development of the project.
+Get in touch via our [contact form](https://dribd.at/#contact) or [raise an issue](https://github.com/dribdat/dribdat/issues). Get updates on our [OpenCollective](https://opencollective.com/dribdat/updates), where you can also support the development of the project.
 
 If you see an issue with the documentation, please [share it here](https://github.com/dribdat/docs/issues) or contribute [directly here](https://github.com/dribdat/docs).
 

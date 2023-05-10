@@ -77,7 +77,7 @@ The following options can be used to toggle **application features**:
 
 Support for **Web analytics** can be configured using one of the following variables:
 
-* `ANALYTICS_FATHOM` ([Fathom](https://usefathom.com/) - with optional `ANALYTICS_FATHOM_SITE` if you use a custom site)
+* `ANALYTICS_FATHOM` ([Fathom](https://usefathom.com/))
 * `ANALYTICS_SIMPLE` ([Simple Analytics](https://simpleanalytics.com))
 * `ANALYTICS_GOOGLE` (starts with "UA-...")
 * `ANALYTICS_HREF` - an optional link in the footer to a public dashboard for your analytics.
