@@ -1,4 +1,4 @@
-**Co-creation, sprints & hackathons-in-a-box**
+**Open hackathons with batteries included**
 
 ---
 
@@ -17,11 +17,11 @@ Here you can find documentation about the `dribdat` open source project. Please 
 
 # Intro
 
-**dribdat** (originally from "Driven By Data") is an open source (MIT licensed) web application which helps to organize short sprints and hackathons. 
+**dribdat** (originally from "Driven By Data") is an open source (MIT licensed) web application, featuring an ideation and challenge board to help organize short sprints, co-creative sessions, hackdays and hackathons. 
 
-Built around Web-friendly standards like Schema.org and Frictionless Data, dribdat features a collection of bootstraps (authentication, file uploading, data import/export, etc.), useful workflows (announce an event - publish challenges - form teams - develop projects) and channels (social media sharing, digital signage, summary reports). 
+Built around Web-friendly standards like [Schema.org](https://schema.org) and [Frictionless Data](https://frictionlessdata.io), dribdat features a collection of bootstraps (authentication, file uploading, data import/export, etc.), useful workflows (announce an event - publish challenges - form teams - develop projects) and channels (social media sharing, digital signage, summary reports). 
 
-We use it to run activities based on open licenses (Creative Commons, OdbL, etc.), community-developed templates (School of Data pipeline), and governance instruments (Hack Code of Conduct). It is the official platform of [Opendata.ch - Swiss chapter of Open Knowledge](https://opendata.ch), and has been used to host dozens of events in the Swiss [open data](https://hack.opendata.ch), [open hardware](https://now.makezurich.ch), and [open source](https://hacknight.dinacon.ch) community.
+We use it to run activities based on open licenses ([Creative Commons](https://creativecommons.org/licenses/), [Open Data Commons](https://opendatacommons.org/licenses/odbl/), etc.), community-developed templates ([School of Data Pipeline](https://schoolofdata.org/methodology/)), and governance instruments ([Hack Code of Conduct](https://hackcodeofconduct.org/)). It is the official platform of [Opendata.ch - Swiss chapter of Open Knowledge](https://opendata.ch), and has been used to host dozens of events in the Swiss [open data](https://hack.opendata.ch), [open hardware](https://now.makezurich.ch), and [open source](https://hacknight.dinacon.ch) community.
 
 Dribdat strives in itself to be an example of a hackable project that can be adapted to other needs and causes. It can be used just as a Python-powered backend to aggregate data from GitHub, GitLab and other repositories and fileshares in one place. 
 
