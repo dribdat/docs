@@ -1,5 +1,8 @@
 This document explains the basic functions of `dribdat`, an open source platform for data-driven team collaboration (such as *[Hackathons](https://hackathon.guide/)*). It is a FAQ covering the basic usage of the application. For more background see [ABOUT](about), and for technical details visit the [README](https://github.com/dribdat/dribdat#dribdat).
 
+For another version of this document see [📄 Handbook for hackathons powered by Dribdat](https://docs.google.com/document/d/e/2PACX-1vR5Gv5NA3pkls0FRufC0dg-blkOhSo1LMX58pSNtj0FhZq1ImmLw0cIwmla_hiZaxtP8tnzJQQgZg94/pub)
+
+
 User handbook
 ---
 
@@ -8,7 +11,6 @@ User handbook
 It incorporates tools and best practices from 10 years of community building and open data activism, such as templates for 🌳beginner 😄intermediate 🏀advanced level challenges, a 7-stage process for data-driven projects, connectivity to popular collaboration platforms, and time-tracking utilities.
 
 As it helps us - we hope it will help you to contribute to open projects, be a better (team) player, and make the most of a blank canvas and creative constraints.
-
 
 ## Quickstart
 

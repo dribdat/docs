@@ -103,9 +103,10 @@ Run `manage.py socialize users` to restore the profile images. This is due to a 
 
 ## Cleaning out inactive users
 
-Open a shell, and do something like this to remove all non-admin, inactive, non-SSO users with zero drib-scores:
+Open a `manage.py shell` and run a command like this to remove all non-admin, inactive, non-SSO users with zero drib-scores:
 
 ```
+from dribdat.user.models import User
 for pp in User.query.filter_by(is_admin=False, active=False, sso_id=None):
   if pp.activity_count == 0 and len(pp.roles) == 0 and len(pp.posted_challenges()) == 0: pp.delete()
 ```

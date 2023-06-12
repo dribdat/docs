@@ -42,7 +42,9 @@ python manage.py db migrate
 python manage.py db upgrade
 ```
 
-Install a local copy of frontend resources for offline development using [yarn install](https://yarnpkg.com/en/docs/getting-started). These will be used when `FLASK_ENV=dev`, otherwise a CDN will be used in production.
+Install a local copy of frontend resources for offline development using [npm](https://nodejs.org/) or [yarn](https://yarnpkg.com/en/docs/getting-started). These will be used when `FLASK_ENV=dev`, otherwise a CDN will be used in production. I.e.:
+
+`npm install`
 
 Finally, run this command (or just `debug.sh`) to start the server:
 
@@ -87,7 +89,7 @@ To apply the migration. Watch out for any errors in the process.
 For a full migration command reference, run `python manage.py db --help`.
 
 
-# API Guide
+## API Guide
 
 There are a number of API calls that admins can use to easily get to the data in Dribdat in various formats. The full list of calls is shown in the **About** or Search page in a running app. For example, to get basic data on an event:
 
@@ -98,7 +100,15 @@ There are a number of API calls that admins can use to easily get to the data in
 - `/api/project/activity.json`
 - `/api/<PROJECT ID>/activity.json`
 
-To search all project contents:
+To get your logged in user's full data:
+
+- `/api/user/current/my-hackathons.json`
+
+To get just public data for any user:
+
+- `/api/user/<USER NAME>`
+
+To search through all project contents:
 
 - `/api/project/search.json?q=<text_query>`
 
