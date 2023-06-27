@@ -91,14 +91,30 @@ For a full migration command reference, run `python manage.py db --help`.
 
 ## API Guide
 
-There are a number of API calls that admins can use to easily get to the data in Dribdat in various formats. The full list of calls is shown in the **About** or Search page in a running app. For example, to get basic data on an event:
+There are a number of API calls that admins can use to easily get to the data in Dribdat in various formats. The full list of calls is shown in the **About** or Search page in a running app. 
+
+Look up data on the current event with the [Hackathon Schema.org Type](https://schema.org/Hackathon):
 
 - `/hackathon.json`
+
+For just basic information and projects from the current or another event:
+
 - `/api/event/current/info.json`
-- `/api/event/current/projects.json`
 - `/api/event/<EVENT ID>/info.json`
-- `/api/project/activity.json`
-- `/api/<PROJECT ID>/activity.json`
+- `/api/event/current/projects.json` (or `.csv`)
+- `/api/event/<EVENT ID>/projects.json` (or `.csv`)
+- `/api/event/current/activity.json` (or `.csv`)
+- `/api/event/<EVENT ID>/activity.json` (or `.csv`)
+
+Details on a project:
+
+- `/api/project/<PROJECT ID>/info.json`
+- `/api/project/<PROJECT ID>/activity.json`
+
+To get the full list of events, or all the latest activities:
+
+- `/api/events.json` (or `.csv`)
+- `/api/project/activity.json` (or `.csv`)
 
 To get your logged in user's full data:
 
