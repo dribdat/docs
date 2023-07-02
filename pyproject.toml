@@ -7,10 +7,8 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.7"
-mkdocs = "^1.3.1"
-mkdocs-theme-bootstrap4 = "^0.4.0"
-livemark = "^0.109.0"
-ghp-import = "^2.1.0"
+livemark = "^0"
+ghp-import = "^2"
 
 [tool.poetry.dev-dependencies]
 

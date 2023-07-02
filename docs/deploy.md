@@ -28,17 +28,15 @@ At this point you should be ready to start with Docker Compose:
 
 `docker-compose up -d`
 
-## With cloud hosting
+## Cloud scripts
 
-We have battle-tested and tweaked installation of dribdat with the following cloud stacks:
-
-[![Deploy to NINE](https://www.nine.ch/hs-fs/hubfs/NEW%20WEBSITE/logo-new.png?width=536&name=logo-new.png)](https://hub.docker.com/r/loleg/dribdat)
+The installation of dribdat on some cloud providers has been facilitated with quick-deploy scripts:
 
 [![Deploy on Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/dribdat/dribdat)
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/dribdat/dribdat)
 
-[![Deploy with Akamai](https://assets.linode.com/akamai-logo.svg)](https://cloud.linode.com/stackscripts/community?query=dribdat)
+<a title="Deploy with Akamai" target="_blank" href="https://cloud.linode.com/stackscripts/community?query=dribdat"><img src="https://assets.linode.com/akamai-logo.svg" width="256"></a>
 
 # Configuration
 
