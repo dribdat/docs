@@ -48,23 +48,14 @@ Optimize your dribdat instance with the following environment variables in produ
 * `DRIBDAT_SECRET` - a long scary string for hashing your passwords - in Heroku this is set automatically.
 * `DRIBDAT_ENV` - 'dev' to enable debugging, 'prod' to optimise for production.
 
-## Server settings
-
-These parameters can be used to improve the **production setup**:
-
-* `SERVER_SSL` - redirect all visitors to HTTPS, applying [CSP rules](https://developers.google.com/web/fundamentals/security/csp).
-* `SERVER_PROXY` - set to True to use a [standalone proxy](https://flask.palletsprojects.com/en/2.0.x/deploying/wsgi-standalone/#proxy-setups) and static files server - do not use if you already have [a proxy set up](#using-a-proxy-server).
-* `SERVER_CORS` - set to False to disable the [CORS whitelist](https://flask.palletsprojects.com/en/2.0.x/deploying/wsgi-standalone/#proxy-setups) for external API access.
-* `CSP_DIRECTIVES` - configure content security policy - see [Talisman docs](https://github.com/GoogleCloudPlatform/flask-talisman#content-security-policy).
-* `CACHE_TYPE` - speed up the site with Redis or Memcache - see [Flask-Caching](https://flask-caching.readthedocs.io/en/latest/index.html#configuring-flask-caching).
-
 ## Features
 
-The following options can be used to toggle **application features**:
+The following environment variables can be used to toggle **application features**:
 
+* `DRIBDAT_CLOCK` - use 'up' or 'down' to change the position, or 'off' to hide the countdown clock.
 * `DRIBDAT_THEME` - can be set to one of the [Bootswatch themes](https://bootswatch.com/).
 * `DRIBDAT_STYLE` - provide the address to a CSS stylesheet for custom global styles.
-* `DRIBDAT_CLOCK` - use 'up' or 'down' to change the position, or 'off' to hide the countdown clock.
+* `DRIBDAT_STAGE` - provide the address to a YAML configuration for custom global [stages](organiser#stages).
 * `DRIBDAT_APIKEY` - a secret key for connecting bots with write access to the remote [API](#api).
 * `DRIBDAT_USER_APPROVE` - set to True so that any new non-SSO accounts are inactive until approved by an admin.
 * `DRIBDAT_NOT_REGISTER` - set to True to hide the registration, so new users can only join this server via SSO.
@@ -127,11 +118,23 @@ See example connection in the [Troubleshooting](trouble#file-storage-example) gu
 
 Due to the use of the [boto3](https://github.com/boto/boto3/) library for S3 support, there is a dependency on OpenSSL via awscrt. If you use these features, please note that the product includes cryptographic software written by Eric Young (eay@cryptsoft.com) and Tim Hudson (tjh@cryptsoft.com).
 
-## Custom content
+## Advanced server settings
 
-To customize some of the default content, you can edit the template include files in the folder `dribdat/templates/includes`, for example you will find there the default [quickstart.md](https://github.com/dribdat/dribdat/blob/main/dribdat/templates/includes/quickstart.md) and [stages.yaml](https://github.com/dribdat/dribdat/blob/main/dribdat/templates/includes/stages.yaml) definitions. 
+These parameters can be used to improve the **production setup**:
 
-Make sure your changes will not be overwritten is you are using ephemeral storage (e.g. Heroku) for your deployment. In a future release we may provide an environmental variable for configurations hosted elsewhere. For now, copy the files from a secure location during a deployment step.
+* `SERVER_SSL` - redirect all visitors to HTTPS, applying [CSP rules](https://developers.google.com/web/fundamentals/security/csp).
+* `SERVER_PROXY` - set to True to use a [standalone proxy](https://flask.palletsprojects.com/en/2.0.x/deploying/wsgi-standalone/#proxy-setups) and static files server - do not use if you already have [a proxy set up](#using-a-proxy-server).
+* `SERVER_CORS` - set to False to disable the [CORS whitelist](https://flask.palletsprojects.com/en/2.0.x/deploying/wsgi-standalone/#proxy-setups) for external API access.
+* `CSP_DIRECTIVES` - configure content security policy - see [Talisman docs](https://github.com/GoogleCloudPlatform/flask-talisman#content-security-policy).
+* `CACHE_TYPE` - speed up the site with Redis or Memcache - see [Flask-Caching](https://flask-caching.readthedocs.io/en/latest/index.html#configuring-flask-caching).
+
+# Tips for your deployment
+
+Here are some additional instructions for your installation. See also the [troubleshooting](trouble) and [contributing](contribute) docs.
+
+## Custom default content
+
+To customize some of the default content, you can edit the template include files in the folder `dribdat/templates/includes`, for example you will find there the default [quickstart.md](https://github.com/dribdat/dribdat/blob/main/dribdat/templates/includes/quickstart.md) and [stages.yaml](https://github.com/dribdat/dribdat/blob/main/dribdat/templates/includes/stages.yaml) definitions. Make sure your changes will not be overwritten is you are using ephemeral storage (e.g. Heroku) for your deployment.
 
 ## Using a proxy server
 

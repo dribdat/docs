@@ -153,9 +153,7 @@ One of the unique features of Dribdat is the progression of projects through a s
 
 <img src="../images/whitepaper/stages2.jpg" width="100%">
 
-The stages are defined in a [stages.yaml](https://github.com/dribdat/dribdat/blob/main/dribdat/templates/includes/stages.yaml) configuration file, which you can also customize for your event as an administrator. You can change the names and contents and rules of every stage, even remove or add stages to your liking. 
-
-For example, to make sure people put at least 10, but not more than 50, characters in their project summary, add this validation rule to the appropriate stage:
+The stages are defined in a [stages.yaml](https://github.com/dribdat/dribdat/blob/main/dribdat/templates/includes/stages.yaml) configuration file. Here you can change the names and contents and rules of every stage, even remove or add stages to your liking. For example, to make sure people put at least 10, but not more than 50, characters in their project summary, add this validation rule to the appropriate stage:
 
 ```yml
 validate:
@@ -166,7 +164,9 @@ validate:
           help: Your challenge should have a short summary.
 ```
 
-See the [Whitepaper](whitepaper#excellent) for some more background.
+Either modify the file on your local filesystem, or use the `DRIBDAT_STAGE` environment variable to point to an online location of your configuration.
+
+See the [Whitepaper](whitepaper#excellent) for more background.
 
 ## I want to use Dribdat elsewhere
 
