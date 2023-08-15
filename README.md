@@ -34,4 +34,4 @@ This command updates the gh-pages branch on GitHub:
 
 `livemark build && ghp-import -p -f -o docs/`
 
-We are currently running this inside of a tidy [GitHub Action](.github/workflows/livemark-gh-pages.yml).
+We are currently running this inside of a tidy [GitHub Action](.github/workflows/livemark-gh-pages.yml), no need for manual upload.
