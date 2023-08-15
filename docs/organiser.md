@@ -68,7 +68,7 @@ Once you join a project in step (2), buttons appear at the top of the page allow
 
 ![Editing buttons](https://us-east-1.linodeobjects.com/dribdat/uploads/upload_2445ee313b8f144af17b7490eee29f0e.png)
 
-By clicking the **Post** button, you can give a quick status report of your progress. A dialog box asks you to self-evaluate your team's **Progress**, as well as enter a few words or sentences to describe at which stage you are at in the process. You can find these posts in the project **Log**:
+By clicking the **Post** button, you can give a quick status report of your progress. A dialog box asks you to self-evaluate your team's **Progress**, as well as enter a few words or sentences to describe at which [project stage](#stages) you are at in the process. You can find these posts in the project **Log**:
 
 ![Project log](https://user-images.githubusercontent.com/31819/95675905-db89dd00-0bba-11eb-9e65-24d4213b94ab.png)
 
@@ -145,8 +145,31 @@ You can pre-configure **Categories** for your site or a specific event, as well 
 - 💡 Facilitator
 - 🛡️ Organizer
 
-## I want to use this elsewhere
+<a name="stages"></a>
 
-Please contact the dribdat maintainers through the [homepage](https://dribdat.cc/), where you can find links to get a free copy of the software - or just ask the organising team at a dribdat-powered event for leads. We will be happy to get you any help you need to get started.
+## How do project Stages work?
 
-Happy hacking!
+One of the unique features of Dribdat is the progression of projects through a series of stages. You can see this in various ways - the progress bar on top of every project, or in the Stages screen on every event:
+
+<img src="../images/whitepaper/stages2.jpg" width="100%">
+
+The stages are defined in a [stages.yaml](https://github.com/dribdat/dribdat/blob/main/dribdat/templates/includes/stages.yaml) configuration file, which you can also customize for your event as an administrator. You can change the names and contents and rules of every stage, even remove or add stages to your liking. 
+
+For example, to make sure people put at least 10, but not more than 50, characters in their project summary, add this validation rule to the appropriate stage:
+
+```yml
+validate:
+        -
+          field: summary
+          min: 10
+          max: 50
+          help: Your challenge should have a short summary.
+```
+
+See the [Whitepaper](whitepaper#excellent) for some more background.
+
+## I want to use Dribdat elsewhere
+
+Please contact the maintainers through the [homepage](https://dribd.at/), where you can find links to get a free copy of the software - or just ask the organising team at a dribdat-powered event for leads. We will be happy to get you any help you need to get started.
+
+<tt>Happy hacking! &lt;3</tt>
