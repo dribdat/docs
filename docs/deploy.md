@@ -1,14 +1,18 @@
 This document contains additional information on deploying dribdat to a web server.
 
-# Quickstart for installing dribdat
+# Quickstart
 
-The following section details various options for installation, followed by environment variables you can use to tweak your installation. See also the [README](https://github.com/dribdat/dribdat#quickstart) guide, and our new frontend microservice [Backboard](https://github.com/dribdat/backboard).
-
-## With Python
+The following section explains installation options, followed by environment variables you can use to tweak your installation. See also the [README](https://github.com/dribdat/dribdat#quickstart) guide, and our new frontend microservice [Backboard](https://github.com/dribdat/backboard).
 
 Details on starting the application directly with Python are detailed in the [Developer guide](contribute). You will still want to refer to the [Configuration](#Configuration) section below.
 
-## With Ansible
+## Cloud scripts
+
+The installation of dribdat on some cloud providers has been facilitated with quick-deploy scripts:
+
+<a title="Deploy on Heroku" target="_blank" href="https://heroku.com/deploy?template=https://github.com/dribdat/dribdat"><img src="https://www.herokucdn.com/deploy/button.svg" width="25%"> <a title="Deploy with Vercel" href="https://vercel.com/new/clone?repository-url=https://github.com/dribdat/dribdat" target="_blank"><img src="https://vercel.com/button" width="25%"></a> <a title="Deploy with Akamai" target="_blank" href="https://cloud.linode.com/stackscripts/community?query=dribdat"><img src="https://assets.linode.com/akamai-logo.svg" width="25%"></a>
+
+## Using Ansible
 
 Use the [dribdat Ansible role](https://ansible.build/roles/dribdat/) for a straightforward production deployment using [Ansible](https://docs.ansible.com/).
 
@@ -16,27 +20,13 @@ Use the [dribdat Ansible role](https://ansible.build/roles/dribdat/) for a strai
 
 We have a (beta) Docker image available at https://hub.docker.com/r/loleg/dribdat
 
-## With Docker Compose
-
-To deploy dribdat using a local [Docker](https://www.docker.com/) or [Podman](https://docs.podman.io/en/latest/index.html) build, use the included `docker-compose.yml` file as a starting point. This, by default, persists the PostgreSQL database outside the container, on the local filesystem in the `.db` folder.
-
-For a first-time setup, perform the initial migrations as follows:
+To deploy dribdat using a local [Docker](https://www.docker.com/) or [Podman](https://docs.podman.io/en/latest/index.html) build, use the included `docker-compose.yml` file as a starting point. This, by default, persists the PostgreSQL database outside the container, on the local filesystem in the `.db` folder. For a first-time setup, perform the initial migrations as follows:
 
 `docker-compose run --rm dribdat ./release.sh`
 
 At this point you should be ready to start with Docker Compose:
 
 `docker-compose up -d`
-
-## Cloud scripts
-
-The installation of dribdat on some cloud providers has been facilitated with quick-deploy scripts:
-
-[![Deploy on Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/dribdat/dribdat)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/dribdat/dribdat)
-
-<a title="Deploy with Akamai" target="_blank" href="https://cloud.linode.com/stackscripts/community?query=dribdat"><img src="https://assets.linode.com/akamai-logo.svg" width="256"></a>
 
 # Configuration
 
@@ -96,7 +86,7 @@ Register your app with the provider, and set the following variables:
 * `OAUTH_SECRET` - the Client Secret of your app.
 * `OAUTH_DOMAIN` - Slack subdomain, Auth0/Mattermost domain, or Azure tenant.
 * `OAUTH_SKIP_LOGIN` - (optional) users should go directly to external login screen.
-* `OAUTH_LINK_REGISTER` - (optional) an external registration link.
+* `OAUTH_LINK_REGISTER` - (optional) a registration link to your SSO platform.
 * `OAUTH_HELP_REGISTER` - (optional) a short text for the login page.
 
 You can find more advice in the [Troubleshooting](trouble#need-help-setting-up-sso) guide.
@@ -175,9 +165,9 @@ server {
   }
 
   location /static {
-    # To host assets directly from Nginx
-    expires 2d;
+    # To host assets directly from Nginx (if your files are in /srv/dribdat)
     alias /srv/dribdat/dribdat/static;
+    expires 2d;
   }
 }
 ```
