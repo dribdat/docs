@@ -12,11 +12,14 @@ This code is originally based on [cookiecutter-flask](https://github.com/cookiec
 
 ## Getting started
 
-Install Python (3.7+), Virtualenv and Pip, or [Poetry](https://python-poetry.org/) to start working with the code.
+(1) Install Python (3.8+) and [Poetry](https://python-poetry.org/) to start working with the code. Virtualenv and pip are also supported.
 
-You may need to install additional libraries (`libffi`) for the [misaka](http://misaka.61924.nl/) package, which depends on [CFFI](https://cffi.readthedocs.io/en/latest/installation.html#platform-specific-instructions), e.g. `sudo dnf install libffi-devel`
+(2) You may need to install additional system libraries (`libffi`) for the [misaka](http://misaka.61924.nl/) package, which depends on [CFFI](https://cffi.readthedocs.io/en/latest/installation.html#platform-specific-instructions). You are likely to also need development headers for Python. 
 
-Run the following commands from the repository root folder to bootstrap your environment:
+- For example, in Fedora Linux run: `sudo dnf install libffi-devel python3-devel gcc`
+- On Ubuntu (`apt`) or Alpine Linux (`apk`): `sudo apk add libffi-dev python3-dev gcc`
+
+(3) Next, run the following commands from the repository root folder to bootstrap your environment with Poetry:
 
 ```
 poetry shell
@@ -29,11 +32,11 @@ Or using plain pip:
 pip install -r requirements/dev.txt
 ```
 
-By default in a dev environment, a SQLite database will be created in the root folder (`dev.db`). You can also install and configure your choice of DBMS [supported by SQLAlchemy](http://docs.sqlalchemy.org/en/rel_1_1/dialects/index.html). In production, the `DATABASE_URL` configures connectivity to an SQLAlchemy-compatible database engine. This requires a `DRIBDAT_ENV=prod` configuration.
+(4) By default in a dev environment, a SQLite database will be created in the root folder (`dev.db`). You can also install and configure your choice of DBMS [supported by SQLAlchemy](http://docs.sqlalchemy.org/en/rel_1_1/dialects/index.html). In production, the `DATABASE_URL` configures connectivity to an SQLAlchemy-compatible database engine. This requires a `DRIBDAT_ENV=prod` configuration.
 
 > **Tip**: Use `.flaskenv` or `.env` to store environment variables for local development. See the [Configuration](#configuration) section for more details.
 
-Run the following to create your local SQLite database tables and perform the initial migration. Note that we avoid using the production `migrations` folder locally due to [Flask-Migrate#61](https://github.com/miguelgrinberg/Flask-Migrate/issues/61):
+(5) Run the following to create your local SQLite database tables and perform the initial migration. Note that we avoid using the production `migrations` folder locally due to [Flask-Migrate#61](https://github.com/miguelgrinberg/Flask-Migrate/issues/61):
 
 ```
 mv migrations migrations_prod
@@ -42,19 +45,21 @@ python manage.py db migrate
 python manage.py db upgrade
 ```
 
-Install a local copy of frontend resources for offline development using [npm](https://nodejs.org/) or [yarn](https://yarnpkg.com/en/docs/getting-started). These will be used when `FLASK_ENV=dev`, otherwise a CDN will be used in production. I.e.:
+(6) Install a local copy of frontend resources for offline development using [npm](https://nodejs.org/) or [yarn](https://yarnpkg.com/en/docs/getting-started). These will be used when `FLASK_ENV=dev`, otherwise a CDN will be used in production. I.e.:
 
 `npm install`
 
-Finally, run this command (or just `debug.sh`) to start the server:
+(7) Finally, run this command (or just `debug.sh`) to start the server:
 
 ```
 FLASK_DEBUG=1 python manage.py run
 ```
 
-You will see a welcome screen at http://127.0.0.1:5000 - register your first user account, which will have admin access and let you set up events.
+You should at this point see a welcome screen at http://127.0.0.1:5000 🎉
 
-## Coding tips
+Follow the instructions to register your first user account, which will have admin access, and let you set up events.
+
+# Coding tips
 
 This section has some advice for developers and operators.
 
@@ -89,7 +94,7 @@ To apply the migration. Watch out for any errors in the process.
 For a full migration command reference, run `python manage.py db --help`.
 
 
-## API Guide
+# API Guide
 
 There are a number of API calls that admins can use to easily get to the data in Dribdat in various formats. The full list of calls is shown in the **About** or Search page in a running app. 
 

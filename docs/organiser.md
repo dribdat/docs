@@ -170,6 +170,6 @@ See the [Whitepaper](whitepaper#excellent) for more background.
 
 ## I want to use Dribdat elsewhere
 
-Please contact the maintainers through the [homepage](https://dribd.at/), where you can find links to get a free copy of the software - or just ask the organising team at a dribdat-powered event for leads. We will be happy to get you any help you need to get started.
+You can get links to a free copy of the software on our website - or just ask the organising team at a dribdat-powered event for leads. We will be happy to get you any help you need to get started. Please contact the maintainers [by email](mailto:dribdat@datalets.ch) if you have further questions.
 
 <tt>Happy hacking! &lt;3</tt>

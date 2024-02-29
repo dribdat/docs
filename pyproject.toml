@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "dribdat-docs"
-version = "0.1.0"
+version = "0.1.2"
 description = "A documentation site for dribdat"
 authors = ["Oleg Lavrovsky <oleg@datalets.ch>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.8"
 livemark = "^0"
 ghp-import = "^2"
 

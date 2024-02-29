@@ -12,7 +12,7 @@ The installation of dribdat on some cloud providers has been facilitated with qu
 
 <a title="Deploy on Heroku" target="_blank" href="https://heroku.com/deploy?template=https://github.com/dribdat/dribdat"><img src="https://www.herokucdn.com/deploy/button.svg" width="25%"> <a title="Deploy with Vercel" href="https://vercel.com/new/clone?repository-url=https://github.com/dribdat/dribdat" target="_blank"><img src="https://vercel.com/button" width="25%"></a> <a title="Deploy with Akamai" target="_blank" href="https://cloud.linode.com/stackscripts/community?query=dribdat"><img src="https://assets.linode.com/akamai-logo.svg" width="25%"></a>
 
-## Using Ansible
+## With Ansible
 
 Use the [dribdat Ansible role](https://ansible.build/roles/dribdat/) for a straightforward production deployment using [Ansible](https://docs.ansible.com/).
 
@@ -27,6 +27,10 @@ To deploy dribdat using a local [Docker](https://www.docker.com/) or [Podman](ht
 At this point you should be ready to start with Docker Compose:
 
 `docker-compose up -d`
+
+## From source
+
+See deployment notes in the [Developer guide](contribute).
 
 # Configuration
 

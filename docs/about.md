@@ -118,7 +118,7 @@ For deployment see the [deployment guide](/deploy).
 
 For usage notes, see the [user handbook](/usage).
 
-For general information, visit [our website](https://dribd.at).
+If you have question, drop them in [our forum](https://github.com/orgs/dribdat/discussions).
 
 ### _Do you have people mentoring new contributors and actively helping them to get on board of the project?_
 

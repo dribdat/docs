@@ -94,7 +94,13 @@ apk add libxml2-dev libxslt-dev libffi-dev rust cargo
 You are missing development headers for Python. For example, in Fedora Linux run:
 
 ```
-sudo dnf install libffi-devel python3-devel
+sudo dnf install libffi-devel python3-devel gcc
+```
+
+On Ubuntu (`apt`) or Alpine Linux (`apk`), the command will look more like this:
+
+```
+sudo apk add libffi-dev python3-dev gcc
 ```
 
 ## No profile images after updating
@@ -110,3 +116,9 @@ from dribdat.user.models import User
 for pp in User.query.filter_by(is_admin=False, active=False, sso_id=None):
   if pp.activity_count == 0 and len(pp.roles) == 0 and len(pp.posted_challenges()) == 0: pp.delete()
 ```
+
+## Updating the requirements file
+
+Install the [Poetry Export plugin](https://github.com/python-poetry/poetry-plugin-export) (this may not be necessary in the near future), then run:
+
+`poetry export -f "requirements.txt" --output "requirements/prod.txt" --without-hashes`

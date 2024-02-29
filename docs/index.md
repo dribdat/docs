@@ -3,7 +3,7 @@
 ---
 <img align="right" src="images/logo12.png" width="128">
 
-Here you can find documentation about the `dribdat` open source project. Please see our [Launch page](https://dribd.at), [Open Collective](https://opencollective.com/dribdat) and [Code repo](https://github.com/dribdat/dribdat#dribdat) for a general introduction, downloads and more!
+Here you can find documentation about the `dribdat` open source project. Please see our [Open Collective](https://opencollective.com/dribdat) and [code repository](https://github.com/dribdat/dribdat#dribdat) for a general introduction, downloads and more!
 
 1. [About dribdat](about)
 1. [User handbook](usage)
@@ -26,7 +26,7 @@ Dribdat strives in itself to be an example of a hackable project that can be ada
 
 ## Get in touch
 
-Via our [contact form](https://dribd.at/#contact) or [raise an issue](https://github.com/dribdat/dribdat/issues). If you would like to improve the documentation, please share [feedback here](https://github.com/dribdat/docs/issues), or contribute via Pull Request.
+Via our [discussion forum](https://github.com/orgs/dribdat/discussions) or [raise an issue](https://github.com/dribdat/dribdat/issues). If you would like to improve the documentation, please share [feedback here](https://github.com/dribdat/docs/issues), or contribute via Pull Request.
 
 Get updates on our [OpenCollective](https://opencollective.com/dribdat/updates), where you can also support the development of the project. There you can find a range of excellent events that have been powered by dribdat on the Web. Please don't hesitate to get in touch if you'd like to get help accelerating your community!
 
