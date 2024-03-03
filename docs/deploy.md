@@ -81,17 +81,26 @@ If you would like people to be able to activate their accounts and reset passwor
 
 ## Authentication
 
-OAuth 2.0 support for **Single Sign-On** (SSO) is currently available using [Flask Dance](https://flask-dance.readthedocs.io/), and requires SSL to be enabled (using `SERVER_SSL`=1 in production or `OAUTHLIB_INSECURE_TRANSPORT` in development). You may wish to disable non-SSO logins using `DRIBDAT_NOT_REGISTER`.
+OAuth 2.0 support for **Single Sign-On** (SSO) is currently available using [Flask Dance](https://flask-dance.readthedocs.io/), and requires SSL to be enabled (using `SERVER_SSL`=1 in production or `OAUTHLIB_INSECURE_TRANSPORT` in development). Currently the following providers are supported:
+
+- `mattermost` - [Mattermost](https://developers.mattermost.com/integrate/apps/authentication/oauth2/)
+- `hitobito` - [Hitobito](https://github.com/hitobito/hitobito/blob/master/doc/development/08_oauth.md)
+- `github`- [GitHub](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app)
+- `slack` - [Slack](https://api.slack.com/authentication/oauth-v2)
+- `azure` - [Microsoft Azure](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow)
+- `auth0` - [Auth0](https://auth0.com/docs/authenticate/protocols/oauth)
 
 Register your app with the provider, and set the following variables:
 
-* `OAUTH_TYPE` - a supported provider: 'mattermost', 'slack', 'github', 'azure', 'auth0'
+* `OAUTH_TYPE` - one of the supported providers (see above)
 * `OAUTH_ID` - the Client ID of your app.
 * `OAUTH_SECRET` - the Client Secret of your app.
-* `OAUTH_DOMAIN` - Slack subdomain, Auth0/Mattermost domain, or Azure tenant.
+* `OAUTH_DOMAIN` - Slack subdomain, Auth0/Mattermost/Hitobito domain, or Azure tenant.
 * `OAUTH_SKIP_LOGIN` - (optional) users should go directly to external login screen.
 * `OAUTH_LINK_REGISTER` - (optional) a registration link to your SSO platform.
 * `OAUTH_HELP_REGISTER` - (optional) a short text for the login page.
+
+You may also wish to disable non-SSO logins using `DRIBDAT_NOT_REGISTER`, or at least enable moderation of non-SSO accounts with `DRIBDAT_USER_APPROVE`. 
 
 You can find more advice in the [Troubleshooting](trouble#need-help-setting-up-sso) guide.
 

@@ -98,7 +98,7 @@ No
 
 ### _Does the community meet in "real life" on a regular base (e.g. yearly, monthly, ...)? How many people do meet at such meetings?_
 
-Yes. We meet at least twice a year at events where we use, and further develop, this platform. There is a small group of people that has directly influenced, and continues to take an interest in, the course of this project. We have several online locations to share updates (notably on [Mattermost](https://team.opendata.ch/signup_user_complete/?id=74yuxwruaby9fpoukx9bmoxday), Discord and Slack).
+Yes. We meet at least twice a year at events where we use, and further develop, this platform. There is a small group of people that has directly influenced, and continues to take an interest in, the course of this project. We have several online locations to share updates (notably on [Open Collective](https://opencollective.com/dribdat/updates), ~~Mattermost, Discord and Slack~~).
 
 ### _Do you have other metrics that you would like to share with us, which help us to understand how successful your project is?_
 

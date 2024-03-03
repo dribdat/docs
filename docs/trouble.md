@@ -21,7 +21,7 @@ Cannot determine SSO callback for app registration? Try this:
 
 `<my server url>/oauth/<my provider>/authorized`
 
-Where the provider is `slack`, `mattermost`, ..
+Where the provider is `slack`, `mattermost`, .. as configured in `OAUTH_TYPE`
 
 ## File storage example
 
