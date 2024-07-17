@@ -51,8 +51,9 @@ The following environment variables can be used to toggle **application features
 * `DRIBDAT_STYLE` - provide the address to a CSS stylesheet for custom global styles.
 * `DRIBDAT_STAGE` - provide the address to a YAML configuration for custom global [stages](organiser#stages).
 * `DRIBDAT_APIKEY` - a secret key for connecting bots with write access to the remote [API](#api).
+* `DRIBDAT_ALLOW_LOGINS` - set to False to hide the login, so new users can only log into this server via SSO.
+* `DRIBDAT_NOT_REGISTER` - set to True to hide the registration, so new users can only join this server via SSO or invite.
 * `DRIBDAT_USER_APPROVE` - set to True so that any new non-SSO accounts are inactive until approved by an admin.
-* `DRIBDAT_NOT_REGISTER` - set to True to hide the registration, so new users can only join this server via SSO.
 * `DRIBDAT_ALLOW_EVENTS` - set to True to allow regular users to start new events, which admins can edit to make visible on the home page.
 * `DRIBDAT_SOCIAL_LINKS` - set to False to hide automatic social network links (Twitter etc.) on the site.
 
@@ -81,7 +82,7 @@ If you would like people to be able to activate their accounts and reset passwor
 
 ## Authentication
 
-OAuth 2.0 support for **Single Sign-On** (SSO) is currently available using [Flask Dance](https://flask-dance.readthedocs.io/), and requires SSL to be enabled (using `SERVER_SSL`=1 in production or `OAUTHLIB_INSECURE_TRANSPORT` in development). Currently the following providers are supported:
+OAuth 2.0 support for **Single Sign-On** (SSO) is currently available using [Flask Dance](https://flask-dance.readthedocs.io/), and requires SSL to be enabled (using `SERVER_SSL`=1 in production or `OAUTHLIB_INSECURE_TRANSPORT` in development). The following providers are supported:
 
 - `mattermost` - [Mattermost](https://developers.mattermost.com/integrate/apps/authentication/oauth2/)
 - `hitobito` - [Hitobito](https://github.com/hitobito/hitobito/blob/master/doc/development/08_oauth.md)
@@ -100,7 +101,7 @@ Register your app with the provider, and set the following variables:
 * `OAUTH_LINK_REGISTER` - (optional) a registration link to your SSO platform.
 * `OAUTH_HELP_REGISTER` - (optional) a short text for the login page.
 
-You may also wish to disable non-SSO logins using `DRIBDAT_NOT_REGISTER`, or at least enable moderation of non-SSO accounts with `DRIBDAT_USER_APPROVE`. 
+You may then wish to disable non-SSO logins using `DRIBDAT_ALLOW_LOGINS` and registrations with `DRIBDAT_NOT_REGISTER` - or at least enable moderation of non-SSO accounts with `DRIBDAT_USER_APPROVE` and an SMTP provider for e-mail activation.
 
 You can find more advice in the [Troubleshooting](trouble#need-help-setting-up-sso) guide.
 
@@ -120,6 +121,14 @@ For **uploading images** and other files directly within dribdat, you can config
 See example connection in the [Troubleshooting](trouble#file-storage-example) guide.
 
 Due to the use of the [boto3](https://github.com/boto/boto3/) library for S3 support, there is a dependency on OpenSSL via awscrt. If you use these features, please note that the product includes cryptographic software written by Eric Young (eay@cryptsoft.com) and Tim Hudson (tjh@cryptsoft.com).
+
+## Large language model
+
+If you would like to enable automated challenge and AI-enhanced project suggestions, you can connect OpenAI or compatible service, for example the API endpoint of [LM Studio](https://github.com/lmstudio-ai), or the [LiteLLM](https://docs.litellm.ai/) proxy.
+
+- `LLM_BASE_URL` - if left blank, this uses the production OpenAI endpoint
+- `LLM_API_KEY` - (required) the API key of an account with your LLM provider
+- `LLM_MODEL` - set to your choice of model, e.g. "gpt-3.5-turbo"
 
 ## Advanced server settings
 
