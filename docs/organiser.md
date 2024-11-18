@@ -1,7 +1,11 @@
+Organiser Guide
+
+---
+<img align="right" src="images/logo12.png" width="128">
+
 This document explains how the open source `dribdat` tool can help you to set up data-driven collaborative sprints, such as *[Hackathons](https://hackathon.guide/)*. For basic usage of the application see the [User's guide](usage). For more background see [ABOUT](about), and for technical details visit the [README](https://github.com/dribdat/dribdat#dribdat).
 
-Organiser's Guide
----
+# Tick tock
 
 What does the core dribdat look like? As event organisers, we are really into making the most of time constraints - so the homepage and dashboard feature a big animated countdown clock:
 
@@ -44,9 +48,9 @@ If you have issues logging into the platform, contact the organizing team of you
 
 Every active team should have a public project page on dribdat.
 
-These are sometimes categorized according to the challenge topic they address at the top of the event page, which is a kind of digital map. The button at the far right (&#9776;) switches to a list mode, which can also help you to find your team if there are a lot of challenges. 
+These are sometimes categorized according to the challenge topic they address at the top of the event page, which is a kind of digital map. The button at the far right (&#9776;) switches to a list mode, which can also help you to find your team if there are a lot of challenges.
 
-Here is an example from a recent dribdat-powered event which uses categories:
+Here is an example from a dribdat-powered event which uses categories:
 
 ![EvalHack screenshot](https://us-east-1.linodeobjects.com/dribdat/uploads/upload_5f353fb2f1a035c8a2a2d84f50121ca1.png)
 
@@ -151,7 +155,7 @@ You can pre-configure **Categories** for your site or a specific event, as well 
 
 One of the unique features of Dribdat is the progression of projects through a series of stages. You can see this in various ways - the progress bar on top of every project, or in the Stages screen on every event:
 
-<img src="../images/whitepaper/stages2.jpg" width="100%">
+<img src="images/whitepaper/stages2.jpg" width="100%">
 
 The stages are defined in a [stages.yaml](https://github.com/dribdat/dribdat/blob/main/dribdat/templates/includes/stages.yaml) configuration file. Here you can change the names and contents and rules of every stage, even remove or add stages to your liking. For example, to make sure people put at least 10, but not more than 50, characters in their project summary, add this validation rule to the appropriate stage:
 

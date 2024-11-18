@@ -1,13 +1,12 @@
 Co{re}creation for civic hackers
 ---
 
-// v.2.8 /// 8.2022
+// v.2 /// 8.2022
 
 
 > This paper describes **dribdat** as an open development platform for technical sprints and data expeditions. A simple user interface allows managing challenges, resources and bootstraps, while augmenting tolerance and fairness among participants. See how we use it to support teams in hackathons and workshops. By fostering and connecting design notes, data, and code, let's make the experience of exploring real world problems moar awesome!
 
-Permalink: [dribdat.cc/whitepaper](https://dribdat.cc/whitepaper/)
-~ Download: [tresorit.com](https://web.tresorit.com/l/fPhCS#b8XDMRrW_MTQC3z7anFn8Q) (PDF)
+_Permalink: [dribdat.cc/whitepaper](https://dribdat.cc/whitepaper/)_
 
 1. [Executive summary](#summary)
 2. [For corecreation](#collaboration)
@@ -20,12 +19,12 @@ Permalink: [dribdat.cc/whitepaper](https://dribdat.cc/whitepaper/)
 9. [Always be closing](#closing)
 10. [References](#references)
 
-<img src="../images/whitepaper/logo_3.png" width="33%">
+<img src="images/whitepaper/logo_3.png" width="33%">
 
 ---
 <a name="summary"></a>
 
-# ➀ executive summary
+## ➀ executive summary
 
 Using dribdat, you can start and showcase projects at collaborative events. These are most commonly hackathons: a popular event format for tinkering and innovation in small teams. Developed within the civic tech movement, concerned with open access to data and sharing the knowledge associated with data production and reuse across diverse local communities, dribdat was created as a tool for organisers and participants to have a good overview of the goals and results of their meetings.
 
@@ -35,7 +34,7 @@ We encoded our principles in the form of an online, web-based application to ens
 
 When citizens engage in open development to hack on projects - such as monitoring the environment or validating public accounts - sometimes longer-term initiatives emerge. The shared premise is that open source code and openly designed hardware can be used in our digital society to rapidly prototype and assess the real-world potential and impacts of ideas or "challenges".
 
-<img alt="Screenshot" src="../images/whitepaper/datahackdaysbe.jpg" width="100%">
+<img alt="Screenshot" src="images/whitepaper/datahackdaysbe.jpg" width="100%">
 
 _Opendata.ch / [Data Hackdays BE 2021](https://hack.opendata.ch/event/45)_
 
@@ -54,7 +53,7 @@ _Graph of contributions to the dribdat code base, via GitHub_
 ---
 <a name="collaboration"></a>
 
- # ➁ for corecreation
+## ➁ for corecreation
 
 Designed to help participants and organisers to have a great time and focus on the essentials, dribdat features timekeeping and progress tracking dashboards to make it easier to form teams and sustain the energy in the room or online event. We aim to keep the focus on driving creative ideas forward while having fun: a kind of collaborative, multidisciplinary, sportive prototyping that we call **corecreation**.
 
@@ -75,13 +74,13 @@ Only one tool can be in focus at a time, keeping participants on board as their 
 ---
 <a name="results"></a>
 
-# ③ an open platform
+## ③ an open platform
 
 Web technologies and open data standards are at the core of dribdat. Typically, hackathons need some kind of publishing workflow that collects data from the team in a series of forms. We have often encountered this to be a laborious process that steals valuable time from teams and organisers while introducing bias and latency. Project aggregation is facilitated by the ability to start a project on the basis of data from a coding platform, a chat channel, or an open web resource.
 
 In practice, the teams using dribdat are free to work as they please: keeping up with every twist and turn in the online collaboration landscape, we try to nurture supportive communities sharing the best brainstorming, prototyping and code sharing tools, helping to ensure we can plug in and generate data from any preferred platforms.
 
-<img alt="Screenshot" src="../images/whitepaper/myprofile.png" width="100%">
+<img alt="Screenshot" src="images/whitepaper/myprofile.png" width="100%">
 
 _Role selection in the profile editor_
 
@@ -91,7 +90,7 @@ Designers can use their favorite prototyping tools, either uploading screenshots
 
 No 'copypasta' needed here, Developers! Code projects created in a compatible repository - such as [GitHub](http://github.com/), [GitLab](http://gitlab.com/), [Bitbucket](http://bitbucket.com/) - or documentation in supported wikis, such as [Etherpad](http://etherpad.org/), [DokuWiki](https://www.dokuwiki.org/), [Google Docs](https://www.google.com/docs/about/) - can be synchronised so that documentation can take place, and *continue to happen in a distributed way*, using standard formats, such as the *README* files preferred in open source.
 
-<img src="../images/whitepaper/swihack_2.png" alt="Screenshot" width="100%">
+<img src="images/whitepaper/swihack_2.png" alt="Screenshot" width="100%">
 
 _Swiss Broadcasting Corporation / [#swihack 2020](https://swihack.ch/)_
 
@@ -99,11 +98,11 @@ Documentation that cannot readily be synced, such as data science notebooks as p
 
 The less friction there is between one tool and the next, the more effectively and flexibly our teams can iterate their designs. With dribdat we can visualize and put into practice the data streams connecting our platforms. Where there are hitches and barriers along the way, the open community around dribdat is well positioned to investigate and suggest improvements.
 
-<img alt="Screenshot of Posts editor" src="../images/whitepaper/tips_nextlevel.png" width="100%">
+<img alt="Screenshot of Posts editor" src="images/whitepaper/tips_nextlevel.png" width="100%">
 
 Any team member may write short, social media-like _Posts_ to document their work, while the API allows the use of other ways to capture insight into participant activity. This includes [dridbot](https://github.com/dribdat/dridbot#dridbot), a chat-mode integration compatible with Slack, RocketChat and other messengers, that allows updating projects directly within a team channel. Dribs are also automatically generated out of commit logs from supported code repositories.
 
-<img alt="Screenshot of project log" src="../images/whitepaper/projectlog.png" width="100%">
+<img alt="Screenshot of project log" src="images/whitepaper/projectlog.png" width="100%">
 
 Your team's posts, or "dribs", that are visible in the _Log_ section of their project, are also aggregated with those of all the other teams in the  _Dribs_ section of the navigation. Event operators can recognize projects in a similar way. There is also a _Dashboard_, which organizers can set up alongside announcements, and an optional social media stream. This is typically used in digital signage.
 
@@ -113,17 +112,17 @@ _Opendata.ch / [Open Farming Hackdays 2021](https://hack.farming.opendata.ch/eve
 ---
 <a name="friction"></a>
 
-# ④ reducing friction
+## ④ reducing friction
 
 Project presentations and demos made easily and efficiently available for evaluation when each team can update their own progress level, generating an automatic metric for profile completeness and activity levels, and giving each project a meaningful progress score.
 
 Participants can subscribe to a challenge or join a project once someone has started it, and immediately gain access to improving the content. This is done using a simple form, and a [Markdown](https://daringfireball.net/projects/markdown/syntax) editor that helps to format your _Pitch_.
 
-<img alt="Editor" src="../images/whitepaper/richtext.png" width="100%">
+<img alt="Editor" src="images/whitepaper/richtext.png" width="100%">
 
 As they do this, their project gets linked in a public profile, where their personal contributions - dribs, reports, code commits, etc. - can be seen. By engaging regularly in this way, they can help their team climb through the normalizing progress stages of the event.
 
-<img alt="Tips" src="../images/whitepaper/tips_posting.png" width="100%">
+<img alt="Tips" src="images/whitepaper/tips_posting.png" width="100%">
 
 We are working to build dribdat into a powerful tool for tracking performance and recognising contribution -- for example, by supporting real-time collaboration in [CodiMD](https://github.com/hackmdio/codimd) and [Jupyter](https://jupyter.org/) notebooks embedded directly in the project, to minimise the friction of on-boarding contributors.
 
@@ -137,17 +136,17 @@ We support several ways of extracting real-time statistics for insight on the pu
 
 -- John Gruber, co-creator of [Markdown](https://en.wikipedia.org/wiki/Markdown)
 
-<img alt="Screens" src="../images/whitepaper/inspired_by_data.png" width="100%">
+<img alt="Screens" src="images/whitepaper/inspired_by_data.png" width="100%">
 _Forum Helveticum / [Plurilingualism Hackathon 2018](https://hack.opendata.ch/event/22)_
 
 ---
 <a name="interoperability"></a>
 
-# ⑤ assuring interoperability
+## ⑤ assuring interoperability
 
 Not just a metaphor: dribdat aims to be a digital glue between a plethora of tools and processes that are being deployed in the civic tech community, enabling quick and painless deployment - ideal for hackathons, but a need that is common throughout the IT and public sector. Tools like dribdat are important instruments in facilitating concentrated social change-making that is digitally sustainable.
 
-Baked into the core of dribdat is support for Frictionless Data, the "open-source toolkit that brings simplicity and gracefulness to the data experience" ([frictionlessdata.io](https://frictionlessdata.io/)) which we use to accelerate the process of unpacking and exploring open information sources in the crucial early research & experimentation phases of a hackathon. When you create a Data Package of your dribdat event, it is a snapshot of all the projects and configurations which can be used for analysis, for backup, or even as a template for the next event with a one-click import. 
+Baked into the core of dribdat is support for Frictionless Data, the "open-source toolkit that brings simplicity and gracefulness to the data experience" ([frictionlessdata.io](https://frictionlessdata.io/)) which we use to accelerate the process of unpacking and exploring open information sources in the crucial early research & experimentation phases of a hackathon. When you create a Data Package of your dribdat event, it is a snapshot of all the projects and configurations which can be used for analysis, for backup, or even as a template for the next event with a one-click import.
 
 The foundation of this is an open schema that we are advocating for publishing hack-event results: `hackathon.json` - a simple, readable text file at the root of any dribdat instance. Along with Data Package support, our compliance for [Schema.org](https://schema.org/Hackathon) and [Open Graph](https://ogp.me/) standards helps to ensure that publications are picked up by search crawlers and easily federated.
 
@@ -161,7 +160,7 @@ _Open Network Infrastructure Association / [MakeZurich](https://makezurich.ch/)_
 ---
 <a name="excellent"></a>
 
-# ⑥ being excellent to each other
+## ⑥ being excellent to each other
 
 The dribdat initiative is grounded in the tradition of creative and ethical hacking. We have combined best practices in using wikis, issue tracking, and content management systems, creating the basic framework of the application at a hackathon in 2015. Since then, we have battle-tested it at many events with thousands of people - and the people have spoken to us about what they want from the experience. Many of these demands concern the content and form of interaction between participants at the event, not so much the technical support.
 
@@ -174,7 +173,7 @@ _The standard footer deployed with a dribdat instance._
 
 Independently developed at the grassroots, behind the scenes of this project are compacted qualities of what we believe entails good collaboration: a supportive atmosphere that proliferates diversity and tolerance, clearly stated goals, community support and progressive guidelines. Inclusive co-creation, designed to support processes that engender team-building diversity, is an area of active development, currently the focus of collaborations, research, and development.
 
-<img src="../images/whitepaper/stages2.jpg" width="100%">
+<img src="images/whitepaper/stages2.jpg" width="100%">
 
 _Screenshot of the [Stages screen](https://meta.dribdat.cc/event/1/stages)_
 
@@ -193,7 +192,7 @@ As core methodology to help orient the teams, we have built in a customizable 7-
 ---
 <a name="things"></a>
 
-# ⑦ what's next in the pipeline
+## ⑦ what's next in the pipeline
 
 Our [Open Collective](https://opencollective.com/dribdat) offers a number of ways to support our project, from code and financial contribution to helping us to prioritize development and govern the overall initiative. Here are some areas where we think improvement should happen in the medium term. You will find these and a variety of enhancements being proposed and worked on in our [Issue Tracker](https://github.com/dribdat/dribdat/issues). That said, let's try to keep in mind that dribdat is a niche product with unique features and limited scope.
 
@@ -201,7 +200,7 @@ Our [Open Collective](https://opencollective.com/dribdat) offers a number of way
 
 While dribdat has built-in user profiles, the application currently has minimal user management features. Collecting personally identifiable information is not the goal of the project - facilitating recognition in a privacy-protecting way is. We take personal data seriously, but try to keep a small footprint in the tradition of tightly focused software utilities.
 
-Instead of maintaining e-mail validation, user management and password reset functions, we suggest using OAuth for authenticating users of dribdat through a trusted identity service like Slack, GitHub, or any OAuth 2-compatible provider. Once configured, the user is shown a dialog like this to log in, in the case of Slack: 
+Instead of maintaining e-mail validation, user management and password reset functions, we suggest using OAuth for authenticating users of dribdat through a trusted identity service like Slack, GitHub, or any OAuth 2-compatible provider. Once configured, the user is shown a dialog like this to log in, in the case of Slack:
 
 ![](images/whitepaper/slack_login.png)
 
@@ -242,13 +241,13 @@ If you have questions, just ping us through the project contacts. Visit the drib
 ---
 <a name="alternative"></a>
 
-# ⑧ the open alternative
+## ⑧ the open alternative
 
 In this section, we draw comparison to several other open source platforms and applications for hackathon-type events, which have most strongly inspired our work. While project management tools, online forums, digital whiteboards, and conceivably any reasonably flexible collaboration platform can be used to run ideation events, specialized products can help to quickly build a team, evaluate progress, and "get in the groove".
 
 Platforms that are accessible to the general public (no matter how technically astute or not), and produce useful documentation, are popular with [civic tech](https://github.com/dribdat/dribdat/issues/240) and digital society initiatives. In the arena of student events, things are more focused on admissions, competition, and jury evaluation. Despite the differences across the spectra of audiences, we hope to see some of the core functional aspects modularized, enabling more code and design sharing to improve hackathon experiences everywhere.
 
-<img alt="Screenshot" width="100%" src="../images/whitepaper/hackdash-jugendhackt.jpg">
+<img alt="Screenshot" width="100%" src="images/whitepaper/hackdash-jugendhackt.jpg">
 
 [HackDash](https://github.com/impronunciable/hackdash) (pictured above) by Dan Zajdband and team for [Hacks/Hackers](https://www.hackshackers.com/) events, is an open source hackathon platform written in Node.js and uses MongoDB. It has a popular public site [hackdash.org](https://hackdash.org/) where anyone can create a dashboard with a few clicks. At time of writing, over 2'000 of them have been created, collecting at least 7'000 ideas and 900 released projects. We could learn a lot from their dedicated community and interesting [concept statements](https://github.com/impronunciable/hackdash/wiki/Ideas-&-Improves).
 
@@ -260,14 +259,14 @@ Platforms that are accessible to the general public (no matter how technically a
 
 Visit [awesome-hackathons](https://github.com/dribdat/awesome-hackathon) for links to other projects that you may wish to evaluate and compare with dribdat, complementary tools and further resources.
 
-<img alt="Screenshot" width="100%" src="../images/whitepaper/energydata_1.png">
+<img alt="Screenshot" width="100%" src="images/whitepaper/energydata_1.png">
 
 _Opendata.ch / [Energy Data Hackdays 2020](https://hack.opendata.ch/project/463)_
 
 ----
 <a name="closing"></a>
 
-# ⑨ always be closing
+## ⑨ always be closing
 
 The development of dribdat has involved coding by a diverse group, standardization efforts, enterprise software integration, and academic research. Alternative versions and new designs are being promoted through fully open platforms, and it is possible to follow and support the work through an [OpenCollective](https://opencollective.com/dribdat/).
 
@@ -291,7 +290,7 @@ The easiest way to try dribdat is to sign up for an upcoming event with such an 
 ---
 <a name="Contacts"></a>
 
-# @ contacts
+## @ contacts
 
 Your feedback is very welcome. Just open a discussion thread in one of the community channels:
 
@@ -318,13 +317,13 @@ _Development_
 ---
 <a name="references"></a>
 
-# @ references
+## @ references
 
 You can find our inspirations and additional references at [dribdat/awesome-hackathon](https://github.com/dribdat/awesome-hackathon). On the following pages are reference deployments with some background information from **2015 - 2021**
 
 ---
 
-<img alt="Screenshot" width="100%" src="../images/whitepaper/energyhack_2.png">
+<img alt="Screenshot" width="100%" src="images/whitepaper/energyhack_2.png">
 
 ### Energy & Climate Hack
 
@@ -338,7 +337,7 @@ You can find our inspirations and additional references at [dribdat/awesome-hack
 
 ---
 
-<img alt="Screenshot" width="100%" src="../images/whitepaper/covid19mon.jpg">
+<img alt="Screenshot" width="100%" src="images/whitepaper/covid19mon.jpg">
 
 *The open data community at the front-lines of a digital response to the COVID-19 pandemic.*
 
@@ -354,7 +353,7 @@ You can find our inspirations and additional references at [dribdat/awesome-hack
 
 ---
 
-<img alt="Screenshot" width="100%" src="../images/whitepaper/makezurich_2.jpg">
+<img alt="Screenshot" width="100%" src="images/whitepaper/makezurich_2.jpg">
 
 *An interest to accelerate hackathons using the Internet of Things is at the heart of dribdat.*
 
@@ -370,7 +369,7 @@ You can find our inspirations and additional references at [dribdat/awesome-hack
 
 ---
 
-<img alt="Screenshot" width="100%" src="../images/whitepaper/foodopendata_grabfast.png">
+<img alt="Screenshot" width="100%" src="images/whitepaper/foodopendata_grabfast.png">
 
 *Since 2016, dribdat is the official platform of Opendata.ch Hackdays.*
 
@@ -386,7 +385,7 @@ You can find our inspirations and additional references at [dribdat/awesome-hack
 
 ---
 
-<img alt="Screenshot" width="100%" src="../images/whitepaper/ipdet_evalhack.png">
+<img alt="Screenshot" width="100%" src="images/whitepaper/ipdet_evalhack.png">
 
 ### Evaluation Hackathon
 
@@ -400,7 +399,7 @@ You can find our inspirations and additional references at [dribdat/awesome-hack
 
 ---
 
-<img alt="Screenshot" width="100%" src="../images/whitepaper/swihack.png">
+<img alt="Screenshot" width="100%" src="images/whitepaper/swihack.png">
 
 ### Multilingual Media Hackathon
 
@@ -414,7 +413,7 @@ You can find our inspirations and additional references at [dribdat/awesome-hack
 
 ---
 
-<img alt="Screenshot" width="100%" src="../images/whitepaper/climathon.jpg">
+<img alt="Screenshot" width="100%" src="images/whitepaper/climathon.jpg">
 
 ### Climathon Zurich
 
@@ -428,7 +427,7 @@ You can find our inspirations and additional references at [dribdat/awesome-hack
 
 ---
 
-<img alt="Screenshot" width="100%" src="../images/whitepaper/swisscom_iot.png">
+<img alt="Screenshot" width="100%" src="images/whitepaper/swisscom_iot.png">
 
 *The first release of dribdat was designed in cooperation with Swisscom. Image courtesy of [Impact Hub Zürich](https://zurich.impacthub.ch/de/cross-sector-innovation/).*
 

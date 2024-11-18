@@ -13,28 +13,18 @@ github:
   repo: dribdat
 topics:
   selector: h2
-links:
-  items:
-    - name: dribdat.cc
-      path: https://dribdat.cc
-    - name: GitHub
-      path: https://github.com/dribdat
-    - name: Support
-      path: https://opencollective.com/dribdat
 pages:
   items:
     - path: docs/index
-      name: Introduction
+      name: Intro
     - path: docs/usage
       name: User guide
-    - path: docs/sync
-      name: Sync how-to
     - path: docs/organiser
       name: Organiser guide
-    - path: docs/deploy
-      name: Installation
     - path: docs/contribute
-      name: Contribute
+      name: Developer guide
+    - path: docs/deploy
+      name: Install
     - path: docs/whitepaper
       name: Whitepaper
     - path: docs/about

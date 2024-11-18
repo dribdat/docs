@@ -1,3 +1,8 @@
+Installation
+
+---
+<img align="right" src="images/logo12.png" width="128">
+
 This document contains additional information on deploying dribdat to a web server.
 
 # Quickstart
@@ -8,11 +13,11 @@ Details on starting the application directly with Python are detailed in the [De
 
 ## Cloud scripts
 
-The installation of dribdat on some cloud providers has been facilitated with quick-deploy scripts:
+The installation of dribdat on some cloud providers has been facilitated with quick-deploy scripts.
+See [Configuration](#Configuration) below for a list of variables you can set to customize your instance.
+
 
 <a title="Deploy on Heroku" target="_blank" href="https://heroku.com/deploy?template=https://github.com/dribdat/dribdat"><img src="https://www.herokucdn.com/deploy/button.svg" width="25%"> <a title="Deploy with Vercel" href="https://vercel.com/new/clone?repository-url=https://github.com/dribdat/dribdat" target="_blank"><img src="https://vercel.com/button" width="25%"></a> <a title="Deploy with Akamai" target="_blank" href="https://cloud.linode.com/stackscripts/community?query=dribdat"><img src="https://assets.linode.com/akamai-logo.svg" width="25%"></a>
-
-See [Configuration](#Configuration) below for a list of variables you can set to customize your instance.
 
 ## With Ansible
 

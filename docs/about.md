@@ -4,7 +4,7 @@ This document summarises the current status and makes some vision statements abo
 
 An open source project board designed for splendid collaboration, **dribdat** is used to collect and showcase all projects from an event in one place. Originally designed for use at hackathons - more than just a trendy way to get recruited into an IT job, these are a venue for open collaboration, civic engagement, and technical experimentation in a social setting. We've packed in a lot of experience running and optimizing the participant experience into this platform.
 
-<img src="../images/whitepaper/stages2.jpg"><img src="../images/screenshot_backboard2.jpg">
+<img src="images/whitepaper/stages2.jpg"><img src="images/screenshot_backboard2.jpg">
 
 _Screenshots of the [Stages screen](whitepaper/#6-being-excellent-to-each-other) and [Backboard](https://github.com/dribdat/backboard)_
 
@@ -18,7 +18,7 @@ Once a team has formed around a Challenge, any of the team members can Post an u
 
 Users can use [Markdown](https://en.wikipedia.org/wiki/Markdown) formatting to document their project and customise its display. Projects which are published in a compatible source repository - such as GitHub or supported wikis - can be [auto-synced in dribdat](sync), so that the documentation work can take place in the README's favored by the open source community. You can also update your progress level, in addition to an automatic metric for profile completeness and activity levels, to give each project a progress score. Your team members can subscribe to the project once you have started it, link their public profile in the team roster, and make changes to the data.
 
-![The dribdat stages](../images/pipeline.png)
+![The dribdat stages](images/pipeline.png)
 
 Out of the box, your projects advance through a series of stages inspired by the [School of Data Pipeline](http://toolbox.schoolofdata.ch/overview.html), which you can also configure to follow a different methodology. At the end of the event, the teams, audience and organizers should have an excellent overview of the work that was done during the event, see the progress of the documentation at a glance, and export data for analysis using the administrative console. The [Whitepaper](whitepaper/) has additional background.
 

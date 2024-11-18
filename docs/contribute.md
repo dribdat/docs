@@ -1,10 +1,11 @@
+Developer Guide
+
+---
+
 This document contains additional information on contributing to dribdat as a developer. If you are just interested in connecting to dribdat's API, scroll down to the [API overview](#api-guide)
-
-# Developer Guide
-
 For more background references, see the [README](https://github.com/dribdat/dribdat#dribdat).
 
-## Software Architecture
+# Software Architecture
 
 This code is originally based on [cookiecutter-flask](https://github.com/cookiecutter-flask/cookiecutter-flask), which has a number of helpful [developer features](https://github.com/cookiecutter-flask/cookiecutter-flask#features). It is a Python 3 project that uses the Flask microframework and SQLAlchemy for data modelling on the backend. A plain JSON API, along with Jinja templates and WTForms, serves data to a frontend based on Bootstrap 3 and jQuery.
 
@@ -14,7 +15,7 @@ This code is originally based on [cookiecutter-flask](https://github.com/cookiec
 
 (1) Install Python (3.8+) and [Poetry](https://python-poetry.org/) to start working with the code. Virtualenv and pip are also supported.
 
-(2) You may need to install additional system libraries (`libffi`) for the [misaka](http://misaka.61924.nl/) package, which depends on [CFFI](https://cffi.readthedocs.io/en/latest/installation.html#platform-specific-instructions). You are likely to also need development headers for Python. 
+(2) You may need to install additional system libraries (`libffi`) for the [misaka](http://misaka.61924.nl/) package, which depends on [CFFI](https://cffi.readthedocs.io/en/latest/installation.html#platform-specific-instructions). You are likely to also need development headers for Python.
 
 - For example, in Fedora Linux run: `sudo dnf install libffi-devel python3-devel gcc`
 - On Ubuntu (`apt`) or Alpine Linux (`apk`): `sudo apk add libffi-dev python3-dev gcc`
@@ -59,7 +60,7 @@ You should at this point see a welcome screen at http://127.0.0.1:5000 🎉
 
 Follow the instructions to register your first user account, which will have admin access, and let you set up events.
 
-# Coding tips
+## Coding tips
 
 This section has some advice for developers and operators.
 
@@ -94,9 +95,9 @@ To apply the migration. Watch out for any errors in the process.
 For a full migration command reference, run `python manage.py db --help`.
 
 
-# API Guide
+## API Guide
 
-There are a number of API calls that admins can use to easily get to the data in Dribdat in various formats. The full list of calls is shown in the **About** or Search page in a running app. 
+There are a number of API calls that admins can use to easily get to the data in Dribdat in various formats. The full list of calls is shown in the **About** or Search page in a running app.
 
 Look up data on the current event with the [Hackathon Schema.org Type](https://schema.org/Hackathon):
 
@@ -135,12 +136,12 @@ To search through all project contents:
 
 Use the `limit` query parameter to get more or less than 10 results.
 
-## Write access (beta)
+### Write access (beta)
 
 If you would like to use external clients, like the chatbot, to remote control Dribdat you need to set `DRIBDAT_APIKEY`. The (experimental) call used to push data into projects is:
 
 - `/api/project/push.json`
 
-## Technical details
+### Technical details
 
 For more details see [api.py](https://github.com/dribdat/dribdat/blob/main/dribdat/public/api.py)
