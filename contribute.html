@@ -1,0 +1,2410 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="This document contains additional information on contributing to dribdat as a developer. If you are just interested in connecting to dribdat's API, scroll down to the  API overview">
+<meta name="keywords" content="developer,guide">
+<link rel="icon" href="../assets/favicon.ico">
+<title>Developer Guide | dribdat.cc</title>
+<link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://unpkg.com/prismjs@1.23.0/themes/prism.css">
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* Base */
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #222;
+  text-align: left;
+  background-color: #fff;
+}
+
+*,
+::after,
+::before {
+	box-sizing: border-box;
+}
+
+ul,
+ol {
+	margin-top: 0;
+	margin-bottom: 1rem;
+}
+
+a {
+	color: #007bff;
+	text-decoration: none;
+	background-color: transparent;
+}
+
+a:hover {
+	color: #0056b3;
+	text-decoration: underline;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* Main */
+
+#livemark-main {
+  padding: 24px 20px;
+  min-height: 100vh;
+}
+
+#livemark-main h1 {
+  margin-top: 4px !important;
+  padding-bottom: 12px !important;
+}
+
+#livemark-main h1 a.heading,
+#livemark-main h2 a.heading,
+#livemark-main h3 a.heading,
+#livemark-main h4 a.heading,
+#livemark-main h5 a.heading,
+#livemark-main h6 a.heading {
+  display: none;
+}
+
+#livemark-main h2:hover a.heading,
+#livemark-main h3:hover a.heading,
+#livemark-main h4:hover a.heading,
+#livemark-main h5:hover a.heading,
+#livemark-main h6:hover a.heading {
+  display: inline;
+  margin-left: 8px;
+  color: #aaa;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+#livemark-main h2 a.heading:hover,
+#livemark-main h3 a.heading:hover,
+#livemark-main h4 a.heading:hover,
+#livemark-main h5 a.heading:hover,
+#livemark-main h6 a.heading:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 768px) {
+  #livemark-main {
+    margin-left: 300px;
+    border-left: dashed 1px #ccc;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  #livemark-main {
+    margin-right: 300px;
+    border-right: dashed 1px #ccc;
+  }
+}
+
+#livemark-main .octicon {
+  display: inline-block;
+  fill: currentColor;
+  vertical-align: text-bottom;
+}
+
+#livemark-main .anchor {
+  float: left;
+  line-height: 1;
+  margin-left: -20px;
+  padding-right: 4px;
+}
+
+#livemark-main .anchor:focus {
+  outline: none;
+}
+
+#livemark-main h1 .octicon-link,
+#livemark-main h2 .octicon-link,
+#livemark-main h3 .octicon-link,
+#livemark-main h4 .octicon-link,
+#livemark-main h5 .octicon-link,
+#livemark-main h6 .octicon-link {
+  color: #1b1f23;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+#livemark-main h1:hover .anchor,
+#livemark-main h2:hover .anchor,
+#livemark-main h3:hover .anchor,
+#livemark-main h4:hover .anchor,
+#livemark-main h5:hover .anchor,
+#livemark-main h6:hover .anchor {
+  text-decoration: none;
+}
+
+#livemark-main h1:hover .anchor .octicon-link,
+#livemark-main h2:hover .anchor .octicon-link,
+#livemark-main h3:hover .anchor .octicon-link,
+#livemark-main h4:hover .anchor .octicon-link,
+#livemark-main h5:hover .anchor .octicon-link,
+#livemark-main h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+#livemark-main h1:hover .anchor .octicon-link:before,
+#livemark-main h2:hover .anchor .octicon-link:before,
+#livemark-main h3:hover .anchor .octicon-link:before,
+#livemark-main h4:hover .anchor .octicon-link:before,
+#livemark-main h5:hover .anchor .octicon-link:before,
+#livemark-main h6:hover .anchor .octicon-link:before {
+  width: 16px;
+  height: 16px;
+  content: ' ';
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' width='16' height='16' aria-hidden='true'%3E%3Cpath fill-rule='evenodd' d='M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+#livemark-main {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.5;
+  color: #222;
+  font-family: Roboto, system-ui, -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+#livemark-main details {
+  display: block;
+}
+
+#livemark-main summary {
+  display: list-item;
+}
+
+#livemark-main a {
+  background-color: initial;
+}
+
+#livemark-main a:active,
+#livemark-main a:hover {
+  outline-width: 0;
+}
+
+#livemark-main strong {
+  font-weight: inherit;
+  font-weight: bolder;
+}
+
+#livemark-main h1 {
+  font-size: 2em;
+  margin: .67em 0;
+}
+
+#livemark-main img {
+  border-style: none;
+}
+
+#livemark-main code,
+#livemark-main kbd,
+#livemark-main pre {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+#livemark-main hr {
+  box-sizing: initial;
+  height: 0;
+  overflow: visible;
+}
+
+#livemark-main input {
+  font: inherit;
+  margin: 0;
+}
+
+#livemark-main input {
+  overflow: visible;
+}
+
+#livemark-main [type=checkbox] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+#livemark-main * {
+  box-sizing: border-box;
+}
+
+#livemark-main input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+#livemark-main a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+#livemark-main a:hover {
+  text-decoration: underline;
+}
+
+#livemark-main strong {
+  font-weight: 600;
+}
+
+#livemark-main hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #dfe2e5;
+}
+
+#livemark-main hr:after,
+#livemark-main hr:before {
+  display: table;
+  content: "";
+}
+
+#livemark-main hr:after {
+  clear: both;
+}
+
+/* NOTE: is it possible to find a better fix for not breaking TablePlugin's styles? */
+#livemark-main table:not(.dataTable) {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+#livemark-main td,
+#livemark-main th {
+  padding: 0;
+}
+
+#livemark-main details summary {
+  cursor: pointer;
+}
+
+#livemark-main kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+  line-height: 10px;
+  color: #444d56;
+  vertical-align: middle;
+  background-color: #fafbfc;
+  border: 1px solid #d1d5da;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #d1d5da;
+}
+
+#livemark-main h1,
+#livemark-main h2,
+#livemark-main h3,
+#livemark-main h4,
+#livemark-main h5,
+#livemark-main h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#livemark-main h1 {
+  font-size: 32px;
+}
+
+#livemark-main h1,
+#livemark-main h2 {
+  font-weight: 600;
+}
+
+#livemark-main h2 {
+  font-size: 24px;
+}
+
+#livemark-main h3 {
+  font-size: 20px;
+}
+
+#livemark-main h3,
+#livemark-main h4 {
+  font-weight: 600;
+}
+
+#livemark-main h4 {
+  font-size: 16px;
+}
+
+#livemark-main h5 {
+  font-size: 14px;
+}
+
+#livemark-main h5,
+#livemark-main h6 {
+  font-weight: 600;
+}
+
+#livemark-main h6 {
+  font-size: 12px;
+}
+
+#livemark-main p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+#livemark-main blockquote {
+  margin: 0;
+}
+
+#livemark-main ol,
+#livemark-main ul {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#livemark-main ol ol,
+#livemark-main ul ol {
+  list-style-type: lower-roman;
+}
+
+#livemark-main ol ol ol,
+#livemark-main ol ul ol,
+#livemark-main ul ol ol,
+#livemark-main ul ul ol {
+  list-style-type: lower-alpha;
+}
+
+#livemark-main dd {
+  margin-left: 0;
+}
+
+#livemark-main code,
+#livemark-main pre {
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+  font-size: 12px;
+}
+
+#livemark-main pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#livemark-main input::-webkit-inner-spin-button,
+#livemark-main input::-webkit-outer-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+#livemark-main :checked+.radio-label {
+  position: relative;
+  z-index: 1;
+  border-color: #0366d6;
+}
+
+#livemark-main .border {
+  border: 1px solid #e1e4e8!important;
+}
+
+#livemark-main .border-0 {
+  border: 0!important;
+}
+
+#livemark-main .border-bottom {
+  border-bottom: 1px solid #e1e4e8!important;
+}
+
+#livemark-main .rounded-1 {
+  border-radius: 3px!important;
+}
+
+#livemark-main .bg-white {
+  background-color: #fff!important;
+}
+
+#livemark-main .bg-gray-light {
+  background-color: #fafbfc!important;
+}
+
+#livemark-main .text-gray-light {
+  color: #666!important;
+}
+
+#livemark-main .mb-0 {
+  margin-bottom: 0!important;
+}
+
+#livemark-main .my-2 {
+  margin-top: 8px!important;
+  margin-bottom: 8px!important;
+}
+
+#livemark-main .pl-0 {
+  padding-left: 0!important;
+}
+
+#livemark-main .py-0 {
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+}
+
+#livemark-main .pl-1 {
+  padding-left: 4px!important;
+}
+
+#livemark-main .pl-2 {
+  padding-left: 8px!important;
+}
+
+#livemark-main .py-2 {
+  padding-top: 8px!important;
+  padding-bottom: 8px!important;
+}
+
+#livemark-main .pl-3,
+#livemark-main .px-3 {
+  padding-left: 16px!important;
+}
+
+#livemark-main .px-3 {
+  padding-right: 16px!important;
+}
+
+#livemark-main .pl-4 {
+  padding-left: 24px!important;
+}
+
+#livemark-main .pl-5 {
+  padding-left: 32px!important;
+}
+
+#livemark-main .pl-6 {
+  padding-left: 40px!important;
+}
+
+#livemark-main .f6 {
+  font-size: 12px!important;
+}
+
+#livemark-main .lh-condensed {
+  line-height: 1.25!important;
+}
+
+#livemark-main .text-bold {
+  font-weight: 600!important;
+}
+
+#livemark-main .pl-c {
+  color: #666;
+}
+
+#livemark-main .pl-c1,
+#livemark-main .pl-s .pl-v {
+  color: #005cc5;
+}
+
+#livemark-main .pl-e,
+#livemark-main .pl-en {
+  color: #6f42c1;
+}
+
+#livemark-main .pl-s .pl-s1,
+#livemark-main .pl-smi {
+  color: #222;
+}
+
+#livemark-main .pl-ent {
+  color: #22863a;
+}
+
+#livemark-main .pl-k {
+  color: #d73a49;
+}
+
+#livemark-main .pl-pds,
+#livemark-main .pl-s,
+#livemark-main .pl-s .pl-pse .pl-s1,
+#livemark-main .pl-sr,
+#livemark-main .pl-sr .pl-cce,
+#livemark-main .pl-sr .pl-sra,
+#livemark-main .pl-sr .pl-sre {
+  color: #032f62;
+}
+
+#livemark-main .pl-smw,
+#livemark-main .pl-v {
+  color: #e36209;
+}
+
+#livemark-main .pl-bu {
+  color: #b31d28;
+}
+
+#livemark-main .pl-ii {
+  color: #fafbfc;
+  background-color: #b31d28;
+}
+
+#livemark-main .pl-c2 {
+  color: #fafbfc;
+  background-color: #d73a49;
+}
+
+#livemark-main .pl-c2:before {
+  content: "^M";
+}
+
+#livemark-main .pl-sr .pl-cce {
+  font-weight: 700;
+  color: #22863a;
+}
+
+#livemark-main .pl-ml {
+  color: #735c0f;
+}
+
+#livemark-main .pl-mh,
+#livemark-main .pl-mh .pl-en,
+#livemark-main .pl-ms {
+  font-weight: 700;
+  color: #005cc5;
+}
+
+#livemark-main .pl-mi {
+  font-style: italic;
+  color: #222;
+}
+
+#livemark-main .pl-mb {
+  font-weight: 700;
+  color: #222;
+}
+
+#livemark-main .pl-md {
+  color: #b31d28;
+  background-color: #ffeef0;
+}
+
+#livemark-main .pl-mi1 {
+  color: #22863a;
+  background-color: #f0fff4;
+}
+
+#livemark-main .pl-mc {
+  color: #e36209;
+  background-color: #ffebda;
+}
+
+#livemark-main .pl-mi2 {
+  color: #f6f8fa;
+  background-color: #005cc5;
+}
+
+#livemark-main .pl-mdr {
+  font-weight: 700;
+  color: #6f42c1;
+}
+
+#livemark-main .pl-ba {
+  color: #586069;
+}
+
+#livemark-main .pl-sg {
+  color: #959da5;
+}
+
+#livemark-main .pl-corl {
+  text-decoration: underline;
+  color: #032f62;
+}
+
+#livemark-main .mb-0 {
+  margin-bottom: 0!important;
+}
+
+#livemark-main .my-2 {
+  margin-bottom: 8px!important;
+}
+
+#livemark-main .my-2 {
+  margin-top: 8px!important;
+}
+
+#livemark-main .pl-0 {
+  padding-left: 0!important;
+}
+
+#livemark-main .py-0 {
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+}
+
+#livemark-main .pl-1 {
+  padding-left: 4px!important;
+}
+
+#livemark-main .pl-2 {
+  padding-left: 8px!important;
+}
+
+#livemark-main .py-2 {
+  padding-top: 8px!important;
+  padding-bottom: 8px!important;
+}
+
+#livemark-main .pl-3 {
+  padding-left: 16px!important;
+}
+
+#livemark-main .pl-4 {
+  padding-left: 24px!important;
+}
+
+#livemark-main .pl-5 {
+  padding-left: 32px!important;
+}
+
+#livemark-main .pl-6 {
+  padding-left: 40px!important;
+}
+
+#livemark-main .pl-7 {
+  padding-left: 48px!important;
+}
+
+#livemark-main .pl-8 {
+  padding-left: 64px!important;
+}
+
+#livemark-main .pl-9 {
+  padding-left: 80px!important;
+}
+
+#livemark-main .pl-10 {
+  padding-left: 96px!important;
+}
+
+#livemark-main .pl-11 {
+  padding-left: 112px!important;
+}
+
+#livemark-main .pl-12 {
+  padding-left: 128px!important;
+}
+
+#livemark-main hr {
+  border-bottom-color: #eee;
+}
+
+#livemark-main kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+  line-height: 10px;
+  color: #444d56;
+  vertical-align: middle;
+  background-color: #fafbfc;
+  border: 1px solid #d1d5da;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #d1d5da;
+}
+
+#livemark-main:after,
+#livemark-main:before {
+  display: table;
+  content: "";
+}
+
+#livemark-main:after {
+  clear: both;
+}
+
+#livemark-main a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+#livemark-main blockquote,
+#livemark-main details,
+#livemark-main dl,
+#livemark-main ol,
+#livemark-main p,
+#livemark-main pre,
+#livemark-main table:not(.dataTable),
+#livemark-main ul {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+#livemark-main hr {
+  /* height: .25em; */
+  height: 1px;
+  padding: 0;
+  margin: 24px 0;
+  background-color: #e1e4e8;
+  border: 0;
+}
+
+#livemark-main blockquote {
+  padding: 0 1em;
+  color: #666;
+  border-left: .25em solid #dfe2e5;
+}
+
+#livemark-main blockquote>:first-child {
+  margin-top: 0;
+}
+
+#livemark-main blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+#livemark-main h1,
+#livemark-main h2,
+#livemark-main h3,
+#livemark-main h4,
+#livemark-main h5,
+#livemark-main h6 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+#livemark-main h1 {
+  font-size: 2em;
+}
+
+#livemark-main h1,
+#livemark-main h2 {
+  padding-bottom: .3em;
+  border-bottom: 1px solid #eaecef;
+}
+
+#livemark-main h2 {
+  font-size: 1.5em;
+}
+
+#livemark-main h3 {
+  font-size: 1.25em;
+}
+
+#livemark-main h4 {
+  font-size: 1em;
+}
+
+#livemark-main h5 {
+  font-size: .875em;
+}
+
+#livemark-main h6 {
+  font-size: .85em;
+  color: #666;
+}
+
+#livemark-main ol,
+#livemark-main ul {
+  padding-left: 2em;
+}
+
+#livemark-main ol ol,
+#livemark-main ol ul,
+#livemark-main ul ol,
+#livemark-main ul ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#livemark-main li {
+  word-wrap: break-all;
+}
+
+#livemark-main li>p {
+  margin-top: 16px;
+}
+
+#livemark-main li+li {
+  margin-top: .25em;
+}
+
+#livemark-main dl {
+  padding: 0;
+}
+
+#livemark-main dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+}
+
+#livemark-main dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+#livemark-main table:not(.dataTable) {
+  display: block;
+  width: 100%;
+  overflow: auto;
+}
+
+#livemark-main table:not(.dataTable) th {
+  font-weight: 600;
+}
+
+#livemark-main table:not(.dataTable) td,
+#livemark-main table:not(.dataTable) th {
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+
+#livemark-main table:not(.dataTable) tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+#livemark-main table:not(.dataTable) tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+#livemark-main img {
+  max-width: 100%;
+  box-sizing: initial;
+  background-color: #fff;
+}
+
+#livemark-main img[align=right] {
+  padding-left: 20px;
+}
+
+#livemark-main img[align=left] {
+  padding-right: 20px;
+}
+
+#livemark-main code {
+  padding: .2em .4em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(27,31,35,.05);
+  border-radius: 3px;
+}
+
+#livemark-main pre {
+  word-wrap: normal;
+}
+
+#livemark-main pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+#livemark-main .highlight {
+  margin-bottom: 16px;
+}
+
+#livemark-main .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+#livemark-main .highlight pre,
+#livemark-main pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f6f8fa;
+  border-radius: 3px;
+}
+
+#livemark-main pre code {
+  display: inline;
+  max-width: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: initial;
+  border: 0;
+}
+
+#livemark-main .commit-tease-sha {
+  display: inline-block;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+  font-size: 90%;
+  color: #444d56;
+}
+
+#livemark-main .full-commit .btn-outline:not(:disabled):hover {
+  color: #005cc5;
+  border-color: #005cc5;
+}
+
+#livemark-main .blob-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+#livemark-main .blob-wrapper-embedded {
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+#livemark-main .blob-num {
+  width: 1%;
+  min-width: 50px;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+  font-size: 12px;
+  line-height: 20px;
+  color: rgba(27,31,35,.3);
+  text-align: right;
+  white-space: nowrap;
+  vertical-align: top;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#livemark-main .blob-num:hover {
+  color: rgba(27,31,35,.6);
+}
+
+#livemark-main .blob-num:before {
+  content: attr(data-line-number);
+}
+
+#livemark-main .blob-code {
+  position: relative;
+  padding-right: 10px;
+  padding-left: 10px;
+  line-height: 20px;
+  vertical-align: top;
+}
+
+#livemark-main .blob-code-inner {
+  overflow: visible;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+  font-size: 12px;
+  color: #222;
+  word-wrap: normal;
+  white-space: pre;
+}
+
+#livemark-main .pl-token.active,
+#livemark-main .pl-token:hover {
+  cursor: pointer;
+  background: #ffea7f;
+}
+
+#livemark-main .tab-size[data-tab-size="1"] {
+  -moz-tab-size: 1;
+  tab-size: 1;
+}
+
+#livemark-main .tab-size[data-tab-size="2"] {
+  -moz-tab-size: 2;
+  tab-size: 2;
+}
+
+#livemark-main .tab-size[data-tab-size="3"] {
+  -moz-tab-size: 3;
+  tab-size: 3;
+}
+
+#livemark-main .tab-size[data-tab-size="4"] {
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+#livemark-main .tab-size[data-tab-size="5"] {
+  -moz-tab-size: 5;
+  tab-size: 5;
+}
+
+#livemark-main .tab-size[data-tab-size="6"] {
+  -moz-tab-size: 6;
+  tab-size: 6;
+}
+
+#livemark-main .tab-size[data-tab-size="7"] {
+  -moz-tab-size: 7;
+  tab-size: 7;
+}
+
+#livemark-main .tab-size[data-tab-size="8"] {
+  -moz-tab-size: 8;
+  tab-size: 8;
+}
+
+#livemark-main .tab-size[data-tab-size="9"] {
+  -moz-tab-size: 9;
+  tab-size: 9;
+}
+
+#livemark-main .tab-size[data-tab-size="10"] {
+  -moz-tab-size: 10;
+  tab-size: 10;
+}
+
+#livemark-main .tab-size[data-tab-size="11"] {
+  -moz-tab-size: 11;
+  tab-size: 11;
+}
+
+#livemark-main .tab-size[data-tab-size="12"] {
+  -moz-tab-size: 12;
+  tab-size: 12;
+}
+
+#livemark-main .task-list-item {
+  list-style-type: none;
+}
+
+#livemark-main .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+#livemark-main .task-list-item input {
+  margin: 0 .2em .25em -1.6em;
+  vertical-align: middle;
+}
+
+/* Left */
+
+#livemark-left {
+  visibility: hidden;
+  position: fixed;
+  width: 300px;
+  padding: 10px 40px;
+  padding-bottom: 100px;
+  left: 0px;
+  top: 25px;
+  font-size: 125%;
+  height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+/* NOTE: we need to move it to DisplayPlugin (currently unsetting doesn't work) */
+body:not(.with-readability) #livemark-left::-webkit-scrollbar {
+  display: none; /* Chrome; Safari */
+}
+
+#livemark-left > div:not(:last-child) {
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+@media only screen and (min-width: 768px) {
+  #livemark-left {
+    visibility: visible;
+  }
+}
+
+/* Right */
+
+#livemark-right {
+  visibility: hidden;
+  position: fixed;
+  width: 300px;
+  padding: 10px 40px;
+  padding-bottom: 100px;
+  right: 0px;
+  top: 25px;
+  font-size: 125%;
+  height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+/* NOTE: we need to move it to DisplayPlugin (currently unsetting doesn't work) */
+body:not(.with-readability) #livemark-right::-webkit-scrollbar {
+  display: none; /* Chrome; Safari */
+}
+
+#livemark-right > div:not(:last-child) {
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+@media only screen and (min-width: 992px) {
+  #livemark-right {
+    visibility: visible;
+  }
+}
+
+</style>
+<style>
+
+#content .row p img { max-width: 100%; }
+
+</style>
+<style>
+
+#livemark-brand {
+  color: #888;
+}
+
+#livemark-brand ul {
+  overflow: hidden;
+  position: relative;
+  padding-left: 0;
+  margin: 0;
+}
+
+#livemark-brand li {
+  list-style: none;
+}
+
+#livemark-brand a {
+  display: inline-block;
+  color: currentColor;
+  position: relative;
+  width: 100%;
+  line-height: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#livemark-brand a.active {
+  font-weight: 700;
+}
+
+#livemark-brand a:hover {
+  color: #80b2e6;
+}
+
+</style>
+<style>
+
+#livemark-pages {
+  color: #888;
+}
+
+#livemark-pages ul {
+  overflow: hidden;
+  position: relative;
+  padding-left: 0;
+  margin: 0;
+}
+
+#livemark-pages ul.secondary {
+  margin-left: 20px;
+  display: none;
+}
+
+#livemark-pages li.active ul.secondary {
+  display: block;
+}
+
+#livemark-pages li {
+  list-style: none;
+}
+
+#livemark-pages a {
+  display: inline-block;
+  color: currentColor;
+  position: relative;
+  width: 100%;
+  line-height: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#livemark-pages li.active > a {
+  font-weight: 700;
+}
+
+#livemark-pages li.group.active > a {
+  font-weight: normal;
+}
+
+#livemark-pages li.group a.primary::after {
+  content: "\f054";
+  font-size: 16px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  top: 2px;
+  right: 0px;
+}
+
+#livemark-pages li.group.active a.primary::after {
+  content: "\f078";
+}
+
+#livemark-pages a:hover {
+  color: #80b2e6;
+}
+
+</style>
+<style>
+
+.livemark-reference {
+  display: block;
+  /* font-family: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;; */
+}
+
+.livemark-reference-heading {
+    background-color: #f6f8fa;
+    font-family: "Roboto Mono", ui-monospace, monospace;
+    padding: 1em 0;
+}
+
+</style>
+<style>
+
+#livemark-notes {
+  color: #aaa;
+  text-align: right;
+  font-size: 14px;
+  float: right;
+  visibility: hidden;
+}
+
+@media (min-width: 768px) {
+  #livemark-notes {
+    visibility: visible;
+  }
+}
+
+#livemark-notes a {
+  color: inherit;
+}
+
+#livemark-notes a:hover {
+  color: #80b2e6;
+}
+
+#livemark-notes a[target="_blank"]:after {
+  content: "\f35d";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  vertical-align: text-top;
+  text-decoration: none;
+  display: inline-block;
+  color: #ccc;
+  font-size: 10px;
+  margin-left: -1px;
+}
+
+#livemark-notes a[target="_blank"]:hover:after {
+  color: #80b2e6;
+}
+
+</style>
+<style>
+
+#livemark-signs {
+  color: #888;
+  border-top: 1px solid #eaecef;
+  margin-top: 24px;
+  padding-top: 20px;
+  height: 50px;
+}
+
+#livemark-signs .next {
+  float: right;
+}
+
+#livemark-signs a {
+  font-size: 20px;
+  color: currentColor;
+}
+
+#livemark-signs a:hover {
+  color: #80b2e6;
+}
+
+</style>
+<style>
+
+#livemark-rating {
+  height: 46px;
+}
+
+#livemark-rating iframe {
+  margin-top: -5px;
+  border: none;
+  opacity: 0.5;
+}
+
+</style>
+<style>
+
+#livemark-topics {
+  color: #888;
+}
+
+#livemark-topics .toc>.toc-list {
+  overflow: hidden;
+  position: relative;
+}
+
+#livemark-topics .toc>.toc-list li {
+  list-style: none;
+}
+
+#livemark-topics .toc-list {
+  padding-left: 0;
+  margin: 0;
+}
+
+#livemark-topics a.toc-link {
+  color: currentColor;
+}
+
+#livemark-topics a.toc-link:hover {
+  color: #80b2e6;
+}
+
+#livemark-topics .is-active-link {
+  font-weight: 700;
+}
+
+#livemark-topics ul.secondary {
+  margin-left: 20px;
+  display: none;
+}
+
+#livemark-topics li.is-active-li ul.secondary {
+  display: block;
+}
+
+#livemark-topics li.group a.primary::after {
+  content: "\f054";
+  font-size: 16px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  top: 2px;
+  right: 0px;
+}
+
+#livemark-topics li.group.is-active-li a.primary::after {
+  content: "\f078";
+}
+
+#livemark-topics a {
+  display: inline-block;
+  color: currentColor;
+  position: relative;
+  width: 100%;
+  line-height: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#livemark-topics a:hover {
+  color: #80b2e6;
+}
+
+</style>
+<style>
+
+.livemark-audio {
+  padding-bottom: 10px;
+}
+
+</style>
+<style>
+
+.livemark-blog-item {
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+.livemark-blog-item h2 a:not(.heading) {
+  color: #222 !important;
+}
+
+</style>
+<style>
+
+#livemark-cards .modal-lg {
+    max-width: 1000px;
+}
+
+</style>
+<style>
+
+#livemark-display {
+  display: flex;
+  position: fixed;
+  visibility: hidden;
+  justify-content: space-between;
+  font-size: 16px;
+  color: #888;
+  width: 240px;
+  bottom: 20px;
+  right: 30px;
+}
+
+@media only screen and (min-width: 992px) {
+  #livemark-display {
+    visibility: visible;
+  }
+}
+
+#livemark-display .control {
+  cursor: pointer;
+  background-color:#fff;
+  box-shadow: 0px 7px 10px #eee;
+  border-radius: 50%;
+  border: solid 1px #ddd;
+  z-index: 100;
+}
+
+#livemark-display .control .fa {
+  display: inline-block !important;
+  opacity: 1 !important;
+  padding: 15px;
+}
+
+.with-readability {
+  font-size: 20px;
+}
+
+.with-readability #livemark-main {
+  color: #000;
+}
+
+.with-readability #livemark-left > *,
+.with-readability #livemark-right > * {
+  color: #444;
+}
+
+.with-readability #livemark-left,
+.with-readability #livemark-right {
+  scrollbar-width: unset;  /* Firefox */
+  -ms-overflow-style: unset;  /* Internet Explorer 10+ */
+}
+
+/* NOTE: */
+/* temporarily implemented in HtmlPlugin */
+/* .with-readability #livemark-left::-webkit-scrollbar, */
+/* .with-readability #livemark-right::-webkit-scrollbar { */
+  /* display: unset !important; [> Chrome; Safari <] */
+/* } */
+
+</style>
+<style>
+
+.livemark-image {
+  padding-bottom: 10px;
+}
+
+</style>
+<style>
+
+.livemark-infinity {
+  display: none;
+}
+
+</style>
+<style>
+
+#livemark-mobile {
+  position: absolute;
+  visibility: hidden;
+  z-index: 10000;
+  /* NOTE: We can't use "right" because of Mobile Chrome and #34 */
+  left: calc(100vw - 60px);
+  top: 24px;
+}
+
+#livemark-mobile .stack {
+  margin-top: 15px;
+  display: block;
+  cursor: pointer;
+}
+
+#livemark-mobile .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #aaa;
+}
+
+@media only screen and (max-width: 768px) {
+  #livemark-mobile {
+    visibility: visible;
+  }
+
+  #livemark-mobile.active {
+    position: fixed;
+  }
+
+  #livemark-mobile.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  #livemark-mobile.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  #livemark-mobile.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  #livemark-left {
+      position: fixed;
+      top: 0;
+      left: -100vw;
+      padding-top: 35px;
+      background-color: #fff;
+      width: 100vw;
+      border-radius: 10px;
+      text-align: center;
+      transition: 0.3s;
+      box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+      visibility: visible;
+      z-index: 1000;
+  }
+
+  #livemark-left.active {
+    left: 0;
+  }
+}
+
+</style>
+<link rel="stylesheet" href="https://unpkg.com/paginationjs@2.1.5/dist/pagination.css">
+<style>
+
+.livemark-pagination {
+  display: none;
+}
+
+</style>
+<style>
+
+.livemark-remark {
+  display: block;
+}
+
+</style>
+<style>
+
+#livemark-search {
+  position: fixed;
+  left: 30px;
+  width: 240px;
+  bottom: 20px;
+  z-index:100;
+  visibility: hidden;
+}
+
+@media only screen and (min-width: 992px) {
+  #livemark-search {
+    visibility: visible;
+  }
+}
+
+#livemark-search-input {
+  width: 100%;
+  outline: none;
+  font-size: 20px;
+  padding: 7px 10px;
+  border-radius: 20px;
+  border: solid 1px #ddd;
+  box-shadow: 0px 7px 10px #eee;
+  color: #888;
+}
+
+#livemark-search-input::placeholder {
+  color: #888;
+}
+
+#livemark-search-input::-webkit-search-decoration,
+#livemark-search-input::-webkit-search-cancel-button,
+#livemark-search-input::-webkit-search-results-button,
+#livemark-search-input::-webkit-search-results-decoration {
+  -webkit-appearance:none;
+}
+
+#livemark-search-output {
+  visibility: hidden;
+  width: 100%;
+  font-size: 16px;
+  padding: 10px 10px;
+  border-radius: 20px;
+  border: solid 1px #ddd;
+  box-shadow: 0px 7px 10px #eee;
+  background: white;
+  margin-bottom: 10px;
+}
+
+#livemark-search-output ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+#livemark-search-output li.active {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#livemark-search-output a {
+  color: #5CC820;
+  text-decoration: underline;
+}
+
+.livemark-search-found {
+  background-color: #5CC820;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+</style>
+<style>
+
+#livemark-main h2 .livemark-source-button {
+  float: right;
+  display: none;
+}
+
+#livemark-main h2:hover .livemark-source-button {
+  display: inline;
+  margin-left: 8px;
+  color: #aaa;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+#livemark-main h2 .livemark-source-button:hover {
+  text-decoration: underline;
+}
+
+.livemark-source-section {
+  border: dashed 1px #ccc;
+}
+
+</style>
+<style>
+
+.nav-tabs {
+    padding-left: 0 !important;
+}
+
+.nav-item {
+    margin-top: 0 !important;
+}
+
+</style>
+<style>
+
+.livemark-task pre:first-child {
+  margin-bottom: 0 !important;
+  border-bottom: dashed 1px #ccc;
+}
+
+</style>
+<style>
+
+.livemark-video {
+  padding-bottom: 10px;
+}
+
+</style>
+</head>
+<body>
+<div id="livemark-left">
+
+<div id="livemark-brand">
+  <ul>
+    <li>
+      <a class="active" href="..">
+        dribdat.cc
+      </a>
+    </li>
+  </ul>
+</div>
+
+<div id="livemark-pages">
+  <ul class="primary">
+        <li class="primary  ">
+      <a href="index.html" class="primary">
+        Introduction
+      </a>
+          </li>
+        <li class="primary  ">
+      <a href="usage.html" class="primary">
+        User guide
+      </a>
+          </li>
+        <li class="primary  ">
+      <a href="sync.html" class="primary">
+        Sync how-to
+      </a>
+          </li>
+        <li class="primary  ">
+      <a href="organiser.html" class="primary">
+        Organiser guide
+      </a>
+          </li>
+        <li class="primary  ">
+      <a href="deploy.html" class="primary">
+        Installation
+      </a>
+          </li>
+        <li class="primary  active">
+      <a href="contribute.html" class="primary">
+        Contribute
+      </a>
+          </li>
+        <li class="primary  ">
+      <a href="whitepaper.html" class="primary">
+        Whitepaper
+      </a>
+          </li>
+        <li class="primary  ">
+      <a href="about.html" class="primary">
+        History
+      </a>
+          </li>
+        <li class="primary  ">
+      <a href="trouble.html" class="primary">
+        F.A.Q.
+      </a>
+          </li>
+      </ul>
+</div>
+</div>
+<div id="livemark-main">
+<div id="livemark-notes">
+      <a href="https://github.com/dribdat/dribdat/edit/main/docs/contribute.md" target="_blank">Edit page </a> in <a href="https://livemark.frictionlessdata.io" target="_blank"> Livemark </a><br>
+    (2024-02-29 13:47)
+</div>
+
+<p>This document contains additional information on contributing to dribdat as a developer. If you are just interested in connecting to dribdat's API, scroll down to the <a href="#api-guide">API overview</a></p>
+<h1>Developer Guide</h1>
+<p>For more background references, see the <a href="https://github.com/dribdat/dribdat#dribdat">README</a>.</p>
+<h2>Software Architecture</h2>
+<p>This code is originally based on <a href="https://github.com/cookiecutter-flask/cookiecutter-flask">cookiecutter-flask</a>, which has a number of helpful <a href="https://github.com/cookiecutter-flask/cookiecutter-flask#features">developer features</a>. It is a Python 3 project that uses the Flask microframework and SQLAlchemy for data modelling on the backend. A plain JSON API, along with Jinja templates and WTForms, serves data to a frontend based on Bootstrap 3 and jQuery.</p>
+<p><img src="images/architecture-dribdat.svg.png" alt="Sketch of project architecture"></p>
+<h2>Getting started</h2>
+<p>(1) Install Python (3.8+) and <a href="https://python-poetry.org/">Poetry</a> to start working with the code. Virtualenv and pip are also supported.</p>
+<p>(2) You may need to install additional system libraries (<code>libffi</code>) for the <a href="http://misaka.61924.nl/">misaka</a> package, which depends on <a href="https://cffi.readthedocs.io/en/latest/installation.html#platform-specific-instructions">CFFI</a>. You are likely to also need development headers for Python. </p>
+<ul>
+<li>For example, in Fedora Linux run: <code>sudo dnf install libffi-devel python3-devel gcc</code></li>
+<li>On Ubuntu (<code>apt</code>) or Alpine Linux (<code>apk</code>): <code>sudo apk add libffi-dev python3-dev gcc</code></li>
+</ul>
+<p>(3) Next, run the following commands from the repository root folder to bootstrap your environment with Poetry:</p>
+<div><pre><code>poetry shell
+poetry install
+</code></pre>
+</div><p>Or using plain pip:</p>
+<div><pre><code>pip install -r requirements/dev.txt
+</code></pre>
+</div><p>(4) By default in a dev environment, a SQLite database will be created in the root folder (<code>dev.db</code>). You can also install and configure your choice of DBMS <a href="http://docs.sqlalchemy.org/en/rel_1_1/dialects/index.html">supported by SQLAlchemy</a>. In production, the <code>DATABASE_URL</code> configures connectivity to an SQLAlchemy-compatible database engine. This requires a <code>DRIBDAT_ENV=prod</code> configuration.</p>
+<blockquote>
+<p><strong>Tip</strong>: Use <code>.flaskenv</code> or <code>.env</code> to store environment variables for local development. See the <a href="#configuration">Configuration</a> section for more details.</p>
+</blockquote>
+<p>(5) Run the following to create your local SQLite database tables and perform the initial migration. Note that we avoid using the production <code>migrations</code> folder locally due to <a href="https://github.com/miguelgrinberg/Flask-Migrate/issues/61">Flask-Migrate#61</a>:</p>
+<div><pre><code>mv migrations migrations_prod
+python manage.py db init
+python manage.py db migrate
+python manage.py db upgrade
+</code></pre>
+</div><p>(6) Install a local copy of frontend resources for offline development using <a href="https://nodejs.org/">npm</a> or <a href="https://yarnpkg.com/en/docs/getting-started">yarn</a>. These will be used when <code>FLASK_ENV=dev</code>, otherwise a CDN will be used in production. I.e.:</p>
+<p><code>npm install</code></p>
+<p>(7) Finally, run this command (or just <code>debug.sh</code>) to start the server:</p>
+<div><pre><code>FLASK_DEBUG=1 python manage.py run
+</code></pre>
+</div><p>You should at this point see a welcome screen at <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a> 🎉</p>
+<p>Follow the instructions to register your first user account, which will have admin access, and let you set up events.</p>
+<h1>Coding tips</h1>
+<p>This section has some advice for developers and operators.</p>
+<h3>Shell access</h3>
+<p>To open the interactive shell, run: <code>python manage.py shell</code>. By default, you will have access to the <code>User</code> model, as well as Event, Project, Category, Activity.</p>
+<p>Using the <a href="https://devcenter.heroku.com/categories/command-line">Heroku toolchain</a>, <code>heroku run python manage.py shell</code>, or using <a href="https://www.docker.com/">Docker</a>, <code>docker-compose run --rm dribdat python manage.py shell</code>.</p>
+<h3>Running Tests</h3>
+<p>To run all tests, whose source is in the <strong>tests</strong> folder, run: <code>python manage.py test</code></p>
+<p>To run just a specific test, specify it by name, e.g. <code>python manage.py test --name features</code></p>
+<h3>Migrations</h3>
+<p>Whenever a database migration needs to be made. Run the following commands:</p>
+<div><pre><code>python manage.py db migrate
+</code></pre>
+</div><p>This will generate a new migration script. Then run:</p>
+<div><pre><code>python manage.py db upgrade
+</code></pre>
+</div><p>To apply the migration. Watch out for any errors in the process.</p>
+<p>For a full migration command reference, run <code>python manage.py db --help</code>.</p>
+<h1>API Guide</h1>
+<p>There are a number of API calls that admins can use to easily get to the data in Dribdat in various formats. The full list of calls is shown in the <strong>About</strong> or Search page in a running app. </p>
+<p>Look up data on the current event with the <a href="https://schema.org/Hackathon">Hackathon Schema.org Type</a>:</p>
+<ul>
+<li><code>/hackathon.json</code></li>
+</ul>
+<p>For just basic information and projects from the current or another event:</p>
+<ul>
+<li><code>/api/event/current/info.json</code></li>
+<li><code>/api/event/&lt;EVENT ID&gt;/info.json</code></li>
+<li><code>/api/event/current/projects.json</code> (or <code>.csv</code>)</li>
+<li><code>/api/event/&lt;EVENT ID&gt;/projects.json</code> (or <code>.csv</code>)</li>
+<li><code>/api/event/current/activity.json</code> (or <code>.csv</code>)</li>
+<li><code>/api/event/&lt;EVENT ID&gt;/activity.json</code> (or <code>.csv</code>)</li>
+</ul>
+<p>Details on a project:</p>
+<ul>
+<li><code>/api/project/&lt;PROJECT ID&gt;/info.json</code></li>
+<li><code>/api/project/&lt;PROJECT ID&gt;/activity.json</code></li>
+</ul>
+<p>To get the full list of events, or all the latest activities:</p>
+<ul>
+<li><code>/api/events.json</code> (or <code>.csv</code>)</li>
+<li><code>/api/project/activity.json</code> (or <code>.csv</code>)</li>
+</ul>
+<p>To get your logged in user's full data:</p>
+<ul>
+<li><code>/api/user/current/my-hackathons.json</code></li>
+</ul>
+<p>To get just public data for any user:</p>
+<ul>
+<li><code>/api/user/&lt;USER NAME&gt;</code></li>
+</ul>
+<p>To search through all project contents:</p>
+<ul>
+<li><code>/api/project/search.json?q=&lt;text_query&gt;</code></li>
+</ul>
+<p>Use the <code>limit</code> query parameter to get more or less than 10 results.</p>
+<h2>Write access (beta)</h2>
+<p>If you would like to use external clients, like the chatbot, to remote control Dribdat you need to set <code>DRIBDAT_APIKEY</code>. The (experimental) call used to push data into projects is:</p>
+<ul>
+<li><code>/api/project/push.json</code></li>
+</ul>
+<h2>Technical details</h2>
+<p>For more details see <a href="https://github.com/dribdat/dribdat/blob/main/dribdat/public/api.py">api.py</a></p>
+
+<div id="livemark-signs">
+  <div>
+        <div class="next">
+      <a href="whitepaper.html">
+        ➀ executive summary »
+      </a>
+    </div>
+            <div class="prev">
+      <a href="deploy.html">
+        « Quickstart
+      </a>
+    </div>
+      </div>
+</div>
+</div>
+<div id="livemark-right">
+
+<div id="livemark-rating">
+  <iframe src="https://ghbtns.com/github-btn.html?user=dribdat&amp;repo=dribdat&amp;type=star&amp;count=true&amp;size=large" width="160px" height="30px" title="GitHub">
+  </iframe>
+</div>
+
+<div id="livemark-topics">
+  <div class="toc">
+  </div>
+</div>
+</div>
+<script src="https://unpkg.com/lodash@4.17.21/lodash.min.js"></script>
+<script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://unpkg.com/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/prismjs@1.23.0/components/prism-core.min.js"></script>
+<script src="https://unpkg.com/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+  const content = document.querySelector("#livemark-main");
+  const headings = content.querySelectorAll("h1, h2, h3, h4, h5, h6, h7");
+  const headingMap = {};
+
+  // Add identifiers
+  Array.prototype.forEach.call(headings, function (heading) {
+    const id = heading.id
+      ? heading.id
+      : heading.textContent
+          .trim()
+          .toLowerCase()
+          .split(" ")
+          .join("-")
+          .replace(/[!@#$%^&*():]/gi, "")
+          .replace(/\//gi, "-");
+    headingMap[id] = !isNaN(headingMap[id]) ? ++headingMap[id] : 0;
+    if (headingMap[id]) {
+      heading.id = id + "-" + headingMap[id];
+    } else {
+      heading.id = id;
+    }
+  });
+
+  // Add links
+  Array.prototype.forEach.call(headings, function (heading) {
+    const link = document.createElement("a");
+    link.href = "#" + heading.id;
+    link.innerText = "#";
+    link.classList.add("heading");
+    heading.appendChild(link);
+  });
+});
+
+</script>
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+  const groups = $("#livemark-pages li.group");
+  for (const group of groups) {
+    $(group)
+      .children("a")
+      .click((ev) => {
+        ev.preventDefault();
+        $(group).toggleClass("active");
+        // $(group).find(".fa").toggleClass("fa-chevron-right");
+        // $(group).find(".fa").toggleClass("fa-chevron-down");
+      });
+  }
+});
+
+</script>
+<script src="https://unpkg.com/tocbot@4.12.3/dist/tocbot.min.js"></script>
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Start tocbot
+  tocbot.init({
+    // Where to render the table of contents.
+    tocSelector: ".toc",
+    // Where to grab the headings to build the table of contents.
+    contentSelector: "#livemark-main",
+    // Which headings to grab inside of the contentSelector element.
+    headingSelector: "h2",
+    // For headings inside relative or absolute positioned containers within content.
+    hasInnerContainers: true,
+    // Called each time a heading is parsed. Expects a string in return.
+    headingLabelCallback: (label) => {
+      label = label.replace(/(^#|#$)/g, "").trim();
+      // label = label.replace(/\(.*?\)$/g, "");
+      return label;
+    },
+    // Disable generating ordered lists (ol)
+    orderedList: false,
+    // Fix active link class
+    onClick: syncList,
+    scrollEndCallback: syncList,
+  });
+
+  // Style list
+  $("#livemark-topics .toc > ul").addClass("primary");
+  $("#livemark-topics .toc > ul > li").addClass("primary");
+  $("#livemark-topics .toc > ul > li > a").addClass("primary");
+  $("#livemark-topics .toc ul.is-collapsible").addClass("secondary");
+  $("#livemark-topics .toc ul.is-collapsible li").addClass("secondary");
+  $("#livemark-topics .toc ul.is-collapsible li > a").addClass("secondary");
+  for (const element of $("#livemark-topics .primary")) {
+    if ($(element).find(".secondary").length) {
+      $(element).addClass("group");
+    }
+  }
+
+  // Sync list
+  function syncList() {
+    for (const element of $("#livemark-topics li.primary")) {
+      if ($(element).find(".is-active-li").length) {
+        $(element).addClass("is-active-li");
+      }
+    }
+  }
+  syncList();
+});
+
+</script>
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+  const handlePopstate = async () => {
+    const href = location.hash;
+    if (href.startsWith("#card=")) {
+      const code = href.split("=")[1];
+      const response = await fetch(`/assets/cards/${code}.html`);
+      const html = await response.text();
+      $("#livemark-cards .modal-title").html("");
+      $("#livemark-cards .modal-body").html(html);
+      $("#livemark-cards h1").appendTo("#livemark-cards .modal-title");
+      $("#livemark-cards .modal").modal();
+      $("#livemark-cards .modal").on("hidden.bs.modal", () => {
+        history.pushState("", document.title, window.location.pathname);
+      });
+    }
+  };
+  window.addEventListener("popstate", handlePopstate);
+  handlePopstate();
+});
+
+</script>
+
+<div id="livemark-cards">
+  <div class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://unpkg.com/ue-scroll-js@2.0.2/dist/ue-scroll.min.js"></script>
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Init
+  const readability = localStorage.getItem("livemark-display-readability");
+  if (readability === "plus") {
+    document.body.classList.add("with-readability");
+  } else {
+    document.body.classList.remove("with-readability");
+  }
+
+  // Plus
+  document
+    .getElementById("livemark-display-plus")
+    .addEventListener("click", function () {
+      document.body.classList.add("with-readability");
+      localStorage.setItem("livemark-display-readability", "plus");
+    });
+
+  // Minus
+  document
+    .getElementById("livemark-display-minus")
+    .addEventListener("click", function () {
+      document.body.classList.remove("with-readability");
+      localStorage.setItem("livemark-display-readability", "minus");
+    });
+
+  // Print
+  document
+    .getElementById("livemark-display-print")
+    .addEventListener("click", function () {
+      window.print();
+    });
+
+  // Scroll
+  const scrollSpeed = parseInt("10");
+  UeScroll.init({ element: "#livemark-display-scroll .fa", scrollSpeed });
+});
+
+</script>
+
+<div id="livemark-display">
+  <div class="control" id="livemark-display-print" title="Print">
+    <span class="fa fa-print"></span>
+  </div>
+  <div class="control" id="livemark-display-plus" title="Increase readability">
+    <span class="fa fa-plus"></span>
+  </div>
+  <div class="control" id="livemark-display-minus" title="Decrease readability">
+    <span class="fa fa-minus"></span>
+  </div>
+  <div class="control" id="livemark-display-scroll" title="Back to top">
+    <span class="fa fa-chevron-up"></span>
+  </div>
+</div>
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+  const container = $(".livemark-infinity");
+  if (container.length) {
+    const elements = container
+      .children()
+      .map((index, element) => element.outerHTML)
+      .get();
+    container.html(elements.splice(0, 100));
+    container.show();
+    window.addEventListener("scroll", () => {
+      const element = container.get(0);
+      const position = window.scrollY + window.innerHeight + 100;
+      const threshold = element.offsetTop + element.scrollHeight;
+      if (position > threshold) {
+        container.append(elements.splice(0, 100));
+      }
+    });
+  }
+});
+
+</script>
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+  const left = document.getElementById("livemark-left");
+  const mobile = document.getElementById("livemark-mobile");
+  mobile.addEventListener("click", () => {
+    left.classList.toggle("active");
+    mobile.classList.toggle("active");
+  });
+  // NOTE: We can replace the selector by 'a:not[href=""]' after #57
+  left.querySelectorAll("li:not(.group) a").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (left.classList.contains("active")) {
+        left.classList.remove("active");
+        mobile.classList.remove("active");
+      }
+    });
+  });
+});
+
+</script>
+
+<div id="livemark-mobile">
+  <div class="stack" title="Toggle menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+</div>
+<script src="https://unpkg.com/paginationjs@2.1.5/dist/pagination.min.js"></script>
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+  const container = $(".livemark-pagination");
+  if (container.length) {
+    const elements = container
+      .children()
+      .map((index, element) => element.outerHTML)
+      .get();
+    container.html(`
+      <div class="livemark-pagination-data"></div>
+      <div class="livemark-pagination-navs"></div>
+    `);
+    container.find(".livemark-pagination-navs").pagination({
+      dataSource: elements,
+      callback: (html) => {
+        container.find(".livemark-pagination-data").html(html);
+      },
+    });
+    container.show();
+  }
+});
+
+</script>
+<script src="https://unpkg.com/lunr@2.3.9/lunr.min.js"></script>
+<script src="https://unpkg.com/jquery-highlight@3.5.0/jquery.highlight.js"></script>
+<script src="https://unpkg.com/jquery.scrollto@2.1.3/jquery.scrollTo.js"></script>
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+  const prepare = () => {
+    const searchParams = new URLSearchParams(window.location.search);
+    const query = searchParams.get('query') || ''
+    if (query.length >= 3) {
+      searchInput.value = query
+    }
+  }
+  const search = () => {
+    unhighlight()
+    query = searchInput.value
+    searchOutput.innerHTML = ''
+    searchOutput.style.visibility = 'hidden'
+    const searchParams = new URLSearchParams(window.location.search);
+    if (query.length < 3) return
+    const results = searchIndex.search(query)
+    if (!results.length) return
+    searchParams.set('query', query)
+    const newRelativePathQuery = window.location.pathname + '?' + searchParams.toString();
+    history.pushState(null, '', newRelativePathQuery);
+    const elements = []
+    for (const result of results) {
+      const item = searchItems[result.ref]
+      const link = `${item.relpath}.html`
+      const cls = window.location.pathname === link ? 'class="active"' : ''
+      elements.push(`<li ${cls}><a href="${link}?query=${query}">${item.name}</a></li>`)
+    }
+    searchOutput.innerHTML = `<ul>\n${elements.join('\n')}\n</ul>`
+    searchOutput.style.visibility = 'visible'
+    highlight()
+  }
+  const highlight = () => {
+    const stem = lunr.stemmer(new lunr.Token(query)).str
+    $('#livemark-main').highlight(stem, {className: 'livemark-search-found'});
+    setTimeout(() => {
+      $(window).scrollTo($('.livemark-search-found').first(), 1000)
+    }, 1000)
+  }
+  const unhighlight = () => {
+    $('#livemark-main').unhighlight({className: 'livemark-search-found'});
+  }
+  const searchItems = {
+          'docs/index': {
+          'name': 'docs/index',
+          'path': 'docs/index',
+          'relpath': 'index',
+          'text': "**Driven By Data** --- 1. [About dribdat](about) 1. [User handbook](usage) 1. [Installation guide](deploy) 1. [How to contribute](contribute) 1. [Whitepaper](whitepaper) 1. [Troubleshooting help](trouble) --- **Dribdat** (from \"driven by data\") is an open source (MIT licensed) web application, featuring an ideation and challenge board to help organize short sprints, co-creative sessions, hackdays and open hackathons with batteries included. \ud83c\udf89 We are starting a next-generation app - **EveryHack** - based on Dribdat and [Backboard](https://codeberg.org/dribdat/backboard). See [announcement](https://meta.dribdat.cc/project/161) and sign up to the alpha at [EveryHack.day](https://everyhack.day). ## Purpose Built around Web-friendly standards like [Schema.org](https://schema.org) and [Frictionless Data](https://frictionlessdata.io), Dribdat features a collection of bootstraps (authentication, file uploading, data import/export, etc.), useful workflows (announce an event - publish challenges - form teams - develop projects) and channels (social media sharing, digital signage, summary reports). Dribdat events typically involve open licenses ([Creative Commons](https://creativecommons.org/licenses/), [Open Data Commons](https://opendatacommons.org/licenses/odbl/), etc.), community-developed templates ([School of Data Pipeline](https://schoolofdata.org/methodology/)), and governance instruments ([Hack Code of Conduct](https://hackcodeofconduct.org/)). This is the official platform of [Opendata.ch - Swiss chapter of Open Knowledge](https://opendata.ch), and has been used to host dozens of events in the Swiss [open data](https://hack.opendata.ch), [open hardware](https://now.makezurich.ch), and [open source](https://hacknight.dinacon.ch) community. Dribdat strives in itself to be an example of a hackable project that can be adapted to other needs and causes. It can be used just as a Python-powered backend to aggregate data from Gitea, GitHub, GitLab and other repositories and fileshares in one place. There is a `Vue.js`-based [Backboard app](https://github.com/dribdat/backboard) and a `Node.js` [Chatbot](https://github.com/dribdat/dridbot) available as alternatives to the default Bootstrap user interface, easily customized with a bit of `CSS`. You can customize the layout and presets in an admin panel, or with `YAML` configuration files. There is more on this in the [User Guide](usage) and [Whitepaper](whitepaper). \ud83c\udf33 \ud83d\ude04 \ud83c\udfc0 ## Contact Please use our [discussion forum](https://github.com/orgs/dribdat/discussions) or [raise an issue](https://github.com/dribdat/dribdat/issues). If you would like to improve the documentation, share [feedback here](https://github.com/dribdat/docs/issues), or contribute via Pull Request on GitHub. You can also use our [Codeberg mirrors](https://codeberg.org/dribdat) to do this. Further contact options: - Subscribe to get updates on our [OpenCollective](https://opencollective.com/dribdat/updates), where you can also support our development. - Find a sampling of Dribdat-powered events at [Tour de Hack](https://meta.dribdat.cc/event/5) and [OpenCollective Events](https://opencollective.com/dribdat/events). - Get in touch with [the maintainers](mailto:dribdat@datalets.ch) if you\u0027d like to get help accelerating your community!",
+      },
+          'docs/usage': {
+          'name': 'docs/usage',
+          'path': 'docs/usage',
+          'relpath': 'usage',
+          'text': "User handbook --- This document explains the basic functions of `dribdat`, an open source platform for data-driven team collaboration (such as *[Hackathons](https://hackathon.guide/)*). It is a FAQ covering the basic usage of the application. For more background see [ABOUT](about), and for technical details visit the [README](https://github.com/dribdat/dribdat#dribdat). For a printable version of this document see [\ud83d\udcc4 Handbook for hackathons powered by Dribdat](https://docs.google.com/document/d/e/2PACX-1vR5Gv5NA3pkls0FRufC0dg-blkOhSo1LMX58pSNtj0FhZq1ImmLw0cIwmla_hiZaxtP8tnzJQQgZg94/pub) **dribdat** works as a website and project board for running exciting, productive events, and allows organizers and participants to collect their project details in one place, displaying the challenges and projects in Web dashboards, and plugging in community tools such as [Discourse](https://www.discourse.org/) or [Slack](http://slack.com) - or using the [remote API](#api) for custom frontends or [chatbots](https://github.com/datalets/dridbot) to enhance the hackathon. It incorporates tools and best practices from 10 years of community building and open data activism, such as templates for \ud83c\udf33beginner \ud83d\ude04intermediate \ud83c\udfc0advanced level challenges, a 7-stage process for data-driven projects, connectivity to popular collaboration platforms, and time-tracking utilities. As it helps us - we hope it will help you to contribute to open projects, be a better (team) player, and make the most of a blank canvas and creative constraints. ## Quickstart Open the page of an event, log in and create a user **Profile**. Then you can explore the existing challenges at your event. Keep an eye on the unfilled Roles (\ud83d\udd8d\ufe0fDesigner \u2699\ufe0fEnabler \ud83d\udca1Facilitator etc.) that are shown on the bottom of the project page, if you are not sure which team you should support. You can then leave a **Comment** or **Join** the challenge. Or, if the organisers permit it, you may also be able to submit a **New** challenge, along with a summary of your idea. This could also be a \"fork\" of an existing challenge, as sometimes multiple teams would like to work on the same idea. Once you have a project page, you and any of your team members can click the **Join** button to start to contribute. A typical dribdat-powered event (this is [GLAMhack 2022](https://hack.glam.opendata.ch/)) has a variety of challenges and projects at different stages, which you can explore in a hexagonal grid: ![](images/glamhack.jpg) ### Leap into action Use your project page to document what makes your ideas tick. Post a creative 30-second **Pitch** using plain text or [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) - there is an editor you can activate which helps you learn this widely used formatting style. You can add links to sound or video clips, embed documents or a slideshow hosted on [Speaker Deck](https://speakerdeck.com/) and similar. Content from many other [supported sites](https://oembed.com/#section7) will turn into a live preview. The picture below explains the various parts of a typical challenge or project page: ![](images/project_page_overview.png) ## Sync your stuff We do not force or even expect you to use the editor on this platform to work on your content. Some teams are content with just adding a link to their Demo or uploading their Pitch presentation into Dribdat. **Edit** your project to add notes or answer questions relevant to the event you are at, and **Details** to tweak the Contact, Download, Source, Image links and more. ![](images/editbuttons.png) The **README** feature allows you to connect documentation from your open source repository on [GitHub](https://github.com), an online document at [Etherpad](http://etherpad.org), and many other collaboration platforms. To use this function, just put the URL to your remote content into the **README** field when creating a new project. Or find it in the **Details** editor on an existing challenge or project. Use the **Sync** (synchronise) button on your project page to refresh your changes at any time. You can still _Edit_ your project to add notes or answer questions relevant to the event you are at, and _Details_ to tweak the Contact, Download, Source, Image links and more. The contents of all projects in an event can be synced by the admin, and this happens automatically from time to time as you work with your project. ### Supported README sites - [Codeberg](https://codeberg.org/) (Gitea) - [GitHub](https://github.com) - [GitLab](https://gitlab.com) - [Bitbucket](https://bitbucket.org) - [Instructables](http://instructables.com) - [Etherpad](http://etherpad.org) - [HackMD](https://hackmd.io) and [CodiMD](https://codimd.web.cern.ch/) - [DokuWiki](http://make.opendata.ch/wiki/project:home) - [Google Docs](http://docs.google.com) (* you must enable \"Publish to web\", as shown below) ### Using Google Docs ![](images/googledocs1.png) Activate publishing in this dialog, and finally copy the link that is shown, so that you can paste it into the README of your dribdat project: ![](images/googledocs2.png) ## Keep tabs on your progress By updating your progress using the **Post** button, you can regularly check in your team\u0027s status or any roadblocks. You may see a couple of tips for completing or advancing your project at the top of the screen. You can find this button on the top of any projects you have joined, or on your profile page (which takes you to your latest team). ![](images/post.png) ### Keep tabs on everyones progress Having a readable, regularly updated overview of what your team is working on is your secret weapon in collaborative projects. Release early, release often, and use the power of evaluation for quick feedback to your experiments. Then rock that stage with your results! The posts are visible in the **Log** section of your project, in the **Dribs** global firehose, and on your profile as a **Personal Log**. As an organizer, this can help you to have an overview of all the teams, and what stage they are at. Of course you can also cross-post to a variety of social networks to boost your online rep from here! ![](images/dribs.png) That\u0027s all there is to it, as a user. Read the [Organiser\u0027s guide](organiser) if you\u0027d like to see more details about running your own event. --- ![](images/playersavegame.png)",
+      },
+          'docs/sync': {
+          'name': 'docs/sync',
+          'path': 'docs/sync',
+          'relpath': 'sync',
+          'text': "Visit the [User guide](usage#sync-your-stuff) to learn more about syncing data into Dribdat.",
+      },
+          'docs/organiser': {
+          'name': 'What to explain to users',
+          'path': 'docs/organiser',
+          'relpath': 'organiser',
+          'text': "This document explains how the open source `dribdat` tool can help you to set up data-driven collaborative sprints, such as *[Hackathons](https://hackathon.guide/)*. For basic usage of the application see the [User\u0027s guide](usage). For more background see [ABOUT](about), and for technical details visit the [README](https://github.com/dribdat/dribdat#dribdat). Organiser\u0027s Guide --- What does the core dribdat look like? As event organisers, we are really into making the most of time constraints - so the homepage and dashboard feature a big animated countdown clock: ![](images/screenshot_countdown.png) Here is how a dribdat-powered event looks like in the heat of things: ![](images/screenshot_makezurich.jpg) _[now.makezurich.ch](https://now.makezurich.ch)_ This basic documentation makes it easy for fellow participants to understand the challenge - or what you\u0027ve worked on in response to it - as well as allow the audience, the jury, and so on, to discover your work and respond to it. ## How do you enter content? Data on projects can be entered into the application directly using text, HTML or [Markdown](https://www.markdowntutorial.com/) formatting. Dribdat features an accessible user-facing frontend (made with Twitter\u0027s Bootstrap framework, in case you\u0027re wondering) for starting and updating projects, and an administrative backend for the organizing team. Content may also be aggregated (**Sync**-ed) from an external location by putting in the URL to a public project hosted on one of several [supported platforms](sync). For more details on entering content, see the [usage steps](#content). ## Why should we use dribdat? Creative collaborative events are a playground for creative individuals, and events which focus on sustainable solutions need to encourage good documentation and evaluation. Developed and used for hackathon series, dribdat is designed to involve a diverse user base - in particular those of the Swiss NGO [Opendata.ch](https://opendata.ch/events/). This open source platform built by a community for its own needs has developed over time into a unique solution that is used for a wide variety of events, and every contribution helps to assure the future development of this project. Logged-in users can submit challenges, ideas and projects by linking their document or repository, or entering details directly into a form. Many customizations to the process and content of the event can be made. You can change or customize the instructions for new projects as you see fit in the Event administration. ## How do I use this effectively? Once you\u0027ve signed up for a challenge, found a team and joined a group channel, you will soon start brainstorming daring and innovative solutions. Use dribdat to keep a notebook, post updates about your team\u0027s progress, accelerate your collaboration efforts and get ahead of the game to rock your pitch at the end. # What to explain to users Here we explain the steps that your users typically would go through in using dribdat. Feel free to copy and paste and adapt this into your event documentation: ### 1. Sign in Click **Login** at the top of the page and either use the e-mail and password to register and log in, or for servers that are connected to Slack, GitHub, Auth0 and other supported providers of Single Sign-On that you can enable in dribdat. If you have issues logging into the platform, contact the organizing team of your event for help. ### 2. Find your team Every active team should have a public project page on dribdat. These are sometimes categorized according to the challenge topic they address at the top of the event page, which is a kind of digital map. The button at the far right (\u2630) switches to a list mode, which can also help you to find your team if there are a lot of challenges. Here is an example from a recent dribdat-powered event which uses categories: ![EvalHack screenshot](https://us-east-1.linodeobjects.com/dribdat/uploads/upload_5f353fb2f1a035c8a2a2d84f50121ca1.png) If your team does not yet have a project, then you may (administrators can disable this) be able to create one with the green **Start project** button (which is called **Announce Challenge** before the event begins) to create a project: ![](images/screenshot_start.png) Once you have found your group, open the project page, and tap on the blue **Join** button at the top, which looks like this: ![Join button](https://us-east-1.linodeobjects.com/dribdat/uploads/upload_989ab9d17413b416810311f1de341f9e.png) You should then see your name along with any other team members listed underneath. You can also Leave (click the \u2605 blue star) the project if you joined one by accident. If you need to make changes or link your name to somewhere on the Internet, click **Profile** in the top of the page. ### 3. Post an update Once you join a project in step (2), buttons appear at the top of the page allowing you to *Post* and *Edit* updates about your experience. ![Editing buttons](https://us-east-1.linodeobjects.com/dribdat/uploads/upload_2445ee313b8f144af17b7490eee29f0e.png) By clicking the **Post** button, you can give a quick status report of your progress. A dialog box asks you to self-evaluate your team\u0027s **Progress**, as well as enter a few words or sentences to describe at which [project stage](#stages) you are at in the process. You can find these posts in the project **Log**: ![Project log](https://user-images.githubusercontent.com/31819/95675905-db89dd00-0bba-11eb-9e65-24d4213b94ab.png) Try to use this regularly to keep tabs on how and your team are spending your precious time at the event. It will help you to learn from the experience and think of improvements for next time. ### 4. Share your results If you need to make other changes to your project, click the **Edit** button. You will also see other fields there allowing you to set up how your project is presented. There are three basic ways to share your team\u0027s efforts: 1) a free form Description, 2) external content via Sync, and 3) external content in a frame with the Project link. In the large **Description** field you can post notes on your final results, such as a video or slide presentation, summarizing in free form your solution to the challenge. This can be plain text, in HTML or Markdown. If you need to add an image, use a cloud hosting service like Imgur and paste the link in like this: `![Title of my image](https://link-to-my-image.jpg)` As noted at the top of this guide: if you are using GitHub, Google Docs, a wiki, etc., to write your documentation, you don\u0027t need to copy and paste it into dribdat. Use the [**Sync** capability](sync) to automatically scrape the contents of your README or webpage into your project. Pretty hacky, huh? `;-)` You can also use the **Project link** to embed documentation you are working on elsewhere into a frame on your project page. This could be a demo of your application, or - in the early phases at least - collaboration tools for your team. For example, if you are using a wireframing tool and can share it with a public link, add it to the page using the Project link and enable **Embed** mode to have it update automatically as you work on it - like in this screenshot featuring [Draw.io](https://draw.io/): ![Embedded mindmap](https://us-east-1.linodeobjects.com/dribdat/uploads/upload_d3ff416db1199b36e091b33e2820af4d.png) Shared text documents, a folder full of sketches, datasets, and any other online materials can be showcased in this manner. Put whatever is currently the most actively developed prototype at the top, and list links to any other relevant materials in your description or project updates. ### 5. Keep a beginner\u0027s mind Have you never participated in an event, where you were not quite sure what you can contribute, you do not know anyone yet here, or are just stuck? In the header bar you will find a link to the **Community** - most likely a chat channel or forum - where people are posting questions and support issues. In the same vein, adding a **Contact** link to your project which points to your team\u0027s chat channel or Issues page helps to connect you to (hopefully very constructive) criticism and encouragement from the audience. Remember: _there is no such thing as a stupid question._ ![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/The_Hitchhiker%27s_Guide_to_the_Galaxy.svg/512px-The_Hitchhiker%27s_Guide_to_the_Galaxy.svg.png) # Further solutions Dribdat helps us to keep things fun and unpredictable at our events. We love hacking on the platform itself, and would love to hear your feedback. Here we cover some ways of extending dribdat\u0027s functions with additional tools. If you have any other questions or suggestions, please leave them in our [Issues](https://github.com/dribdat/dribdat/issues). ## How is the work evaluated? At the bottom of the project page (administrators: use the Community Code field) you may find a tool with which visitors to your project can leave a quick public commentary or just an Emoji in response to what they see. Leave your own suggestions and constructive commentary to motivate your fellow participants! For example, here is how [Disqus](https://disqus.com) was integrated with dribdat at a recent event: ![Comments](https://us-east-1.linodeobjects.com/dribdat/uploads/upload_6a8a08937ba4e85f9dd508d1b9c0df19.png) You can also add a GitHub widget to a project page by adding the link to the repository on it\u0027s own line in your Pitch. This shows the number of \"Stars\" and \"Forks\" the project has received. ## What about Intellectual Property? The teams are free to decide for themselves which license conditions apply to their work. However, open access allows for the best evaluation, so we are stipulating a *Creative Commons license by default* which will apply to any project documentation which is not explicitly adherent to a different license or conditions. We also typically encourage organizers to adopt the [Hack Code of Conduct](https://hackcodeofconduct.org/). You can add both with this snippet in your event\u0027s **Community code**: ``` All attendees, sponsors, partners, volunteers and staff at our events are required to agree with the Hack Code of Conduct. Organisers will enforce this code throughout. We expect cooperation from all participants to ensure a safe environment for everybody. The contents of this website, unless otherwise stated, are licensed under a Creative Commons Attribution 4.0 International License. ``` ## Show me the back end The administrative interface shown below allows defining details of the event and managing project data. ![](images/screenshot_admin_projects.png) Here you can see challenges and projects, with a rating of how completely they are documented. In the `Events` screen there are links to a *Print* view for a summary of all projects on one page, and the ability to *Embed* results into another website. The look and feel of the projects as well as instructions for teams can be customized per-event. You can pre-configure **Categories** for your site or a specific event, as well as **Roles** in the `Presets` section of the admin. For example, you could define the following Roles: - \ud83d\udd8d\ufe0f Designer - \u2699\ufe0f Enabler - \ud83d\udca1 Facilitator - \ud83d\udee1\ufe0f Organizer ## How do project Stages work? One of the unique features of Dribdat is the progression of projects through a series of stages. You can see this in various ways - the progress bar on top of every project, or in the Stages screen on every event: The stages are defined in a [stages.yaml](https://github.com/dribdat/dribdat/blob/main/dribdat/templates/includes/stages.yaml) configuration file. Here you can change the names and contents and rules of every stage, even remove or add stages to your liking. For example, to make sure people put at least 10, but not more than 50, characters in their project summary, add this validation rule to the appropriate stage: ```yml validate: - field: summary min: 10 max: 50 help: Your challenge should have a short summary. ``` Either modify the file on your local filesystem, or use the `DRIBDAT_STAGE` environment variable to point to an online location of your configuration. See the [Whitepaper](whitepaper#excellent) for more background. ## I want to use Dribdat elsewhere You can get links to a free copy of the software on our website - or just ask the organising team at a dribdat-powered event for leads. We will be happy to get you any help you need to get started. Please contact the maintainers [by email](mailto:dribdat@datalets.ch) if you have further questions. Happy hacking! \u003c3",
+      },
+          'docs/deploy': {
+          'name': 'Quickstart',
+          'path': 'docs/deploy',
+          'relpath': 'deploy',
+          'text': "This document contains additional information on deploying dribdat to a web server. # Quickstart The following section explains installation options, followed by environment variables you can use to tweak your installation. See also the [README](https://github.com/dribdat/dribdat#quickstart) guide, and our new frontend microservice [Backboard](https://github.com/dribdat/backboard). Details on starting the application directly with Python are detailed in the [Developer guide](contribute). You will still want to refer to the [Configuration](#Configuration) section below. ## Cloud scripts The installation of dribdat on some cloud providers has been facilitated with quick-deploy scripts: See [Configuration](#Configuration) below for a list of variables you can set to customize your instance. ## With Ansible Use the [dribdat Ansible role](https://ansible.build/roles/dribdat/) for a straightforward production deployment using [Ansible](https://docs.ansible.com/). See [Configuration](#Configuration) below for a list of variables you can set to customize your instance. ## With Docker Containerized Docker builds are available at https://hub.docker.com/r/dribdat/dribdat To deploy dribdat using a local [Docker](https://www.docker.com/) or [Podman](https://docs.podman.io/en/latest/index.html) build, use the included `docker-compose.yml` file as a starting point. This, by default, persists the PostgreSQL database outside the container, on the local filesystem in the `.db` folder. For a first-time setup, perform the initial migrations as follows: `docker-compose run --rm dribdat ./release.sh` At this point you should be ready to start with Docker Compose: `docker-compose up -d` See Configuration below for a list of variables you can set to customize your instance. ## From source See deployment notes in the [Developer guide](contribute) for more information on setting up your build. # Configuration Optimize your dribdat instance with the following **environment variables** in production: * `TIME_ZONE` - set if your event is not in UTC time (e.g. \"Europe/Zurich\" - see [pytz docs](https://pythonhosted.org/pytz/)). * `SERVER_URL` - fully qualified domain name where the site is hosted. * `DATABASE_URL` - connects to PostgreSQL or another database via `postgresql://username:password@...` (in Heroku this is set automatically) * `DRIBDAT_SECRET` - a long scary string for hashing your passwords - in Heroku this is set automatically. * `DRIBDAT_ENV` - \u0027dev\u0027 to enable debugging, \u0027prod\u0027 to optimise for production. ## Features The following environment variables can be used to toggle **application features**: * `DRIBDAT_CLOCK` - use \u0027up\u0027 or \u0027down\u0027 to change the position, or \u0027off\u0027 to hide the countdown clock. * `DRIBDAT_THEME` - can be set to one of the [Bootswatch themes](https://bootswatch.com/). * `DRIBDAT_STYLE` - provide the address to a CSS stylesheet for custom global styles. * `DRIBDAT_STAGE` - provide the address to a YAML configuration for custom global [stages](organiser#stages). * `DRIBDAT_APIKEY` - a secret key for connecting bots with write access to the remote [API](#api). * `DRIBDAT_ALLOW_LOGINS` - set to False to hide the login, so new users can only log into this server via SSO. * `DRIBDAT_NOT_REGISTER` - set to True to hide the registration, so new users can only join this server via SSO or invite. * `DRIBDAT_USER_APPROVE` - set to True so that any new non-SSO accounts are inactive until approved by an admin. * `DRIBDAT_ALLOW_EVENTS` - set to True to allow regular users to start new events, which admins can edit to make visible on the home page. * `DRIBDAT_SOCIAL_LINKS` - set to False to hide automatic social network links (Twitter etc.) on the site. ## Statistics Support for **Web analytics** can be configured using one of the following variables: * `ANALYTICS_FATHOM` ([Fathom](https://usefathom.com/)) * `ANALYTICS_SIMPLE` ([Simple Analytics](https://simpleanalytics.com)) * `ANALYTICS_GOOGLE` (starts with \"UA-...\") * `ANALYTICS_HREF` - an optional link in the footer to a public dashboard for your analytics. If you are required by law to use a cookie warning or banner, you can add this through your community code configuration. ## Mail If you would like people to be able to activate their accounts and reset passwords, you can connect to an SMTP mailing service (use Mailgun, or any other). Note that this is not really needed when you use OAuth (see next session) and disable registration completely. * `MAIL_SERVER` - just the domain name of your server. * `MAIL_PORT` - defaults to 25. * `MAIL_USERNAME` - the user name of your service. * `MAIL_PASSWORD` - the password to your service. * `MAIL_DEFAULT_SENDER` - a required reply-to address for e-mails. * `MAIL_USE_TLS` - require a secure (TLS) connection when talking to the SMTP server. * `MAIL_USE_SSL` - require a secure (SSL) connection when talking to the SMTP server. ## Authentication OAuth 2.0 support for **Single Sign-On** (SSO) is currently available using [Flask Dance](https://flask-dance.readthedocs.io/), and requires SSL to be enabled (using `SERVER_SSL`=1 in production or `OAUTHLIB_INSECURE_TRANSPORT` in development). The following providers are supported: - `mattermost` - [Mattermost](https://developers.mattermost.com/integrate/apps/authentication/oauth2/) - `hitobito` - [Hitobito](https://github.com/hitobito/hitobito/blob/master/doc/development/08_oauth.md) - `github`- [GitHub](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app) - `slack` - [Slack](https://api.slack.com/authentication/oauth-v2) - `azure` - [Microsoft Azure](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow) - `auth0` - [Auth0](https://auth0.com/docs/authenticate/protocols/oauth) Register your app with the provider, and set the following variables: * `OAUTH_TYPE` - one of the supported providers (see above) * `OAUTH_ID` - the Client ID of your app. * `OAUTH_SECRET` - the Client Secret of your app. * `OAUTH_DOMAIN` - Slack subdomain, Auth0/Mattermost/Hitobito domain, or Azure tenant. * `OAUTH_SKIP_LOGIN` - (optional) users should go directly to external login screen. * `OAUTH_LINK_REGISTER` - (optional) a registration link to your SSO platform. * `OAUTH_HELP_REGISTER` - (optional) a short text for the login page. You may then wish to disable non-SSO logins using `DRIBDAT_ALLOW_LOGINS` and registrations with `DRIBDAT_NOT_REGISTER` - or at least enable moderation of non-SSO accounts with `DRIBDAT_USER_APPROVE` and an SMTP provider for e-mail activation. You can find more advice in the [Troubleshooting](trouble#need-help-setting-up-sso) guide. ## File storage For **uploading images** and other files directly within dribdat, you can configure S3 through Amazon and compatible providers: * `S3_KEY` - the access key (20 characters, all caps) * `S3_SECRET` - the generated secret (long, mixed case) * `S3_BUCKET` - the name of your S3 bucket. * `S3_REGION` - defaults to \u0027eu-west-1\u0027. * `S3_FOLDER` - skip unless you want to store to a subfolder. * `S3_HTTPS` - URL for web access to your bucket\u0027s public files. * `S3_ENDPOINT` - alternative endpoint for self-hosted Object Storage. * `MAX_CONTENT_LENGTH` - defaults to 1048576 bytes (1 MB) file size. See example connection in the [Troubleshooting](trouble#file-storage-example) guide. Due to the use of the [boto3](https://github.com/boto/boto3/) library for S3 support, there is a dependency on OpenSSL via awscrt. If you use these features, please note that the product includes cryptographic software written by Eric Young (eay@cryptsoft.com) and Tim Hudson (tjh@cryptsoft.com). ## Large language model If you would like to enable automated challenge and AI-enhanced project suggestions, you can connect OpenAI or compatible service, for example the API endpoint of [LM Studio](https://github.com/lmstudio-ai), or the [LiteLLM](https://docs.litellm.ai/) proxy. - `LLM_BASE_URL` - if left blank, this uses the production OpenAI endpoint - `LLM_API_KEY` - (required) the API key of an account with your LLM provider - `LLM_MODEL` - set to your choice of model, e.g. \"gpt-3.5-turbo\" - visible to users ## Advanced server settings These parameters can be used to improve the **production setup**: * `SERVER_SSL` - redirect all visitors to HTTPS, applying [CSP rules](https://developers.google.com/web/fundamentals/security/csp). * `SERVER_PROXY` - set to True to use a [standalone proxy](https://flask.palletsprojects.com/en/2.0.x/deploying/wsgi-standalone/#proxy-setups) and static files server - do not use if you already have [a proxy set up](#using-a-proxy-server). * `SERVER_CORS` - set to False to disable the [CORS whitelist](https://flask.palletsprojects.com/en/2.0.x/deploying/wsgi-standalone/#proxy-setups) for external API access. * `CSP_DIRECTIVES` - configure content security policy - see [Talisman docs](https://github.com/GoogleCloudPlatform/flask-talisman#content-security-policy). * `CACHE_TYPE` - speed up the site with Redis or Memcache - see [Flask-Caching](https://flask-caching.readthedocs.io/en/latest/index.html#configuring-flask-caching). # Tips for your deployment Here are some additional instructions for your installation. See also the [troubleshooting](trouble) and [contributing](contribute) docs. ## Custom default content To customize some of the default content, you can edit the template include files in the folder `dribdat/templates/includes`, for example you will find there the default [quickstart.md](https://github.com/dribdat/dribdat/blob/main/dribdat/templates/includes/quickstart.md) and [stages.yaml](https://github.com/dribdat/dribdat/blob/main/dribdat/templates/includes/stages.yaml) definitions. Make sure your changes will not be overwritten is you are using ephemeral storage (e.g. Heroku) for your deployment. ## Using a proxy server We encourage the use of [Gunicorn](https://flask.palletsprojects.com/en/2.0.x/deploying/wsgi-standalone/#) to run the application in production. Here is an example with 4 workers: `gunicorn -w 4 -b 127.0.0.1:5000 \"dribdat.app:init_app()\"` A web proxy server is typically also used in production to optimize your deployment, add SSL certificates, etc. Here is an example configuration using [nginx](https://nginx.org/) if you are running your application on port 5000: ``` upstream dribdat-cluster { server localhost:5000; } server { listen 80; server_name my.dribdat.net; # File size limit for uploads client_max_body_size 10m; keepalive_timeout 0; tcp_nopush on; tcp_nodelay on; # Configure compression gzip on; gzip_vary on; gzip_types text/plain text/css application/x-javascript text/xml application/xml application/xml+rss text/javascript; location / { # In case archived URLs were bookmarked rewrite ^(.*).html$ $1; # Set up the Proxy proxy_redirect off; proxy_pass http://dribdat-cluster; proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Forwarded-Proto $scheme; } location /static { # To host assets directly from Nginx (if your files are in /srv/dribdat) alias /srv/dribdat/dribdat/static; expires 2d; } } ```",
+      },
+          'docs/contribute': {
+          'name': 'Developer Guide',
+          'path': 'docs/contribute',
+          'relpath': 'contribute',
+          'text': "This document contains additional information on contributing to dribdat as a developer. If you are just interested in connecting to dribdat\u0027s API, scroll down to the [API overview](#api-guide) # Developer Guide For more background references, see the [README](https://github.com/dribdat/dribdat#dribdat). ## Software Architecture This code is originally based on [cookiecutter-flask](https://github.com/cookiecutter-flask/cookiecutter-flask), which has a number of helpful [developer features](https://github.com/cookiecutter-flask/cookiecutter-flask#features). It is a Python 3 project that uses the Flask microframework and SQLAlchemy for data modelling on the backend. A plain JSON API, along with Jinja templates and WTForms, serves data to a frontend based on Bootstrap 3 and jQuery. ![Sketch of project architecture](images/architecture-dribdat.svg.png) ## Getting started (1) Install Python (3.8+) and [Poetry](https://python-poetry.org/) to start working with the code. Virtualenv and pip are also supported. (2) You may need to install additional system libraries (`libffi`) for the [misaka](http://misaka.61924.nl/) package, which depends on [CFFI](https://cffi.readthedocs.io/en/latest/installation.html#platform-specific-instructions). You are likely to also need development headers for Python. - For example, in Fedora Linux run: `sudo dnf install libffi-devel python3-devel gcc` - On Ubuntu (`apt`) or Alpine Linux (`apk`): `sudo apk add libffi-dev python3-dev gcc` (3) Next, run the following commands from the repository root folder to bootstrap your environment with Poetry: ``` poetry shell poetry install ``` Or using plain pip: ``` pip install -r requirements/dev.txt ``` (4) By default in a dev environment, a SQLite database will be created in the root folder (`dev.db`). You can also install and configure your choice of DBMS [supported by SQLAlchemy](http://docs.sqlalchemy.org/en/rel_1_1/dialects/index.html). In production, the `DATABASE_URL` configures connectivity to an SQLAlchemy-compatible database engine. This requires a `DRIBDAT_ENV=prod` configuration. \u003e **Tip**: Use `.flaskenv` or `.env` to store environment variables for local development. See the [Configuration](#configuration) section for more details. (5) Run the following to create your local SQLite database tables and perform the initial migration. Note that we avoid using the production `migrations` folder locally due to [Flask-Migrate#61](https://github.com/miguelgrinberg/Flask-Migrate/issues/61): ``` mv migrations migrations_prod python manage.py db init python manage.py db migrate python manage.py db upgrade ``` (6) Install a local copy of frontend resources for offline development using [npm](https://nodejs.org/) or [yarn](https://yarnpkg.com/en/docs/getting-started). These will be used when `FLASK_ENV=dev`, otherwise a CDN will be used in production. I.e.: `npm install` (7) Finally, run this command (or just `debug.sh`) to start the server: ``` FLASK_DEBUG=1 python manage.py run ``` You should at this point see a welcome screen at http://127.0.0.1:5000 \ud83c\udf89 Follow the instructions to register your first user account, which will have admin access, and let you set up events. # Coding tips This section has some advice for developers and operators. ### Shell access To open the interactive shell, run: `python manage.py shell`. By default, you will have access to the `User` model, as well as Event, Project, Category, Activity. Using the [Heroku toolchain](https://devcenter.heroku.com/categories/command-line), `heroku run python manage.py shell`, or using [Docker](https://www.docker.com/), `docker-compose run --rm dribdat python manage.py shell`. ### Running Tests To run all tests, whose source is in the **tests** folder, run: `python manage.py test` To run just a specific test, specify it by name, e.g. `python manage.py test --name features` ### Migrations Whenever a database migration needs to be made. Run the following commands: ``` python manage.py db migrate ``` This will generate a new migration script. Then run: ``` python manage.py db upgrade ``` To apply the migration. Watch out for any errors in the process. For a full migration command reference, run `python manage.py db --help`. # API Guide There are a number of API calls that admins can use to easily get to the data in Dribdat in various formats. The full list of calls is shown in the **About** or Search page in a running app. Look up data on the current event with the [Hackathon Schema.org Type](https://schema.org/Hackathon): - `/hackathon.json` For just basic information and projects from the current or another event: - `/api/event/current/info.json` - `/api/event//info.json` - `/api/event/current/projects.json` (or `.csv`) - `/api/event//projects.json` (or `.csv`) - `/api/event/current/activity.json` (or `.csv`) - `/api/event//activity.json` (or `.csv`) Details on a project: - `/api/project//info.json` - `/api/project//activity.json` To get the full list of events, or all the latest activities: - `/api/events.json` (or `.csv`) - `/api/project/activity.json` (or `.csv`) To get your logged in user\u0027s full data: - `/api/user/current/my-hackathons.json` To get just public data for any user: - `/api/user/` To search through all project contents: - `/api/project/search.json?q=` Use the `limit` query parameter to get more or less than 10 results. ## Write access (beta) If you would like to use external clients, like the chatbot, to remote control Dribdat you need to set `DRIBDAT_APIKEY`. The (experimental) call used to push data into projects is: - `/api/project/push.json` ## Technical details For more details see [api.py](https://github.com/dribdat/dribdat/blob/main/dribdat/public/api.py)",
+      },
+          'docs/whitepaper': {
+          'name': '➀ executive summary',
+          'path': 'docs/whitepaper',
+          'relpath': 'whitepaper',
+          'text': "Co{re}creation for civic hackers --- // v.2.8 /// 8.2022 \u003e This paper describes **dribdat** as an open development platform for technical sprints and data expeditions. A simple user interface allows managing challenges, resources and bootstraps, while augmenting tolerance and fairness among participants. See how we use it to support teams in hackathons and workshops. By fostering and connecting design notes, data, and code, let\u0027s make the experience of exploring real world problems moar awesome! Permalink: [dribdat.cc/whitepaper](https://dribdat.cc/whitepaper/) ~ Download: [tresorit.com](https://web.tresorit.com/l/fPhCS#b8XDMRrW_MTQC3z7anFn8Q) (PDF) 1. [Executive summary](#summary) 2. [For corecreation](#collaboration) 3. [An open platform](#results) 4. [Reducing friction](#friction) 5. [Assuring interoperability](#interoperability) 6. [Being excellent to each other](#excellent) 7. [What\u0027s next in the pipeline](#things) 8. [The open alternative](#alternative) 9. [Always be closing](#closing) 10. [References](#references) --- # \u2780 executive summary Using dribdat, you can start and showcase projects at collaborative events. These are most commonly hackathons: a popular event format for tinkering and innovation in small teams. Developed within the civic tech movement, concerned with open access to data and sharing the knowledge associated with data production and reuse across diverse local communities, dribdat was created as a tool for organisers and participants to have a good overview of the goals and results of their meetings. We encoded our principles in the form of an online, web-based application to ensure that our contributions are easily accessible and verifiable. It helps everyone when the executive summaries, or _Pitches_, of our projects get published using good standards. This helps to make open design workshops more sustainable, when the experiences gained to be more easily discoverable, readable, and reproducible. ![Photo of team working on dribdat](images/whitepaper/2019-02-hes-so.jpg) When citizens engage in open development to hack on projects - such as monitoring the environment or validating public accounts - sometimes longer-term initiatives emerge. The shared premise is that open source code and openly designed hardware can be used in our digital society to rapidly prototype and assess the real-world potential and impacts of ideas or \"challenges\". _Opendata.ch / [Data Hackdays BE 2021](https://hack.opendata.ch/event/45)_ Hackathons may be considered as a type of focus group, where platforms are evaluated, skills transferred, and horizontal insights accelerated by an open exchange of knowledge. This is an established venue to network, explore potential career paths while keenly evaluating prospective candidates or partners. Enabling better time management and coordination, such teamwork supported by dribdat should help to build a community of practice - lowering the barriers to entry for contributing creatively to NGOs, research, government, tech platforms and startups. Datathons and hackdays go beyond a trendy way to find a job: they are venues for energetic collaboration which channel public engagement and technical experimentation within an open, socialised setting. In contributing to such events, the participants engage to respond to urgent questions, take opportunities to be active for diverse causes in pragmatic ways. It is important that the digital spaces they fill reflect these purposes in their construction and philosophy. With the experience of deploying wikis, cloud-editors, and other awesome tools, we are using dribdat to streamline efforts of sharing knowledge across civic tech communities. Compared to competitive online platforms, dribdat puts more emphasis on cooperation and impact-making than competition. Users can join and contribute to multiple projects, where every row of data, line of code, or design sketch, is an integral part of your overall contribution to the community. The name of dribdat is inspired by *dribbling* in basketball and other sports, with a hat tip to [Dribbble](https://dribbble.com/), an online community for graphic design, and the [Dat protocol](https://datproject.org/) for peer-to-peer data sharing. In this paper, you can learn about how we see the dribdat project as an open platform, a gateway to other collaboration tools, and a learning instrument for digital co-creation. In the following sections we dive deeper into what exactly makes dribdat tick. ![](images/whitepaper/commitlog.png) _Graph of contributions to the dribdat code base, via GitHub_ --- # \u2781 for corecreation Designed to help participants and organisers to have a great time and focus on the essentials, dribdat features timekeeping and progress tracking dashboards to make it easier to form teams and sustain the energy in the room or online event. We aim to keep the focus on driving creative ideas forward while having fun: a kind of collaborative, multidisciplinary, sportive prototyping that we call **corecreation**. The open source code of dribdat is accessible for free (under the MIT license), with instructions for self-hosting the platform anywhere that Python runs - which is, basically, anywhere. We are making it easier to deploy on popular platforms using package management and containers. With a running application, you can set up your first hackathon. Future events can run on the same site. ![](images/whitepaper/screenshot_countdown.png) On the front page you can see the featured upcoming event, as well as any future and past events. A short description is followed by a link to the event home page, as well as a second-by-second countdown of time remaining until the start or the finish line (once started). *Projects*, *Challenges* and *Resources* are shown in the event screen. Here you can learn about topics, find datasets, get schedules or directions, and any other vital information that the organisers have provided. Before the event begins it is possible to *Share a Challenge*, which can be organised by *Category*. People who are interested in it can approach the initiator in person, via contact channels, or just *Follow* the challenge. Once the event has started, you can form a team by clicking the *Join* button, taking over a challenge and boosting it, or selecting *Start project* to begin afresh when open challenges are permitted. The dribdat dashboard helps to keep track of remaining time for your all your registered teams. The Challenges, and Projects that result from them, feature a large embedded frame at the top which can be connected to any Web-based tool. These are typically used to place a form for collecting data, a prototyping tool for iterating on designs, a data science notebook, or slide presentation. You can find visuals of all the elements above in the [User handbook](https://github.com/dribdat/dribdat/blob/main/docs/USAGE.md). Only one tool can be in focus at a time, keeping participants on board as their projects pass through stages. When setting up an event, it is possible to recommend and preset a range of tools, making it easy to guide all your teams through a process of collecting ideas, refining designs, etc. This is something that we have found particularly helpful in a classroom setting. We hope that dribdat can also boost your sessions, by making the most of co-creation with the right toolbox. Join our community to share tips and workflows. ![](images/whitepaper/start_event.png) --- # \u2462 an open platform Web technologies and open data standards are at the core of dribdat. Typically, hackathons need some kind of publishing workflow that collects data from the team in a series of forms. We have often encountered this to be a laborious process that steals valuable time from teams and organisers while introducing bias and latency. Project aggregation is facilitated by the ability to start a project on the basis of data from a coding platform, a chat channel, or an open web resource. In practice, the teams using dribdat are free to work as they please: keeping up with every twist and turn in the online collaboration landscape, we try to nurture supportive communities sharing the best brainstorming, prototyping and code sharing tools, helping to ensure we can plug in and generate data from any preferred platforms. _Role selection in the profile editor_ Ideators who would like to get help with their challenge-writing or research can easily connect this with dribdat. Just embed your favorite cloud wiki or document editor and set open permissions. For example, [CodiMD](https://github.com/hackmdio/codimd) or [HackMD](https://hackmd.io) can be used to embed a collaborative document with commenting functionality, that can easily be turned into a pitch deck. Designers can use their favorite prototyping tools, either uploading screenshots or sketches into the Pitch area, or - if they are web-accessible - embedding the tool directly into the top area of the project. For example, we have seen successful co-creation happen around an embedded [Excalidraw](https://excalidraw.com/) canvas or [Miro](https://miro.com/app/) board. No \u0027copypasta\u0027 needed here, Developers! Code projects created in a compatible repository - such as [GitHub](http://github.com/), [GitLab](http://gitlab.com/), [Bitbucket](http://bitbucket.com/) - or documentation in supported wikis, such as [Etherpad](http://etherpad.org/), [DokuWiki](https://www.dokuwiki.org/), [Google Docs](https://www.google.com/docs/about/) - can be synchronised so that documentation can take place, and *continue to happen in a distributed way*, using standard formats, such as the *README* files preferred in open source. _Swiss Broadcasting Corporation / [#swihack 2020](https://swihack.ch/)_ Documentation that cannot readily be synced, such as data science notebooks as pictured above, is typically embedded using the _Project link_. This set-up both teaches your participants about key concepts of how publishing and integration on the Internet works today, and promotes a Web of Data approach to the collaboration setting. The less friction there is between one tool and the next, the more effectively and flexibly our teams can iterate their designs. With dribdat we can visualize and put into practice the data streams connecting our platforms. Where there are hitches and barriers along the way, the open community around dribdat is well positioned to investigate and suggest improvements. Any team member may write short, social media-like _Posts_ to document their work, while the API allows the use of other ways to capture insight into participant activity. This includes [dridbot](https://github.com/dribdat/dridbot#dridbot), a chat-mode integration compatible with Slack, RocketChat and other messengers, that allows updating projects directly within a team channel. Dribs are also automatically generated out of commit logs from supported code repositories. Your team\u0027s posts, or \"dribs\", that are visible in the _Log_ section of their project, are also aggregated with those of all the other teams in the _Dribs_ section of the navigation. Event operators can recognize projects in a similar way. There is also a _Dashboard_, which organizers can set up alongside announcements, and an optional social media stream. This is typically used in digital signage. ![](images/whitepaper/openfarming_1.jpg) _Opendata.ch / [Open Farming Hackdays 2021](https://hack.farming.opendata.ch/event/1)_ --- # \u2463 reducing friction Project presentations and demos made easily and efficiently available for evaluation when each team can update their own progress level, generating an automatic metric for profile completeness and activity levels, and giving each project a meaningful progress score. Participants can subscribe to a challenge or join a project once someone has started it, and immediately gain access to improving the content. This is done using a simple form, and a [Markdown](https://daringfireball.net/projects/markdown/syntax) editor that helps to format your _Pitch_. As they do this, their project gets linked in a public profile, where their personal contributions - dribs, reports, code commits, etc. - can be seen. By engaging regularly in this way, they can help their team climb through the normalizing progress stages of the event. We are working to build dribdat into a powerful tool for tracking performance and recognising contribution -- for example, by supporting real-time collaboration in [CodiMD](https://github.com/hackmdio/codimd) and [Jupyter](https://jupyter.org/) notebooks embedded directly in the project, to minimise the friction of on-boarding contributors. The data exports, APIs, and dashboards of dribdat allow organisers to at a glance see how all their teams rank both during and after the event. Fundamental to this is the experience of the hackathon participant, their ability to represent their team, to be aware of what\u0027s happening in the wider event, document their efforts, and present the results on time. This kind of tooling has potential to be used in a variety of formats - from Agile Scrum sprints, to Design Thinking workshops and Rapid Prototyping: everywhere that time is of the essence, and a scrappy, \"can-do\" attitude reflective of the hacker ethic encourages better results, while enabling more venues for civic hacking and open data sharing. We support several ways of extracting real-time statistics for insight on the pulse of the hackathon, pointing to improvements and providing motivational data-points as content. Check the admin dashboard for links and documentation. \u003e \ud83d\udca1 _\"Different sites (and people) have different needs. No one syntax would make all happy.\"_ -- John Gruber, co-creator of [Markdown](https://en.wikipedia.org/wiki/Markdown) _Forum Helveticum / [Plurilingualism Hackathon 2018](https://hack.opendata.ch/event/22)_ --- # \u2464 assuring interoperability Not just a metaphor: dribdat aims to be a digital glue between a plethora of tools and processes that are being deployed in the civic tech community, enabling quick and painless deployment - ideal for hackathons, but a need that is common throughout the IT and public sector. Tools like dribdat are important instruments in facilitating concentrated social change-making that is digitally sustainable. Baked into the core of dribdat is support for Frictionless Data, the \"open-source toolkit that brings simplicity and gracefulness to the data experience\" ([frictionlessdata.io](https://frictionlessdata.io/)) which we use to accelerate the process of unpacking and exploring open information sources in the crucial early research \u0026 experimentation phases of a hackathon. When you create a Data Package of your dribdat event, it is a snapshot of all the projects and configurations which can be used for analysis, for backup, or even as a template for the next event with a one-click import. The foundation of this is an open schema that we are advocating for publishing hack-event results: `hackathon.json` - a simple, readable text file at the root of any dribdat instance. Along with Data Package support, our compliance for [Schema.org](https://schema.org/Hackathon) and [Open Graph](https://ogp.me/) standards helps to ensure that publications are picked up by search crawlers and easily federated. For event organizers, the backend allows quick browsing and export of project data: in document form for evaluation by jury, or in `CSV` or `JSON` formats for external workflow. Spammy or invalid entries can be easily hidden or cleaned up. With `OAuth` support, user profile administration can go through an external, enterprise-scale provider such as GitHub or Slack. We can generally support integration with any kind of data platform or collaboration tool through embedding or APIs. We can work with event management software, even other hackathon platforms, if you need to mix and match features: dribdat is intended to be part of an ecosystem of compatible Internet tools. ![](images/whitepaper/makezurich_1.jpg) _Open Network Infrastructure Association / [MakeZurich](https://makezurich.ch/)_ --- # \u2465 being excellent to each other The dribdat initiative is grounded in the tradition of creative and ethical hacking. We have combined best practices in using wikis, issue tracking, and content management systems, creating the basic framework of the application at a hackathon in 2015. Since then, we have battle-tested it at many events with thousands of people - and the people have spoken to us about what they want from the experience. Many of these demands concern the content and form of interaction between participants at the event, not so much the technical support. As the ethics of code and algorithms, better public awareness and relationship to data protection are today a critical and urgent need - platforms like dribdat in the open development community are needed to explain and interact with frameworks of legal and moral agreement. For this reason, we are using dribdat to embed ethical codes, open access licensing, and even data sharing agreements into the activities of our community. One of the most important areas of feedback has been to understand what information should be made as visible as possible, to benefit our users despite the time pressure. There is a clear and readable Code of Conduct, Terms of Participation, and Contributor Guidelines, available out of the box and customizable. By default, we support the [Hack Code of Conduct](https://hackcodeofconduct.org/) and [Creative Commons](http://creativecommons.org/) licenses. ![](images/whitepaper/disclaimer.png) _The standard footer deployed with a dribdat instance._ Independently developed at the grassroots, behind the scenes of this project are compacted qualities of what we believe entails good collaboration: a supportive atmosphere that proliferates diversity and tolerance, clearly stated goals, community support and progressive guidelines. Inclusive co-creation, designed to support processes that engender team-building diversity, is an area of active development, currently the focus of collaborations, research, and development. _Screenshot of the [Stages screen](https://meta.dribdat.cc/event/1/stages)_ As core methodology to help orient the teams, we have built in a customizable 7-step process inspired by the [School of Data Pipeline](https://schoolofdata.org/methodology/), that we recommend for attractive and efficient data expeditions and hackathons. Around each of these _Stages_, shown above, it is possible to set up Resources: recommended tools, datasets, brainstorming instruments, etc. Progressing from one step to the next is allowed based on simple programmable rules configured in `YAML`. This content can be customized by site owners to fit other patterns and practices. \u003e _\ud83d\udca1 \"Maximize the following qualities in the projects at your event:_ - **Clearly articulated.** _Projects should have a clear question or problem they are trying to solve plus a reasonably specific proposed solution._ - **Attainable.** _Most projects will accomplish about 25% of what they think they can accomplish in the limited time they have. Manage each project\u2019s goals so participants are able to feel accomplished at the end of the session, not interrupted._ - **Easy to onboard newcomers.** _Projects should have ready-to-go tasks for newcomers with a variety of skills and at a variety of skill levels. For coding projects, these tasks can\u2019t require an intimate understanding of the code base, and make sure the build environment can be spun up in less than 20 minutes. Make a list of tasks or create github issues ahead of time!_ - **Led by a stakeholder** _(or \u201csubject matter expert\u201d) [who] guides a project to real-world relevance. Projects without a stakeholder can \u201csolve\u201d a problem that doesn\u2019t exist. ... Beware when the leader is a stakeholder but can\u2019t foresee how he or she might be implementing along with the rest of the team._ - **Organized.** _For projects with four or more members, especially newcomers, the project leader\u2019s role should be to coordinate, ensuring each team member has something to work on and helping to welcome new team members.\"_ -- Joshua Tauberer, [hackathon.guide](https://hackathon.guide) --- # \u2466 what\u0027s next in the pipeline Our [Open Collective](https://opencollective.com/dribdat) offers a number of ways to support our project, from code and financial contribution to helping us to prioritize development and govern the overall initiative. Here are some areas where we think improvement should happen in the medium term. You will find these and a variety of enhancements being proposed and worked on in our [Issue Tracker](https://github.com/dribdat/dribdat/issues). That said, let\u0027s try to keep in mind that dribdat is a niche product with unique features and limited scope. ### User management While dribdat has built-in user profiles, the application currently has minimal user management features. Collecting personally identifiable information is not the goal of the project - facilitating recognition in a privacy-protecting way is. We take personal data seriously, but try to keep a small footprint in the tradition of tightly focused software utilities. Instead of maintaining e-mail validation, user management and password reset functions, we suggest using OAuth for authenticating users of dribdat through a trusted identity service like Slack, GitHub, or any OAuth 2-compatible provider. Once configured, the user is shown a dialog like this to log in, in the case of Slack: ![](images/whitepaper/slack_login.png) We furthermore encourage users to create profiles in a community platform that you integrate with dribdat - such as the open source [Discourse](https://www.discourse.org/) forum software, or at least to connect their social media profiles. You could also recommend \"CV builder\" platforms (e.g. [Stack Overflow](https://stackoverflow.blog/2016/10/11/bye-bye-bullets-the-stack-overflow-developer-story-is-the-new-technical-resume/)) to conveniently promote everyone\u0027s hackathon experiences. The ability to display participant accomplishments in an interesting way remains an area of improvement. That said, we allow admins to create accounts, which opens the door to giving credit to proxy users - these people who, for example, participated at a physical event but did not create a user account. Permission to use of an anonymous username and disposable e-mail address to log in to dribdat further widen the appeal in less formal contexts and communities. ### Questionnaires Currently dribdat does not include a form builder, though you are welcome to fork and make changes to the data schema in Python code. We have left the project structure open ended, allowing operators and teams to define how people can engage as contributors or testers. This is certainly part of the challenge of succeeding with promoting a hackathon idea, but also a major area of improvement to assist beginners and encourage active participation through questionnaires and templates. While it is possible to include this in the \"Getting Started\" guide shown to teams, we see many organisers set up separate online forms for registration, collecting feedback, or asking specific questions to the teams. At some hackathons, like the [hacknight challenge](https://hacknight.dinacon.ch/project/10) pictured here, we follow an easy-moderate-advanced structure (\"ski pistes\") in their task descriptions, reflecting the _Easy to onboard newcomers_ aspect in Joshua Tauberer\u0027s points in the previous section. Yet other events have set up a Challenge template, which requires idea submitters to think about it step-by-step. ![](images/whitepaper/start_tip.png) ### Mobile app While featuring a robust and mobile-ready user interface, the overall User Experience is basic and familiar to many of our users who are users of Twitter, GitHub and similar online apps. Our project has made small but significant UX engineering efforts, while catering perhaps more to the needs of grassroots communities who prefer a simple, \"no-frills\" interface. If you desire an application is more in the foreground and engaged with by users, check out the [backboard](https://github.com/dribdat/backboard) project which we started in response to requests for a smoother mobile UI for participants. It is a [Vue.js](https://vuejs.org/) project based on a client/server [architecture](https://github.com/dribdat/design/blob/master/Technical%20guide%20final.pdf), and as a custom app, allows completely flexible customization and branding. ![](images/whitepaper/backboard.jpg) _Screenshot of a [backboard deployment](https://backboard.vercel.app)_ ### Integrations In running hackathons, we are used to relying on a bunch of complementary tools. The organizing teams often use cloud tools, spreadsheets and calendars to make drafts and detailed plans. Clearly, the goal should not be to replace all of this with a new \"[15th competing standard](https://xkcd.com/927/)\". Integration with Web tools like wikis and docs is already at the core, with the goal of making it easy to put dribdat into your workflow. For example, we have run events where all the content is maintained in Google Docs and Google Calendar, and then just synced into dribdat. Other sites are successful in leveraging Airtable, GitHub and Microsoft Teams for content and user experience integration. ### Support channels The code base of dribdat has developed organically using crowdsourced requirements. At time of writing, there is no broadly available Platform as a Service or a service provider running instances on demand. We believe there is a need for this and are taking steps in this direction. We are also involved in wider attempts to build scalable \"operating systems\" for hackathons. While setting up a small dribdat instance is easy and should be enough for a few teams to get started, the organizers of large events typically rely on more advanced support. Vendors who want to fully support dribdat should have experience with Python, OAuth and Web APIs, and be able to provide advice on how best to plug dribdat into your collaboration infrastructure. Notes on the architecture and supporting dribdat can be found in the [documentation](https://dribdat.cc/contribute). If you have questions, just ping us through the project contacts. Visit the dribdat [Design repository](https://github.com/dribdat/design) for more articles and wireframes of our designs. This is also where the Whitepaper you are reading now lives! ![](images/whitepaper/design_sketch.png) --- # \u2467 the open alternative In this section, we draw comparison to several other open source platforms and applications for hackathon-type events, which have most strongly inspired our work. While project management tools, online forums, digital whiteboards, and conceivably any reasonably flexible collaboration platform can be used to run ideation events, specialized products can help to quickly build a team, evaluate progress, and \"get in the groove\". Platforms that are accessible to the general public (no matter how technically astute or not), and produce useful documentation, are popular with [civic tech](https://github.com/dribdat/dribdat/issues/240) and digital society initiatives. In the arena of student events, things are more focused on admissions, competition, and jury evaluation. Despite the differences across the spectra of audiences, we hope to see some of the core functional aspects modularized, enabling more code and design sharing to improve hackathon experiences everywhere. [HackDash](https://github.com/impronunciable/hackdash) (pictured above) by Dan Zajdband and team for [Hacks/Hackers](https://www.hackshackers.com/) events, is an open source hackathon platform written in Node.js and uses MongoDB. It has a popular public site [hackdash.org](https://hackdash.org/) where anyone can create a dashboard with a few clicks. At time of writing, over 2\u0027000 of them have been created, collecting at least 7\u0027000 ideas and 900 released projects. We could learn a lot from their dedicated community and interesting [concept statements](https://github.com/impronunciable/hackdash/wiki/Ideas-\u0026-Improves). [JunctionApp](https://github.com/hackjunction/JunctionApp) by a Finland-based non-profit, is an \"All-in-one hackathon platform for organisers\" catering to international business users. It is open source and also written in Node.js with Express, Mongoose and React. It is highly scalable, has a slick user experience, and has been translated to Chinese. The management of event content is highly flexible, but the project data is rather barebones, and there are no user profiles at time of writing. [Quill](https://github.com/techx/quill) from the TechX program at MIT, is the most active and followed open source hackathon platform on GitHub, focusing on the registration process. Written in Node.js, Express, Mongoose and Angular, it is technically similar to dribdat and the apps mentioned above, but more refined when it comes to the process of onboarding new participants, which have 10 possible statuses as they apply, get selected, and finally officially join the event. Being really focused on this aspect of the hackathon, it tries to get the job done and leave the rest to other tools. We can learn from its compliance to Accessibility measures, excellent user management (a.k.a. \"God mode\") and statistics. [Versus Virus](https://github.com/VersusVirus-Hackathons/VersusVirus-App) was a series of events in 2020 in response to the COVID-19 pandemic, for which a small group (including Oleg from the dribdat project, Swiss software engineers from Panter AG and The Port Association at CERN), rapidly designed and implemented a highly scalable client-server web application for the onboarding process of the large hackathons of the same name. Based on Node.js, Next.js and PostgreSQL, it relies heavily on GraphQL interfaces. It is in many ways a next-generation version of dribdat, and its design focuses on the team-building process which is powered by a unique matching algorithm. The project is at time of writing unfortunately inactive and unsupported, but is the subject of continued study and inspiration. Visit [awesome-hackathons](https://github.com/dribdat/awesome-hackathon) for links to other projects that you may wish to evaluate and compare with dribdat, complementary tools and further resources. _Opendata.ch / [Energy Data Hackdays 2020](https://hack.opendata.ch/project/463)_ ---- # \u2468 always be closing The development of dribdat has involved coding by a diverse group, standardization efforts, enterprise software integration, and academic research. Alternative versions and new designs are being promoted through fully open platforms, and it is possible to follow and support the work through an [OpenCollective](https://opencollective.com/dribdat/). Until today, dribdat has been built on the shoulders of the same giants who have helped to make our hackathons teams productive: code repositories like GitLab and GitHub, backend libraries like Flask and SQLalchemy, the Bootstrap UI framework, and more. We recognize, and strive to give back to these open source projects. As a web application, dribdat can run as a cloud service, as an on-premises self-hosted solution, or even on a dedicated hardware device for ease of deployment. We are committed to stay close to our roots: dribdat itself will always be open, hacky, experimental, and accessible to tinkering. A project like this is never \"finished\", and we are always on the look-out for fresh ideas that turn our world view upside-down. In the first years of service, dribdat has supported dozens of events around Switzerland, becoming the official hackathon platform of [Opendata.ch](https://opendata.ch) - Swiss chapter of Open Knowledge and its working groups, the [Open Network Infrastructure Association](https://opennetworkinfrastructure.org/), [DINAcon](https://dinacon.ch) - the largest annual Swiss conference for digital sustainability, [DayOne](https://dayone.swiss) - an association that runs patient-centric hackathons, and other pioneers listed in the Showcase futher on. Over 3\u0027000 user accounts and at least 700 projects have been published with dribdat during this time. The easiest way to try dribdat is to sign up for an upcoming event with such an organization, and to use our platforms as participant. You can visit the home page to get links to example deployments, instructions on how to set up your own server and start your own events. If you need help or advice with any of this, or would like to contribute to the project in some way, please get in touch using the links below. ### In a nutshell, dribdat... - ... has had [1\u0027487 commits](https://www.openhub.net/p/dribdat/commits/summary) made by [9 contributors](https://www.openhub.net/p/dribdat/contributors/summary) representing [12\u0027213 lines of code](https://www.openhub.net/p/dribdat/analyses/latest/languages_summary) - ... is [mostly written in Python](https://www.openhub.net/p/dribdat/analyses/latest/languages_summary) with [a low number of source code comments](https://www.openhub.net/p/dribdat/factoids#FactoidCommentsLow) - ... has [a well established, mature codebase](https://www.openhub.net/p/dribdat/factoids#FactoidAgeOld) maintained by [a small development team](https://www.openhub.net/p/dribdat/factoids#FactoidTeamSizeSmall) with [increasing Y-O-Y commits](https://www.openhub.net/p/dribdat/factoids#FactoidActivityIncreasing) - ... took an estimated [3 years of effort](https://www.openhub.net/p/dribdat/estimated_cost) (COCOMO model) starting with its [first commit in September, 2015](https://www.openhub.net/p/dribdat/commits?sort=oldest). *Generated at [openhub.net/p/dribdat](https://www.openhub.net/p/dribdat) on 26.8.2022* --- # @ contacts Your feedback is very welcome. Just open a discussion thread in one of the community channels: - Homepage: [dribdat.cc](https://datalets.ch/dribdat) - Operations: [opencollective.com/dribdat](https://opencollective.com/dribdat) _News_ - Updates: [opencollective.com/dribdat/updates](https://opencollective.com/dribdat/updates/) - Mastodon: [@dribdat](https://mastodon.social/web/@dribdat) - Twitter: [@dribdat](https://twitter.com/dribdat) - Discourse: [forum.opendata.ch](https://forum.opendata.ch/search?q=dribdat%20order%3Alatest) _Development_ - Sources: [github.com/dribdat](https://github.com/dribdat/dribdat) or [gitlab.com/dribdat](https://gitlab.com/dribdat/dribdat) - Releases: [dribdat/releases](https://github.com/dribdat/dribdat/releases) - Bug tracker: [dribdat/issues](https://github.com/dribdat/dribdat/issues) ~ _**All our hack are belong to us.**_ ~ ![](images/whitepaper/dribdat_outline.png) --- # @ references You can find our inspirations and additional references at [dribdat/awesome-hackathon](https://github.com/dribdat/awesome-hackathon). On the following pages are reference deployments with some background information from **2015 - 2021** --- ### Energy \u0026 Climate Hack **User:** Swisspower, Opendata.ch **Application:** https://hack.opendata.ch/event/36 **Discussion:** https://forum.opendata.ch/t/31-8-1-9-energy-climate-hack/783 **Integrations:** Slack, Google Drive, GitHub --- *The open data community at the front-lines of a digital response to the COVID-19 pandemic.* ### Monitoring COVID-19 Effects **User**: Canton of Z\u00fcrich **Application:** **Discussion:** **Integrations:** Mattermost, GitHub --- *An interest to accelerate hackathons using the Internet of Things is at the heart of dribdat.* ### MakeZurich **User**: Open Network Infrastructure Association **Application:** http://now.makezurich.ch/ **Discussion:** https://forum.schoolofdata.ch/t/22-30-6-makezurich-2018 **Integrations:** Slack, GitHub, The Things Network --- *Since 2016, dribdat is the official platform of Opendata.ch Hackdays.* ### Open Data Hackdays **User:** Opendata.ch - Swiss Chapter of Open Knowledge **Application:** [http://hack.opendata.ch/](http://hack.opendata.ch/event/18) **Discussion:** https://blog.datalets.ch/039/ **Integrations:** Datacentral, CKAN, Discourse, GitHub, Slack --- ### Evaluation Hackathon **User:** International Program for Development Evaluation Training **Application:** https://evalhack.org/ **Discussion:** https://opencollective.com/dribdat/updates/a-season-of-hackathons **Integrations:** Slack, Disqus, YouTube --- ### Multilingual Media Hackathon **User:** Swissinfo **Application:** https://db.schoolofdata.ch/project/58 **Discussion:** https://blog.datalets.ch/065/ **Integrations:** CodiMD, GitHub, YouTube --- ### Climathon Zurich **User:** City of Z\u00fcrich **Application:** http://hack.opendata.ch/event/4 **Discussion:** https://blog.datalets.ch/023/ **Integrations:** Slack, Hubot (sodabot), GitHub --- *The first release of dribdat was designed in cooperation with Swisscom. Image courtesy of [Impact Hub Z\u00fcrich](https://zurich.impacthub.ch/de/cross-sector-innovation/).* ### Internet of Things Hackathon **User:** IoT Z\u00fcrich Community **Application:** https://datalets.ch/dribdat/iot-2015/ **Discussion:** https://blog.datalets.ch/an-internet-of-open-things-to-tell-stories/ **Integrations:** Slack, GitHub, Twitter, Instagram, Heroku, custom hardware --- ![](images/whitepaper/thumbs.png) EOF",
+      },
+          'docs/about': {
+          'name': 'About this project',
+          'path': 'docs/about',
+          'relpath': 'about',
+          'text': "This document summarises the current status and makes some vision statements about possible future developments. For more background and references, see the [User handbook](usage) and [Whitepaper](whitepaper). # About this project An open source project board designed for splendid collaboration, **dribdat** is used to collect and showcase all projects from an event in one place. Originally designed for use at hackathons - more than just a trendy way to get recruited into an IT job, these are a venue for open collaboration, civic engagement, and technical experimentation in a social setting. We\u0027ve packed in a lot of experience running and optimizing the participant experience into this platform. _Screenshots of the [Stages screen](whitepaper/#6-being-excellent-to-each-other) and [Backboard](https://github.com/dribdat/backboard)_ The name _dribdat_ is an amalgam of \"Driven By Data\" - with a tip of the hat to [Dribbble](https://dribbble.com/), a famous online community for graphic design which was one of the inspirations at the start of the project. We have organised a lot of hackathons over the years, and started this platform to streamline our own efforts. It is designed with the goal of helping teams - and their facilitators - sustain efforts over time, streamline information channels, and let everyone focus on driving their ideas forward. On the front page you can see the upcoming event, as well as any previous events. A short description is followed by a link to the event home page, as well as a countdown of time remaining until the start or finish (if already started) of the event. All the Projects and Challenges are shown on the event home page. Here you can learn about topics, schedules, get directions and any other vital information that the organizers of the event have provided. Once the event has started, and you have formed a team, you can login and \"Share project\". ## How does it work? Once a team has formed around a Challenge, any of the team members can Post an update, and promote it to Project status. At that point you can see a log of the progress the team is making (encourage them to Post regularly to help track activities), and the latest version of their pitch and documentation. As we will discuss in more detail below, this documentation can come from almost any open Internet source and be embedded on the project page. Users can use [Markdown](https://en.wikipedia.org/wiki/Markdown) formatting to document their project and customise its display. Projects which are published in a compatible source repository - such as GitHub or supported wikis - can be [auto-synced in dribdat](sync), so that the documentation work can take place in the README\u0027s favored by the open source community. You can also update your progress level, in addition to an automatic metric for profile completeness and activity levels, to give each project a progress score. Your team members can subscribe to the project once you have started it, link their public profile in the team roster, and make changes to the data. ![The dribdat stages](../images/pipeline.png) Out of the box, your projects advance through a series of stages inspired by the [School of Data Pipeline](http://toolbox.schoolofdata.ch/overview.html), which you can also configure to follow a different methodology. At the end of the event, the teams, audience and organizers should have an excellent overview of the work that was done during the event, see the progress of the documentation at a glance, and export data for analysis using the administrative console. The [Whitepaper](whitepaper/) has additional background. For more user-facing guidance, see the [User\u0027s Guide](usage) and installation instructions in the [README](https://github.com/dribdat/dribdat#dribdat). ## Data schema One starts an **Event**, to which Challenges (= Ideas) are added. These can take the form of **Projects** (at progress level 0), or **Categories**. A team is made of up of any number of **Users** who have certain organizer-defined **Roles** and have joined a **Project**. The main models are represented here: [![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggVERcbiAgICBFdmVudCAtLS0gUHJvamVjdFxuICAgIFByb2plY3QgLS0tIFVzZXJcbiAgICBQcm9qZWN0IC0tLSBDYXRlZ29yeVxuICAgIFByb2plY3QgLS0tIFByb2dyZXNzXG4gICAgQWN0aXZpdGllcyAtLS0gVXNlciAmIFByb2plY3QgJiBSZXNvdXJjZVxuICAgIFVzZXIgLS0tIFJvbGUiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ)](https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbiAgICBFdmVudCAtLS0gUHJvamVjdFxuICAgIFByb2plY3QgLS0tIFVzZXJcbiAgICBQcm9qZWN0IC0tLSBDYXRlZ29yeVxuICAgIFByb2plY3QgLS0tIFByb2dyZXNzXG4gICAgQWN0aXZpdGllcyAtLS0gVXNlciAmIFByb2plY3QgJiBSZXNvdXJjZVxuICAgIFVzZXIgLS0tIFJvbGUiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ) What are the differences between a Project and a Challenge? - A **Challenge** is a problem statement, often with some elaboration of some ideas of how to address it - at a hackathon, this typically involves links to technical tools, datasets, or information resources. In dribdat, these are published in the form of Projects (set to an initial idea/challenge stage) and/or **Categories**. - A **Project** contains evidence of work that has been done - typically but not always in response to a specific Challenge, as often as possible with links to documentation, source code, presentation, or any other relevant artifacts. ## Screenshots [![Open Food Hackdays](https://blog.datalets.ch/workshops/2017/dribdat/foodhackdays-openreceipts.jpg)](https://hack.opendata.ch/project/74) [![Climathon Z\u00fcrich](https://blog.datalets.ch/workshops/2017/dribdat/climathon.jpg)](https://hack.opendata.ch/event/4) ![](https://blog.datalets.ch/workshops/2017/dribdat/IMG_6910_800.JPG) *Photo credit: MakeZurich 2018 by Christina Rieder CC BY-SA 4.0* ## History We have built this project to \"scratch our own itch\". In it\u0027s first two years of service, it has supported dozens of events around Switzerland, and become the official hackathon platform of [Opendata.ch](https://opendata.ch) - Swiss chapter of Open Knowledge, the [Open Network Infrastructure Association](https://opennetworkinfrastructure.org/), and others. We have interesting ideas about how to develop the project further, and a supportive community giving us the feedback and means to realize them. Easiest of all is to sign up for an upcoming [hackathon](http://hack.opendata.ch/), and try dribdat out as a participant. You can also visit the project\u0027s home page for instructions on how to quickly deploy it on your own server and set up your own events. dribdat is a responsive Web application written using the Flask framework for Python and Bootstrap. Using dribdat\u0027s API, it is also possible to create a live dashboard, for example for use as Digital Signage at the event, or to connect apps like [backboard](https://github.com/dribdat/backboard). It runs on all major operating systems and databases. [Take it for a spin!](https://dribdat.cc) ## F.A.Q. The following questions were originally compiled as part of the projects [DINAcon nomination](https://dinacon.ch/en/dinacon-awards/nominations/): ### _How mature is the project?_ Live and production ready. ### _When was the project started?_ November 2015 ### _Under which license is your project licensed?_ OSI/FSD-approved free software license (MIT) ### _Does one need to sign a contributor agreement?_ No ### _How many different contributors did contribute to the project within the last 12 months?_ 5 ### _How many commits did your project receive within the last 12 months? Projects not having a version control system (e.g. Open Data projects or similar) can also specify changesets or similar._ 393 ### _Was this project forked (split into different communities) in the past or is this project a fork of an other project? Please describe the situation (was it a friendly/unfriendly fork, what was the reason, what is the current state of the projects that are/were involved)._ No ### _If your project is based on a (public) GitLab instance, on Github, on Bitbucket, etc. that offers a metric like \"followers\" or \"likes\", what is the metric of your project?_ 38 stars, 17 forks ### _Does the community meet in \"real life\" on a regular base (e.g. yearly, monthly, ...)? How many people do meet at such meetings?_ Yes. We meet at least twice a year at events where we use, and further develop, this platform. There is a small group of people that has directly influenced, and continues to take an interest in, the course of this project. We have several online locations to share updates (notably on [Open Collective](https://opencollective.com/dribdat/updates), ~~Mattermost, Discord and Slack~~). ### _Do you have other metrics that you would like to share with us, which help us to understand how successful your project is?_ Used at 50+ hackathons. The single largest installation has 750+ users. ### _Does your project have a non-coder community e.g. UX designer, translator, marketing, etc.? What kind of non-coder people are involved in your project?_ Yes. Hackathon participations are not just coders, and non-technical users who would like to discover open source activities are an important prerogative for this project. The process of running creative events like hackathons, combining our experience in code, is something we have aimed to build into all parts of the tool to make the event format accessible to an even wider public. ### _Does your project offer something like \"easy hacks\" to make it easy to get a foot into the project?_ Yes, there is a getting started page which can also be customized by the organisers. We have a community instance, where people can start their own events. To run your own instance of dribdat, there are clear installation instructions to follow. ### _Please provide the page where we can find more information about the easy hacks._ For deployment see the [deployment guide](/deploy). For usage notes, see the [user handbook](/usage). If you have question, drop them in [our forum](https://github.com/orgs/dribdat/discussions). ### _Do you have people mentoring new contributors and actively helping them to get on board of the project?_ Oleg and other people with experience in using the platform are available via various community channels to new users of dribdat. We regularly mentor new users in getting started. There is also a hosted version of the platform which we can set up to get hackathons going quickly. And a reasonably [active forum](https://forum.schoolofdata.ch/t/make-the-most-of-hackathon-season/167). ### _Does your project undertake specific efforts to make sure, that people regardless of ethnicity, gender, etc. can contribute and participate in the project? Does your project for example have a Code of Conduct or is it in general open and friendly to all human beings? Please explain the current situation._ The [Hack Code of Conduct](https://hackcodeofconduct.org/), which we have applied to events for the past 3 years, is now in dribdat by default to help facilitate inclusive events. ### _Please describe the business case of your project._ There are hackathons happening all over the world every weekend. Countless more collaborative online \"hacking\" events happen every day in companies, institutions and the civil society. Each of them generates interest, activity, networking and new initiatives. While several hackathon platforms contend to \"lead the market\", we are one of a handful of open source alternatives, most notably [HackDash](https://github.com/impronunciable/hackdash/) and [Sparkboard](https://github.com/sparkboard/sparkboard) - which operate in a SaaS model. Please visit our [OpenCollective](https://opencollective.com/dribdat), where we are currently focusing our fundraising and transparent budgeting. ### _How relevant is your project in regard to a commercial use?_ Currently we accept sponsoring and distribute it within the project, but do not charge a licensing fee of any kind. There is a strong, recurrent interest from companies in using dashboards similar to this one for tracking internal activities above and beyond hackathon-type events. Several commercial models come to mind: the original motivation for the project came out of a hackathon sponsored by Swisscom, a company that champions innovation culture. We are inspired us to pursue an organic and grassroots business model that benefits a wide variety of \"start-up\" initiatives. ### _This project is important to the world because...._ Hackathons have become a useful instrument to see critically beyond the veil of pragmatic utility in Information Technologies, and have been embraced by the most disruptive companies and organisations around the world as a vehicle for positive change. By imbuing a software project with the ethics and values of hackathons, we can scale these experiments from our local community to many other corners of the world and many domains of creative collaboration. ### _If this project stops its development and ceases to exist, this would be the impact..._ We wouldn\u0027t have our own platform to hack the meta-side of hackathons, and that would be a shame. We could go back to using wikis and repo organisations, with all the constraints and loss of user friendliness that entails. ### _Do you have any usage metrics you can provide which show how succesful your project is? (downloads, visits on website, registered users, etc.)_ In addition to the low thousands of user accounts and hundreds of projects across the different installations (these are visible to administrators in the dashboard), many dribdat instances have \"open analytics\": scroll down to the bottom of the page (for example, on hack.opendata.ch) and click Analytics.",
+      },
+          'docs/trouble': {
+          'name': 'Frequently asked questions',
+          'path': 'docs/trouble',
+          'relpath': 'trouble',
+          'text': "This document contains additional tips for working with dribdat. # Frequently asked questions Guidance to troubleshooting common issues and quesitons in Dribdat can be found here. For more technical references, see the [README](https://codeberg.org/dribdat/dribdat#dribdat). ## How to insert the projects and challenges into my own web page There is an **Embed** button in the event admin which provides you with code for an IFRAME that just contains the hexagrid. If you would like to embed the entire application, and find it more intuitive to hide the navigation, add `?clean=1` to the URL. To also hide the top header, use `?minimal=1`. The [Backboard](https://codeberg.org/dribdat/backboard) project is our new alternative front-end, that invokes the [dribdat API](#API) to visualize data from the platform. If your CMS supports RSS feeds, you can also embed the latest activities using this format. Check the About page for the link. # User management ## How to restore admin access The first user account on the system gets automatically promoted to admin. If you are locked out of the administration, run `./manage.py shell` on the console. You can then promote any user to admin and/or reset the password of a user called \"admin\" like this: ``` u = User.query.filter(User.username==\u0027admin\u0027).first() u.is_admin = True u.set_password(\u0027Ins@nEl*/c0mpl3x\u0027) u.save() ``` ## Need help setting up SSO To get client keys, go to the [Slack API](https://api.slack.com/apps/), [Azure portal](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade), or add the [GitHub App](https://github.com/apps/dribdat) to your account or organization. You can also use [custom OAuth 2](https://flask-dance.readthedocs.io/en/latest/providers.html#custom) provider if you provide all external registration URLs. Cannot determine SSO callback for app registration? Try this: `/oauth//authorized` Where the provider is `slack`, `mattermost`, .. as configured in `OAUTH_TYPE` ## Cleaning out inactive users Open a `manage.py shell` and run a command like this to remove all non-admin, inactive, non-SSO users with zero drib-scores: ``` from dribdat.user.models import User for pp in User.query.filter_by(is_admin=False, active=False, sso_id=None): if pp.activity_count == 0 and len(pp.roles) == 0 and len(pp.posted_challenges()) == 0: pp.delete() ``` # User interface ## Navigation is not visible Some Bootswatch themes do not play well with the *navbar-light* component used in our layout (`nav.html`). Override the styles by hand using the `DRIBDAT_CSS_URL` environment variable. # Data management ## File storage example Here is an example of how to configure your own S3 provider (i.e. not Amazon) for serving files: ``` S3_BUCKET=my-bucket-a1bc2d3f4g S3_FOLDER=dribdat4uri S3_ENDPOINT=https://my-bucket-a1bc2d3f4g.s3.provider.com S3_HTTPS=https://my-bucket-a1bc2d3f4g.https.provider.com S3_KEY=BC7CH3CNMVERYSECRET S3_SECRET=abCdEfGhIjKlMnOpQr ``` Make sure to provide an HTTPS link, as normally you would like to be able to show uploaded files, not just store them. This may require setting permissions and CORS settings accordingly with your provider. We have tested this set up with Linode Object Storage, Exascale, Bucketeer and others. ## Cannot upgrade database In local deployment, you will need to upgrade the database using `./manage.py db upgrade`. On Heroku, a deployment process called **Release** runs automatically. Note also the **Socialize** process which is used for refreshing user profiles. If you get errors like *ERROR [alembic.env] Can\u0027t locate revision identified by \u0027aa969b4f9f51\u0027*, your migration history is out of sync. You can set `FORCE_MIGRATE` to 1 when you run releases, however changes to the column sizes and other schema details will not be deployed. Instead, it is better to verify the latest schema specifications in the `migrations` folder, fix anything that is out of sync, and then update the alembic version, e.g.: ``` alter table projects alter column webpage_url type character varying(2048); insert into alembic_version values (\u00277c3929047190\u0027) ``` A handy parameter is `--sql` which shows just the SQL code you can also apply manually to fix your database. See also further instructions in the `force-migrate.sh` script. ## Invalid input value for enum activity_type error There were issues in upgrading your instance that may require a manual SQL entry. Try running these commands in your `psql` console: ``` ALTER TYPE activity_type ADD VALUE \u0027boost\u0027; ALTER TYPE activity_type ADD VALUE \u0027review\u0027; ``` ## No profile images after updating Run `manage.py socialize users` to restore the profile images. This is due to a change in the way they are stored, to make the profile more flexible. # Developer environment ## Test locally using SSL Some development scenarios and OAuth testing requires SSL. To use this in development with self-signed certificates (you will get a browser warning), start the server with `./manage.py run --cert=adhoc` You can test SSO providers in this way by adding `OAUTHLIB_INSECURE_TRANSPORT=true` to your environment (do not use in production!) ## Installation on Alpine Linux The project has so far mostly been developed on Fedora and Ubuntu Linux. Users on Alpine, BSD and other distributions are welcome to share their experience with us in the Issues. Some additional system packages are needed for a successful local (non-Docker) deployment. E.g. for Alpine or Ubuntu (apt instead of apk): ``` apk add libxml2-dev libxslt-dev libffi-dev rust cargo ``` ## Error compiling misaka You are missing development headers for Python. For example, in Fedora Linux run: ``` sudo dnf install libffi-devel python3-devel gcc ``` On Ubuntu (`apt`) or Alpine Linux (`apk`), the command will look more like this: ``` sudo apk add libffi-dev python3-dev gcc ``` ## Updating the requirements file Install the [Poetry Export plugin](https://github.com/python-poetry/poetry-plugin-export) (this may not be necessary in the near future), then run: `poetry export -f \"requirements.txt\" --output \"requirements/prod.txt\" --without-hashes`",
+      },
+      };
+  const searchIndex = lunr(function () {
+    this.ref("path")
+    this.field("name", { boost: 10 })
+    this.field("text")
+    for (const item of Object.values(searchItems)) {
+      this.add(item)
+    }
+  });
+  const searchOutput = document.getElementById('livemark-search-output')
+  const searchInput = document.getElementById('livemark-search-input')
+  searchInput.addEventListener('input', search)
+  prepare()
+  search()
+});
+
+</script>
+
+<div id="livemark-search">
+  <div id="livemark-search-output"></div>
+  <input id="livemark-search-input" type="search" placeholder="Search...">
+</div>
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Add buttons
+  $("h2").append('<a href="" class="livemark-source-button">Source</a>');
+
+  // Enable buttons
+  $(".livemark-source-button").click(async (ev) => {
+    ev.preventDefault();
+
+    // Close open
+    if ($(".livemark-source-section").length) {
+      $(".livemark-source-section").remove();
+      return;
+    }
+
+    // Load content
+    let source = location.href.replace(".html", ".md");
+    if (!source.endsWith(".md")) source = `${source}index.md`;
+    const heading = $(ev.target).parent().contents().get(0).nodeValue;
+    response = await fetch(source);
+    content = await response.text();
+
+    // Extract section
+    let isCapture;
+    const lines = [];
+    for (const line of content.split(/\r?\n/)) {
+      if (line.startsWith("##")) {
+        isCapture = line.startsWith(`## ${heading}`) ? true : false;
+        continue;
+      }
+      if (isCapture) {
+        lines.push(line);
+      }
+    }
+    const section = _.escape(lines.join("\n").trim());
+
+    // Show section
+    $(ev.target)
+      .parent()
+      .after(
+        `<pre class="livemark-source-section" style="white-space: pre-wrap;">${section}</pre>`
+      );
+  });
+});
+
+</script>
+</body>
+</html>
