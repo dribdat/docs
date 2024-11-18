@@ -6,7 +6,7 @@ authors = ["Dribdat contributors <dribdat@datalets.ch>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3"
+python = ">=3.6,<4"
 livemark = "^0"
 ghp-import = "^2"
 
