@@ -1,4 +1,4 @@
-site_name: dribdat docs
+site_name: dribdat.cc
 site_url: https://dribdat.cc/
 nav:
     - Usage: usage.md

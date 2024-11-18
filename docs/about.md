@@ -1,6 +1,5 @@
 This document summarises the current status and makes some vision statements about possible future developments. For more background and references, see the [User handbook](usage) and [Whitepaper](whitepaper).
 
-
 # About this project
 
 An open source project board designed for splendid collaboration, **dribdat** is used to collect and showcase all projects from an event in one place. Originally designed for use at hackathons - more than just a trendy way to get recruited into an IT job, these are a venue for open collaboration, civic engagement, and technical experimentation in a social setting. We've packed in a lot of experience running and optimizing the participant experience into this platform.
@@ -25,7 +24,6 @@ Out of the box, your projects advance through a series of stages inspired by the
 
 For more user-facing guidance, see the [User's Guide](usage) and installation instructions in the [README](https://github.com/dribdat/dribdat#dribdat).
 
-
 ## Data schema
 
 One starts an **Event**, to which Challenges (= Ideas) are added. These can take the form of **Projects** (at progress level 0), or **Categories**. A team is made of up of any number of **Users** who have certain organizer-defined **Roles** and have joined a **Project**.
@@ -41,7 +39,7 @@ What are the differences between a Project and a Challenge?
 
 ## Screenshots
 
-[![Open Food Hackdays](https://blog.datalets.ch/workshops/2017/dribdat/foodhackdays-openreceipts.jpg)](https://hack.opendata.ch/project/74)     
+[![Open Food Hackdays](https://blog.datalets.ch/workshops/2017/dribdat/foodhackdays-openreceipts.jpg)](https://hack.opendata.ch/project/74)
 
 [![Climathon Zürich](https://blog.datalets.ch/workshops/2017/dribdat/climathon.jpg)](https://hack.opendata.ch/event/4)
 
@@ -106,7 +104,7 @@ Used at 50+ hackathons. The single largest installation has 750+ users.
 
 ### _Does your project have a non-coder community e.g. UX designer, translator, marketing, etc.? What kind of non-coder people are involved in your project?_
 
-Yes. Hackathon participations are not just coders, and non-technical users who would like to discover open source activities are an important prerogative for this project. The process of running creative events like hackathons, combining our experience in code, is something we have aimed to build into all parts of the tool to make the event format accessible to an even wider public.  
+Yes. Hackathon participations are not just coders, and non-technical users who would like to discover open source activities are an important prerogative for this project. The process of running creative events like hackathons, combining our experience in code, is something we have aimed to build into all parts of the tool to make the event format accessible to an even wider public.
 
 ### _Does your project offer something like "easy hacks" to make it easy to get a foot into the project?_
 

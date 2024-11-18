@@ -1,11 +1,7 @@
-**Intro**
+**Driven By Data**
 
 ---
 <img align="right" src="images/logo12.png" width="128">
-
-Here you can find documentation about the `Dribdat` open source project.
-
-Please see our [Open Collective](https://opencollective.com/dribdat) and [code repository](https://github.com/dribdat/dribdat#dribdat) for a general introduction, downloads and more!
 
 1. [About dribdat](about)
 1. [User handbook](usage)
@@ -18,9 +14,9 @@ Please see our [Open Collective](https://opencollective.com/dribdat) and [code r
 
 **Dribdat** (from "driven by data") is an open source (MIT licensed) web application, featuring an ideation and challenge board to help organize short sprints, co-creative sessions, hackdays and open hackathons with batteries included.
 
-<img alt="Screenshot of dribdat" src="images/screenshot_sandbox.png" width="100%">
+🎉 We are starting a next-generation app - **EveryHack** - based on Dribdat and [Backboard](https://codeberg.org/dribdat/backboard). See [announcement](https://meta.dribdat.cc/project/161) and sign up to the alpha at [EveryHack.day](https://everyhack.day).
 
-**NEW:** We are starting a next-generation app - `EveryHack` - based on Dribdat and [Backboard](https://codeberg.org/dribdat/backboard). See [announcement](https://meta.dribdat.cc/project/161) and visit [EveryHack.day](https://everyhack.day) to support us.
+<img alt="Screenshot of dribdat" src="images/screenshot_sandbox.png" width="100%">
 
 ## Purpose
 
@@ -36,14 +32,12 @@ You can customize the layout and presets in an admin panel, or with `YAML` confi
 
 There is more on this in the [User Guide](usage) and [Whitepaper](whitepaper).
 
+<center><a href="https://opencollective.com/dribdat/donate" target="_blank"><img src="https://opencollective.com/dribdat/donate/button@2x.png?color=blue" width=300 /></a><br>🌳 😄 🏀</center>
+
 ## Contact
 
-Please use our [discussion forum](https://github.com/orgs/dribdat/discussions) or [raise an issue](https://github.com/dribdat/dribdat/issues). If you would like to improve the documentation, share [feedback here](https://github.com/dribdat/docs/issues), or contribute via Pull Request on GitHub. You can also use our [Codeberg mirrors](https://codeberg.org/dribdat) to do this.
+Please use our [discussion forum](https://github.com/orgs/dribdat/discussions) or [raise an issue](https://github.com/dribdat/dribdat/issues). If you would like to improve the documentation, share [feedback here](https://github.com/dribdat/docs/issues), or contribute via Pull Request on GitHub. You can also use our [Codeberg mirrors](https://codeberg.org/dribdat) to do this. Further contact options:
 
-Subscribe to get updates on our [OpenCollective](https://opencollective.com/dribdat/updates), where you can also support the development of the project.
-
-A sampling of Dribdat-powered events can be found at [Tour de Hack](https://meta.dribdat.cc/event/5) and [OpenCollective Events](https://opencollective.com/dribdat/events).
-
-Please don't hesitate to get in touch with [the maintainers](mailto:dribdat@datalets.ch) if you'd like to get help accelerating your community!
-
-<center>🌳 😄 🏀<br><a href="https://opencollective.com/dribdat/donate" target="_blank"><img src="https://opencollective.com/dribdat/donate/button@2x.png?color=blue" width=300 /></a></center>
+- Subscribe to get updates on our [OpenCollective](https://opencollective.com/dribdat/updates), where you can also support our development.
+- Find a sampling of Dribdat-powered events at [Tour de Hack](https://meta.dribdat.cc/event/5) and [OpenCollective Events](https://opencollective.com/dribdat/events).
+- Get in touch with [the maintainers](mailto:dribdat@datalets.ch) if you'd like to get help accelerating your community!

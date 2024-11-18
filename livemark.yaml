@@ -1,7 +1,7 @@
 site:
   title: dribdat
 brand:
-  text: dribdat
+  text: dribdat.cc
 about:
   text: Co-creation, sprints & hackathons-in-a-box
 site:
@@ -25,8 +25,6 @@ pages:
   items:
     - path: docs/index
       name: Introduction
-    - path: docs/about
-      name: Overview
     - path: docs/usage
       name: User guide
     - path: docs/sync
@@ -39,5 +37,7 @@ pages:
       name: Contribute
     - path: docs/whitepaper
       name: Whitepaper
+    - path: docs/about
+      name: History
     - path: docs/trouble
-      name: Help
+      name: F.A.Q.
