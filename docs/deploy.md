@@ -12,15 +12,21 @@ The installation of dribdat on some cloud providers has been facilitated with qu
 
 <a title="Deploy on Heroku" target="_blank" href="https://heroku.com/deploy?template=https://github.com/dribdat/dribdat"><img src="https://www.herokucdn.com/deploy/button.svg" width="25%"> <a title="Deploy with Vercel" href="https://vercel.com/new/clone?repository-url=https://github.com/dribdat/dribdat" target="_blank"><img src="https://vercel.com/button" width="25%"></a> <a title="Deploy with Akamai" target="_blank" href="https://cloud.linode.com/stackscripts/community?query=dribdat"><img src="https://assets.linode.com/akamai-logo.svg" width="25%"></a>
 
+See [Configuration](#Configuration) below for a list of variables you can set to customize your instance.
+
 ## With Ansible
 
 Use the [dribdat Ansible role](https://ansible.build/roles/dribdat/) for a straightforward production deployment using [Ansible](https://docs.ansible.com/).
 
+See [Configuration](#Configuration) below for a list of variables you can set to customize your instance.
+
 ## With Docker
 
-We have a (beta) Docker image available at https://hub.docker.com/r/loleg/dribdat
+Containerized Docker builds are available at https://hub.docker.com/r/dribdat/dribdat
 
-To deploy dribdat using a local [Docker](https://www.docker.com/) or [Podman](https://docs.podman.io/en/latest/index.html) build, use the included `docker-compose.yml` file as a starting point. This, by default, persists the PostgreSQL database outside the container, on the local filesystem in the `.db` folder. For a first-time setup, perform the initial migrations as follows:
+To deploy dribdat using a local [Docker](https://www.docker.com/) or [Podman](https://docs.podman.io/en/latest/index.html) build, use the included `docker-compose.yml` file as a starting point. This, by default, persists the PostgreSQL database outside the container, on the local filesystem in the `.db` folder.
+
+For a first-time setup, perform the initial migrations as follows:
 
 `docker-compose run --rm dribdat ./release.sh`
 
@@ -28,13 +34,15 @@ At this point you should be ready to start with Docker Compose:
 
 `docker-compose up -d`
 
+See Configuration below for a list of variables you can set to customize your instance.
+
 ## From source
 
-See deployment notes in the [Developer guide](contribute).
+See deployment notes in the [Developer guide](contribute) for more information on setting up your build.
 
 # Configuration
 
-Optimize your dribdat instance with the following environment variables in production:
+Optimize your dribdat instance with the following **environment variables** in production:
 
 * `TIME_ZONE` - set if your event is not in UTC time (e.g. "Europe/Zurich" - see [pytz docs](https://pythonhosted.org/pytz/)).
 * `SERVER_URL` - fully qualified domain name where the site is hosted.
@@ -128,7 +136,7 @@ If you would like to enable automated challenge and AI-enhanced project suggesti
 
 - `LLM_BASE_URL` - if left blank, this uses the production OpenAI endpoint
 - `LLM_API_KEY` - (required) the API key of an account with your LLM provider
-- `LLM_MODEL` - set to your choice of model, e.g. "gpt-3.5-turbo"
+- `LLM_MODEL` - set to your choice of model, e.g. "gpt-3.5-turbo" - visible to users
 
 ## Advanced server settings
 

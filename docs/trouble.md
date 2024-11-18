@@ -1,17 +1,34 @@
 This document contains additional tips for working with dribdat.
 
-# Troubleshooting
+# Frequently asked questions
 
-Guidance to common errors is listed below.
-For more background references, see the [README](https://github.com/dribdat/dribdat#dribdat).
+Guidance to troubleshooting common issues and quesitons in Dribdat can be found here.
+For more technical references, see the [README](https://codeberg.org/dribdat/dribdat#dribdat).
 
-## Add results to my own web page
+## How to insert the projects and challenges into my own web page
 
-There is an Embed button in the event page and in the admin which provides you with code for an IFRAME that just contains the hexagrid. If you would like to embed the entire application, and find it more intuitive to hide the navigation, add `?clean=1` to the URL. To also hide the top header, use `?minimal=1`. You might also invoke the [dribdat API](#API) to pull data from the platform.
+There is an **Embed** button in the event admin which provides you with code for an IFRAME that just contains the hexagrid. If you would like to embed the entire application, and find it more intuitive to hide the navigation, add `?clean=1` to the URL. To also hide the top header, use `?minimal=1`.
 
-## Navigation is not visible
+The [Backboard](https://codeberg.org/dribdat/backboard) project is our new alternative front-end, that invokes the [dribdat API](#API) to visualize data from the platform.
 
-Dark Bootswatch themes do not play well with the *navbar-light* component used in our layout (`nav.html`). Override the styles by hand using the `DRIBDAT_CSS_URL` environment variable.
+If your CMS supports RSS feeds, you can also embed the latest activities using this format. Check the About page for the link.
+
+# User management
+
+## How to restore admin access
+
+The first user account on the system gets automatically promoted to admin.
+
+If you are locked out of the administration, run `./manage.py shell` on the console.
+
+You can then promote any user to admin and/or reset the password of a user called "admin" like this:
+
+```
+u = User.query.filter(User.username=='admin').first()
+u.is_admin = True
+u.set_password('Ins@nEl*/c0mpl3x')
+u.save()
+```
 
 ## Need help setting up SSO
 
@@ -22,6 +39,24 @@ Cannot determine SSO callback for app registration? Try this:
 `<my server url>/oauth/<my provider>/authorized`
 
 Where the provider is `slack`, `mattermost`, .. as configured in `OAUTH_TYPE`
+
+## Cleaning out inactive users
+
+Open a `manage.py shell` and run a command like this to remove all non-admin, inactive, non-SSO users with zero drib-scores:
+
+```
+from dribdat.user.models import User
+for pp in User.query.filter_by(is_admin=False, active=False, sso_id=None):
+  if pp.activity_count == 0 and len(pp.roles) == 0 and len(pp.posted_challenges()) == 0: pp.delete()
+```
+
+# User interface
+
+## Navigation is not visible
+
+Some Bootswatch themes do not play well with the *navbar-light* component used in our layout (`nav.html`). Override the styles by hand using the `DRIBDAT_CSS_URL` environment variable.
+
+# Data management
 
 ## File storage example
 
@@ -37,17 +72,6 @@ S3_SECRET=abCdEfGhIjKlMnOpQr
 ```
 
 Make sure to provide an HTTPS link, as normally you would like to be able to show uploaded files, not just store them. This may require setting permissions and CORS settings accordingly with your provider. We have tested this set up with Linode Object Storage, Exascale, Bucketeer and others.
-
-## Restore admin access
-
-Create a user account if you do not already have one. From the console, run `./manage.py shell` then to promote to admin and/or reset the password of a user called "admin":
-
-```
-u = User.query.filter(User.username=='admin').first()
-u.is_admin = True
-u.set_password('Ins@nEl*/c0mpl3x')
-u.save()
-```
 
 ## Cannot upgrade database
 
@@ -72,6 +96,12 @@ There were issues in upgrading your instance that may require a manual SQL entry
 ALTER TYPE activity_type ADD VALUE 'boost';
 ALTER TYPE activity_type ADD VALUE 'review';
 ```
+
+## No profile images after updating
+
+Run `manage.py socialize users` to restore the profile images. This is due to a change in the way they are stored, to make the profile more flexible.
+
+# Developer environment
 
 ## Test locally using SSL
 
@@ -101,20 +131,6 @@ On Ubuntu (`apt`) or Alpine Linux (`apk`), the command will look more like this:
 
 ```
 sudo apk add libffi-dev python3-dev gcc
-```
-
-## No profile images after updating
-
-Run `manage.py socialize users` to restore the profile images. This is due to a change in the way they are stored, to make the profile more flexible.
-
-## Cleaning out inactive users
-
-Open a `manage.py shell` and run a command like this to remove all non-admin, inactive, non-SSO users with zero drib-scores:
-
-```
-from dribdat.user.models import User
-for pp in User.query.filter_by(is_admin=False, active=False, sso_id=None):
-  if pp.activity_count == 0 and len(pp.roles) == 0 and len(pp.posted_challenges()) == 0: pp.delete()
 ```
 
 ## Updating the requirements file
