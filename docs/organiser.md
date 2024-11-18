@@ -5,9 +5,9 @@ Organiser Guide
 
 This document explains how the open source `dribdat` tool can help you to set up data-driven collaborative sprints, such as *[Hackathons](https://hackathon.guide/)*. For basic usage of the application see the [User's guide](usage). For more background see [ABOUT](about), and for technical details visit the [README](https://github.com/dribdat/dribdat#dribdat).
 
-# Tick tock
+# Dear Organiser
 
-What does the core dribdat look like? As event organisers, we are really into making the most of time constraints - so the homepage and dashboard feature a big animated countdown clock:
+What is the core concern of your hackathon? As event organisers, we are really into making the most of time constraints - so the homepage and dashboard feature a big animated countdown clock:
 
 ![](images/screenshot_countdown.png)
 

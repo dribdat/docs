@@ -1,8 +1,14 @@
+History
+
+---
+
 This document summarises the current status and makes some vision statements about possible future developments. For more background and references, see the [User handbook](usage) and [Whitepaper](whitepaper).
 
-# About this project
+# define:dribdat
 
-An open source project board designed for splendid collaboration, **dribdat** is used to collect and showcase all projects from an event in one place. Originally designed for use at hackathons - more than just a trendy way to get recruited into an IT job, these are a venue for open collaboration, civic engagement, and technical experimentation in a social setting. We've packed in a lot of experience running and optimizing the participant experience into this platform.
+> **dribs** _n. pl.: in small amounts, a few at a time_
+
+An open source project board designed for splendid collaboration, **Dribdat** is used to collect and showcase all projects from an event in one place. Originally designed for use at hackathons - more than just a trendy way to get recruited into an IT job, these are a venue for open collaboration, civic engagement, and technical experimentation in a social setting. We've packed in a lot of experience running and optimizing the participant experience into this platform.
 
 <img src="images/whitepaper/stages2.jpg"><img src="images/screenshot_backboard2.jpg">
 

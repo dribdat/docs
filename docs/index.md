@@ -1,4 +1,4 @@
-**Driven By Data**
+Driven By Data
 
 ---
 
@@ -14,7 +14,7 @@ short sprints, co-creative sessions, hackdays and
 🎉 See [announcement](https://meta.dribdat.cc/project/161)
 of our next app and sign up to the alpha at [EveryHack.day](https://everyhack.day)
 
-## Purpose
+# Purpose
 
 Built around Web-friendly standards like [Schema.org](https://schema.org) and [Frictionless Data](https://frictionlessdata.io), Dribdat is an (MIT licensed) part of an open source ecosystem, featuring bootstraps (authentication, file uploading, data import/export, etc.), useful workflows (announce an event - publish challenges - form teams - develop projects) and channels (social media sharing, digital signage, summary reports).
 
