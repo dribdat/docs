@@ -52,7 +52,7 @@ The contents of all projects in an event can be synced by the admin, and this ha
 - [GitHub](https://github.com)
 - [GitLab](https://gitlab.com)
 - [Bitbucket](https://bitbucket.org)
-- [Instructables](http://instructables.com)
+- [Pretalx](http://pretalx.com)
 - [Etherpad](http://etherpad.org)
 - [HackMD](https://hackmd.io) and [CodiMD](https://codimd.web.cern.ch/)
 - [DokuWiki](http://make.opendata.ch/wiki/project:home)
