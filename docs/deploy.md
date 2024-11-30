@@ -3,27 +3,22 @@ Installation
 ---
 <img align="right" src="images/logo12.png" width="128">
 
-This document contains additional information on deploying dribdat to a web server.
+The following section explains installation options, followed by environment variables you can use to tweak your installation. See also the [README](https://github.com/dribdat/dribdat#quickstart) guide.
 
 # Quickstart
 
-The following section explains installation options, followed by environment variables you can use to tweak your installation. See also the [README](https://github.com/dribdat/dribdat#quickstart) guide, and our new frontend microservice [Backboard](https://github.com/dribdat/backboard).
+The core of Dribdat is developed in Python, with an API based on open standards: Linked Data ([JSON-LD](https://json.everyhack.day)), Web-friendly metadata ([Schema.org](https://schema.org/Hackathon)), data packages ([Frictionless Data](https://frictionlessdata.io)), and web authentication ([OAuth](https://oauth.net)). 
 
-Details on starting the application directly with Python are detailed in the [Developer guide](contribute). You will still want to refer to the [Configuration](#Configuration) section below.
+There are several frontends available, from the default web site in Bootstrap, to a Vue.js-based Single Page App ([Backboard](https://github.com/dribdat/backboard)), an older multiplatform chatbot ([Dridbot](https://github.com/dribdat/dridbot)) and a new Tailwind-based dashboard ([Rustboard](https://github.com/dribdat/rustboard)).
+
+With all these options, you might be wondering what is a good way to start? This page should help you with that. Please keep in mind that our [Open Collective](https://opencollective.com/dribdat) is a great way to contribute or get additional support from the maintainers!
 
 ## Cloud scripts
 
 The installation of dribdat on some cloud providers has been facilitated with quick-deploy scripts.
 See [Configuration](#Configuration) below for a list of variables you can set to customize your instance.
 
-
 <a title="Deploy on Heroku" target="_blank" href="https://heroku.com/deploy?template=https://github.com/dribdat/dribdat"><img src="https://www.herokucdn.com/deploy/button.svg" width="25%"> <a title="Deploy with Vercel" href="https://vercel.com/new/clone?repository-url=https://github.com/dribdat/dribdat" target="_blank"><img src="https://vercel.com/button" width="25%"></a> <a title="Deploy with Akamai" target="_blank" href="https://cloud.linode.com/stackscripts/community?query=dribdat"><img src="https://assets.linode.com/akamai-logo.svg" width="25%"></a>
-
-## With Ansible
-
-Use the [dribdat Ansible role](https://ansible.build/roles/dribdat/) for a straightforward production deployment using [Ansible](https://docs.ansible.com/).
-
-See [Configuration](#Configuration) below for a list of variables you can set to customize your instance.
 
 ## With Docker
 
@@ -41,9 +36,15 @@ At this point you should be ready to start with Docker Compose:
 
 See Configuration below for a list of variables you can set to customize your instance.
 
+## With Ansible
+
+Use the [dribdat Ansible role](https://ansible.build/roles/dribdat/) for a straightforward production deployment using [Ansible](https://docs.ansible.com/). Thanks to Mint Systems for maintaining these scripts.
+
+See [Configuration](#Configuration) below for a list of variables you can set to customize your instance.
+
 ## From source
 
-See deployment notes in the [Developer guide](contribute) for more information on setting up your build.
+Details on starting the application directly with Python are detailed in the [Developer guide](contribute). You will still want to refer to the [Configuration](#Configuration) section below.
 
 # Configuration
 
