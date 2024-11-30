@@ -5,13 +5,15 @@ Installation
 
 The following section explains installation options, followed by environment variables you can use to tweak your installation. See also the [README](https://github.com/dribdat/dribdat#quickstart) guide.
 
-# Quickstart
+# Overview
 
-The core of Dribdat is developed in Python, with an API based on open standards: Linked Data ([JSON-LD](https://json.everyhack.day)), Web-friendly metadata ([Schema.org](https://schema.org/Hackathon)), data packages ([Frictionless Data](https://frictionlessdata.io)), and web authentication ([OAuth](https://oauth.net)). 
+The core of Dribdat is developed in Python, with an API based on open standards: Linked Data ([JSON-LD](https://json.everyhack.day)), Web-friendly metadata ([Schema.org](https://schema.org/Hackathon)), data packages ([Frictionless Data](https://frictionlessdata.io)), and web authentication ([OAuth](https://oauth.net)). A range of integrations are available to enable sending e-mails, uploading files, or activating AI coaches.
 
 There are several frontends available, from the default web site in Bootstrap, to a Vue.js-based Single Page App ([Backboard](https://github.com/dribdat/backboard)), an older multiplatform chatbot ([Dridbot](https://github.com/dribdat/dridbot)) and a new Tailwind-based dashboard ([Rustboard](https://github.com/dribdat/rustboard)).
 
-With all these options, you might be wondering what is a good way to start? This page should help you with that. Please keep in mind that our [Open Collective](https://opencollective.com/dribdat) is a great way to contribute or get additional support from the maintainers!
+With all these options, you might be wondering: what is a good way to start? This page should help you with a basic installation of Dribdat in a short time. 
+
+Please keep in mind that our [Open Collective](https://opencollective.com/dribdat) is a great way to contribute or get additional support from the maintainers!
 
 ## Cloud scripts
 
