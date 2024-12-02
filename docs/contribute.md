@@ -13,7 +13,9 @@ This code is originally based on [cookiecutter-flask](https://github.com/cookiec
 
 ## Getting started
 
-(1) Install Python (3.8+) and [Poetry](https://python-poetry.org/) to start working with the code. Virtualenv and pip are also supported.
+It is possible to start a development build using the `docker-compose.local.yml` configuration for Docker Compose. Otherwise, you need to set up your coding environment as follows.
+
+(1) Install [Python](https://python.org) and [Poetry](https://python-poetry.org/) to start working with the code. Virtualenv and `pip` are also supported as alternatives to Poetry.
 
 (2) You may need to install additional system libraries (`libffi`) for the [misaka](http://misaka.61924.nl/) package, which depends on [CFFI](https://cffi.readthedocs.io/en/latest/installation.html#platform-specific-instructions). You are likely to also need development headers for Python.
 

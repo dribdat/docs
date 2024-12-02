@@ -40,7 +40,7 @@ Here we explain the steps that your users typically would go through in using dr
 
 ### 1. Sign in
 
-Click **Login** at the top of the page and either use the e-mail and password to register and log in, or for servers that are connected to Slack, GitHub, Auth0 and other supported providers of Single Sign-On that you can enable in dribdat.
+Click **Login** at the top of the page and either use the e-mail and password to register and log in, or for servers that are connected to supported providers of Single Sign-On that you can enable in dribdat.
 
 If you have issues logging into the platform, contact the organizing team of your event for help.
 

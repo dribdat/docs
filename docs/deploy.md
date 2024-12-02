@@ -27,21 +27,25 @@ See [Configuration](#Configuration) below for a list of variables you can set to
 
 ## With Docker
 
-Containerized Docker builds are available at https://hub.docker.com/r/dribdat/dribdat
+Containerized Docker builds are available at [Docker Hub](https://hub.docker.com/r/dribdat/dribdat). To deploy dribdat using a local [Docker](https://www.docker.com/) or [Podman](https://docs.podman.io/en/latest/index.html) build, use the included `docker-compose.yml` file as a starting point. This, by default, persists the PostgreSQL database outside the container, on the local filesystem in the `.db` folder.
 
-To deploy dribdat using a local [Docker](https://www.docker.com/) or [Podman](https://docs.podman.io/en/latest/index.html) build, use the included `docker-compose.yml` file as a starting point. This, by default, persists the PostgreSQL database outside the container, on the local filesystem in the `.db` folder.
+## With Docker Compose
 
-For a first-time setup, perform the initial migrations as follows:
+We also provide a couple of other Docker Compose configurations: for example, you can instantiate a lightweight SQLite version like this:
 
-`docker-compose run --rm dribdat ./release.sh`
+`docker compose -f docker-compose.sqlite.yml up -d`
+
+For a first-time setup, you may need to perform the initial migrations as follows:
+
+`docker compose run --rm dribdat ./release.sh`
 
 At this point you should be ready to start with Docker Compose:
 
-`docker-compose up -d`
+`docker compose up -d`
 
 See Configuration below for a list of variables you can set to customize your instance.
 
-## From source
+## Deploying from source
 
 See deployment notes in the [Developer guide](contribute) for more information on setting up your build.
 
@@ -102,14 +106,15 @@ OAuth 2.0 support for **Single Sign-On** (SSO) is currently available using [Fla
 - `github`- [GitHub](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app)
 - `slack` - [Slack](https://api.slack.com/authentication/oauth-v2)
 - `azure` - [Microsoft Azure](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow)
-- `auth0` - [Auth0](https://auth0.com/docs/authenticate/protocols/oauth)
+- `oauth2` - [Generic OAuth 2.0 providers](https://oauth.net/2/) (Zitadel, Auth0, etc.)
 
 Register your app with the provider, and set the following variables:
 
 * `OAUTH_TYPE` - one of the supported providers (see above)
 * `OAUTH_ID` - the Client ID of your app.
 * `OAUTH_SECRET` - the Client Secret of your app.
-* `OAUTH_DOMAIN` - Slack subdomain, Auth0/Mattermost/Hitobito domain, or Azure tenant.
+* `OAUTH_DOMAIN` - Slack subdomain, OAuth/Mattermost/Hitobito domain, or Azure tenant.
+* `OAUTH_SCOPE` - (optional) comma-delimited Scope, if not blank (e.g. for Auth0: `email,profile,openid`)
 * `OAUTH_SKIP_LOGIN` - (optional) users should go directly to external login screen.
 * `OAUTH_LINK_REGISTER` - (optional) a registration link to your SSO platform.
 * `OAUTH_HELP_REGISTER` - (optional) a short text for the login page.
