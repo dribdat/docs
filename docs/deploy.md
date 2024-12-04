@@ -71,10 +71,10 @@ The following environment variables can be used to toggle **application features
 * `DRIBDAT_STYLE` - provide the address to a CSS stylesheet for custom global styles.
 * `DRIBDAT_STAGE` - provide the address to a YAML configuration for custom global [stages](organiser#stages).
 * `DRIBDAT_APIKEY` - a secret key for connecting bots with write access to the remote [API](#api).
-* `DRIBDAT_ALLOW_LOGINS` - set to False to hide the login, so new users can only log into this server via SSO.
+* `DRIBDAT_ALLOW_LOGINS` - set to False to hide the login, so new users can only log into this server via SSO or by email.
 * `DRIBDAT_NOT_REGISTER` - set to True to hide the registration, so new users can only join this server via SSO or invite.
 * `DRIBDAT_USER_APPROVE` - set to True so that any new non-SSO accounts are inactive until approved by an admin.
-* `DRIBDAT_ALLOW_EVENTS` - set to True to allow regular users to start new events, which admins can edit to make visible on the home page.
+* `DRIBDAT_ALLOW_EVENTS` - set to True to allow regular users to start new events, which admins can promote by un-hiding from the home page.
 * `DRIBDAT_SOCIAL_LINKS` - set to False to hide automatic social network links (Twitter etc.) on the site.
 
 ## Statistics
@@ -109,20 +109,23 @@ OAuth 2.0 support for **Single Sign-On** (SSO) is currently available using [Fla
 - `github`- [GitHub](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app)
 - `slack` - [Slack](https://api.slack.com/authentication/oauth-v2)
 - `azure` - [Microsoft Azure](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow)
-- `oauth2` - [Generic OAuth 2.0 providers](https://oauth.net/2/) (Zitadel, Auth0, etc.)
+- `oauth2` - [Generic OAuth 2.0 providers](https://oauth.net/2/) (Zitadel, Auth0, Keycloak, ..)
 
 Register your app with the provider, and set the following variables:
 
 * `OAUTH_TYPE` - one of the supported providers (see above)
 * `OAUTH_ID` - the Client ID of your app.
 * `OAUTH_SECRET` - the Client Secret of your app.
-* `OAUTH_DOMAIN` - Slack subdomain, OAuth/Mattermost/Hitobito domain, or Azure tenant.
-* `OAUTH_SCOPE` - (optional) comma-delimited Scope, if not blank (e.g. for Auth0: `email,profile,openid`)
+* `OAUTH_DOMAIN` - OAuth/Mattermost/Hitobito domain, Slack subdomain, or Azure tenant.
+* `OAUTH_SCOPE` - (optional) comma-delimited Scope, if not the default (`email,profile,openid`)
+* `OAUTH_USERINFO` - (optional) location of userinfo endpoint relative to the domain.
 * `OAUTH_SKIP_LOGIN` - (optional) users should go directly to external login screen.
 * `OAUTH_LINK_REGISTER` - (optional) a registration link to your SSO platform.
 * `OAUTH_HELP_REGISTER` - (optional) a short text for the login page.
 
-You may then wish to disable non-SSO logins using `DRIBDAT_ALLOW_LOGINS` and registrations with `DRIBDAT_NOT_REGISTER` - or at least enable moderation of non-SSO accounts with `DRIBDAT_USER_APPROVE` and an SMTP provider for e-mail activation.
+You may then wish to disable non-SSO logins using `DRIBDAT_ALLOW_LOGINS` (if an e-mail server is configured, they can still use that), and registrations with `DRIBDAT_NOT_REGISTER`
+
+E-mail activation or moderation (activation in admin area) of non-SSO accounts can be forced with `DRIBDAT_USER_APPROVE` 
 
 You can find more advice in the [Troubleshooting](trouble#need-help-setting-up-sso) guide.
 
