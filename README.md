@@ -1,6 +1,7 @@
-# dribdat docs
+# Dribdat docs
 
-This repository and its wiki serves to collect helpful advice and curated resources for contributing to open sprints and hackathons, aimed especially at self-starters who are new to organizing or taking part in hackdays and hacknights popular in the open data community. This is a perpetual work-in-progress: new org-hacks and tools pop up all the time, so please contribute your favorites and questions.
+This repository and [wiki drafts](https://github.com/dribdat/docs/wiki) collect helpful advice on using Dribdat. See the web version at https://dribdat.cc and for more curated resources, visit [awesome-hackathons](https://github.com/dribdat/awesome-hackathon?tab=readme-ov-file#awesome-hackathon).
+This is a perpetual work-in-progress: new org-hacks and tools pop up all the time, so please contribute your favorites and questions.
 
 📖 100 [GOTO HANDBOOK](https://dribdat.cc)
 🕹️ 200 [GOTO FORUMS](https://github.com/orgs/dribdat/discussions)
