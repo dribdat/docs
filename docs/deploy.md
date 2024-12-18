@@ -138,6 +138,8 @@ To try to reduce spam issues on your Dribdat instance, we encourage you to use a
 * `RECAPTCHA_API_SERVER` - (optional) Specify your Recaptcha API server.
 * `RECAPTCHA_PARAMETERS` - (optional) A dict of JavaScript (api.js) parameters.
 * `RECAPTCHA_DATA_ATTRS` - (optional) A dict of [data attributes](https://developers.google.com/recaptcha/docs/display#javascript_resource_apijs_parameters).
+* `RECAPTCHA_VERIFY_SERVER` - (optional) The remote API of your alternative Captcha service.
+* `RECAPTCHA_SCRIPT` - (optional) The script that is used by your alternative Captcha service.
 
 ## File storage
 
