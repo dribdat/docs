@@ -301,12 +301,10 @@ _News_
 
 - Updates: [opencollective.com/dribdat/updates](https://opencollective.com/dribdat/updates/)
 - Mastodon: [@dribdat](https://mastodon.social/web/@dribdat)
-- Twitter: [@dribdat](https://twitter.com/dribdat)
-- Discourse: [forum.opendata.ch](https://forum.opendata.ch/search?q=dribdat%20order%3Alatest)
 
 _Development_
 
-- Sources: [github.com/dribdat](https://github.com/dribdat/dribdat) or [gitlab.com/dribdat](https://gitlab.com/dribdat/dribdat)
+- Sources: [github.com/dribdat](https://github.com/dribdat) or [codeberg.org/dribdat](https://codeberg.org/dribdat)
 - Releases: [dribdat/releases](https://github.com/dribdat/dribdat/releases)
 - Bug tracker: [dribdat/issues](https://github.com/dribdat/dribdat/issues)
 

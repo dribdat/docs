@@ -75,7 +75,7 @@ The following environment variables can be used to toggle **application features
 * `DRIBDAT_NOT_REGISTER` - set to True to hide the registration, so new users can only join this server via SSO or invite.
 * `DRIBDAT_USER_APPROVE` - set to True so that any new non-SSO accounts are inactive until approved by an admin.
 * `DRIBDAT_ALLOW_EVENTS` - set to True to allow regular users to start new events, which admins can promote by un-hiding from the home page.
-* `DRIBDAT_SOCIAL_LINKS` - set to False to hide automatic social network links (Twitter etc.) on the site.
+* `DRIBDAT_SOCIAL_LINKS` - set to False to hide automatic social network links on the site.
 
 ## Statistics
 

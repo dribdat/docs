@@ -20,7 +20,7 @@ This basic documentation makes it easy for fellow participants to understand the
 
 ## How do you enter content?
 
-Data on projects can be entered into the application directly using text, HTML or [Markdown](https://www.markdowntutorial.com/) formatting. Dribdat features an accessible user-facing frontend (made with Twitter's Bootstrap framework, in case you're wondering) for starting and updating projects, and an administrative backend for the organizing team.
+Data on projects can be entered into the application directly using text, HTML or [Markdown](https://www.markdowntutorial.com/) formatting. Dribdat features an accessible user-facing frontend for starting and updating projects, and an administrative backend for the organizing team.
 
 Content may also be aggregated (**Sync**-ed) from an external location by putting in the URL to a public project hosted on one of several [supported platforms](sync). For more details on entering content, see the [usage steps](#content).
 

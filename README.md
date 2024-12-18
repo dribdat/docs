@@ -9,11 +9,11 @@ This is a perpetual work-in-progress: new org-hacks and tools pop up all the tim
 
 ## Contributing
 
-We welcome you to contribute ideas for this guide! Please open an issue, start a Pull Request, or edit the wiki if you have a question or a suggestion that merits discussion. The [community forum](https://forum.opendata.ch) and social media ([@dribdat](https://twitter.com/dribdat)) is also a good place for discussions.
-
-The documentation site for dribdat is built using [Livemark](https://livemark.frictionlessdata.io/). See instructions below for setting this up as a developer:
+We welcome you to contribute ideas for this guide! Please open an issue, start a Pull Request, or edit the wiki if you have a question or a suggestion that merits discussion. The [discussion forum](https://github.com/orgs/dribdat/discussions) is also a good place to do this.
 
 ## Installation
+
+The documentation site for dribdat is built using [Livemark](https://livemark.frictionlessdata.io/). To set this up as a developer:
 
 Install [Python Poetry](https://python-poetry.org/) and then install the dependencies:
 
