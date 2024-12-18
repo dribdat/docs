@@ -3,29 +3,34 @@ User handbook
 ---
 <img align="right" src="images/logo12.png" width="128">
 
-This document explains the basic functions of `dribdat`, an open source platform for data-driven team collaboration (such as *[Hackathons](https://hackathon.guide/)*). It is a FAQ covering the basic usage of the application. For more background see [ABOUT](about), and for technical details visit the [README](https://github.com/dribdat/dribdat#dribdat).
+This page explains Dribdat, an open source platform for data-driven team collaboration (such as *[Hackathons](https://hackathon.guide/)*), covering the basic usage of the application. For more background see [ABOUT](about), and for technical details visit the [README](https://github.com/dribdat/dribdat#dribdat).
 For a printable version of this document see [📄 Handbook for hackathons powered by Dribdat](https://docs.google.com/document/d/e/2PACX-1vR5Gv5NA3pkls0FRufC0dg-blkOhSo1LMX58pSNtj0FhZq1ImmLw0cIwmla_hiZaxtP8tnzJQQgZg94/pub)
 
+# Dear Participant
 
-**dribdat** works as a website and project board for running exciting, productive events, and allows organizers and participants to collect their project details in one place, displaying the challenges and projects in Web dashboards, and plugging in community tools such as [Discourse](https://www.discourse.org/) or [Slack](http://slack.com) - or using the [remote API](#api) for custom frontends or [chatbots](https://github.com/datalets/dridbot) to enhance the hackathon.
+**Dribdat** (from Driven by Data) works as an online multitool and project board, incorporating best practices from community building, such as templates for 🌳beginner 😄intermediate 🏀advanced level challenges, a 7-stage process for effective data-driven projects, connectivity to popular collaboration platforms, and time-tracking utilities.
 
-It incorporates tools and best practices from 10 years of community building and open data activism, such as templates for 🌳beginner 😄intermediate 🏀advanced level challenges, a 7-stage process for data-driven projects, connectivity to popular collaboration platforms, and time-tracking utilities.
+So what are we waiting for? Let's get started!
 
-As it helps us - we hope it will help you to contribute to open projects, be a better (team) player, and make the most of a blank canvas and creative constraints.
-
-## Quickstart
+## Quick start
 
 Open the page of an event, log in and create a user **Profile**. Then you can explore the existing challenges at your event. Keep an eye on the unfilled Roles (🖍️Designer ⚙️Enabler 💡Facilitator etc.) that are shown on the bottom of the project page, if you are not sure which team you should support. You can then leave a **Comment** or **Join** the challenge.
 
-Or, if the organisers permit it, you may also be able to submit a **New** challenge, along with a summary of your idea. This could also be a "fork" of an existing challenge, as sometimes multiple teams would like to work on the same idea. Once you have a project page, you and any of your team members can click the **Join** button to start to contribute.
+![](images/screenshot_userprofile.jpg)
 
-A typical dribdat-powered event (this is [GLAMhack 2022](https://hack.glam.opendata.ch/)) has a variety of challenges and projects at different stages, which you can explore in a hexagonal grid:
+Before the event starts, you may also be able to submit a **New** challenge, along with a summary of your idea. This could be linked to a supported design tool or code repository. Once you have a project page, you and any of your team members can click the **Join** button to make changes and contribute updates.
+
+![](images/screenshot_project_new.png)
+
+A typical Dribdat-powered event (this is from [GLAMhack](https://hack.glam.opendata.ch/) - the Swiss Open Culture Data hackathon) has a variety of challenges and projects at different stages, which you can explore in a hexagonal grid:
 
 ![](images/glamhack.jpg)
 
 ### Leap into action
 
-Use your project page to document what makes your ideas tick. Post a creative 30-second **Pitch** using plain text or [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) - there is an editor you can activate which helps you learn this widely used formatting style. You can add links to sound or video clips, embed documents or a slideshow hosted on [Speaker Deck](https://speakerdeck.com/) and similar. Content from many other [supported sites](https://oembed.com/#section7) will turn into a live preview.
+Use your project page to document what makes your ideas tick. Post a creative 30-second **Pitch** using plain text or [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) - there is an editor you can activate which helps you learn this widely used formatting style. Enable **Presentation mode** to turn your pitch into slides, or upload a PDF if you prefer.
+
+You can add links to sound or video clips, embed documents or a slideshow hosted on [Speaker Deck](https://speakerdeck.com/) and similar. Content from many other [supported sites](https://oembed.com/#section7) will turn into a live preview.
 
 The picture below explains the various parts of a typical challenge or project page:
 

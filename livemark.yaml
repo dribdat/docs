@@ -17,14 +17,14 @@ pages:
   items:
     - path: docs/index
       name: Intro
-    - path: docs/deploy
-      name: How to install
     - path: docs/usage
-      name: User guide
+      name: User handbook
     - path: docs/organiser
       name: Organiser guide
+    - path: docs/deploy
+      name: How to install
     - path: docs/contribute
-      name: Developer guide
+      name: How to contribute
     - path: docs/whitepaper
       name: Whitepaper
     - path: docs/about

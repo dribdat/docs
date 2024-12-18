@@ -5,9 +5,9 @@ Developer Guide
 This document contains additional information on contributing to dribdat as a developer. If you are just interested in connecting to dribdat's API, scroll down to the [API overview](#api-guide)
 For more background references, see the [README](https://github.com/dribdat/dribdat#dribdat).
 
-# Software Architecture
+# Welcome, contributor!
 
-This code is originally based on [cookiecutter-flask](https://github.com/cookiecutter-flask/cookiecutter-flask), which has a number of helpful [developer features](https://github.com/cookiecutter-flask/cookiecutter-flask#features). It is a Python 3 project that uses the Flask microframework and SQLAlchemy for data modelling on the backend. A plain JSON API, along with Jinja templates and WTForms, serves data to a frontend based on Bootstrap 3 and jQuery.
+Thanks for checking out `dribdat` - made for brilliant people like you. This code is originally based on [cookiecutter-flask](https://github.com/cookiecutter-flask/cookiecutter-flask), which has a number of helpful [developer features](https://github.com/cookiecutter-flask/cookiecutter-flask#features). It is a Python 3 project that uses the Flask microframework and SQLAlchemy for data modelling on the backend. A plain JSON API, along with Jinja templates and WTForms, serves data to a frontend based on Bootstrap 3 and jQuery.
 
 ![Sketch of project architecture](images/architecture-dribdat.svg.png)
 
@@ -15,7 +15,12 @@ This code is originally based on [cookiecutter-flask](https://github.com/cookiec
 
 It is possible to start a development build using the `docker-compose.local.yml` configuration for Docker Compose. Otherwise, you need to set up your coding environment as follows.
 
-(1) Install [Python](https://python.org) and [Poetry](https://python-poetry.org/) to start working with the code. Virtualenv and `pip` are also supported as alternatives to Poetry.
+(1) Install [Git](https://git-scm.com/), [Python](https://python.org) and [Poetry](https://python-poetry.org/) to start working with the code. Virtualenv and `pip` are also supported as alternatives to Poetry. Then get the sources using `git`:
+
+```
+git clone https://codeberg.org/dribdat/dribdat.git
+cd dribdat
+```
 
 (2) You may need to install additional system libraries (`libffi`) for the [misaka](http://misaka.61924.nl/) package, which depends on [CFFI](https://cffi.readthedocs.io/en/latest/installation.html#platform-specific-instructions). You are likely to also need development headers for Python.
 
@@ -25,15 +30,11 @@ It is possible to start a development build using the `docker-compose.local.yml`
 (3) Next, run the following commands from the repository root folder to bootstrap your environment with Poetry:
 
 ```
-poetry shell
 poetry install
+poetry shell
 ```
 
-Or using plain pip:
-
-```
-pip install -r requirements/dev.txt
-```
+(If using plain pip: `pip install -r requirements/dev.txt`)
 
 (4) By default in a dev environment, a SQLite database will be created in the root folder (`dev.db`). You can also install and configure your choice of DBMS [supported by SQLAlchemy](http://docs.sqlalchemy.org/en/rel_1_1/dialects/index.html). In production, the `DATABASE_URL` configures connectivity to an SQLAlchemy-compatible database engine. This requires a `DRIBDAT_ENV=prod` configuration.
 

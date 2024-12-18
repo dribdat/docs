@@ -4,7 +4,7 @@ Driven By Data
 
 <div style="font-size: 150%;">
 
-**Dribdat** (from "driven by data") is an open source web application, featuring a playful ideation and challenge board to help organize short sprints, co-creative sessions, hackdays and [awesome hackathons](https://meta.dribdat.cc/event/2) with batteries included. See our [roadmap](https://github.com/orgs/dribdat/projects/8/views/2?pane=issue&itemId=89596986) 🔜  sign up to get invited to beta releases at *[EveryHack.day](https://everyhack.day)*
+**Dribdat** (from "driven by data") is an open source web application, featuring a playful ideation and challenge board to help organize short sprints, co-creative sessions, hackdays and [awesome hackathons](https://meta.dribdat.cc/event/2) with batteries included. 
 
 </div>
 <center style="font-size: 170%;">
@@ -17,8 +17,14 @@ Driven By Data
 <img alt="Screenshot of dribdat" src="images/screenshot_awesome.png" width="100%">
 </center>
 
+<center>
 
-# Purpose
+<br>See our [roadmap](https://github.com/orgs/dribdat/projects/8/views/2?pane=issue&itemId=89596986) 🔜  sign up for the beta @ [EveryHack.day](https://everyhack.day)
+
+</center>
+
+
+## Purpose
 
 Built around Web-friendly standards like [Schema.org](https://schema.org) and [Frictionless Data](https://frictionlessdata.io), Dribdat is an (MIT licensed) part of an open source ecosystem, featuring bootstraps (authentication, file uploading, data import/export, etc.), useful workflows (announce an event - publish challenges - form teams - develop projects) and channels (social media sharing, digital signage, summary reports).
 
