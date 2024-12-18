@@ -7,18 +7,16 @@ Driven By Data
 **Dribdat** (from "driven by data") is an open source web application, featuring a playful ideation and challenge board to help organize short sprints, co-creative sessions, hackdays and [awesome hackathons](https://meta.dribdat.cc/event/2) with batteries included. 
 
 </div>
-<center style="font-size: 170%;">
+<center><font style="font-size: 170%;">
 
 [🏀 Demo](https://demo.dribdat.cc/event/1)
 [⭐ Star](https://github.com/dribdat/dribdat)
 [📁 Download](https://github.com/dribdat/dribdat/releases)
 [👍 Support](https://opencollective.com/dribdat/contribute)
 
-<img alt="Screenshot of dribdat" src="images/screenshot_awesome.png" width="100%">
+</font><img alt="Screenshot of dribdat" src="images/screenshot_awesome.png" width="100%" vspace="10">
 
-<center>
-
-<br>See our [roadmap](https://github.com/orgs/dribdat/projects/8/views/2?pane=issue&itemId=89596986) 🔜  sign up for the beta @ [EveryHack.day](https://everyhack.day)
+See our [roadmap](https://github.com/orgs/dribdat/projects/8/views/2?pane=issue&itemId=89596986) 🔜  sign up for the beta @ [EveryHack.day](https://everyhack.day)
 
 </center>
 
