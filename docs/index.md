@@ -15,7 +15,6 @@ Driven By Data
 [👍 Support](https://opencollective.com/dribdat/contribute)
 
 <img alt="Screenshot of dribdat" src="images/screenshot_awesome.png" width="100%">
-</center>
 
 <center>
 
