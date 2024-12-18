@@ -10,18 +10,17 @@ Driven By Data
 <center><font style="font-size: 170%;">
 
 [🏀 Demo](https://demo.dribdat.cc/event/1)
-[⭐ Star](https://github.com/dribdat/dribdat)
 [📁 Download](https://github.com/dribdat/dribdat/releases)
 [👍 Support](https://opencollective.com/dribdat/contribute)
 
 </font><img alt="Screenshot of dribdat" src="images/screenshot_awesome.png" width="100%" vspace="10">
 
-See our [roadmap](https://github.com/orgs/dribdat/projects/8/views/2?pane=issue&itemId=89596986) 🔜  sign up for the beta @ [EveryHack.day](https://everyhack.day)
+See our [roadmap](https://github.com/orgs/dribdat/projects/8/views/2?pane=issue&itemId=89596986) and sign up for the beta 🔜 [EveryHack.day](https://everyhack.day)
 
 </center>
 
 
-## Purpose
+# Purpose
 
 Built around Web-friendly standards like [Schema.org](https://schema.org) and [Frictionless Data](https://frictionlessdata.io), Dribdat is an (MIT licensed) part of an open source ecosystem, featuring bootstraps (authentication, file uploading, data import/export, etc.), useful workflows (announce an event - publish challenges - form teams - develop projects) and channels (social media sharing, digital signage, summary reports).
 
@@ -35,7 +34,11 @@ You can customize the layout and presets in an admin panel, or with `YAML` confi
 
 There is more on this in the [User Guide](usage) and [Whitepaper](whitepaper).
 
-<center><a href="https://opencollective.com/dribdat/donate" target="_blank"><img src="https://opencollective.com/dribdat/donate/button@2x.png?color=blue" width=300 /></a></center>
+<center><a href="https://opencollective.com/dribdat/donate" target="_blank"><img src="https://opencollective.com/dribdat/donate/button@2x.png?color=blue" width=300 /></a>
+<font style="font-size: 140%">
+<br><a href="https://alternativeto.net/software/dribdat/" target="_blank">♥️ Heart on AlternativeTo</a>
+<br><a href="https://github.com/dribdat/dribdat" target="_blank">⭐ Star us on GitHub</a>
+</font></center>
 
 ## Contact
 

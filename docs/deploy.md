@@ -129,6 +129,16 @@ E-mail activation or moderation (activation in admin area) of non-SSO accounts c
 
 You can find more advice in the [Troubleshooting](trouble#need-help-setting-up-sso) guide.
 
+## Spam shield
+
+To try to reduce spam issues on your Dribdat instance, we encourage you to use an OAuth provider (as above) with competency in this area. Basic form validation using [Google Recaptcha](https://developers.google.com/recaptcha) and compatible providers like [Friendly Captcha](https://developer.friendlycaptcha.com/docs/v2/guides/migrating-from-recaptcha), is available:
+
+* `RECAPTCHA_PUBLIC_KEY` - A public key.
+* `RECAPTCHA_PRIVATE_KEY` - A private key.
+* `RECAPTCHA_API_SERVER` - (optional) Specify your Recaptcha API server.
+* `RECAPTCHA_PARAMETERS` - (optional) A dict of JavaScript (api.js) parameters.
+* `RECAPTCHA_DATA_ATTRS` - (optional) A dict of [data attributes](https://developers.google.com/recaptcha/docs/display#javascript_resource_apijs_parameters).
+
 ## File storage
 
 For **uploading images** and other files directly within dribdat, you can configure S3 through Amazon and compatible providers:

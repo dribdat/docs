@@ -1,12 +1,10 @@
-Co{re}creation for civic hackers
----
-
-// v.2 /// 8.2022
-
+# Whitepaper
 
 > This paper describes **dribdat** as an open development platform for technical sprints and data expeditions. A simple user interface allows managing challenges, resources and bootstraps, while augmenting tolerance and fairness among participants. See how we use it to support teams in hackathons and workshops. By fostering and connecting design notes, data, and code, let's make the experience of exploring real world problems moar awesome!
 
 _Permalink: [dribdat.cc/whitepaper](https://dribdat.cc/whitepaper/)_
+
+# Co{re}creation for civic hackers
 
 1. [Executive summary](#summary)
 2. [For corecreation](#collaboration)
