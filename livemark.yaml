@@ -25,6 +25,8 @@ pages:
       name: How to install
     - path: docs/contribute
       name: How to contribute
+    - path: docs/tour
+      name: Tour de Hack
     - path: docs/whitepaper
       name: Whitepaper
     - path: docs/about

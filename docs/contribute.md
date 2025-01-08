@@ -2,12 +2,18 @@ Developer Guide
 
 ---
 
-This document contains additional information on contributing to dribdat as a developer. If you are just interested in connecting to dribdat's API, scroll down to the [API overview](#api-guide)
+This document contains additional information on contributing to dribdat as a developer.
+If you are interested in connecting to dribdat's API, scroll down to the [API overview](#api-guide)
 For more background references, see the [README](https://github.com/dribdat/dribdat#dribdat).
 
 # Welcome, contributor!
 
-Thanks for checking out `dribdat` - made for brilliant people like you. This code is originally based on [cookiecutter-flask](https://github.com/cookiecutter-flask/cookiecutter-flask), which has a number of helpful [developer features](https://github.com/cookiecutter-flask/cookiecutter-flask#features). It is a Python 3 project that uses the Flask microframework and SQLAlchemy for data modelling on the backend. A plain JSON API, along with Jinja templates and WTForms, serves data to a frontend based on Bootstrap 3 and jQuery.
+Thanks for checking out `dribdat` - a tool made for brilliant, openly contributing people like you!
+This code is originally based on [cookiecutter-flask](https://github.com/cookiecutter-flask/cookiecutter-flask),
+which has a number of helpful [developer features](https://github.com/cookiecutter-flask/cookiecutter-flask#features).
+
+Dribdat is a Python 3 project that uses the Flask microframework and SQLAlchemy for data modelling on the backend.
+A plain JSON API, along with Jinja templates and WTForms, serves data to a frontend based on Bootstrap 3 and jQuery.
 
 ![Sketch of project architecture](images/architecture-dribdat.svg.png)
 
@@ -119,7 +125,11 @@ Look up data on the current event with the [Hackathon Schema.org Type](https://s
 
 - `/hackathon.json`
 
-For just basic information and projects from the current or another event:
+Or like this for another sprint, which is how we call our events:
+
+- `/api/event/<EVENT ID>/hackathon.json`
+
+For basic information and projects in the current sprint:
 
 - `/api/event/current/info.json`
 - `/api/event/<EVENT ID>/info.json`
