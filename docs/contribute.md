@@ -40,7 +40,7 @@ poetry install
 poetry shell
 ```
 
-(If using plain pip: `pip install -r requirements/dev.txt`)
+> **Tip**: If using plain pip, run: `pip install -r requirements/dev.txt`. Production pip requirements are updated using [poetry-plugin-export](https://github.com/python-poetry/poetry-plugin-export) (install separately), and the command `poetry export --without-hashes -o requirements/prod.txt`
 
 (4) By default in a dev environment, a SQLite database will be created in the root folder (`dev.db`). You can also install and configure your choice of DBMS [supported by SQLAlchemy](http://docs.sqlalchemy.org/en/rel_1_1/dialects/index.html). In production, the `DATABASE_URL` configures connectivity to an SQLAlchemy-compatible database engine. This requires a `DRIBDAT_ENV=prod` configuration.
 

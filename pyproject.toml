@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "dribdat-docs"
-version = "0.1.5"
+version = "0.2.0"
 description = "A documentation site for dribdat"
 authors = ["Dribdat contributors <dribdat@datalets.ch>"]
 license = "MIT"
