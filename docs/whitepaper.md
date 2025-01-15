@@ -1,12 +1,10 @@
-Co{re}creation for civic hackers
----
-
-// v.2 /// 8.2022
-
+# Whitepaper
 
 > This paper describes **dribdat** as an open development platform for technical sprints and data expeditions. A simple user interface allows managing challenges, resources and bootstraps, while augmenting tolerance and fairness among participants. See how we use it to support teams in hackathons and workshops. By fostering and connecting design notes, data, and code, let's make the experience of exploring real world problems moar awesome!
 
 _Permalink: [dribdat.cc/whitepaper](https://dribdat.cc/whitepaper/)_
+
+# Co{re}creation for civic hackers
 
 1. [Executive summary](#summary)
 2. [For corecreation](#collaboration)
@@ -301,12 +299,10 @@ _News_
 
 - Updates: [opencollective.com/dribdat/updates](https://opencollective.com/dribdat/updates/)
 - Mastodon: [@dribdat](https://mastodon.social/web/@dribdat)
-- Twitter: [@dribdat](https://twitter.com/dribdat)
-- Discourse: [forum.opendata.ch](https://forum.opendata.ch/search?q=dribdat%20order%3Alatest)
 
 _Development_
 
-- Sources: [github.com/dribdat](https://github.com/dribdat/dribdat) or [gitlab.com/dribdat](https://gitlab.com/dribdat/dribdat)
+- Sources: [github.com/dribdat](https://github.com/dribdat) or [codeberg.org/dribdat](https://codeberg.org/dribdat)
 - Releases: [dribdat/releases](https://github.com/dribdat/dribdat/releases)
 - Bug tracker: [dribdat/issues](https://github.com/dribdat/dribdat/issues)
 
@@ -319,127 +315,7 @@ _Development_
 
 ## @ references
 
-You can find our inspirations and additional references at [dribdat/awesome-hackathon](https://github.com/dribdat/awesome-hackathon). On the following pages are reference deployments with some background information from **2015 - 2021**
-
----
-
-<img alt="Screenshot" width="100%" src="images/whitepaper/energyhack_2.png">
-
-### Energy & Climate Hack
-
-**User:** Swisspower, Opendata.ch
-
-**Application:** https://hack.opendata.ch/event/36
-
-**Discussion:** https://forum.opendata.ch/t/31-8-1-9-energy-climate-hack/783
-
-**Integrations:** Slack, Google Drive, GitHub
-
----
-
-<img alt="Screenshot" width="100%" src="images/whitepaper/covid19mon.jpg">
-
-*The open data community at the front-lines of a digital response to the COVID-19 pandemic.*
-
-### Monitoring COVID-19 Effects
-
-**User**: Canton of Zürich
-
-**Application:** <https://db.schoolofdata.ch/event/7>
-
-**Discussion:** <https://forum.opendata.ch/t/18-3-1-year-of-covid19mon/757>
-
-**Integrations:** Mattermost, GitHub
-
----
-
-<img alt="Screenshot" width="100%" src="images/whitepaper/makezurich_2.jpg">
-
-*An interest to accelerate hackathons using the Internet of Things is at the heart of dribdat.*
-
-### MakeZurich
-
-**User**: Open Network Infrastructure Association
-
-**Application:** http://now.makezurich.ch/
-
-**Discussion:** https://forum.schoolofdata.ch/t/22-30-6-makezurich-2018
-
-**Integrations:** Slack, GitHub, The Things Network
-
----
-
-<img alt="Screenshot" width="100%" src="images/whitepaper/foodopendata_grabfast.png">
-
-*Since 2016, dribdat is the official platform of Opendata.ch Hackdays.*
-
-### Open Data Hackdays
-
-**User:** Opendata.ch - Swiss Chapter of Open Knowledge
-
-**Application:** [http://hack.opendata.ch/](http://hack.opendata.ch/event/18)
-
-**Discussion:** https://blog.datalets.ch/039/
-
-**Integrations:** Datacentral, CKAN, Discourse, GitHub, Slack
-
----
-
-<img alt="Screenshot" width="100%" src="images/whitepaper/ipdet_evalhack.png">
-
-### Evaluation Hackathon
-
-**User:** International Program for Development Evaluation Training
-
-**Application:** https://evalhack.org/
-
-**Discussion:** https://opencollective.com/dribdat/updates/a-season-of-hackathons
-
-**Integrations:** Slack, Disqus, YouTube
-
----
-
-<img alt="Screenshot" width="100%" src="images/whitepaper/swihack.png">
-
-### Multilingual Media Hackathon
-
-**User:** Swissinfo
-
-**Application:** https://db.schoolofdata.ch/project/58
-
-**Discussion:** https://blog.datalets.ch/065/
-
-**Integrations:** CodiMD, GitHub, YouTube
-
----
-
-<img alt="Screenshot" width="100%" src="images/whitepaper/climathon.jpg">
-
-### Climathon Zurich
-
-**User:** City of Zürich
-
-**Application:** http://hack.opendata.ch/event/4
-
-**Discussion:** https://blog.datalets.ch/023/
-
-**Integrations:** Slack, Hubot (sodabot), GitHub
-
----
-
-<img alt="Screenshot" width="100%" src="images/whitepaper/swisscom_iot.png">
-
-*The first release of dribdat was designed in cooperation with Swisscom. Image courtesy of [Impact Hub Zürich](https://zurich.impacthub.ch/de/cross-sector-innovation/).*
-
-### Internet of Things Hackathon
-
-**User:** IoT Zürich Community
-
-**Application:** https://datalets.ch/dribdat/iot-2015/
-
-**Discussion:** https://blog.datalets.ch/an-internet-of-open-things-to-tell-stories/
-
-**Integrations:** Slack, GitHub, Twitter, Instagram, Heroku, custom hardware
+You can find our inspirations and additional references at [dribdat/awesome-hackathon](https://github.com/dribdat/awesome-hackathon) and in the [Tour de Hack](tour) section of this documentation.
 
 ---
 

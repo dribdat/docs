@@ -18,9 +18,11 @@ _[now.makezurich.ch](https://now.makezurich.ch)_
 
 This basic documentation makes it easy for fellow participants to understand the challenge - or what you've worked on in response to it - as well as allow the audience, the jury, and so on, to discover your work and respond to it.
 
+By the way: the name _dribdat_ is an amalgam of "Driven By Data" - with a tip of the hat to [Dribbble](https://dribbble.com/), a famous online community for graphic design which was one of the inspirations at the start of the project. We have organised a lot of hackathons over the years, and started this platform to streamline our own efforts. It is designed with the goal of helping teams - and their facilitators - sustain efforts over time, streamline information channels, and let everyone focus on driving their ideas forward.
+
 ## How do you enter content?
 
-Data on projects can be entered into the application directly using text, HTML or [Markdown](https://www.markdowntutorial.com/) formatting. Dribdat features an accessible user-facing frontend (made with Twitter's Bootstrap framework, in case you're wondering) for starting and updating projects, and an administrative backend for the organizing team.
+Data on projects can be entered into the application directly using text, HTML or [Markdown](https://www.markdowntutorial.com/) formatting. Dribdat features an accessible user-facing frontend for starting and updating projects, and an administrative backend for the organizing team.
 
 Content may also be aggregated (**Sync**-ed) from an external location by putting in the URL to a public project hosted on one of several [supported platforms](sync). For more details on entering content, see the [usage steps](#content).
 
@@ -40,7 +42,7 @@ Here we explain the steps that your users typically would go through in using dr
 
 ### 1. Sign in
 
-Click **Login** at the top of the page and either use the e-mail and password to register and log in, or for servers that are connected to Slack, GitHub, Auth0 and other supported providers of Single Sign-On that you can enable in dribdat.
+Click **Login** at the top of the page and either use the e-mail and password to register and log in, or for servers that are connected to supported providers of Single Sign-On that you can enable in dribdat.
 
 If you have issues logging into the platform, contact the organizing team of your event for help.
 
@@ -78,6 +80,8 @@ By clicking the **Post** button, you can give a quick status report of your prog
 
 Try to use this regularly to keep tabs on how and your team are spending your precious time at the event. It will help you to learn from the experience and think of improvements for next time.
 
+> **dribs** _n. pl.: in small amounts, a few at a time_
+
 ### 4. Share your results
 
 If you need to make other changes to your project, click the **Edit** button. You will also see other fields there allowing you to set up how your project is presented. There are three basic ways to share your team's efforts: 1) a free form Description, 2) external content via Sync, and 3) external content in a frame with the Project link.
@@ -108,7 +112,7 @@ Remember: _there is no such thing as a stupid question._
 
 Dribdat helps us to keep things fun and unpredictable at our events. We love hacking on the platform itself, and would love to hear your feedback.
 
-Here we cover some ways of extending dribdat's functions with additional tools. If you have any other questions or suggestions, please leave them in our [Issues](https://github.com/dribdat/dribdat/issues).
+Here we cover some ways of extending dribdat's functions with additional tools. Check out [awesome-hackathon](https://github.com/dribdat/awesome-hackathon) for further inspiration. If you have any other questions or suggestions, please leave them in our [Issues](https://github.com/dribdat/dribdat/issues).
 
 ## How is the work evaluated?
 
@@ -134,7 +138,7 @@ You can add both with this snippet in your event's **Community code**:
 <br><p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="_blank"><img align="left" style="margin-right:1em" alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>The contents of this website, unless otherwise stated, are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.</p>
 ```
 
-## Show me the back end
+## The back end
 
 The administrative interface shown below allows defining details of the event and managing project data.
 
@@ -151,11 +155,13 @@ You can pre-configure **Categories** for your site or a specific event, as well 
 
 <a name="stages"></a>
 
-## How do project Stages work?
+## Project Stages
 
 One of the unique features of Dribdat is the progression of projects through a series of stages. You can see this in various ways - the progress bar on top of every project, or in the Stages screen on every event:
 
 <img src="images/whitepaper/stages2.jpg" width="100%">
+
+Out of the box, your projects advance through a series of stages inspired by the [School of Data Pipeline](http://toolbox.schoolofdata.ch/overview.html), which you can also configure to follow a different methodology. At the end of the event, the teams, audience and organizers should have an excellent overview of the work that was done during the event, see the progress of the documentation at a glance, and export data for analysis using the administrative console. The [Whitepaper](whitepaper/) has additional background.
 
 The stages are defined in a [stages.yaml](https://github.com/dribdat/dribdat/blob/main/dribdat/templates/includes/stages.yaml) configuration file. Here you can change the names and contents and rules of every stage, even remove or add stages to your liking. For example, to make sure people put at least 10, but not more than 50, characters in their project summary, add this validation rule to the appropriate stage:
 
@@ -170,7 +176,19 @@ validate:
 
 Either modify the file on your local filesystem, or use the `DRIBDAT_STAGE` environment variable to point to an online location of your configuration.
 
+![The dribdat stages](images/pipeline.png)
+
 See the [Whitepaper](whitepaper#excellent) for more background.
+
+## Screenshots
+
+[![Open Food Hackdays](https://blog.datalets.ch/workshops/2017/dribdat/foodhackdays-openreceipts.jpg)](https://hack.opendata.ch/project/74)
+
+[![Climathon Zürich](https://blog.datalets.ch/workshops/2017/dribdat/climathon.jpg)](https://hack.opendata.ch/event/4)
+
+![](https://blog.datalets.ch/workshops/2017/dribdat/IMG_6910_800.JPG)
+
+*Photo credit: MakeZurich 2018 by Christina Rieder CC BY-SA 4.0*
 
 ## I want to use Dribdat elsewhere
 

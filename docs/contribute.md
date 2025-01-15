@@ -2,18 +2,31 @@ Developer Guide
 
 ---
 
-This document contains additional information on contributing to dribdat as a developer. If you are just interested in connecting to dribdat's API, scroll down to the [API overview](#api-guide)
+This document contains additional information on contributing to dribdat as a developer.
+If you are interested in connecting to dribdat's API, scroll down to the [API overview](#api-guide)
 For more background references, see the [README](https://github.com/dribdat/dribdat#dribdat).
 
-# Software Architecture
+# Welcome, contributor!
 
-This code is originally based on [cookiecutter-flask](https://github.com/cookiecutter-flask/cookiecutter-flask), which has a number of helpful [developer features](https://github.com/cookiecutter-flask/cookiecutter-flask#features). It is a Python 3 project that uses the Flask microframework and SQLAlchemy for data modelling on the backend. A plain JSON API, along with Jinja templates and WTForms, serves data to a frontend based on Bootstrap 3 and jQuery.
+Thanks for checking out `dribdat` - a tool made for brilliant, openly contributing people like you!
+This code is originally based on [cookiecutter-flask](https://github.com/cookiecutter-flask/cookiecutter-flask),
+which has a number of helpful [developer features](https://github.com/cookiecutter-flask/cookiecutter-flask#features).
+
+Dribdat is a Python 3 project that uses the Flask microframework and SQLAlchemy for data modelling on the backend.
+A plain JSON API, along with Jinja templates and WTForms, serves data to a frontend based on Bootstrap 3 and jQuery.
 
 ![Sketch of project architecture](images/architecture-dribdat.svg.png)
 
 ## Getting started
 
-(1) Install Python (3.8+) and [Poetry](https://python-poetry.org/) to start working with the code. Virtualenv and pip are also supported.
+It is possible to start a development build using the `docker-compose.local.yml` configuration for Docker Compose. Otherwise, you need to set up your coding environment as follows.
+
+(1) Install [Git](https://git-scm.com/), [Python](https://python.org) and [Poetry](https://python-poetry.org/) to start working with the code. Virtualenv and `pip` are also supported as alternatives to Poetry. Then get the sources using `git`:
+
+```
+git clone https://codeberg.org/dribdat/dribdat.git
+cd dribdat
+```
 
 (2) You may need to install additional system libraries (`libffi`) for the [misaka](http://misaka.61924.nl/) package, which depends on [CFFI](https://cffi.readthedocs.io/en/latest/installation.html#platform-specific-instructions). You are likely to also need development headers for Python.
 
@@ -23,15 +36,11 @@ This code is originally based on [cookiecutter-flask](https://github.com/cookiec
 (3) Next, run the following commands from the repository root folder to bootstrap your environment with Poetry:
 
 ```
-poetry shell
 poetry install
+poetry shell
 ```
 
-Or using plain pip:
-
-```
-pip install -r requirements/dev.txt
-```
+(If using plain pip: `pip install -r requirements/dev.txt`)
 
 (4) By default in a dev environment, a SQLite database will be created in the root folder (`dev.db`). You can also install and configure your choice of DBMS [supported by SQLAlchemy](http://docs.sqlalchemy.org/en/rel_1_1/dialects/index.html). In production, the `DATABASE_URL` configures connectivity to an SQLAlchemy-compatible database engine. This requires a `DRIBDAT_ENV=prod` configuration.
 
@@ -59,6 +68,19 @@ FLASK_DEBUG=1 python manage.py run
 You should at this point see a welcome screen at http://127.0.0.1:5000 🎉
 
 Follow the instructions to register your first user account, which will have admin access, and let you set up events.
+
+## Data schema
+
+One starts an **Event**, to which Challenges (= Ideas) are added. These can take the form of **Projects** (at progress level 0), or **Categories**. A team is made of up of any number of **Users** who have certain organizer-defined **Roles** and have joined a **Project**.
+
+The main models are represented here:
+
+[![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggVERcbiAgICBFdmVudCAtLS0gUHJvamVjdFxuICAgIFByb2plY3QgLS0tIFVzZXJcbiAgICBQcm9qZWN0IC0tLSBDYXRlZ29yeVxuICAgIFByb2plY3QgLS0tIFByb2dyZXNzXG4gICAgQWN0aXZpdGllcyAtLS0gVXNlciAmIFByb2plY3QgJiBSZXNvdXJjZVxuICAgIFVzZXIgLS0tIFJvbGUiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ)](https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbiAgICBFdmVudCAtLS0gUHJvamVjdFxuICAgIFByb2plY3QgLS0tIFVzZXJcbiAgICBQcm9qZWN0IC0tLSBDYXRlZ29yeVxuICAgIFByb2plY3QgLS0tIFByb2dyZXNzXG4gICAgQWN0aXZpdGllcyAtLS0gVXNlciAmIFByb2plY3QgJiBSZXNvdXJjZVxuICAgIFVzZXIgLS0tIFJvbGUiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ)
+
+What are the differences between a Project and a Challenge?
+
+- A **Challenge** is a problem statement, often with some elaboration of some ideas of how to address it - at a hackathon, this typically involves links to technical tools, datasets, or information resources. In dribdat, these are published in the form of Projects (set to an initial idea/challenge stage) and/or **Categories**.
+- A **Project** contains evidence of work that has been done - typically but not always in response to a specific Challenge, as often as possible with links to documentation, source code, presentation, or any other relevant artifacts.
 
 ## Coding tips
 
@@ -103,7 +125,11 @@ Look up data on the current event with the [Hackathon Schema.org Type](https://s
 
 - `/hackathon.json`
 
-For just basic information and projects from the current or another event:
+Or like this for another sprint, which is how we call our events:
+
+- `/api/event/<EVENT ID>/hackathon.json`
+
+For basic information and projects in the current sprint:
 
 - `/api/event/current/info.json`
 - `/api/event/<EVENT ID>/info.json`

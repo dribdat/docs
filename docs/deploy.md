@@ -3,47 +3,54 @@ Installation
 ---
 <img align="right" src="images/logo12.png" width="128">
 
-This document contains additional information on deploying dribdat to a web server.
+The following section explains installation options, followed by environment variables you can use to tweak your installation. See also the [README](https://github.com/dribdat/dribdat#quickstart) guide.
 
-# Quickstart
+# Overview
 
-The following section explains installation options, followed by environment variables you can use to tweak your installation. See also the [README](https://github.com/dribdat/dribdat#quickstart) guide, and our new frontend microservice [Backboard](https://github.com/dribdat/backboard).
+The core of Dribdat is developed in Python, with an API based on open standards: Linked Data ([JSON-LD](https://json.everyhack.day)), Web-friendly metadata ([Schema.org](https://schema.org/Hackathon)), data packages ([Frictionless Data](https://frictionlessdata.io)), and web authentication ([OAuth](https://oauth.net)). A range of integrations are available to enable sending e-mails, uploading files, or activating AI coaches.
 
-Details on starting the application directly with Python are detailed in the [Developer guide](contribute). You will still want to refer to the [Configuration](#Configuration) section below.
+There are several frontends available, from the default web site in Bootstrap, to a Vue.js-based Single Page App ([Backboard](https://github.com/dribdat/backboard)), an older multiplatform chatbot ([Dridbot](https://github.com/dribdat/dridbot)) and a new Tailwind-based dashboard ([Rustboard](https://github.com/dribdat/rustboard)).
+
+With all these options, you might be wondering: what is a good way to start? This page should help you with a basic installation of Dribdat in a short time. 
+
+Please keep in mind that our [Open Collective](https://opencollective.com/dribdat) is a great way to contribute or get additional support from the maintainers!
 
 ## Cloud scripts
 
 The installation of dribdat on some cloud providers has been facilitated with quick-deploy scripts.
 See [Configuration](#Configuration) below for a list of variables you can set to customize your instance.
 
-
 <a title="Deploy on Heroku" target="_blank" href="https://heroku.com/deploy?template=https://github.com/dribdat/dribdat"><img src="https://www.herokucdn.com/deploy/button.svg" width="25%"> <a title="Deploy with Vercel" href="https://vercel.com/new/clone?repository-url=https://github.com/dribdat/dribdat" target="_blank"><img src="https://vercel.com/button" width="25%"></a> <a title="Deploy with Akamai" target="_blank" href="https://cloud.linode.com/stackscripts/community?query=dribdat"><img src="https://assets.linode.com/akamai-logo.svg" width="25%"></a>
-
-## With Ansible
-
-Use the [dribdat Ansible role](https://ansible.build/roles/dribdat/) for a straightforward production deployment using [Ansible](https://docs.ansible.com/).
-
-See [Configuration](#Configuration) below for a list of variables you can set to customize your instance.
 
 ## With Docker
 
-Containerized Docker builds are available at https://hub.docker.com/r/dribdat/dribdat
+Containerized Docker builds are available at [Docker Hub](https://hub.docker.com/r/dribdat/dribdat). To deploy dribdat using a local [Docker](https://www.docker.com/) or [Podman](https://docs.podman.io/en/latest/index.html) build, use the included `docker-compose.yml` file as a starting point. This, by default, persists the PostgreSQL database outside the container, on the local filesystem in the `.db` folder.
 
-To deploy dribdat using a local [Docker](https://www.docker.com/) or [Podman](https://docs.podman.io/en/latest/index.html) build, use the included `docker-compose.yml` file as a starting point. This, by default, persists the PostgreSQL database outside the container, on the local filesystem in the `.db` folder.
+## With Docker Compose
 
-For a first-time setup, perform the initial migrations as follows:
+We also provide a couple of other Docker Compose configurations: for example, you can instantiate a lightweight SQLite version like this:
 
-`docker-compose run --rm dribdat ./release.sh`
+`docker compose -f docker-compose.sqlite.yml up -d`
+
+For a first-time setup, you may need to perform the initial migrations as follows:
+
+`docker compose run --rm dribdat ./release.sh`
 
 At this point you should be ready to start with Docker Compose:
 
-`docker-compose up -d`
+`docker compose up -d`
 
 See Configuration below for a list of variables you can set to customize your instance.
 
+## With Ansible
+
+Use the [dribdat Ansible role](https://ansible.build/roles/dribdat/) for a straightforward production deployment using [Ansible](https://docs.ansible.com/). Thanks to Mint Systems for maintaining these scripts.
+
+See [Configuration](#Configuration) below for a list of variables you can set to customize your instance.
+
 ## From source
 
-See deployment notes in the [Developer guide](contribute) for more information on setting up your build.
+Details on starting the application directly with Python are detailed in the [Developer guide](contribute). You will still want to refer to the [Configuration](#Configuration) section below.
 
 # Configuration
 
@@ -64,11 +71,11 @@ The following environment variables can be used to toggle **application features
 * `DRIBDAT_STYLE` - provide the address to a CSS stylesheet for custom global styles.
 * `DRIBDAT_STAGE` - provide the address to a YAML configuration for custom global [stages](organiser#stages).
 * `DRIBDAT_APIKEY` - a secret key for connecting bots with write access to the remote [API](#api).
-* `DRIBDAT_ALLOW_LOGINS` - set to False to hide the login, so new users can only log into this server via SSO.
+* `DRIBDAT_ALLOW_LOGINS` - set to False to hide the login, so new users can only log into this server via SSO or by email.
 * `DRIBDAT_NOT_REGISTER` - set to True to hide the registration, so new users can only join this server via SSO or invite.
 * `DRIBDAT_USER_APPROVE` - set to True so that any new non-SSO accounts are inactive until approved by an admin.
-* `DRIBDAT_ALLOW_EVENTS` - set to True to allow regular users to start new events, which admins can edit to make visible on the home page.
-* `DRIBDAT_SOCIAL_LINKS` - set to False to hide automatic social network links (Twitter etc.) on the site.
+* `DRIBDAT_ALLOW_EVENTS` - set to True to allow regular users to start new events, which admins can promote by un-hiding from the home page.
+* `DRIBDAT_SOCIAL_LINKS` - set to False to hide automatic social network links on the site.
 
 ## Statistics
 
@@ -102,21 +109,37 @@ OAuth 2.0 support for **Single Sign-On** (SSO) is currently available using [Fla
 - `github`- [GitHub](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app)
 - `slack` - [Slack](https://api.slack.com/authentication/oauth-v2)
 - `azure` - [Microsoft Azure](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow)
-- `auth0` - [Auth0](https://auth0.com/docs/authenticate/protocols/oauth)
+- `oauth2` - [Generic OAuth 2.0 providers](https://oauth.net/2/) (Zitadel, Auth0, Keycloak, ..)
 
 Register your app with the provider, and set the following variables:
 
 * `OAUTH_TYPE` - one of the supported providers (see above)
 * `OAUTH_ID` - the Client ID of your app.
 * `OAUTH_SECRET` - the Client Secret of your app.
-* `OAUTH_DOMAIN` - Slack subdomain, Auth0/Mattermost/Hitobito domain, or Azure tenant.
+* `OAUTH_DOMAIN` - OAuth/Mattermost/Hitobito domain, Slack subdomain, or Azure tenant.
+* `OAUTH_SCOPE` - (optional) comma-delimited Scope, if not the default (`email,profile,openid`)
+* `OAUTH_USERINFO` - (optional) location of userinfo endpoint relative to the domain.
 * `OAUTH_SKIP_LOGIN` - (optional) users should go directly to external login screen.
 * `OAUTH_LINK_REGISTER` - (optional) a registration link to your SSO platform.
 * `OAUTH_HELP_REGISTER` - (optional) a short text for the login page.
 
-You may then wish to disable non-SSO logins using `DRIBDAT_ALLOW_LOGINS` and registrations with `DRIBDAT_NOT_REGISTER` - or at least enable moderation of non-SSO accounts with `DRIBDAT_USER_APPROVE` and an SMTP provider for e-mail activation.
+You may then wish to disable non-SSO logins using `DRIBDAT_ALLOW_LOGINS` (if an e-mail server is configured, they can still use that), and registrations with `DRIBDAT_NOT_REGISTER`
+
+E-mail activation or moderation (activation in admin area) of non-SSO accounts can be forced with `DRIBDAT_USER_APPROVE` 
 
 You can find more advice in the [Troubleshooting](trouble#need-help-setting-up-sso) guide.
+
+## Spam shield
+
+To try to reduce spam issues on your Dribdat instance, we encourage you to use an OAuth provider (as above) with competency in this area. Basic form validation using [Google Recaptcha](https://developers.google.com/recaptcha) and compatible providers like [Friendly Captcha](https://developer.friendlycaptcha.com/docs/v2/guides/migrating-from-recaptcha), is available:
+
+* `RECAPTCHA_PUBLIC_KEY` - A public key.
+* `RECAPTCHA_PRIVATE_KEY` - A private key.
+* `RECAPTCHA_API_SERVER` - (optional) Specify your Recaptcha API server.
+* `RECAPTCHA_PARAMETERS` - (optional) A dict of JavaScript (api.js) parameters.
+* `RECAPTCHA_DATA_ATTRS` - (optional) A dict of [data attributes](https://developers.google.com/recaptcha/docs/display#javascript_resource_apijs_parameters).
+* `RECAPTCHA_VERIFY_SERVER` - (optional) The remote API of your alternative Captcha service.
+* `RECAPTCHA_SCRIPT` - (optional) The script that is used by your alternative Captcha service.
 
 ## File storage
 

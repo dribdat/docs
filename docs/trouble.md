@@ -1,4 +1,4 @@
-# Frequently asked questions
+# Frequently asked
 
 Guidance to troubleshooting common issues and quesitons in Dribdat can be found here.
 For more technical references, see the [README](https://codeberg.org/dribdat/dribdat#dribdat).
