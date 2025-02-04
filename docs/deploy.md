@@ -160,9 +160,9 @@ Due to the use of the [boto3](https://github.com/boto/boto3/) library for S3 sup
 
 ## Large language model
 
-If you would like to enable automated challenge and AI-enhanced project suggestions, you can connect OpenAI or compatible service, for example the API endpoint of [LM Studio](https://github.com/lmstudio-ai), or the [LiteLLM](https://docs.litellm.ai/) proxy.
+If you would like to enable automated challenge and AI-enhanced project suggestions, you can connect OpenAI or compatible service. Our library supports the API endpoints of [LM Studio](https://github.com/lmstudio-ai), or the [LiteLLM](https://docs.litellm.ai/) proxy. If using [Ollama](https://ollama.com/blog/openai-compatibility), remember to put `/v1` in your URL.
 
-- `LLM_BASE_URL` - if left blank, this uses the production OpenAI endpoint
+- `LLM_BASE_URL` - if left blank, this uses the production OpenAI endpoint (you still need to set a model)
 - `LLM_API_KEY` - (required) the API key of an account with your LLM provider
 - `LLM_MODEL` - set to your choice of model, e.g. "gpt-3.5-turbo" - visible to users
 
