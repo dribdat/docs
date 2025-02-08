@@ -30,7 +30,7 @@ Containerized Docker builds are available at [Docker Hub](https://hub.docker.com
 
 We also provide a couple of other Docker Compose configurations: for example, you can instantiate a lightweight SQLite version like this:
 
-`docker compose -f docker-compose.sqlite.yml up -d`
+`chmod o+w data/dribdat.db;docker compose --file docker-compose.sqlite.yml up --detach`
 
 For a first-time setup, you may need to perform the initial migrations as follows:
 
