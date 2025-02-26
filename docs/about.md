@@ -1,10 +1,33 @@
 # History
 
-We built this project to "scratch our own itch", support hundreds of events, and become the official hackathon platform of numerous open communities. On this page you can find a timeline and release history of the project.
+On this page you can find a [timeline](#timeline) and release history of the project.
+
+## Release log
+
+Please visit [GitHub releases](https://github.com/dribdat/dribdat/releases) for further details.
+
+| Version | Date | Features |
+| ------- | ---- | -------- |
+| v0.8.7 | Jan 2025 | JSON resume in profile, usability improvements to homepage and projects. |
+| v0.8.6 | Dec 2024 | Pitch to slides, Bootstrap 5, new Markdown library, Captcha support. |
+| v0.8.5 | Nov 2024 | New Project flow, GitHub issue and Pretalx support, Calendar export. |
+| v0.8.4 | Sep 2024 | Search engine usability, event and profile layout, UTC support. |
+| v0.8.3 | Jul 2024 | AI magic pixie dust, duplication of events, revised Log and Post. |
+| v0.8.2 | Jun 2024 | User score weighting, Code of Conduct, Lightbox, Upload Media. |
+| v0.8.0 | Mar 2024 | Navigate to Challenge, Stages and honeycomb revised, role search. |
+| v0.7.0 | Jan 2024 | Import from CSV, Project sharing, RSS feeds, backend refactored. |
+| v0.6.9 | Aug 2023 | Display names, Project history and restore, load Stages remotely. | 
+| v0.6.0 | Dec 2021 | First **beta** release. The project gets a documentation website. |
+| v0.5.0 | Jun 2021 | Progress by Stages. Sync with GitHub API. "Purposeful unpolishing". |
+| v0.4.0 | Jan 2020 | Developer documentation written. GitHub organization created. |
+| v0.3.1 | May 2019 | Merged in the work of HES-SO student team. Embed presentations. |
+| v0.2.0 | Dec 2018 | Massive release based on feedback from a year of hackathons. |
+| v0.1.1 | Aug 2017 | Added the 'rainbow' code of conduct. Performance greatly improved. |
+| v0.1.0 | Jan 2017 | First fully functional **alpha** based on the IoT Hackathon backend. |
 
 ## Timeline
 
-A look back from the roots of the Dribdat initiative:
+We built this project to "scratch our own itch", support hundreds of events, and become the official hackathon platform of numerous open communities. A look back from the roots of the Dribdat initiative.
 
 | Year | Milestone |
 | ---- | --------- |
@@ -28,26 +51,3 @@ A look back from the roots of the Dribdat initiative:
 | 2023 | Tested a blockchain-verified [certification workflow](https://hackorgx.dribdat.cc/project/2) based on the Proxeus tool. |
 | 2023 | Started the [Hack:Org:X](https://hackorgx.dribdat.cc) meetups, supported an international [hackathon](https://www.upu.int/en/Universal-Postal-Union/Activities/Digital-Services/Postal-Data-Hackathon) and [conferences](https://blog.datalets.ch/094/) of hackathon organizers. |
 | 2024 | Continued development of Dribdat in partnership with NGO's and public research institutions, launch of EveryHack.day. |
-
-
-
-## Release log
-
-Please visit [GitHub releases](https://github.com/dribdat/dribdat/releases) for further details.
-
-| v0.8.7 | Jan 2025 | JSON resume in profile, usability improvements to homepage and projects. |
-| v0.8.6 | Dec 2024 | Pitch to slides, Bootstrap 5, new Markdown library, Captcha support. |
-| v0.8.5 | Nov 2024 | New Project flow, GitHub issue and Pretalx support, Calendar export. |
-| v0.8.4 | Sep 2024 | Search engine usability, event and profile layout, UTC support. |
-| v0.8.3 | Jul 2024 | AI magic pixie dust, duplication of events, revised Log and Post. |
-| v0.8.2 | Jun 2024 | User score weighting, Code of Conduct, Lightbox, Upload Media. |
-| v0.8.0 | Mar 2024 | Navigate to Challenge, Stages and honeycomb revised, role search. |
-| v0.7.0 | Jan 2024 | Import from CSV, Project sharing, RSS feeds, backend refactored. |
-| v0.6.9 | Aug 2023 | Display names, Project history and restore, load Stages remotely. | 
-| v0.6.0 | Dec 2021 | |
-| v0.5.0 | Jun 2021 | |
-| v0.4.0 | Jan 2020 | |
-| v0.3.0 | May 2019 | |
-| v0.2.0 | Dec 2018 | |
-| v0.1.1 | Aug 9, 2017 | |
-| v0.1.0 | Jan 24, 2017 | |
