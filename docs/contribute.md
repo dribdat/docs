@@ -62,12 +62,14 @@ python manage.py db upgrade
 (7) Finally, run this command (or just `debug.sh`) to start the server:
 
 ```
-FLASK_DEBUG=1 python manage.py run
+DRIBDAT_ENV=dev python manage.py run
 ```
 
 You should at this point see a welcome screen at http://127.0.0.1:5000 🎉
 
 Follow the instructions to register your first user account, which will have admin access, and let you set up events.
+
+> **Tip**: disable the in-page debugger and profiler using `FLASK_DEBUG=False`
 
 ## Data schema
 

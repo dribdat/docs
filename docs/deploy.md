@@ -20,7 +20,9 @@ Please keep in mind that our [Open Collective](https://opencollective.com/dribda
 The installation of dribdat on some cloud providers has been facilitated with quick-deploy scripts.
 See [Configuration](#Configuration) below for a list of variables you can set to customize your instance.
 
-<a title="Deploy on Heroku" target="_blank" href="https://heroku.com/deploy?template=https://github.com/dribdat/dribdat"><img src="https://www.herokucdn.com/deploy/button.svg" width="25%"> <a title="Deploy with Vercel" href="https://vercel.com/new/clone?repository-url=https://github.com/dribdat/dribdat" target="_blank"><img src="https://vercel.com/button" width="25%"></a> <a title="Deploy with Akamai" target="_blank" href="https://cloud.linode.com/stackscripts/community?query=dribdat"><img src="https://assets.linode.com/akamai-logo.svg" width="25%"></a>
+<a title="Deploy on Heroku" target="_blank" href="https://heroku.com/deploy?template=https://github.com/dribdat/dribdat"><img src="https://www.herokucdn.com/deploy/button.svg" height="128">&nbsp;
+<a title="Deploy with Vercel" href="https://vercel.com/new/clone?repository-url=https://github.com/dribdat/dribdat" target="_blank"><img src="https://vercel.com/button" height="128"></a>&nbsp;
+<a title="Deploy with Akamai" target="_blank" href="https://cloud.linode.com/stackscripts/community?query=dribdat"><img src="https://assets.linode.com/akamai-logo.svg" height="128"></a>&nbsp;
 
 ## With Docker
 
@@ -54,28 +56,35 @@ Details on starting the application directly with Python are detailed in the [De
 
 # Configuration
 
-Optimize your dribdat instance with the following **environment variables** in production:
+Install your site with the following **environment variables** in production:
 
-* `TIME_ZONE` - set if your event is not in UTC time (e.g. "Europe/Zurich" - see [pytz docs](https://pythonhosted.org/pytz/)).
-* `SERVER_URL` - fully qualified domain name where the site is hosted.
-* `DATABASE_URL` - connects to PostgreSQL or another database via `postgresql://username:password@...` (in Heroku this is set automatically)
-* `DRIBDAT_SECRET` - a long scary string for hashing your passwords - in Heroku this is set automatically.
-* `DRIBDAT_ENV` - 'dev' to enable debugging, 'prod' to optimise for production.
+* `SERVER_URL` - fully qualified domain name where the site is hosted (e.g. `my.dribdat.domain`).
+* `DRIBDAT_SECRET` - a long, scary string for hashing your passwords, sometimes set by an install script (e.g. `&gRT2U3hJBN!`).
+* `TIME_ZONE` - (optional) the server time [defaults to UTC](https://pythonhosted.org/pytz/) (e.g. `Europe/Zurich`).
+* `DATABASE_URL` - (optional) connects to a [supported database](https://docs.sqlalchemy.org/en/20/core/engines.html#supported-databases) instead of using SQLite (e.g. `postgresql://user:pass@host...`).
+* `DRIBDAT_ENV` - (optional) the default of `prod` is for everyday use, while `dev` enables debugging for developers.
+* `DRIBDAT_APIKEY` - (optional) a secret key for allowing bots write access to the remote [API](#api).
+
+Once you have a basic server up and running, you may want to configure additional options, as described below.
 
 ## Features
 
-The following environment variables can be used to toggle **application features**:
+The following optional environment variables can be used to toggle **application features**:
 
 * `DRIBDAT_CLOCK` - use 'up' or 'down' to change the position, or 'off' to hide the countdown clock.
 * `DRIBDAT_THEME` - can be set to one of the [Bootswatch themes](https://bootswatch.com/).
 * `DRIBDAT_STYLE` - provide the address to a CSS stylesheet for custom global styles.
 * `DRIBDAT_STAGE` - provide the address to a YAML configuration for custom global [stages](organiser#stages).
-* `DRIBDAT_APIKEY` - a secret key for connecting bots with write access to the remote [API](#api).
-* `DRIBDAT_ALLOW_LOGINS` - set to False to hide the login, so new users can only log into this server via SSO or by email.
-* `DRIBDAT_NOT_REGISTER` - set to True to hide the registration, so new users can only join this server via SSO or invite.
-* `DRIBDAT_USER_APPROVE` - set to True so that any new non-SSO accounts are inactive until approved by an admin.
-* `DRIBDAT_ALLOW_EVENTS` - set to True to allow regular users to start new events, which admins can promote by un-hiding from the home page.
-* `DRIBDAT_SOCIAL_LINKS` - set to False to hide automatic social network links on the site.
+
+## Permissions
+
+Used in combination with the [Authentication](#authentication) settings:
+
+* `DRIBDAT_ALLOW_LOGINS` - when **False**, users may only log into this server via SSO or by a link in the email.
+* `DRIBDAT_NOT_REGISTER` - when **True**, new users can only join this server via SSO or an invite email.
+* `DRIBDAT_USER_APPROVE` - when **True**, any new non-SSO accounts are inactive until manually approved by an admin.
+* `DRIBDAT_ALLOW_EVENTS` - when **True**, regular users are allowed to start new events, which are hidden until admins agree to promote them.
+* `DRIBDAT_SOCIAL_LINKS` - when **False**, social network links are not shown on the site.
 
 ## Statistics
 
