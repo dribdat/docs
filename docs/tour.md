@@ -43,6 +43,18 @@ See the [Whitepaper](whitepaper) for more background and [History](history) for 
 
 <img alt="Screenshot" width="100%" src="images/whitepaper/makezurich_2.jpg">
 
+---
+
+## Frictionless Data
+
+We support the standards and help the community around them to run online sprints.
+
+- User: Open Knowledge Foundation
+- Results: [frictionless.dribdat.cc](https://frictionless.dribdat.cc/event/1.html)
+- Discussion: [frictionlessdata.io](https://frictionlessdata.io/blog/2021/09/30/hackathon-preview/) 
+- Integrations: GitHub, Discord
+
+<img alt="Screenshot" width="100%" src="images/whitepaper/frictionless.png">
 
 ---
 

@@ -20,9 +20,9 @@ Please keep in mind that our [Open Collective](https://opencollective.com/dribda
 The installation of dribdat on some cloud providers has been facilitated with quick-deploy scripts.
 See [Configuration](#Configuration) below for a list of variables you can set to customize your instance.
 
-<a title="Deploy on Heroku" target="_blank" href="https://heroku.com/deploy?template=https://github.com/dribdat/dribdat"><img src="https://www.herokucdn.com/deploy/button.svg" height="128">&nbsp;
-<a title="Deploy with Vercel" href="https://vercel.com/new/clone?repository-url=https://github.com/dribdat/dribdat" target="_blank"><img src="https://vercel.com/button" height="128"></a>&nbsp;
-<a title="Deploy with Akamai" target="_blank" href="https://cloud.linode.com/stackscripts/community?query=dribdat"><img src="https://assets.linode.com/akamai-logo.svg" height="128"></a>&nbsp;
+<a title="Deploy on Heroku" target="_blank" href="https://heroku.com/deploy?template=https://github.com/dribdat/dribdat"><img src="https://www.herokucdn.com/deploy/button.svg" height="48">&nbsp;
+<a title="Deploy with Vercel" href="https://vercel.com/new/clone?repository-url=https://github.com/dribdat/dribdat" target="_blank"><img src="https://vercel.com/button" height="48"></a>&nbsp;
+<a title="Deploy with Akamai" target="_blank" href="https://cloud.linode.com/stackscripts/community?query=dribdat"><img src="https://assets.linode.com/akamai-logo.svg" height="48"></a>&nbsp;
 
 ## With Docker
 
@@ -180,10 +180,12 @@ If you would like to enable automated challenge and AI-enhanced project suggesti
 These parameters can be used to improve the **production setup**:
 
 * `SERVER_SSL` - redirect all visitors to HTTPS, applying [CSP rules](https://developers.google.com/web/fundamentals/security/csp).
-* `SERVER_PROXY` - set to True to use a [standalone proxy](https://flask.palletsprojects.com/en/2.0.x/deploying/wsgi-standalone/#proxy-setups) and static files server - do not use if you already have [a proxy set up](#using-a-proxy-server).
+* `SERVER_PROXY` - set to True to use a [standalone proxy](https://flask.palletsprojects.com/en/2.0.x/deploying/wsgi-standalone/#proxy-setups) and static files server*
 * `SERVER_CORS` - set to False to disable the [CORS whitelist](https://flask.palletsprojects.com/en/2.0.x/deploying/wsgi-standalone/#proxy-setups) for external API access.
 * `CSP_DIRECTIVES` - configure content security policy - see [Talisman docs](https://github.com/GoogleCloudPlatform/flask-talisman#content-security-policy).
 * `CACHE_TYPE` - speed up the site with Redis or Memcache - see [Flask-Caching](https://flask-caching.readthedocs.io/en/latest/index.html#configuring-flask-caching).
+
+\* do not use if you already have [a proxy set up](#using-a-proxy-server).
 
 # Tips for your deployment
 
@@ -191,7 +193,9 @@ Here are some additional instructions for your installation. See also the [troub
 
 ## Custom default content
 
-To customize some of the default content, you can edit the template include files in the folder `dribdat/templates/includes`, for example you will find there the default [quickstart.md](https://github.com/dribdat/dribdat/blob/main/dribdat/templates/includes/quickstart.md) and [stages.yaml](https://github.com/dribdat/dribdat/blob/main/dribdat/templates/includes/stages.yaml) definitions. Make sure your changes will not be overwritten is you are using ephemeral storage (e.g. Heroku) for your deployment.
+To customize some of the default content, you can edit the template include files in the folder `dribdat/templates/includes`, for example you will find there the default [quickstart.md](https://github.com/dribdat/dribdat/blob/main/dribdat/templates/includes/quickstart.md) and [stages.yaml](https://github.com/dribdat/dribdat/blob/main/dribdat/templates/includes/stages.yaml) definitions. 
+
+Make sure your changes will not be overwritten is you are using ephemeral storage (e.g. Heroku) for your deployment.
 
 ## Using a proxy server
 
