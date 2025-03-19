@@ -28,9 +28,13 @@ A typical Dribdat-powered event (this is from [GLAMhack](https://hack.glam.opend
 
 ### Leap into action
 
-Use your project page to document what makes your ideas tick. Post a creative 30-second **Pitch** using plain text or [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) - there is an editor you can activate which helps you learn this widely used formatting style. Enable **Presentation mode** to turn your pitch into slides, or upload a PDF if you prefer.
+Use your project page to document what makes your ideas tick. Post a creative 30-second **Pitch** using plain text or [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). There is an editor you can activate which helps you learn this widely used formatting style. 
 
-You can add links to sound or video clips, embed documents or a slideshow hosted on [Speaker Deck](https://speakerdeck.com/) and similar. Content from many other [supported sites](https://oembed.com/#section7) will turn into a live preview.
+Feeling hacky? Use the Pitch to write your presentation with a few simple statements and [Marpit Markdown](https://marpit.marp.app/markdown) formatting, then **✓ Enable slide mode**.
+
+If you upload a PDF as your presentation, or link to a website (look for a [Publish to Web](https://knowledge.workspace.google.com/kb/publish-docs-sheets-slides-or-forms-as-web-pages-000008504) or [Embed code](https://support.microsoft.com/en-us/office/embed-a-presentation-in-a-web-page-or-blog-19668a1d-2299-4af3-91e1-ae57af723a60)), this will also be shown at the top of your project.
+
+You can add links to sound or video clips, embed documents or a slideshow hosted on a site like [Speaker Deck](https://speakerdeck.com/). Content from many [supported sites](https://oembed.com/#section7) will turn into a live preview.
 
 The picture below explains the various parts of a typical challenge or project page:
 
