@@ -53,30 +53,6 @@ The **README** feature allows you to connect documentation from your open source
 
 💡 See the [How to Sync like a Pro](sync) for more details.
 
-To use this function, just put the URL to your remote content into the **README** field when creating a new project. Or find it in the **Details** editor on an existing challenge or project.
-Use the **Sync** (synchronise) button on your project page to refresh your changes at any time. You can still _Edit_ your project to add notes or answer questions relevant to the event you are at, and _Details_ to tweak the Contact, Download, Source, Image links and more.
-The contents of all projects in an event can be synced by the admin, and this happens automatically from time to time as you work with your project.
-
-### Supported README sites
-
-- [Codeberg](https://codeberg.org/) (Gitea)
-- [GitHub](https://github.com)
-- [GitLab](https://gitlab.com)
-- [Bitbucket](https://bitbucket.org)
-- [Pretalx](http://pretalx.com)
-- [Etherpad](http://etherpad.org)
-- [HackMD](https://hackmd.io) and [CodiMD](https://codimd.web.cern.ch/)
-- [DokuWiki](http://make.opendata.ch/wiki/project:home)
-- [Google Docs](http://docs.google.com) (* you must enable "Publish to web", as shown below)
-
-### Using Google Docs
-
-![](images/googledocs1.png)
-
-Activate publishing in this dialog, and finally copy the link that is shown, so that you can paste it into the README of your dribdat project:
-
-![](images/googledocs2.png)
-
 ## Keep tabs on your progress
 
 By updating your progress using the **Post** button, you can regularly check in your team's status or any roadblocks. You may see a couple of tips for completing or advancing your project at the top of the screen. You can find this button on the top of any projects you have joined, or on your profile page (which takes you to your latest team).
