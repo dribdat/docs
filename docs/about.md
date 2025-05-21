@@ -50,4 +50,5 @@ We built this project to "scratch our own itch", support hundreds of events, and
 | 2022 | Published [awesome-hackathon](https://project-awesome.org/dribdat/awesome-hackathon) based on updated research and curation of resources for organizers. |
 | 2023 | Tested a blockchain-verified [certification workflow](https://hackorgx.dribdat.cc/project/2) based on the Proxeus tool. |
 | 2023 | Started the [Hack:Org:X](https://hackorgx.dribdat.cc) meetups, supported an international [hackathon](https://www.upu.int/en/Universal-Postal-Union/Activities/Digital-Services/Postal-Data-Hackathon) and [conferences](https://blog.datalets.ch/094/) of hackathon organizers. |
-| 2024 | Continued development of Dribdat in partnership with NGO's and public research institutions, launch of EveryHack.day. |
+| 2024 | Partner of the national [HackIntegration.ch](https://hackintegration.ch) research initiative. |
+| 2025 | Launch of [JSON.EveryHack.day](https://json.everyhack.day). |

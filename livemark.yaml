@@ -19,8 +19,10 @@ pages:
       name: Intro
     - path: docs/usage
       name: User handbook
+    - path: docs/sync
+      name: How to sync
     - path: docs/organiser
-      name: Organiser guide
+      name: How to organise
     - path: docs/deploy
       name: How to install
     - path: docs/contribute

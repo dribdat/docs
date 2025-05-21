@@ -47,6 +47,8 @@ Some teams are content with just adding a link to their Demo or uploading their 
 
 The **README** feature allows you to connect documentation from your open source repository on [GitHub](https://github.com), an online document at [Etherpad](http://etherpad.org), and many other collaboration platforms.
 
+💡 See the [How to Sync like a Pro](sync) for more details.
+
 To use this function, just put the URL to your remote content into the **README** field when creating a new project. Or find it in the **Details** editor on an existing challenge or project.
 Use the **Sync** (synchronise) button on your project page to refresh your changes at any time. You can still _Edit_ your project to add notes or answer questions relevant to the event you are at, and _Details_ to tweak the Contact, Download, Source, Image links and more.
 The contents of all projects in an event can be synced by the admin, and this happens automatically from time to time as you work with your project.
