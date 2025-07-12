@@ -3,7 +3,7 @@ Installation
 ---
 <img align="right" src="images/logo12.png" width="128">
 
-The following section explains installation options, followed by environment variables you can use to tweak your installation. See also the [README](https://github.com/dribdat/dribdat#quickstart) guide.
+The following section explains installation options, followed by environment variables you can use to tweak your installation. See also the [README](https://github.com/dribdat/dribdat#quickstart) guide. Don't miss the [#Configuration](#Configuration) section below for details of environment parameters.
 
 # Overview
 
@@ -20,6 +20,7 @@ Please keep in mind that our [Open Collective](https://opencollective.com/dribda
 The installation of dribdat on some cloud providers has been facilitated with quick-deploy scripts.
 See [Configuration](#Configuration) below for a list of variables you can set to customize your instance.
 
+<a title="Deploy to Render" target="_blank" href="https://render.com/deploy?repo=https://github.com/dribdat/dribdat"><img src="https://render.com/images/deploy-to-render-button.svg?w=800&fm=webp" height="48">&nbsp;
 <a title="Deploy on Heroku" target="_blank" href="https://heroku.com/deploy?template=https://github.com/dribdat/dribdat"><img src="https://www.herokucdn.com/deploy/button.svg" height="48">&nbsp;
 <a title="Deploy with Vercel" href="https://vercel.com/new/clone?repository-url=https://github.com/dribdat/dribdat" target="_blank"><img src="https://vercel.com/button" height="48"></a>&nbsp;
 <a title="Deploy with Akamai" target="_blank" href="https://cloud.linode.com/stackscripts/community?query=dribdat"><img src="https://assets.linode.com/akamai-logo.svg" height="48"></a>&nbsp;
@@ -131,6 +132,7 @@ Register your app with the provider, and set the following variables:
 * `OAUTH_SKIP_LOGIN` - (optional) users should go directly to external login screen.
 * `OAUTH_LINK_REGISTER` - (optional) a registration link to your SSO platform.
 * `OAUTH_HELP_REGISTER` - (optional) a short text for the login page.
+* `OAUTH_LOGO` - (optional) URL to a button from your SSO platform.
 
 You may then wish to disable non-SSO logins using `DRIBDAT_ALLOW_LOGINS` (if an e-mail server is configured, they can still use that), and registrations with `DRIBDAT_NOT_REGISTER`
 
