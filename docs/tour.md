@@ -1,7 +1,45 @@
 # Tour de Hack
 
 On the following pages are a sampling of reference Dribdat deployments with some background information from **2015 - 2025**.
-See the [Whitepaper](whitepaper) for more background and [History](history) for more detailed history.
+See the [Whitepaper](whitepaper) for more background and [History](history) for more detail.
+
+---
+
+## Swiss {ai} Weeks Bern
+
+We are part of a nation-wide platform, deployed in support of sovereign AI models.
+
+- User: [Canton of Bern](https://www.berninvest.be.ch/)
+- Results: [siliconlovefield.ch](https://siliconlovefield.bb.dribdat.cc/)
+- Discussion: [log.alets.ch](https://log.alets.ch/111/)
+- Integrations: [Apertus](https://drib.siliconlovefield.ch/project/40), [Public AI](https://publicai.co/), [Hugging Face](https://drib.siliconlovefield.ch/project/28)
+
+<img alt="Screenshot" width="100%" src="images/tour/swissai_2025.jpg">
+
+---
+
+## Hack4SocialGood
+
+A series of hackathons to bridge the gap between the social sector and civic tech.
+
+- User: Swiss Universities
+- Results: [bd.hack4socialgood.ch](https://bd.hack4socialgood.ch/)
+- Discussion: [societybyte.swiss](https://www.societybyte.swiss/en/2020/11/05/hackathon-for-inclusive-digitalisation-in-the-social-sector/)
+- Integrations: Teams, GitHub
+
+<img alt="Screenshot" width="100%" src="images/tour/h4sg_2025.jpg">
+
+---
+
+## Data Hackdays BE
+
+A series of hackathons to bridge the gap between the social sector and civic tech.
+
+- User: Canton of Bern / BFH
+- Results: [data-hackdays-be.ch](https://app.data-hackdays-be.ch/)
+- **Discussion:** [log.alets.ch](https://log.alets.ch/106/)
+
+<img alt="Screenshot" width="100%" src="images/tour/dhbe_2025.jpg">
 
 ---
 
@@ -13,7 +51,6 @@ See the [Whitepaper](whitepaper) for more background and [History](history) for 
 - **Results:** [hack.opendata.ch](http://hack.opendata.ch/event/18)
 - **Discussion:** [log.alets.ch](https://log.alets.ch/039/)
 - **Integrations:** Datacentral, CKAN, Discourse, GitHub, Slack
-
 
 <img alt="Screenshot" width="100%" src="images/whitepaper/foodopendata_grabfast.png">
 

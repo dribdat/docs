@@ -1,1 +1,8 @@
 #content .row p img { max-width: 100%; }
+
+#livemark-brand {
+  background: url('/docs/images/logo12_swi.png') no-repeat right 50%;
+  font-size: 0px;
+  height: 80px;
+  background-size: 200%;
+}

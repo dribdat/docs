@@ -8,6 +8,9 @@ Please visit [GitHub releases](https://github.com/dribdat/dribdat/releases) for 
 
 | Version | Date | Features |
 | ------- | ---- | -------- |
+| v0.9.2 | Sep 2025 | Terms of use, streamlined onboarding, admin tools, AI support. |
+| v0.9.0 | May 2025 | Rich posts, slide render mode, reboot of the user interface. |
+| v0.8.9 | Mar 2025 | Features tagging of user profiles and projects for matchmaking. |
 | v0.8.7 | Jan 2025 | JSON resume in profile, usability improvements to homepage and projects. |
 | v0.8.6 | Dec 2024 | Pitch to slides, Bootstrap 5, new Markdown library, Captcha support. |
 | v0.8.5 | Nov 2024 | New Project flow, GitHub issue and Pretalx support, Calendar export. |

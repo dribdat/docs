@@ -1,0 +1,22 @@
+Purpose
+
+---
+
+Built around Web-friendly standards like [Schema.org](https://schema.org) and [Frictionless Data](https://frictionlessdata.io), Dribdat is an [MIT licensed](https://codeberg.org/dribdat/dribdat/src/branch/main/LICENSE) project in an open source ecosystem. It features handy bootstraps (authentication, file uploading, data import/export, etc.), useful workflows (announce an event - publish challenges - form teams - develop projects) and diverse channels (social media sharing, digital signage, summary reports).
+
+At the heart of it is a hexagonal visualization of your teams:
+
+<img alt="Screenshot of dribdat" src="images/screenshot_awesome.png" width="100%" vspace="10">
+
+Dribdat sprints (see [Tour de Hack](tour) for some examples) typically involve open licenses ([Creative Commons](https://creativecommons.org/licenses/), [Open Data Commons](https://opendatacommons.org/licenses/odbl/), etc.), community-developed templates ([School of Data Pipeline](https://schoolofdata.org/methodology/)), or governance instruments ([Hack Code of Conduct](https://hackcodeofconduct.org/)).
+This is the official platform of [Opendata.ch - Swiss chapter of Open Knowledge](https://opendata.ch), and has been used to host dozens of events in the Swiss [open data](https://hack.opendata.ch), [open hardware](https://now.makezurich.ch), and [open source](https://hacknight.dinacon.ch) community.
+
+Our project started from a [Cookiecutter](https://www.cookiecutter.io/), striving in itself to be an example of a hackable project that can be adapted to other needs and causes.
+It can be used just as a Python-powered backend to aggregate data from Gitea, GitHub, GitLab and other repositories and fileshares in one place.
+
+There is a `Vue.js`-based [Backboard app](https://github.com/dribdat/backboard) and a `Node.js` [Chatbot](https://github.com/dribdat/dridbot) available as alternatives to the default Bootstrap user interface, easily customized with a bit of `CSS`.
+You can customize the layout and presets in an admin panel, or with `YAML` configuration files.
+
+There is more on this in the [User Guide](usage) and [Whitepaper](whitepaper).
+
+See also our [roadmap](https://github.com/orgs/dribdat/projects/8/views/2?pane=issue&itemId=89596986) and sign up for the beta 🔜 [EveryHack.day](https://everyhack.day)

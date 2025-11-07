@@ -109,6 +109,7 @@ If you would like people to be able to activate their accounts and reset passwor
 * `MAIL_DEFAULT_SENDER` - a required reply-to address for e-mails.
 * `MAIL_USE_TLS` - require a secure (TLS) connection when talking to the SMTP server.
 * `MAIL_USE_SSL` - require a secure (SSL) connection when talking to the SMTP server.
+* `MAIL_NOTIFY_ADMIN` - send an e-mail when a new user registers.
 
 ## Authentication
 

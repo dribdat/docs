@@ -17,10 +17,12 @@ pages:
   items:
     - path: docs/index
       name: Intro
+    - path: docs/purpose
+      name: Purpose
     - path: docs/usage
-      name: User handbook
+      name: How to get started
     - path: docs/sync
-      name: How to sync
+      name: How to sync data
     - path: docs/organiser
       name: How to organise
     - path: docs/deploy
