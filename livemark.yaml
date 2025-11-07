@@ -18,7 +18,7 @@ pages:
     - path: docs/index
       name: Intro
     - path: docs/purpose
-      name: Purpose
+      name: About Dribdat
     - path: docs/usage
       name: How to get started
     - path: docs/sync

@@ -10,8 +10,8 @@ Driven By Data
 <font style="font-size: 170%"><hr/>
 
 [🏀 Demo](https://demo.dribdat.cc/event/1)
-[📁 Install](deploy)
-[👍 Support](https://opencollective.com/dribdat/contribute)
+[📁 Download](https://hub.docker.com/r/dribdat/dribdat/tags)
+[👍 Deploy](deploy)
 
 </font>
 <div style="font-size: 150%; text-align: left">
@@ -22,8 +22,8 @@ Driven By Data
 
 </div>
 
-<a href="https://opencollective.com/dribdat/donate" target="_blank"><img src="https://opencollective.com/dribdat/donate/button@2x.png?color=blue" width=300 /></a>
-<font style="font-size: 140%">
+<a href="https://opencollective.com/dribdat/donate" target="_blank"><img src="https://opencollective.com/dribdat/donate/button@2x.png?color=blue" width=300 vspace=20 /></a>
+<font style="font-size: 120%">
 <br><a href="https://alternativeto.net/software/dribdat/" target="_blank">♥️ Heart on AlternativeTo</a>
 <br><a href="https://codeberg.org/dribdat/dribdat" target="_blank">⭐ Favorite on Codeberg</a>
 <br><a href="https://github.com/dribdat/dribdat" target="_blank">⭐ Star this on GitHub</a>
