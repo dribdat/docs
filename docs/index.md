@@ -1,8 +1,4 @@
-Driven By Data
-
----
-
-  
+# Driven By Data
 
 <center>
 <h3>The open platform for data-driven hackathons and hexagonal teams</h3>
