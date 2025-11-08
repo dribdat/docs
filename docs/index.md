@@ -12,7 +12,7 @@
 </font>
 <div style="font-size: 150%; text-align: left">
 
-**Dribdat** is a set of open source tools, such as a playful ideation and challenge board, that helps you to run code sprints, creative jams, hackdays and [awesome hackathons](https://meta.dribdat.cc/project/173) based on [open standards](https://json.everyhack.day)
+**Dribdat** is an open source ideation and challenge board, that helps you to run code sprints, creative jams, playful hackdays and [awesome hackathons](https://awesome.dribdat.cc/)
  ⬡⬢⬡ 
 
 

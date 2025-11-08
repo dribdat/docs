@@ -5,6 +5,12 @@ About Dribdat
 
 Built around Web-friendly standards like [Schema.org](https://schema.org) and [Frictionless Data](https://frictionlessdata.io), **Dribdat** (from "driven by data") is an [MIT licensed](https://codeberg.org/dribdat/dribdat/src/branch/main/LICENSE) project in an open source ecosystem. It features handy bootstraps (authentication, file uploading, data import/export, etc.), useful workflows (announce an event - publish challenges - form teams - develop projects) and diverse channels (social media sharing, digital signage, summary reports).
 
+Of course, we could also just make a simple website, but, ask yourself, _how hacky would that be?_
+
+![cardboard car](https://i.ytimg.com/vi/-Qlv9eYUyPk/maxresdefault.jpg)
+
+<small>Image: [The Q](https://www.youtube.com/channel/UCZdGJgHbmqQcVZaJCkqDRwg) via [The Awesomer](https://theawesomer.com/making-a-cardboard-f1-car/508108/)</small>
+
 # Purpose 
 
 At the heart is a hexagonal visualization of your teams:
@@ -19,6 +25,8 @@ It can be used just as a Python-powered backend to aggregate data from Gitea, Gi
 
 There is a `Vue.js`-based [Backboard app](https://github.com/dribdat/backboard) and a `Node.js` [Chatbot](https://github.com/dribdat/dridbot) available as alternatives to the default Bootstrap user interface, easily customized with a bit of `CSS`.
 You can customize the layout and presets in an admin panel, or with `YAML` configuration files.
+
+All the data is aggregated with an [open standard](https://json.everyhack.day) (`hackathon.json`), and can be exported in various formats at any time.
 
 There is more on this in the [User Guide](usage) and [Whitepaper](whitepaper).
 
