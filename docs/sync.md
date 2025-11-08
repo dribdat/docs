@@ -3,25 +3,29 @@ Sync and Readme
 ---
 <img align="right" src="images/logo12.png" width="128">
 
-This page explains Dribdat, an open source platform for data-driven team collaboration (such as *[Hackathons](https://hackathon.guide/)*), covering the basic usage of the application. For more background see [ABOUT](about), and for technical details visit the [README](https://github.com/dribdat/dribdat#dribdat).
-For a printable version of this document see [📄 Handbook for hackathons powered by Dribdat](https://docs.google.com/document/d/e/2PACX-1vR5Gv5NA3pkls0FRufC0dg-blkOhSo1LMX58pSNtj0FhZq1ImmLw0cIwmla_hiZaxtP8tnzJQQgZg94/pub)
-# How to Sync like a Pro
-
 We do not force or even expect you to use the editor on this platform to work on your content.
-Some teams are content with just adding a link to their Demo or uploading their Pitch presentation into Dribdat. 
+Some teams are content with just adding a link to their Demo or uploading their Pitch presentation into Dribdat.
+
+# Open collaboration
+
+You can sync your content when adding a new challenge or project using the **Import** screen:
+
+![Import screenshot](images/import_sync.png)
+
+This feature allows you to connect documentation from your open source repository on [GitHub](https://github.com), an online document at [Etherpad](http://etherpad.org), and many other collaboration platforms - see the list below.
+
+When you **Edit** your project, you can find the **Readme** in the **Details** tab. 
 Visit the [User guide](usage) to learn more about editing content in Dribdat.
 
-When you **Edit** your project, you can find the **Readme** in the **Details** tab. This feature allows you to connect documentation from your open source repository on [GitHub](https://github.com), an online document at [Etherpad](http://etherpad.org), and many other collaboration platforms - see the list below.
+## Staying in sync
 
-## Getting started
+Once you put the URL to your remote content into the **README** field when creating a new project. Or find it in the **Details** editor on an existing challenge or project, the content will be fetched, and you will be notified if there are any errors.
 
-To use this function, just put the URL to your remote content into the **README** field when creating a new project. Or find it in the **Details** editor on an existing challenge or project.
-
-From time to time the data will be refreshed. You can use the **Sync** (synchronise) button on the bottom of your project page to refresh your changes at any time. 
+From time to time - such as when writing a Post - the data will be refreshed. You can use the **Sync** (synchronise) button on the bottom of your project page to refresh your changes at any time. Administrators can also selectively Sync projects, or all at once in the project list.
 
 Even if you have a Readme, you can still _Edit_ your project to add notes or answer questions relevant to the event you are at, and _Details_ to tweak the Contact, Download, Source, Image links and more.
 
-The contents of all projects in an event can also be synced at once by the admin.
+Note that for source code repositories, some additional content is fetched, such as links to source code or demo. To clear the README, just remove the link.
 
 ## Supported sites
 

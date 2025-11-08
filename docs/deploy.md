@@ -1,11 +1,11 @@
-Installation
+Deployment Guide
 
 ---
 <img align="right" src="images/logo12.png" width="128">
 
 The following section explains installation options, followed by environment variables you can use to tweak your installation. See also the [README](https://github.com/dribdat/dribdat#quickstart) guide. Don't miss the [#Configuration](#Configuration) section below for details of environment parameters.
 
-# Overview
+# Installation
 
 The core of Dribdat is developed in Python, with an API based on open standards: Linked Data ([JSON-LD](https://json.everyhack.day)), Web-friendly metadata ([Schema.org](https://schema.org/Hackathon)), data packages ([Frictionless Data](https://frictionlessdata.io)), and web authentication ([OAuth](https://oauth.net)). A range of integrations are available to enable sending e-mails, uploading files, or activating AI coaches.
 

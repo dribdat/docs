@@ -3,10 +3,10 @@
 <center>
 <h3>The open platform for data-driven hackathons and hexagonal teams</h3>
 <img src="images/tour/dhbe_2025.jpg" width="100%">
-<font style="font-size: 170%"><hr/>
+<font style="font-size: 160%"><hr/>
 
 [🏀 Demo](https://demo.dribdat.cc/event/1)
-[📁 Download](https://hub.docker.com/r/dribdat/dribdat/tags)
+[📁 Docker](https://hub.docker.com/r/dribdat/dribdat/tags)
 [👍 Deploy](deploy)
 
 </font>

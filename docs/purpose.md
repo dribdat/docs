@@ -1,11 +1,11 @@
-Purpose
+About Dribdat
 
 ---
 <img align="right" src="images/logo12.png" width="128">
 
 Built around Web-friendly standards like [Schema.org](https://schema.org) and [Frictionless Data](https://frictionlessdata.io), **Dribdat** (from "driven by data") is an [MIT licensed](https://codeberg.org/dribdat/dribdat/src/branch/main/LICENSE) project in an open source ecosystem. It features handy bootstraps (authentication, file uploading, data import/export, etc.), useful workflows (announce an event - publish challenges - form teams - develop projects) and diverse channels (social media sharing, digital signage, summary reports).
 
-# About Dribdat
+# Purpose 
 
 At the heart is a hexagonal visualization of your teams:
 
