@@ -11,7 +11,7 @@ Of course, we could also just make a simple website, but, ask yourself, _how hac
 
 <small>Image: [The Q](https://www.youtube.com/channel/UCZdGJgHbmqQcVZaJCkqDRwg) via [The Awesomer](https://theawesomer.com/making-a-cardboard-f1-car/508108/)</small>
 
-# Purpose 
+# Purpose
 
 It begins with a countdown, defining the start and finish of a time-boxed event:
 
@@ -30,7 +30,9 @@ Empowering thousands of people to prototype using public data and open source co
 Our project started from a [Cookiecutter](https://www.cookiecutter.io/), striving in itself to be an example of a hackable project that can be adapted to other needs and causes.
 It can be used just as a Python-powered backend to aggregate data from Gitea, GitHub, GitLab and other repositories and fileshares in one place.
 
-There is a `Vue.js`-based [Backboard app](https://github.com/dribdat/backboard) and a `Node.js` [Chatbot](https://github.com/dribdat/dridbot) available as alternatives to the default Bootstrap user interface, easily customized with a bit of `CSS`.
+<img alt="Screenshot of backboard" src="images/screenshot_backboard2.jpg" width="100%" vspace="10">
+
+There is a `Vue.js`-based [Backboard app](https://github.com/dribdat/backboard) (shown above) and a `Node.js` [Chatbot](https://github.com/dribdat/dridbot) available as alternatives to the default Bootstrap user interface, easily customized with a bit of `CSS`.
 You can customize the layout and presets in an admin panel, or with `YAML` configuration files.
 
 All the data is aggregated with an [open standard](https://json.everyhack.day) (`hackathon.json`), and can be exported in various formats at any time.
