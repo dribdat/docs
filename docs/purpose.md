@@ -45,6 +45,8 @@ You can customize the layout and presets in an admin panel, or with `YAML` confi
 All the data is aggregated with an [open standard](https://json.everyhack.day) (`hackathon.json`), and can be exported in various formats at any time.
 There is more on this in the [User Guide](usage) and [Whitepaper](whitepaper).
 
+![Hackintegration](images/whitepaper/hackintegration.jpg)
+
 Visit the 👁️‍🗨️ [Hackfinder](https://hackintegration.ch/hackfinder) to find upcoming events and current research, and join our ongoing 🧬 [Hack:Org:X](https://hackorgx.dribdat.cc) sessions to meet other hackathon organizers.
 
 See also our [roadmap](https://github.com/orgs/dribdat/projects/8/views/2?pane=issue&itemId=89596986) and sign up for the beta 🔜 [EveryHack.day](https://everyhack.day)

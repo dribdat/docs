@@ -16,15 +16,15 @@ So what are we waiting for? *Let's get started!*
 
 Open the page of an event, log in and create a user **Profile**. Then you can explore the existing challenges at your event. Keep an eye on the unfilled Roles (🖍️Designer ⚙️Enabler 💡Facilitator etc.) that are shown on the bottom of the project page, if you are not sure which team you should support.
 
-![Team selection](images/screenshot_join_team.png)
-
-When you open an upcoming event, you are shown a list of teams. The **Join event** button guides you with a shortlist (shown above) based on your profile data. 💡 We are working on new teambuilding features - [stay tuned!](https://hackintegration.ch)
-
-When you open a team page, you can leave a **Comment** or **Join** the challenge.
-
 ![User profile](images/screenshot_userprofile.jpg)
 
-You may also be able to submit a **New** challenge or start a team, along with a summary of your idea. This could be linked to a supported design tool or code repository, as detailed further down. Once you have a project page, you and any of your team members can click the **Join** button to make changes and contribute updates.
+When you open an upcoming event, you are shown a list of teams. The **Join event** button guides you with a shortlist (shown below), based on your profile data. 💡 We are working on new teambuilding features - [stay tuned!](https://hackintegration.ch)
+
+![Team selection](images/screenshot_join_team.png)
+
+When you open a team page, you can leave a **Comment** or **Join** the challenge to make changes and contribute updates.
+
+You may also be able to submit a **New** challenge or start a team, along with a summary of your idea. This could be linked to a supported design tool or code repository, as explained further down.
 
 ![New project](images/screenshot_project_new.png)
 
@@ -34,11 +34,12 @@ A typical Dribdat-powered event (this is from [GLAMhack](https://hack.glam.opend
 
 ### Leap into action
 
-Use your project page to document what makes your ideas tick. Post a creative 30-second **Pitch** using plain text or [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). There is an editor you can activate which helps you learn this widely used formatting style.
+Use your project page to document what makes your ideas tick. Post a creative 30-second **Pitch** using plain text or [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). There is an editor you can activate which helps you learn this widely used formatting style. Feeling hacky? Use the Pitch to write your presentation with a few simple statements and [Marpit Markdown](https://marpit.marp.app/markdown) formatting, then **✓ Enable slide mode**.
 
-Feeling hacky? Use the Pitch to write your presentation with a few simple statements and [Marpit Markdown](https://marpit.marp.app/markdown) formatting, then **✓ Enable slide mode**.
+If you upload a PDF as your presentation, or link to a website (look for a [Publish to Web](https://knowledge.workspace.google.com/kb/publish-docs-sheets-slides-or-forms-as-web-pages-000008504) or [Embed code](https://support.microsoft.com/en-us/office/embed-a-presentation-in-a-web-page-or-blog-19668a1d-2299-4af3-91e1-ae57af723a60)), this will also be shown at the top of your project. It can, of course, go **full screen** at the tap of a button - and our Backboard even adds keyboard navigation and a live timer for smooth presentations!
 
-If you upload a PDF as your presentation, or link to a website (look for a [Publish to Web](https://knowledge.workspace.google.com/kb/publish-docs-sheets-slides-or-forms-as-web-pages-000008504) or [Embed code](https://support.microsoft.com/en-us/office/embed-a-presentation-in-a-web-page-or-blog-19668a1d-2299-4af3-91e1-ae57af723a60)), this will also be shown at the top of your project.
+![Screenshot of embedded slides](images/screenshot_slides_openfarming2025.png)
+<center><small>A screenshot from <a href="https://farminghackdays.bb.dribdat.cc/" target="_blank">Open Farming Hackdays 2025</a></small></center><br>
 
 You can add links to sound or video clips, embed documents or a slideshow hosted on a site like [Speaker Deck](https://speakerdeck.com/). Content from many [supported sites](https://oembed.com/#section7) will turn into a live preview.
 
@@ -65,7 +66,7 @@ By updating your progress using the **Post** button, you can regularly check in 
 
 ![Posting](images/post.png)
 
-### Keep tabs on everyones progress
+### Keep tabs on everyone's progress
 
 Having a readable, regularly updated overview of what your team is working on is your secret weapon in collaborative projects. Release early, release often, and use the power of evaluation for quick feedback to your experiments. Then rock that stage with your results!
 
@@ -74,6 +75,10 @@ The posts are visible in the **Log** section of your project, in the **Dribs** g
 Of course you can also cross-post to a variety of social networks to boost your online rep from here!
 
 ![Dribs](images/dribs.png)
+
+### At the end of the day
+
+Your contributions will be saved and visible in your profile, as well as in the open data accessible through the API of the site. You can download it with one click using the **My Data** button in your profile. Come back to the next hackathon, and build on what you've started!
 
 That's all there is to it, as a user. Read the [Organiser's guide](organiser) if you'd like to see more details about running your own event.
 

@@ -1,7 +1,7 @@
 # Frequently asked
 
-Guidance to troubleshooting common issues and quesitons in Dribdat can be found here.
-For more technical references, see the [README](https://codeberg.org/dribdat/dribdat#dribdat).
+Guidance to troubleshooting common issues and questions in Dribdat can be found here. For less technical questions, there is also a [Q & A for organisers](organiser).
+For further technical references, see the [Deployment guide](deploy).
 
 ---
 
@@ -145,94 +145,93 @@ Install the [Poetry Export plugin](https://github.com/python-poetry/poetry-plugi
 
 `poetry export -f "requirements.txt" --output "requirements/prod.txt" --without-hashes`
 
-
 ---
 
-## F.A.Q.
+## F.A.Q
 
-The following questions were originally compiled as part of the projects [DINAcon nomination](https://dinacon.ch/en/dinacon-awards/nominations/). 
+The following questions were originally compiled as part of the projects [DINAcon nomination](https://dinacon.ch/en/dinacon-awards/nominations/).
 You can contribute to additional social review of the project at [AlternativeTo](https://alternativeto.net/software/dribdat/).
 
-### _How mature is the project?_
+### *How mature is the project?*
 
 Live and production ready.
 
-### _When was the project started?_
+### *When was the project started?*
 
 November 2015
 
-### _Under which license is your project licensed?_
+### *Under which license is your project licensed?*
 
 OSI/FSD-approved free software license (MIT)
 
-### _Does one need to sign a contributor agreement?_
+### *Does one need to sign a contributor agreement?*
 
 No
 
-### _How many different contributors did contribute to the project within the last 12 months?_
+### *How many different contributors did contribute to the project within the last 12 months?*
 
 5
 
-### _How many commits did your project receive within the last 12 months? Projects not having a version control system (e.g. Open Data projects or similar) can also specify changesets or similar._
+### *How many commits did your project receive within the last 12 months? Projects not having a version control system (e.g. Open Data projects or similar) can also specify changesets or similar.*
 
 393
 
-### _Was this project forked (split into different communities) in the past or is this project a fork of an other project? Please describe the situation (was it a friendly/unfriendly fork, what was the reason, what is the current state of the projects that are/were involved)._
+### *Was this project forked (split into different communities) in the past or is this project a fork of an other project? Please describe the situation (was it a friendly/unfriendly fork, what was the reason, what is the current state of the projects that are/were involved).*
 
 No
 
-### _If your project is based on a (public) GitLab instance, on Github, on Bitbucket, etc. that offers a metric like "followers" or "likes", what is the metric of your project?_
+### *If your project is based on a (public) GitLab instance, on Github, on Bitbucket, etc. that offers a metric like "followers" or "likes", what is the metric of your project?*
 
 38 stars, 17 forks
 
-### _Does the community meet in "real life" on a regular base (e.g. yearly, monthly, ...)? How many people do meet at such meetings?_
+### *Does the community meet in "real life" on a regular base (e.g. yearly, monthly, ...)? How many people do meet at such meetings?*
 
 Yes. We meet at least twice a year at events where we use, and further develop, this platform. There is a small group of people that has directly influenced, and continues to take an interest in, the course of this project. We have several online locations to share updates (notably on [Open Collective](https://opencollective.com/dribdat/updates), ~~Mattermost, Discord and Slack~~).
 
-### _Do you have other metrics that you would like to share with us, which help us to understand how successful your project is?_
+### *Do you have other metrics that you would like to share with us, which help us to understand how successful your project is?*
 
 Used at 50+ hackathons. The single largest installation has 750+ users.
 
-### _Does your project have a non-coder community e.g. UX designer, translator, marketing, etc.? What kind of non-coder people are involved in your project?_
+### *Does your project have a non-coder community e.g. UX designer, translator, marketing, etc.? What kind of non-coder people are involved in your project?*
 
 Yes. Hackathon participations are not just coders, and non-technical users who would like to discover open source activities are an important prerogative for this project. The process of running creative events like hackathons, combining our experience in code, is something we have aimed to build into all parts of the tool to make the event format accessible to an even wider public.
 
-### _Does your project offer something like "easy hacks" to make it easy to get a foot into the project?_
+### *Does your project offer something like "easy hacks" to make it easy to get a foot into the project?*
 
 Yes, there is a getting started page which can also be customized by the organisers. We have a community instance, where people can start their own events. To run your own instance of dribdat, there are clear installation instructions to follow.
 
-### _Please provide the page where we can find more information about the easy hacks._
+### *Please provide the page where we can find more information about the easy hacks.*
 
 - For deployment see the [deployment guide](/deploy).
 - For usage notes, see the [user handbook](/usage).
 - If you have question, drop them in [our forum](https://github.com/orgs/dribdat/discussions).
 
-### _Do you have people mentoring new contributors and actively helping them to get on board of the project?_
+### *Do you have people mentoring new contributors and actively helping them to get on board of the project?*
 
 Oleg and other people with experience in using the platform are available via various community channels to new users of dribdat. We regularly mentor new users in getting started. There is also a hosted version of the platform which we can set up to get hackathons going quickly. And a reasonably [active forum](https://forum.schoolofdata.ch/t/make-the-most-of-hackathon-season/167).
 
-### _Does your project undertake specific efforts to make sure, that people regardless of ethnicity, gender, etc. can contribute and participate in the project? Does your project for example have a Code of Conduct or is it in general open and friendly to all human beings? Please explain the current situation._
+### *Does your project undertake specific efforts to make sure, that people regardless of ethnicity, gender, etc. can contribute and participate in the project? Does your project for example have a Code of Conduct or is it in general open and friendly to all human beings? Please explain the current situation.*
 
 The [Hack Code of Conduct](https://hackcodeofconduct.org/), which we have applied to events for the past 3 years, is now in dribdat by default to help facilitate inclusive events.
 
-### _Please describe the business case of your project._
+### *Please describe the business case of your project.*
 
 There are hackathons happening all over the world every weekend. Countless more collaborative online "hacking" events happen every day in companies, institutions and the civil society. Each of them generates interest, activity, networking and new initiatives. While several hackathon platforms contend to "lead the market", we are one of a handful of open source alternatives, most notably [HackDash](https://github.com/impronunciable/hackdash/) and [Sparkboard](https://github.com/sparkboard/sparkboard) - which operate in a SaaS model.
 
 Please visit our [OpenCollective](https://opencollective.com/dribdat), where we are currently focusing our fundraising and transparent budgeting.
 
-### _How relevant is your project in regard to a commercial use?_
+### *How relevant is your project in regard to a commercial use?*
 
 Currently we accept sponsoring and distribute it within the project, but do not charge a licensing fee of any kind. There is a strong, recurrent interest from companies in using dashboards similar to this one for tracking internal activities above and beyond hackathon-type events. Several commercial models come to mind: the original motivation for the project came out of a hackathon sponsored by Swisscom, a company that champions innovation culture. We are inspired us to pursue an organic and grassroots business model that benefits a wide variety of "start-up" initiatives.
 
-### _This project is important to the world because...._
+### *This project is important to the world because....*
 
 Hackathons have become a useful instrument to see critically beyond the veil of pragmatic utility in Information Technologies, and have been embraced by the most disruptive companies and organisations around the world as a vehicle for positive change. By imbuing a software project with the ethics and values of hackathons, we can scale these experiments from our local community to many other corners of the world and many domains of creative collaboration.
 
-### _If this project stops its development and ceases to exist, this would be the impact..._
+### *If this project stops its development and ceases to exist, this would be the impact...*
 
 We wouldn't have our own platform to hack the meta-side of hackathons, and that would be a shame. We could go back to using wikis and repo organisations, with all the constraints and loss of user friendliness that entails.
 
-### _Do you have any usage metrics you can provide which show how succesful your project is? (downloads, visits on website, registered users, etc.)_
+### *Do you have any usage metrics you can provide which show how succesful your project is? (downloads, visits on website, registered users, etc.)*
 
 In addition to the low thousands of user accounts and hundreds of projects across the different installations (these are visible to administrators in the dashboard), many dribdat instances have "open analytics": scroll down to the bottom of the page (for example, on hack.opendata.ch) and click Analytics.

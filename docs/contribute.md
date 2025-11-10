@@ -5,8 +5,9 @@ Developer Guide
 This document contains additional information on contributing to dribdat as a developer.
 If you are interested in connecting to dribdat's API, scroll down to the [API overview](#api-guide)
 For more background references, see the [README](https://github.com/dribdat/dribdat#dribdat).
+See also the [DeepWiki guide](https://deepwiki.com/dribdat/dribdat) for technical specifications.
 
-# Welcome, contributor!
+# Welcome, contributor
 
 Thanks for checking out `dribdat` - a tool made for brilliant, openly contributing people like you!
 This code is originally based on [cookiecutter-flask](https://github.com/cookiecutter-flask/cookiecutter-flask),
@@ -65,7 +66,7 @@ python manage.py db upgrade
 DRIBDAT_ENV=dev python manage.py run
 ```
 
-You should at this point see a welcome screen at http://127.0.0.1:5000 🎉
+You should at this point see a welcome screen at <http://127.0.0.1:5000> 🎉
 
 Follow the instructions to register your first user account, which will have admin access, and let you set up events.
 
@@ -117,7 +118,6 @@ python manage.py db upgrade
 To apply the migration. Watch out for any errors in the process.
 
 For a full migration command reference, run `python manage.py db --help`.
-
 
 ## API Guide
 
