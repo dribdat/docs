@@ -21,6 +21,13 @@ At the heart of Dribdat is a hexagonal visualization of your teams, showing thei
 
 <img alt="Screenshot of dribdat" src="images/screenshot_awesome.png" width="100%" vspace="10">
 
+Created in light of the [Hacker ethic](https://en.wikipedia.org/wiki/Hacker_ethic), the Zen of Dribdat is (in a nutshell):
+
+- **Commit sustainably**: archive collected results in open, web-friendly data formats.
+- **Live and let live**: share designs, dev-envs, docs accessible to your entire team.
+- **Co-create in safe spaces**: promote safer conduct, balancing openness with privacy.
+- **Appreciate hexagons:** 120° of symmetry imply community resilience and social good.
+
 Dribdat sprints (see [Tour de Hack](tour) for some examples) typically involve open licenses ([Creative Commons](https://creativecommons.org/licenses/), [Open Data Commons](https://opendatacommons.org/licenses/odbl/), etc.), community-developed templates ([School of Data Pipeline](https://schoolofdata.org/methodology/)), or governance instruments ([Hack Code of Conduct](https://hackcodeofconduct.org/)).
 
 <img alt="Pipeline of dribdat" src="images/pipeline.png" width="100%" vspace="10">
@@ -37,5 +44,7 @@ You can customize the layout and presets in an admin panel, or with `YAML` confi
 
 All the data is aggregated with an [open standard](https://json.everyhack.day) (`hackathon.json`), and can be exported in various formats at any time.
 There is more on this in the [User Guide](usage) and [Whitepaper](whitepaper).
+
+Visit the 👁️‍🗨️ [Hackfinder](https://hackintegration.ch/hackfinder) to find upcoming events and current research, and join our ongoing 🧬 [Hack:Org:X](https://hackorgx.dribdat.cc) sessions to meet other hackathon organizers.
 
 See also our [roadmap](https://github.com/orgs/dribdat/projects/8/views/2?pane=issue&itemId=89596986) and sign up for the beta 🔜 [EveryHack.day](https://everyhack.day)

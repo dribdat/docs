@@ -3,7 +3,8 @@ Deployment Guide
 ---
 <img align="right" src="images/logo12.png" width="128">
 
-The following section explains installation options, followed by environment variables you can use to tweak your installation. See also the [README](https://github.com/dribdat/dribdat#quickstart) guide. Don't miss the [#Configuration](#Configuration) section below for details of environment parameters.
+The following section explains installation options, followed by environment variables you can use to tweak your installation in the [#Configuration](#configuration) section.
+See also the [README](https://github.com/dribdat/dribdat#quickstart) and [DeepWiki guide](https://deepwiki.com/dribdat/dribdat).
 
 # Installation
 
@@ -11,14 +12,14 @@ The core of Dribdat is developed in Python, with an API based on open standards:
 
 There are several frontends available, from the default web site in Bootstrap, to a Vue.js-based Single Page App ([Backboard](https://github.com/dribdat/backboard)), an older multiplatform chatbot ([Dridbot](https://github.com/dribdat/dridbot)) and a new Tailwind-based dashboard ([Rustboard](https://github.com/dribdat/rustboard)).
 
-With all these options, you might be wondering: what is a good way to start? This page should help you with a basic installation of Dribdat in a short time. 
+With all these options, you might be wondering: what is a good way to start? This page should help you with a basic installation of Dribdat in a short time.
 
 Please keep in mind that our [Open Collective](https://opencollective.com/dribdat) is a great way to contribute or get additional support from the maintainers!
 
 ## Cloud scripts
 
 The installation of dribdat on some cloud providers has been facilitated with quick-deploy scripts.
-See [Configuration](#Configuration) below for a list of variables you can set to customize your instance.
+See [Configuration](#configuration) below for a list of variables you can set to customize your instance.
 
 <a title="Deploy to Render" target="_blank" href="https://render.com/deploy?repo=https://github.com/dribdat/dribdat"><img src="https://render.com/images/deploy-to-render-button.svg?w=800&fm=webp" height="48">&nbsp;
 <a title="Deploy on Heroku" target="_blank" href="https://heroku.com/deploy?template=https://github.com/dribdat/dribdat"><img src="https://www.herokucdn.com/deploy/button.svg" height="48">&nbsp;
@@ -49,11 +50,11 @@ See Configuration below for a list of variables you can set to customize your in
 
 Use the [dribdat Ansible role](https://ansible.build/roles/dribdat/) for a straightforward production deployment using [Ansible](https://docs.ansible.com/). Thanks to Mint Systems for maintaining these scripts.
 
-See [Configuration](#Configuration) below for a list of variables you can set to customize your instance.
+See [Configuration](#configuration) below for a list of variables you can set to customize your instance.
 
 ## From source
 
-Details on starting the application directly with Python are detailed in the [Developer guide](contribute). You will still want to refer to the [Configuration](#Configuration) section below.
+Details on starting the application directly with Python are detailed in the [Developer guide](contribute). You will still want to refer to the [Configuration](#configuration) section below.
 
 # Configuration
 
@@ -115,12 +116,12 @@ If you would like people to be able to activate their accounts and reset passwor
 
 OAuth 2.0 support for **Single Sign-On** (SSO) is currently available using [Flask Dance](https://flask-dance.readthedocs.io/), and requires SSL to be enabled (using `SERVER_SSL`=1 in production or `OAUTHLIB_INSECURE_TRANSPORT` in development). The following providers are supported:
 
-- `mattermost` - [Mattermost](https://developers.mattermost.com/integrate/apps/authentication/oauth2/)
-- `hitobito` - [Hitobito](https://github.com/hitobito/hitobito/blob/master/doc/development/08_oauth.md)
-- `github`- [GitHub](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app)
-- `slack` - [Slack](https://api.slack.com/authentication/oauth-v2)
-- `azure` - [Microsoft Azure](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow)
-- `oauth2` - [Generic OAuth 2.0 providers](https://oauth.net/2/) (Zitadel, Auth0, Keycloak, ..)
+* `mattermost` - [Mattermost](https://developers.mattermost.com/integrate/apps/authentication/oauth2/)
+* `hitobito` - [Hitobito](https://github.com/hitobito/hitobito/blob/master/doc/development/08_oauth.md)
+* `github`- [GitHub](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app)
+* `slack` - [Slack](https://api.slack.com/authentication/oauth-v2)
+* `azure` - [Microsoft Azure](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow)
+* `oauth2` - [Generic OAuth 2.0 providers](https://oauth.net/2/) (Zitadel, Auth0, Keycloak, ..)
 
 Register your app with the provider, and set the following variables:
 
@@ -137,7 +138,7 @@ Register your app with the provider, and set the following variables:
 
 You may then wish to disable non-SSO logins using `DRIBDAT_ALLOW_LOGINS` (if an e-mail server is configured, they can still use that), and registrations with `DRIBDAT_NOT_REGISTER`
 
-E-mail activation or moderation (activation in admin area) of non-SSO accounts can be forced with `DRIBDAT_USER_APPROVE` 
+E-mail activation or moderation (activation in admin area) of non-SSO accounts can be forced with `DRIBDAT_USER_APPROVE`
 
 You can find more advice in the [Troubleshooting](trouble#need-help-setting-up-sso) guide.
 
@@ -168,15 +169,15 @@ For **uploading images** and other files directly within dribdat, you can config
 
 See example connection in the [Troubleshooting](trouble#file-storage-example) guide.
 
-Due to the use of the [boto3](https://github.com/boto/boto3/) library for S3 support, there is a dependency on OpenSSL via awscrt. If you use these features, please note that the product includes cryptographic software written by Eric Young (eay@cryptsoft.com) and Tim Hudson (tjh@cryptsoft.com).
+Due to the use of the [boto3](https://github.com/boto/boto3/) library for S3 support, there is a dependency on OpenSSL via awscrt. If you use these features, please note that the product includes cryptographic software written by Eric Young (<eay@cryptsoft.com>) and Tim Hudson (<tjh@cryptsoft.com>).
 
 ## Large language model
 
 If you would like to enable automated challenge and AI-enhanced project suggestions, you can connect OpenAI or compatible service. Our library supports the API endpoints of [LM Studio](https://github.com/lmstudio-ai), or the [LiteLLM](https://docs.litellm.ai/) proxy. If using [Ollama](https://ollama.com/blog/openai-compatibility), remember to put `/v1` in your URL.
 
-- `LLM_BASE_URL` - if left blank, this uses the production OpenAI endpoint (you still need to set a model)
-- `LLM_API_KEY` - (required) the API key of an account with your LLM provider
-- `LLM_MODEL` - set to your choice of model, e.g. "gpt-3.5-turbo" - visible to users
+* `LLM_BASE_URL` - if left blank, this uses the production OpenAI endpoint (you still need to set a model)
+* `LLM_API_KEY` - (required) the API key of an account with your LLM provider
+* `LLM_MODEL` - set to your choice of model, e.g. "gpt-3.5-turbo" - visible to users
 
 ## Advanced server settings
 
@@ -196,7 +197,7 @@ Here are some additional instructions for your installation. See also the [troub
 
 ## Custom default content
 
-To customize some of the default content, you can edit the template include files in the folder `dribdat/templates/includes`, for example you will find there the default [quickstart.md](https://github.com/dribdat/dribdat/blob/main/dribdat/templates/includes/quickstart.md) and [stages.yaml](https://github.com/dribdat/dribdat/blob/main/dribdat/templates/includes/stages.yaml) definitions. 
+To customize some of the default content, you can edit the template include files in the folder `dribdat/templates/includes`, for example you will find there the default [quickstart.md](https://github.com/dribdat/dribdat/blob/main/dribdat/templates/includes/quickstart.md) and [stages.yaml](https://github.com/dribdat/dribdat/blob/main/dribdat/templates/includes/stages.yaml) definitions.
 
 Make sure your changes will not be overwritten is you are using ephemeral storage (e.g. Heroku) for your deployment.
 
