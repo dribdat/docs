@@ -14,18 +14,21 @@ You can sync your content when adding a new challenge or project using the **Imp
 
 This feature allows you to connect documentation from your open source repository on [GitHub](https://github.com), an online document at [Etherpad](http://etherpad.org), and many other collaboration platforms - see the list below.
 
-When you **Edit** your project, you can find the **Readme** in the **Details** tab. 
+![Screenshot of a README](images/screenshot_readme.png)
+
+When you **Edit** your project, you can find the **Readme** link in the **Details** tab. Clear it to remove the Readme from your project.
+
 Visit the [User guide](usage) to learn more about editing content in Dribdat.
 
 ## Staying in sync
 
-Once you put the URL to your remote content into the **README** field when creating a new project. Or find it in the **Details** editor on an existing challenge or project, the content will be fetched, and you will be notified if there are any errors.
+Once you put the URL to your remote content into the **Readme** field when creating a new project, the content will be fetched, and you will be notified if there are any errors.
+
+Note that for source code repositories, some additional content is fetched, such as links to source code or demo. You can modify this in the **Details** editor.
 
 From time to time - such as when writing a Post - the data will be refreshed. You can use the **Sync** (synchronise) button on the bottom of your project page to refresh your changes at any time. Administrators can also selectively Sync projects, or all at once in the project list.
 
-Even if you have a Readme, you can still _Edit_ your project to add notes or answer questions relevant to the event you are at, and _Details_ to tweak the Contact, Download, Source, Image links and more.
-
-Note that for source code repositories, some additional content is fetched, such as links to source code or demo. To clear the README, just remove the link.
+Even if you have an externally hosted Readme, you can still _Edit_ your project to add notes or answer questions relevant to the event you are at, and _Details_ to tweak the Contact, Download, Source, Image links and more.
 
 ## Supported sites
 
@@ -43,7 +46,7 @@ Leave us [an issue](https://codeberg.org/dribdat/dribdat/issues) or drop into th
 
 ### Using Google Docs
 
-A special note if you are trying to attach a document from Google Drive. 
+A special note if you are trying to attach a document from Google Drive.
 
 If you want to use Google Slides to make a presentation, it is best to Publish to Web, and copy the Embedding link (just the URL) as your Presentation link. The following applies to attaching the contents of Google Docs:
 
