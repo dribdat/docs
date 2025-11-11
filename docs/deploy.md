@@ -128,13 +128,13 @@ Register your app with the provider, and set the following variables:
 * `OAUTH_TYPE` - one of the supported providers (see above)
 * `OAUTH_ID` - the Client ID of your app.
 * `OAUTH_SECRET` - the Client Secret of your app.
-* `OAUTH_DOMAIN` - OAuth/Mattermost/Hitobito domain, Slack subdomain, or Azure tenant.
+* `OAUTH_DOMAIN` - OAuth/Mattermost/Hitobito domain, Slack subdomain, Azure tenant..
+* `OAUTH_LOGO` - (optional) URL to a button image from your SSO platform.
 * `OAUTH_SCOPE` - (optional) comma-delimited Scope, if not the default (`email,profile,openid`)
 * `OAUTH_USERINFO` - (optional) location of userinfo endpoint relative to the domain.
 * `OAUTH_SKIP_LOGIN` - (optional) users should go directly to external login screen.
 * `OAUTH_LINK_REGISTER` - (optional) a registration link to your SSO platform.
 * `OAUTH_HELP_REGISTER` - (optional) a short text for the login page.
-* `OAUTH_LOGO` - (optional) URL to a button from your SSO platform.
 
 You may then wish to disable non-SSO logins using `DRIBDAT_ALLOW_LOGINS` (if an e-mail server is configured, they can still use that), and registrations with `DRIBDAT_NOT_REGISTER`
 
@@ -144,15 +144,18 @@ You can find more advice in the [Troubleshooting](trouble#need-help-setting-up-s
 
 ## Spam shield
 
-To try to reduce spam issues on your Dribdat instance, we encourage you to use an OAuth provider (as above) with competency in this area. Basic form validation using [Google Recaptcha](https://developers.google.com/recaptcha) and compatible providers like [Friendly Captcha](https://developer.friendlycaptcha.com/docs/v2/guides/migrating-from-recaptcha), is available:
+To try to reduce spam issues on your Dribdat instance, we encourage you to use an OAuth provider (as above) with competency in this area. Basic form validation using [Google Recaptcha](https://developers.google.com/recaptcha) and compatible providers like [Friendly Captcha](https://developer.friendlycaptcha.com/docs/v2/guides/migrating-from-recaptcha) or [HCaptcha](https://www.hcaptcha.com/), is available:
 
 * `RECAPTCHA_PUBLIC_KEY` - A public key.
 * `RECAPTCHA_PRIVATE_KEY` - A private key.
-* `RECAPTCHA_API_SERVER` - (optional) Specify your Recaptcha API server.
-* `RECAPTCHA_PARAMETERS` - (optional) A dict of JavaScript (api.js) parameters.
-* `RECAPTCHA_DATA_ATTRS` - (optional) A dict of [data attributes](https://developers.google.com/recaptcha/docs/display#javascript_resource_apijs_parameters).
-* `RECAPTCHA_VERIFY_SERVER` - (optional) The remote API of your alternative Captcha service.
+* `RECAPTCHA_PARAMETERS` - (optional) A dict of configuration parameters.
+* `RECAPTCHA_HTML` - (optional) Override default HTML template.
+* `RECAPTCHA_DATA_ATTRS` - (optional) A dict of [data attributes](https://developers.google.com/recaptcha/docs/display#javascript_resource_apijs_parameters) for Recaptcha using-a-proxy-server.
 * `RECAPTCHA_SCRIPT` - (optional) The script that is used by your alternative Captcha service.
+* `RECAPTCHA_DIV_CLASS` - (optional) Override the default class of the captcha div in case an alternative captcha service is used. Default is `g-recaptcha`
+* `RECAPTCHA_VERIFY_SERVER` - (optional) The remote API of your alternative Captcha service.
+
+See the [Flask WTF docs](https://flask-wtf.readthedocs.io/en/1.2.x/config/#recaptcha) for further configuration settings.
 
 ## File storage
 
