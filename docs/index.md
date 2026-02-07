@@ -31,6 +31,7 @@ We aim to include people of all backgrounds in using + developing this tool - no
 - Read up about the project in the [User Guide](usage), [Purpose](purpose) and 📑 [Whitepaper](whitepaper)
 - Visit the 👁️‍🗨️ [Hackfinder](https://hackintegration.ch/hackfinder) to find upcoming events and current research.
 - Join our 🧬 [Hack:Org:X](https://hackorgx.dribdat.cc) sessions to meet other hackathon organizers.
+- Take a look at the [Modernization Proposal](modernization)
 - See our [roadmap](https://github.com/orgs/dribdat/projects/8/views/2) and sign up for the beta at 🔜 [EveryHack.day](https://everyhack.day)
 - Find **screenshots** of Dribdat-powered events at 🏀 [Tour de Hack](tour)
 - Subscribe to **get updates** on our 🩵 [OpenCollective](https://opencollective.com/dribdat/updates)

@@ -33,6 +33,8 @@ pages:
       name: Tour de Hack
     - path: docs/whitepaper
       name: Whitepaper
+    - path: docs/modernization
+      name: Dribdat v3
     - path: docs/about
       name: History
     - path: docs/trouble
