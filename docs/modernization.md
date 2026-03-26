@@ -10,7 +10,7 @@ _Contents:_
 
 This document outlines a major rework of the Dribdat tech stack to modernize the application, improve developer and user experience, and ensure the codebase is optimized for agentic development.
 
-Generated with Google Jules based on a complete analysis of the source code and documentation, as well as an interview with @loleg
+Generated with [Google Jules](https://github.com/datalets/dribdat/pull/7) based on an interview with @loleg and complete analysis of the source code and documentation.
 
 ## 1. Vision & Goals
 
