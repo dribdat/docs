@@ -1,6 +1,15 @@
 # Teambuilder
 
-Dribdat uses an optimization-based **matching algorithm** to help organizers form teams during hackathons. The algorithm is implemented using [Pyomo](https://www.pyomo.org/) and solved with the [HiGHS](https://highs.dev/) solver. In this documentation you can find some more information on how it works, and our outlook on this type of feature.
+Many hackathons, whether remote or on-site, rely on "organic" formation of teams, where people just meet, connect, and agree to work together for more or less the duration of the event. However, many organizers look for more more methodical ways of matching people together. Some reasons to try to do this are:
+
+- improving the onboarding experience
+- helping people to 'break the ice'
+- promoting more diversity in the teams
+- managing online events, and so on
+
+There are several ways people can form teams on Dribdat already, as described in the [User Handbook](usage), you can just Join a project that you like. You can also be manually added to a project by an organizer, who may have built this into a registration form, or found some other ways to assign teams. We recently added a simple dialog that encourages people to fill out a profile and pick a team.
+
+Dribdat now features an optimization-based **matching algorithm** to go a step further, and actively help participants and organizers to form teams during hackathons. The science-based algorithm is implemented using [Pyomo](https://www.pyomo.org/) and solved with the [HiGHS](https://highs.dev/) solver. In this documentation you can find some more information on how it works, and our outlook on this type of feature.
 
 The **Teambuilder** feature is an automated recommendation engine designed to match participants to projects based on their skills, interests, and preferences. Originally developed as an external algorithm by students of Prof. Dr. Marek Pycia at the University of Zürich (UZH), the tool has been successfully integrated into Dribdat as part of the HackIntegration project.
 

@@ -17,9 +17,11 @@ pages:
   items:
     - path: docs/index
       name: Intro
-    - path: docs/usage
-      name: User Handbook
+    - name: User Handbook
+      path: docs/handbook
       items:
+      - path: docs/usage
+        name: Getting started
       - path: docs/sync
         name: How to sync data
       - path: docs/organiser
@@ -30,9 +32,11 @@ pages:
         name: How to install
       - path: docs/contribute
         name: How to contribute
-    - path: docs/purpose
-      name: About Dribdat
+    - name: About Dribdat
+      path: docs/about
       items:
+      - path: docs/purpose
+        name: Purpose driven
       - path: docs/tour
         name: Tour de Hack
       - path: docs/whitepaper

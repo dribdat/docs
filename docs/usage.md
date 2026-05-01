@@ -18,7 +18,7 @@ Open the page of an event, log in and create a user **Profile**. Then you can ex
 
 ![User profile](images/screenshot_userprofile.jpg)
 
-When you open an upcoming event, you are shown a list of teams. The **Join event** button guides you with a shortlist (shown below), based on your profile data. 💡 We are working on new teambuilding features - [stay tuned!](https://hackintegration.ch)
+When you open an upcoming event, you are shown a list of teams. The **Join event** button guides you with a shortlist (shown below), based on your profile data. 💡 We are working on [new teambuilding features](matching) to complement this.
 
 ![Team selection](images/screenshot_join_team.png)
 
