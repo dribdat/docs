@@ -50,12 +50,21 @@ Where the provider is `slack`, `mattermost`, .. as configured in `OAUTH_TYPE`
 
 ### Cleaning out inactive users
 
-Open a `manage.py shell` and run a command like this to remove all non-admin, inactive, non-SSO users with zero drib-scores:
+If your site is overrun by spammers, first of all, look for deployment instructions to disable registrations, enable e-mail verification, and set up a Captcha. 
+
+Then you can run a command to remove all non-admin, inactive, non-SSO users with zero drib-scores:
 
 ```
-from dribdat.user.models import User
-for pp in User.query.filter_by(is_admin=False, active=False, sso_id=None):
-  if pp.activity_count == 0 and len(pp.roles) == 0 and len(pp.posted_challenges()) == 0: pp.delete()
+cli.py kick -id
+
+  Cull inactive accounts on the system.
+
+Options:
+  -0, --lowscore       Users with a low score
+  -i, --inactive       Users which are not active
+  -o, --withsso        Include users with active SSO
+  -d, --delete         Delete users, not just deactivate them
+  -s, --score INTEGER  What counts as a minimum low score
 ```
 
 ---
